@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
     public float speed;
+	public float rotationSpeed;
 
 	// Use this for initialization
 	void Start () {
@@ -13,11 +14,7 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-       // if (photonView.isMine)
-        {
-            transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * speed, 0f,
-            Input.GetAxis("Vertical") * Time.deltaTime * speed);
-        } 
+        transform.Translate(0f, 0f, Input.GetAxis("Vertical") * Time.deltaTime * speed);
+		transform.Rotate(0f, Input.GetAxis("Horizontal") * rotationSpeed, 0f);
     }
 }
