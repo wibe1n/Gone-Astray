@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-
     public float speed;
-    public float force;
-
-    
 
 	// Use this for initialization
 	void Start () {
@@ -20,12 +16,8 @@ public class Movement : MonoBehaviour {
 
        // if (photonView.isMine)
         {
-
             transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * speed, 0f,
             Input.GetAxis("Vertical") * Time.deltaTime * speed);
-            
-            
-
         } 
     }
 }
