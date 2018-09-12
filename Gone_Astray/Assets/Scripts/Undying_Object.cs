@@ -8,7 +8,7 @@ public class Undying_Object : MonoBehaviour {
 	
 	void Start () {
         DontDestroyOnLoad(this);
-        StartCoroutine(ToTheWorld());
+        StartCoroutine(StartMenuScreen());
     }
 	
 	private IEnumerator ToTheWorld() {
