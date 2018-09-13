@@ -6,24 +6,25 @@ public class CameraController : MonoBehaviour {
 
 	//public Camera myCam;
 	public float rotationSpeed; // pelaajaan käännön nopeus
+	public Quaternion originalRotationValue;
 
 	// Use this for initialization
 	void Start () {
 		Cursor.lockState = CursorLockMode.Locked;
+		originalRotationValue = transform.rotation; // save the initial rotation
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetAxis ("Fire1") !=0) {
-			// Käännetään pelaajaa hiiren x-liikkeeellä
+			// Käännetään pelaajaa hiiren liikkeeellä
 			float mouseInputX = Input.GetAxis ("Mouse X");
-			Vector3 lookHereX = new Vector3 (0, mouseInputX * rotationSpeed * Time.deltaTime, 0);
-			transform.Rotate (lookHereX);
-
-			// Käännetään asetta hiiren y-liikkeellä
 			float mouseInputY = Input.GetAxis ("Mouse Y");
-			Vector3 lookHereY = new Vector3 (-1 * mouseInputY * rotationSpeed * Time.deltaTime, 0, 0);
-			transform.Rotate (lookHereY);
+			Vector3 lookHere = new Vector3 (-1 * mouseInputY * rotationSpeed * Time.deltaTime, mouseInputX * rotationSpeed * Time.deltaTime, 0);
+			transform.Rotate (lookHere);
+		}
+		if (Input.GetAxis ("Fire2") != 0) {
+			transform.rotation = Quaternion.Slerp(transform.rotation, originalRotationValue, Time.time * rotationSpeed);
 		}
 	}
 }
