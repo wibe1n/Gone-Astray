@@ -10,12 +10,16 @@ public class Undying_Object : MonoBehaviour {
         DontDestroyOnLoad(this);
         StartCoroutine(StartMenuScreen());
     }
+
+    public void Level1() {
+        StartCoroutine(ToTheWorld());
+    }
 	
 	private IEnumerator ToTheWorld() {
         yield return SceneManager.LoadSceneAsync("Level1");
     }
 
-    public void ExitGame() {
+    public void Menu() {
         StartCoroutine(StartMenuScreen());
     }
 
