@@ -18,9 +18,9 @@ public class CameraController : MonoBehaviour {
 	void Update () {
 		if (Input.GetAxis ("Fire1") !=0) {
 			// Käännetään pelaajaa hiiren liikkeeellä
-			float mouseInputX = Input.GetAxis ("Mouse X");
-			float mouseInputY = Input.GetAxis ("Mouse Y");
-			Vector3 lookHere = new Vector3 (-1 * mouseInputY * rotationSpeed * Time.deltaTime, mouseInputX * rotationSpeed * Time.deltaTime, 0);
+			float mouseInput = Input.GetAxis ("Mouse X");
+			//float mouseInputY = Input.GetAxis ("Mouse Y");
+			Vector3 lookHere = new Vector3 (0, mouseInput * rotationSpeed * Time.deltaTime, 0);
 			transform.Rotate (lookHere);
 		}
 		if (Input.GetAxis ("Fire2") != 0) {
