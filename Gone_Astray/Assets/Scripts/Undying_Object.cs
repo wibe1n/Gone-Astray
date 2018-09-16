@@ -9,6 +9,7 @@ public class Undying_Object : MonoBehaviour {
 	void Start () {
         DontDestroyOnLoad(this);
         StartCoroutine(StartMenuScreen());
+        DataManager.ReadDataString("nonexistent");
     }
 
     public void Level1() {

@@ -19,6 +19,30 @@ public static class DataManager {
     public static List<string> nameListGeneric = new List<string> { };
     public static List<string> descriptionListGeneric = new List<string> { };
 
+    static public string ReadDataString(string entryName) {
+        if (!readBool) {
+            DownloadTextData();
+        }
+        string[] splitted = entryName.Split("_".ToCharArray());
+        string identifier = splitted[0];
+
+        try {
+            DataManagerDictionaryType dicType = (DataManagerDictionaryType)System.Enum.Parse(typeof(DataManagerDictionaryType), identifier);
+            try {
+                return configDatas[System.Convert.ToInt32(dicType)][entryName];
+            }
+            catch {
+                return null;
+            }
+        }
+        catch {
+            if (identifier != "nonexistent") {
+                Debug.LogError("Identifier part is not defined in DataManager: " + identifier);
+            }
+            return null;
+        }
+    }
+
     static private void DownloadTextData() {
         for (int i = 0; i < System.Enum.GetNames(typeof(DataManagerDictionaryType)).Length; i++) {
             configDatas.Add(new Dictionary<string, string>());
