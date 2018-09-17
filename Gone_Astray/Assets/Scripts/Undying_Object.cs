@@ -10,6 +10,8 @@ public class Undying_Object : MonoBehaviour {
         DontDestroyOnLoad(this);
         StartCoroutine(StartMenuScreen());
         DataManager.ReadDataString("nonexistent");
+        string text = NameDescContainer.GetDescription(NameType.story, 0);
+        Debug.Log(text);
     }
 
     public void Level1() {
