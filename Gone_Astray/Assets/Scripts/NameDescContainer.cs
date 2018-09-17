@@ -4,12 +4,14 @@ using UnityEngine;
 using System;
 
 public enum NameType {
-    item, story
+    item, chapter1, chapter2, chapter3, chapter4
 };
 
-public enum Chapter {
-    chapter1, chapter2, chapter3, chapter4
+public enum ChapterParts
+{
+    part1, part2, part3, part4
 };
+
 
 public static class NameDescContainer {
     private static bool genBool = false;
@@ -33,7 +35,7 @@ public static class NameDescContainer {
                 {
                 }
                 else { 
-                    nameIndex = (int)System.Enum.Parse(typeof(Chapter), splitStr[2]);
+                    nameIndex = (int)System.Enum.Parse(typeof(ChapterParts), splitStr[2]);
                 }
                 names[Convert.ToInt32(nametype)][nameIndex] = splitStr[3];
             }
@@ -45,7 +47,7 @@ public static class NameDescContainer {
                 if (int.TryParse(splitStr[2], out descIndex)) {
                 }
                 else { 
-                    descIndex = (int)System.Enum.Parse(typeof(Chapter), splitStr[2]);
+                    descIndex = (int)System.Enum.Parse(typeof(ChapterParts), splitStr[2]);
                 }
                 descriptions[Convert.ToInt32(nametype)][descIndex] = splitStr[3];
             }
@@ -69,6 +71,11 @@ public static class NameDescContainer {
 
     public static string GetDescription(NameType subtype, int index) {
         return descriptions[Convert.ToInt32(subtype)][index];
+    }
+
+    public static string GetChapterPart(string part, NameType chapter)
+    {
+        return descriptions[Convert.ToInt32(chapter)][Convert.ToInt32((ChapterParts)System.Enum.Parse(typeof(ChapterParts), part))];
     }
 
 

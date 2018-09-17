@@ -1,2 +1,5 @@
-%story_story_0_chapter1
-&story_story_0_Once upon a time there was a little girl called...
+%story_chapter1_0_part1
+&story_chapter1_part1_Once upon a time there was a little girl called...
+
+%story_chapter1_0_part2
+&story_chapter1_part2_Mila. She lived in a tiny cabin in the woods.
