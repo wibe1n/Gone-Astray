@@ -1,5 +1,5 @@
 %story_chapter1_0_part1
-&story_chapter1_part1_Once upon a time there was a little girl called...
+&story_chapter1_part1_Once upon a time there was a little girl called Mila. She lived in a tiny cabin in the woods.
 
 %story_chapter1_0_part2
-&story_chapter1_part2_Mila. She lived in a tiny cabin in the woods.
+&story_chapter1_part2_Mila had a brother, but one day she suddenly realized that her brother had vanished.
