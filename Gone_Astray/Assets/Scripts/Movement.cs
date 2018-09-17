@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour {
 	Rigidbody rigbod; //rigidbody
 	public float jumpforce;
 	bool onGround = true;
-	bool falling = false;
+	bool falling = true;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour {
 	void Update () { //Axis vertical/horizontal tarkoittaa wasd ja nuolinäppäimiä
         transform.Translate(0f, 0f, Input.GetAxis("Vertical") * Time.deltaTime * speed); //hahmo liikkuu eteen ja taakse
 		transform.Rotate(0f, Input.GetAxis("Horizontal") * rotationSpeed, 0f); //hahmo kääntyy vasemmalla ja oikealle
-		if (Input.GetAxis("Jump") !=0 && onGround){ //jos space painettu ja yn suuntainen nopeus on nolla
+		if (Input.GetAxis("Jump") !=0 && onGround){ //jos space painettu ja yn suuntainen nopeus on nolla 
 			rigbod.AddForce (Vector3.up * jumpforce, ForceMode.Impulse); //niin hyppää
 			onGround = false;
 			falling = false;
@@ -32,4 +32,7 @@ public class Movement : MonoBehaviour {
 		if (rigbod.velocity.y == 0 && falling)
 			onGround = true;
     }
+	void OnCollisionEnter(Collision col){
+		onGround = true;
+	}
 }
