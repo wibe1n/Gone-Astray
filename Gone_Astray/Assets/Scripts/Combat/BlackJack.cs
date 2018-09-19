@@ -23,7 +23,7 @@ public class BlackJack : MonoBehaviour {
 		if (firefliesUsed > treshold) {
 			disturbed = true;
 		}
-		if (firefliesUsed => firefliesNeeded) {
+		if (firefliesUsed >= firefliesNeeded) {
 			success = true;
 		}
 	}
