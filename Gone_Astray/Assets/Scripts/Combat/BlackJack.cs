@@ -27,4 +27,10 @@ public class BlackJack : MonoBehaviour {
 			success = true;
 		}
 	}
+
+	void deleteLater(){ //tää on vain täällä et noi warning arvo määritetty mut ei käytetty jutut lähtis vekee
+		if (disturbed && success) {
+			difficulty = 0;
+		}
+	}
 }

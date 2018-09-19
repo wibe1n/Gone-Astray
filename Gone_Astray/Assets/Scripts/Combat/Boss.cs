@@ -23,4 +23,9 @@ public class Boss : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	void deleteLater(){ //tää on vain täällä et noi warning arvo määritetty mut ei käytetty jutut lähtis vekee
+		maxSteps =0;
+		minSteps = 0;
+	}
 }
