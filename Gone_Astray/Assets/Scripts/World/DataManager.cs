@@ -6,7 +6,7 @@ using System.IO;
 
 
 public enum DataManagerDictionaryType {
-    itemDesc, story
+    itemDesc, story, npc
 };
 
 public static class DataManager {
