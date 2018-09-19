@@ -7,4 +7,5 @@ public class SpeechBubble : MonoBehaviour {
 
     public Image image;
     public string text;
+
 }

@@ -17,13 +17,13 @@ public class SpeechBubbleCreator : MonoBehaviour{
     }
 
     public void UpdateSpeechBubble(NPC npc) {
-
-
+        npc.currentSpeechInstance += 1;
+        NameType npcID = (NameType)npc.id;
+        npc.currentSpeechBubble.GetComponent<SpeechBubble>().text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
     }
 
     public void CloseSpeechBubble(NPC npc) {
-
-
+        Destroy(npc.currentSpeechBubble);
     }
 
 	
