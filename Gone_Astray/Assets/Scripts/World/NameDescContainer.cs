@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 public enum NameType {
-    item, chapter1, chapter2, chapter3, chapter4
+    item, chapter1, chapter2, chapter3, chapter4, npc1, npc2
 };
 
 public enum ChapterParts
@@ -73,10 +73,12 @@ public static class NameDescContainer {
         return descriptions[Convert.ToInt32(subtype)][index];
     }
 
-    public static string GetChapterPart(string part, NameType chapter)
-    {
+    public static string GetChapterPart(string part, NameType chapter) {
         return descriptions[Convert.ToInt32(chapter)][Convert.ToInt32((ChapterParts)System.Enum.Parse(typeof(ChapterParts), part))];
     }
 
+    public static string GetSpeechBubble(string part, NameType npc) {
+        return descriptions[Convert.ToInt32(npc)][Convert.ToInt32((ChapterParts)System.Enum.Parse(typeof(ChapterParts), part))];
+    }
 
 }

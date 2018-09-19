@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: eb0d4f5436a8c9549bc823e0bbd5d15a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Grid
+    100002: Grid_001
+    100004: Grid_002
+    100006: Grid_003
+    100008: Grid_004
+    100010: Grid_005
+    100012: Grid_006
+    100014: Grid_007
+    100016: Grid_008
+    100018: Grid_009
+    100020: Grid_010
+    100022: Grid_011
+    100024: Grid_012
+    100026: Grid_013
+    100028: Grid_014
+    100030: Grid_015
+    100032: Grid_016
+    100034: Grid_017
+    100036: //RootNode
+    400000: Grid
+    400002: Grid_001
+    400004: Grid_002
+    400006: Grid_003
+    400008: Grid_004
+    400010: Grid_005
+    400012: Grid_006
+    400014: Grid_007
+    400016: Grid_008
+    400018: Grid_009
+    400020: Grid_010
+    400022: Grid_011
+    400024: Grid_012
+    400026: Grid_013
+    400028: Grid_014
+    400030: Grid_015
+    400032: Grid_016
+    400034: Grid_017
+    400036: //RootNode
+    2100000: unnamed
+    2300000: Grid
+    2300002: Grid_001
+    2300004: Grid_002
+    2300006: Grid_003
+    2300008: Grid_004
+    2300010: Grid_005
+    2300012: Grid_006
+    2300014: Grid_007
+    2300016: Grid_008
+    2300018: Grid_009
+    2300020: Grid_010
+    2300022: Grid_011
+    2300024: Grid_012
+    2300026: Grid_013
+    2300028: Grid_014
+    2300030: Grid_015
+    2300032: Grid_016
+    2300034: Grid_017
+    3300000: Grid
+    3300002: Grid_001
+    3300004: Grid_002
+    3300006: Grid_003
+    3300008: Grid_004
+    3300010: Grid_005
+    3300012: Grid_006
+    3300014: Grid_007
+    3300016: Grid_008
+    3300018: Grid_009
+    3300020: Grid_010
+    3300022: Grid_011
+    3300024: Grid_012
+    3300026: Grid_013
+    3300028: Grid_014
+    3300030: Grid_015
+    3300032: Grid_016
+    3300034: Grid_017
+    4300000: Grid_017
+    4300002: Grid_016
+    4300004: Grid_015
+    4300006: Grid_014
+    4300008: Grid_009
+    4300010: Grid_001
+    4300012: Grid_013
+    4300014: Grid_012
+    4300016: Grid_011
+    4300018: Grid_010
+    4300020: Grid_008
+    4300022: Grid_007
+    4300024: Grid_006
+    4300026: Grid_005
+    4300028: Grid_004
+    4300030: Grid_003
+    4300032: Grid_002
+    4300034: Grid
+    6400000: Grid
+    6400002: Grid_001
+    6400004: Grid_002
+    6400006: Grid_003
+    6400008: Grid_004
+    6400010: Grid_005
+    6400012: Grid_006
+    6400014: Grid_007
+    6400016: Grid_008
+    6400018: Grid_009
+    6400020: Grid_010
+    6400022: Grid_011
+    6400024: Grid_012
+    6400026: Grid_013
+    6400028: Grid_014
+    6400030: Grid_015
+    6400032: Grid_016
+    6400034: Grid_017
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: e818da0e6cc43a54db59506b8472fe03, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
