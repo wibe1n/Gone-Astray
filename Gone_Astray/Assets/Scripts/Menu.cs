@@ -17,8 +17,7 @@ public class Menu : MonoBehaviour {
 
 	public void OnStartGame(){
 		Debug.Log ("start press");
-		SceneManager.LoadScene("Level1");
-		//must add scene to build from File>Build Settings before it can be loaded from here
+        Game_Manager.StartLevel1();
 	}
 
 	public void OnQuit(){

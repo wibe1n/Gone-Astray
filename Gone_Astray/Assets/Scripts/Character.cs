@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 
-    [HideInInspector]
+    
     public bool interactableNear = false;
     public bool enemyIsNear = false;
     public bool bossIsNear = false;
     public bool npcIsNear = false;
     public bool playerInCombat = false;
+    public NPC myNPC;
     public Enemy myEnemy;
     public List<Firefly> myFireflies = new List<Firefly> { };
     public float stressLevel = 0;
@@ -22,11 +23,10 @@ public class Character : MonoBehaviour {
 	
 	
 	void Update () {
-        if (playerInCombat == false) {
-            //movement and controls here
-        }
-        else {
-            //Blackjack controls here
+        if (npcIsNear == true) {
+            if (Input.GetKey(KeyCode.O)) {
+                SpeechBubbleCreator.GenerateSpeechBubble(myNPC);
+            }
         }
 
     }

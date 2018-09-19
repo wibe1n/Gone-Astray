@@ -49,6 +49,7 @@ public static class DataManager {
         }
         DownloadSingleFile("StoryConfig", configDatas[(int)DataManagerDictionaryType.story], nameListGeneric);
         DownloadSingleFile("ItemDescConfig", configDatas[(int)DataManagerDictionaryType.itemDesc], nameListGeneric);
+        DownloadSingleFile("npcConfig", configDatas[(int)DataManagerDictionaryType.npc], nameListGeneric);
 
         readBool = true;
 

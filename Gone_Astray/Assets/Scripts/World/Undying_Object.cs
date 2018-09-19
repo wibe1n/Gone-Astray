@@ -14,6 +14,8 @@ public class Undying_Object : MonoBehaviour {
         Debug.Log(text1);
         string text2 = NameDescContainer.GetChapterPart("part2", NameType.chapter1);
         Debug.Log(text2);
+        string text3 = NameDescContainer.GetSpeechBubble("part1", NameType.npc1);
+        Debug.Log(text3);
     }
 
     public void Level1() {
@@ -21,7 +23,7 @@ public class Undying_Object : MonoBehaviour {
     }
 	
 	private IEnumerator ToTheWorld() {
-        yield return SceneManager.LoadSceneAsync("Level1");
+        yield return SceneManager.LoadSceneAsync("VillenWorldTest1");
     }
 
     public void Menu() {

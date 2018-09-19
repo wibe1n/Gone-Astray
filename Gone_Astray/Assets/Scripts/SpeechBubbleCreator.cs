@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpeechBubbleCreator : MonoBehaviour{
+public static class SpeechBubbleCreator {
 
     
 
-    public void GenerateSpeechBubble(NPC npc) {        
-        GameObject newSpeechBubble = Instantiate 
-            (Resources.Load("NpcResources/SpeechBubble"), transform.position, Quaternion.identity, npc.speechBubbleParent.transform) as GameObject;
-        npc.currentSpeechBubble = newSpeechBubble;
+    public static void GenerateSpeechBubble(NPC npc) {
         NameType npcID = (NameType)npc.id;
-        npc.currentSpeechBubble.GetComponent<SpeechBubble>().imageText.text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
-        
+        Debug.Log(npc.Canvas.GetComponentInChildren<SpeechBubble>());
+        npc.Canvas.GetComponentInChildren<Text>().text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
     }
 
-    public void UpdateSpeechBubble(NPC npc) {
+    public static void UpdateSpeechBubble(NPC npc) {
         npc.currentSpeechInstance += 1;
         NameType npcID = (NameType)npc.id;
-        npc.currentSpeechBubble.GetComponent<SpeechBubble>().imageText.text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
+        npc.Canvas.GetComponent<Text>().text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
     }
 
-    public void CloseSpeechBubble(NPC npc) {
-        Destroy(npc.currentSpeechBubble);
+    public static void CloseSpeechBubble(NPC npc) {
+        npc.Canvas.SetActive(false);
+    }
+
+    public static void SetSpeechInstance(NPC npc, int setInstance) {
+        npc.currentSpeechInstance = setInstance;
     }
 
 	

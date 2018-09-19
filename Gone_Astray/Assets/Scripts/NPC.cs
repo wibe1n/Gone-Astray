@@ -6,14 +6,17 @@ public class NPC : MonoBehaviour {
 
     public int id;
     public GameObject Canvas; // drag from hierarchy
-    public GameObject currentSpeechBubble;
     public int currentSpeechInstance;
-    public GameObject speechBubbleParent;
+    private void Start() {
+        id = 5;
+        currentSpeechInstance = 1;
+    }
 
     void OnTriggerEnter(Collider player) {
         if (player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(true);
             player.gameObject.GetComponent<Character>().npcIsNear = true;
+            player.gameObject.GetComponent<Character>().myNPC = this;
         }
 
     }
@@ -21,6 +24,7 @@ public class NPC : MonoBehaviour {
         if (player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(false);
             player.gameObject.GetComponent<Character>().npcIsNear = false;
+            player.gameObject.GetComponent<Character>().myNPC = null;
         }
 
     }

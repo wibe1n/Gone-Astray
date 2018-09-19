@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 93eb8ff4ea4dbb047aca4911693448eb
+  - enabled: 1
+    path: Assets/Scenes/VillenWorldTest1.unity
+    guid: 5a88df4632623994cafdc488146e4ef8
   m_configObjects: {}
