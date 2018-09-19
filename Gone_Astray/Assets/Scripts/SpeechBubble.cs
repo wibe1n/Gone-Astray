@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SpeechBubble : MonoBehaviour {
-
     public Image image;
-    public string text;
+    public Text imageText;
+    
 
 }
