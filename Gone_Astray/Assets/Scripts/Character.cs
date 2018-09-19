@@ -10,7 +10,7 @@ public class Character : MonoBehaviour {
     public bool bossIsNear = false;
     public bool playerInCombat = false;
     public Enemy myEnemy;
-    List<Firefly> myFireflies = new List<Firefly> { };
+    public List<Firefly> myFireflies = new List<Firefly> { };
     public float stressLevel = 0;
     List<bool> items = new List<bool> { };
 
