@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81d3115ca0ac69d4084673971822c933
+guid: 6530e9ff3569c8349a62b002842ec3c0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -124,7 +124,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eye
-    second: {fileID: 2100000, guid: 866822e0578976a44a7a7d73dec0b515, type: 2}
+    second: {fileID: 2100000, guid: c47c9c095e351064685db4b71d3be52f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
