@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlackJack : MonoBehaviour {
 
 	//vaihda omat muuttujat muilta scripteiltä saatuihin muuttujiin
-	int difficulty;
+	public int difficulty;
 	public int firefliesUsed;
 	private int treshold = 21;
 	bool disturbed = false;
@@ -25,6 +25,12 @@ public class BlackJack : MonoBehaviour {
 		}
 		if (firefliesUsed >= firefliesNeeded) {
 			success = true;
+		}
+	}
+
+	void deleteLater(){ //tää on vain täällä et noi warning arvo määritetty mut ei käytetty jutut lähtis vekee
+		if (disturbed && success) {
+			difficulty = 0;
 		}
 	}
 }
