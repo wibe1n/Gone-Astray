@@ -32,7 +32,9 @@ public class Character : MonoBehaviour {
                         talking = false;
                         myNPC.Canvas.SetActive(true);
                     }
-                    speechCreator.UpdateSpeechBubble(myNPC);
+                    else {
+                        speechCreator.UpdateSpeechBubble(myNPC);
+                    }                   
                 }
                 else {
                     speechCreator.GenerateSpeechBubble(myNPC);
@@ -40,11 +42,6 @@ public class Character : MonoBehaviour {
                 }
             }
         }
-        if(npcIsNear == false && talking == true) {
-            speechCreator.CloseSpeechBubble(myNPC);
-            talking = false;
-        }
-
     }
 
     private void StartCombat() {

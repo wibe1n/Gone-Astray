@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour {
 
+    public SpeechBubbleCreator speechCreator;
     public int id;
     public GameObject Canvas; // drag from hierarchy
     public int currentSpeechInstance, maxSpeechInstance;
@@ -25,7 +26,10 @@ public class NPC : MonoBehaviour {
         if (player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(false);
             player.gameObject.GetComponent<Character>().npcIsNear = false;
+            player.gameObject.GetComponent<Character>().talking = false;
             player.gameObject.GetComponent<Character>().myNPC = null;
+            currentSpeechInstance = 1;
+            speechCreator.CloseSpeechBubble(this);
         }
 
     }
