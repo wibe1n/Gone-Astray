@@ -10,12 +10,7 @@ public class Undying_Object : MonoBehaviour {
         DontDestroyOnLoad(this);
         StartCoroutine(StartMenuScreen());
         DataManager.ReadDataString("nonexistent");
-        string text1 = NameDescContainer.GetChapterPart("part1", NameType.chapter1);
-        Debug.Log(text1);
-        string text2 = NameDescContainer.GetChapterPart("part2", NameType.chapter1);
-        Debug.Log(text2);
-        string text3 = NameDescContainer.GetSpeechBubble("part1", NameType.npc1);
-        Debug.Log(text3);
+        Debug.Log(Application.persistentDataPath);
     }
 
     public void Level1() {
