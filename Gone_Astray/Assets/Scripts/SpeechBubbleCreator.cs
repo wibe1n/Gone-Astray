@@ -22,7 +22,7 @@ public class SpeechBubbleCreator : MonoBehaviour {
     }
 
     public void CloseSpeechBubble(NPC npc) {
-        npc.Canvas.SetActive(false);
+        speechbubble.SetActive(false);
     }
 
     public void SetSpeechInstance(NPC npc, int setInstance) {

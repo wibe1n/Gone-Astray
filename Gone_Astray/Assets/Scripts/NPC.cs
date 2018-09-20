@@ -6,10 +6,11 @@ public class NPC : MonoBehaviour {
 
     public int id;
     public GameObject Canvas; // drag from hierarchy
-    public int currentSpeechInstance;
+    public int currentSpeechInstance, maxSpeechInstance;
     private void Start() {
         id = 5;
         currentSpeechInstance = 1;
+        maxSpeechInstance = 3;
     }
 
     void OnTriggerEnter(Collider player) {

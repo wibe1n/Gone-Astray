@@ -9,6 +9,7 @@ public class Character : MonoBehaviour {
     public bool enemyIsNear = false;
     public bool bossIsNear = false;
     public bool npcIsNear = false;
+    public bool talking = false;
     public bool playerInCombat = false;
     public NPC myNPC;
     public Enemy myEnemy;
@@ -24,9 +25,24 @@ public class Character : MonoBehaviour {
 	
 	void Update () {
         if (npcIsNear == true) {
-            if (Input.GetKey(KeyCode.O)) {
-                speechCreator.GenerateSpeechBubble(myNPC);
+            if (Input.GetKeyDown(KeyCode.O)) {
+                if(talking == true) {
+                    if (myNPC.currentSpeechInstance == myNPC.maxSpeechInstance) {
+                        speechCreator.CloseSpeechBubble(myNPC);
+                        talking = false;
+                        myNPC.Canvas.SetActive(true);
+                    }
+                    speechCreator.UpdateSpeechBubble(myNPC);
+                }
+                else {
+                    speechCreator.GenerateSpeechBubble(myNPC);
+                    talking = true;
+                }
             }
+        }
+        if(npcIsNear == false && talking == true) {
+            speechCreator.CloseSpeechBubble(myNPC);
+            talking = false;
         }
 
     }
