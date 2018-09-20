@@ -22,7 +22,6 @@ public class Character : MonoBehaviour {
 		
 	}
 	
-	
 	void Update () {
         if (npcIsNear == true) {
             if (Input.GetKeyDown(KeyCode.O)) {
@@ -42,6 +41,8 @@ public class Character : MonoBehaviour {
                 }
             }
         }
+
+
     }
 
     private void StartCombat() {
