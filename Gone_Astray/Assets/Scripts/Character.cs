@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 
-    
+    public SpeechBubbleCreator speechCreator;
     public bool interactableNear = false;
     public bool enemyIsNear = false;
     public bool bossIsNear = false;
@@ -25,7 +25,7 @@ public class Character : MonoBehaviour {
 	void Update () {
         if (npcIsNear == true) {
             if (Input.GetKey(KeyCode.O)) {
-                SpeechBubbleCreator.GenerateSpeechBubble(myNPC);
+                speechCreator.GenerateSpeechBubble(myNPC);
             }
         }
 
