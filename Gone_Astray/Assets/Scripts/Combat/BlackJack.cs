@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlackJack : MonoBehaviour {
 
 	//vaihda omat muuttujat muilta scripteiltä saatuihin muuttujiin
-	int difficulty;
+	public int difficulty;
 	public int firefliesUsed;
 	private int treshold = 21;
 	bool disturbed = false;
