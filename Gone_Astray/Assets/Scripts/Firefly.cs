@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Firefly  {
 
-    public int color, value;
+    public int color;
 }
