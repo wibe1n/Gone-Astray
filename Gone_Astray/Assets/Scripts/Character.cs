@@ -12,6 +12,7 @@ public class Character : MonoBehaviour {
     public bool talking = false;
     public bool playerInCombat = false;
     public bool inCombat = false;
+	public Vector3 startPosition;
     public NPC myNPC;
     public Enemy myEnemy;
     public List<Firefly> myFireflies = new List<Firefly> { };
@@ -20,7 +21,7 @@ public class Character : MonoBehaviour {
     List<Firefly> fiaFamily = new List<Firefly> { };
 
 	void Start () {
-		
+		startPosition = gameObject.transform.position;
 	}
 	
 	void Update () {
