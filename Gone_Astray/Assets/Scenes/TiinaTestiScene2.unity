@@ -582,6 +582,11 @@ Prefab:
       propertyPath: maximumX
       value: 360
       objectReference: {fileID: 0}
+    - target: {fileID: 20953633091124184, guid: 696d1fdd1b41aa44facb480db53e0c37,
+        type: 2}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 696d1fdd1b41aa44facb480db53e0c37, type: 2}
   m_IsPrefabAsset: 0
@@ -612,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18c60ecc7a1eb04580d3ff7bdcbf4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chara: {fileID: 0}
+  chara: {fileID: 286484147}
 --- !u!4 &1176700307
 Transform:
   m_ObjectHideFlags: 0
