@@ -44,18 +44,18 @@ public class Character : MonoBehaviour {
         }
         if (enemyIsNear == true && inCombat == false) {
             inCombat = true;
-            StartCombat();
+            Encounter();
         }
 
     }
 
-    private void StartCombat() {
-        StartCoroutine(StartCombatIenum(myEnemy));       
+    private void Encounter() {
+        StartCoroutine(StartEncounterIenum(myEnemy));       
     }
 
-    private IEnumerator StartCombatIenum(Enemy enemy) {       
+    private IEnumerator StartEncounterIenum(Enemy enemy) {       
         CombatController comCon = GameObject.FindGameObjectWithTag("CombatController").GetComponent<CombatController>();
-        comCon.StartBlackJack(enemy, myFireflies);
+        comCon.StartEncounter(enemy, myFireflies);
         yield return new WaitForSeconds(1);
     }
 

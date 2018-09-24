@@ -10,7 +10,7 @@ public class MovementControls : MonoBehaviour {
     private Vector3 m_CamForward;             // The current forward direction of the camera
     private Vector3 m_Move;
     private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-
+    private Character character;
 
     private void Start() {
         // get the transform of the main camera
@@ -25,6 +25,7 @@ public class MovementControls : MonoBehaviour {
 
         // get the third person character ( this should never be null due to require component )
         m_Character = GetComponent<Movement>();
+        character = GetComponent<Character>();
     }
 
 
@@ -38,8 +39,15 @@ public class MovementControls : MonoBehaviour {
     // Fixed update is called in sync with physics
     private void FixedUpdate() {
         // read inputs
-        float h = CrossPlatformInputManager.GetAxis("Horizontal");
-        float v = CrossPlatformInputManager.GetAxis("Vertical");
+        float h, v;
+        if (!character.enemyIsNear) {
+            h = CrossPlatformInputManager.GetAxis("Horizontal");
+            v = CrossPlatformInputManager.GetAxis("Vertical");
+        }
+        else {
+            h = 0;
+            v = 0;
+        }
         bool crouch = Input.GetKey(KeyCode.C);
 
         // calculate move direction to pass to character

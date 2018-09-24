@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     public int disturbTreshold;
+    public GameObject checkpoint;
 	
 
 	void OnTriggerEnter(Collider player){
