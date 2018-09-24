@@ -13,16 +13,22 @@ public class InteractObject : MonoBehaviour
         if (player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(true);
             player.gameObject.GetComponent<Character>().interactableNear = true;
+        }       
+    }
+
+    private void OnTriggerStay(Collider player) {
+        if(player.gameObject.GetComponent<Character>() != null) {
+            if (Input.GetKeyDown("4") && isCollectable) {
+                if (isFirefly) {
+                    Firefly firefly = new Firefly();
+                    chara.myFireflies.Add(firefly);
+                }
+                Destroy(gameObject);
+            }
         }
-		if (Input.GetKeyDown ("4") && isCollectable) {
-			if (isFirefly) {
-				Firefly firefly = new Firefly();
-				chara.myFireflies.Add (firefly);
-			}
-			gameObject.SetActive = false;
-		}
         
     }
+
     void OnTriggerExit(Collider player) {
         if(player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(false);
