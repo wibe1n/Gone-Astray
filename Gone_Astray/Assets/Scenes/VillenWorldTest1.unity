@@ -884,6 +884,10 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 1117203573370820, guid: 0ae2d7ee236a8904d9c36c28c3688df7, type: 2}
+      propertyPath: m_Name
+      value: IconCanvas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae2d7ee236a8904d9c36c28c3688df7, type: 2}
   m_IsPrefabAsset: 0

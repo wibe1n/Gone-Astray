@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CombatController : MonoBehaviour {
 
-
+    public MovementControls playerControls;
     public MenuController menuController;
     public Enemy myEnemy;
     public List<Firefly> myFireflies;
     public List<int> deck = new List<int>() { };
     public List<int> enemyHand;
     public List<int> myHand;
+    public Canvas gameCanvas;
     
 
     public void StartBlackJack(Enemy enemy, List<Firefly> fireflyList) {
@@ -18,7 +19,8 @@ public class CombatController : MonoBehaviour {
         myFireflies = fireflyList;
         GenerateBlackJackDeck();
         ShuffleDeck();
-        //TODO: Freeze player movement, once third person controls are defined in project folder. Turn camera to make player feel small
+        playerControls.enabled = false;
+        //TODO: Turn camera to make player feel small
         enemyHand.Add(deck[0]);
         deck.RemoveAt(0);
         myHand.Add(deck[0]);
