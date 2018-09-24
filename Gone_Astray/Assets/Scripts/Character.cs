@@ -11,6 +11,7 @@ public class Character : MonoBehaviour {
     public bool npcIsNear = false;
     public bool talking = false;
     public bool playerInCombat = false;
+    public bool inCombat = false;
     public NPC myNPC;
     public Enemy myEnemy;
     public List<Firefly> myFireflies = new List<Firefly> { };
@@ -41,7 +42,10 @@ public class Character : MonoBehaviour {
                 }
             }
         }
-
+        if (enemyIsNear == true && inCombat == false) {
+            inCombat = true;
+            StartCombat();
+        }
 
     }
 

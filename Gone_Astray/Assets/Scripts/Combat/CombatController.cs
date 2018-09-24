@@ -7,37 +7,51 @@ public class CombatController : MonoBehaviour {
 
     public MenuController menuController;
     public Enemy myEnemy;
-    public List<int> cardList = new List<int>() { };
+    public List<Firefly> myFireflies;
+    public List<int> deck = new List<int>() { };
+    public List<int> enemyHand;
+    public List<int> myHand;
     
 
     public void StartBlackJack(Enemy enemy, List<Firefly> fireflyList) {
-
-
+        myEnemy = enemy;
+        myFireflies = fireflyList;
+        GenerateBlackJackDeck();
+        ShuffleDeck();
+        //TODO: Freeze player movement, once third person controls are defined in project folder. Turn camera to make player feel small
+        enemyHand.Add(deck[0]);
+        deck.RemoveAt(0);
+        myHand.Add(deck[0]);
+        deck.RemoveAt(0);
+        enemyHand.Add(deck[0]);
+        deck.RemoveAt(0);
+        myHand.Add(deck[0]);
+        deck.RemoveAt(0);
     }
 
     void GenerateBlackJackDeck() {
         for (int i = 0; i < 4; i++) {
-            cardList.Add(2);
-            cardList.Add(3);
-            cardList.Add(4);
-            cardList.Add(5);
-            cardList.Add(6);
-            cardList.Add(7);
-            cardList.Add(8);
-            cardList.Add(9);
-            cardList.Add(11);
+            deck.Add(2);
+            deck.Add(3);
+            deck.Add(4);
+            deck.Add(5);
+            deck.Add(6);
+            deck.Add(7);
+            deck.Add(8);
+            deck.Add(9);
+            deck.Add(11);
         }
         for(int i = 0; i < 16; i++) {
-            cardList.Add(10);
+            deck.Add(10);
         }
     }
 
     void ShuffleDeck() {
-        for (int i = cardList.Count - 1; i > 0; --i) {
+        for (int i = deck.Count - 1; i > 0; --i) {
             int k = Random.Range(0, i);
-            int temp = cardList[i];
-            cardList[i] = cardList[k];
-            cardList[k] = temp;
+            int temp = deck[i];
+            deck[i] = deck[k];
+            deck[k] = temp;
         }
     }
 }
