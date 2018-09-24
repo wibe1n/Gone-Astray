@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController2 : MonoBehaviour {
 
     //public Camera myCam;
-    public float rotationSpeed; // pelaajaan käännön nopeus
+    public float rotationSpeed; // kameran nopeus kun sitä käännetään hiirellä
     public float followRotationSpeed; // smoothisti seuraavan kameran kääntönopeus
     public GameObject target; //kohde, mitä kamera seuraa
     public GameObject cameraPos;
@@ -22,16 +22,21 @@ public class CameraController2 : MonoBehaviour {
 
         target = GameObject.Find("pelihahmo");
         pelihahmoScript = target.GetComponent<Movement2>();
-        cameraPos = GameObject.Find("pelihahmo/CameraPos");
+        cameraPos = GameObject.Find("pelihahmo/CameraPos"); //hakee pelihahmon lapsista tyhjän objektin nimeltä CameraPos
     }
 
     // Update is called once per frame
     void Update () {
         transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * pelihahmoScript.speed, 0f, Space.World);
 
-        if ((cameraPos.transform.position - transform.position).magnitude > 0)
+        //Kamera pyrkii aina CameraPos-objektin sijaintiin, kun hiiren nappeja ei paineta
+        if (Input.GetAxis("Fire1") == 0)
         {
-            transform.position = Vector3.MoveTowards(transform.position, cameraPos.transform.position, pelihahmoScript.speed * Time.deltaTime);
+            if ((cameraPos.transform.position - transform.position).magnitude > 0)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, cameraPos.transform.position, pelihahmoScript.speed * Time.deltaTime);
+                transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
+            }
         }
 
         if (Input.GetAxis("Fire1") != 0)
@@ -49,13 +54,17 @@ public class CameraController2 : MonoBehaviour {
                 {
                     transform.RotateAround(target.transform.position, Vector3.up, -1 * rotationSpeed * Time.deltaTime);
                 }
+                transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
 
             }
-            if (mouseInputY != 0)
-            {
-                Vector3 lookHereY = new Vector3(-1 * mouseInputY * rotationSpeed * Time.deltaTime, 0, 0);
-                transform.Rotate(lookHereY);
-            }
+
+            //Kameran kääntö ylös ja alas, näyttää jotenkin sekavalta imo??
+
+            //if (mouseInputY != 0)
+            //{
+            //    Vector3 lookHereY = new Vector3(-1 * mouseInputY * rotationSpeed * Time.deltaTime, 0, 0);
+            //    transform.Rotate(lookHereY);
+            //}
         }
         else if (Input.GetAxis("Fire2") != 0)
         {
