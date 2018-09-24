@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 704277919}
-  m_IndirectSpecularColor: {r: 0.12181314, g: 0.15319681, b: 0.26854357, a: 1}
+  m_IndirectSpecularColor: {r: 0.12181299, g: 0.1531966, b: 0.268543, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -978,7 +978,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114170645910739722, guid: f34a3d6f1d031fa4189e85feb2fce423, type: 2}
+    - {fileID: 114695896363385478, guid: f34a3d6f1d031fa4189e85feb2fce423, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f34a3d6f1d031fa4189e85feb2fce423, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1172204311 stripped
@@ -1004,9 +1006,40 @@ MonoBehaviour:
   npcIsNear: 0
   talking: 0
   playerInCombat: 0
+  inCombat: 0
   myNPC: {fileID: 0}
   myEnemy: {fileID: 0}
   stressLevel: 0
+--- !u!114 &1172204313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1172204311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a307263ce189fb42a96215f1f3ce6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1172204314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1172204311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b1d0f264e51d84788142a76c85e8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovingTurnSpeed: 360
+  m_StationaryTurnSpeed: 180
+  m_JumpPower: 12
+  m_GravityMultiplier: 2
+  m_RunCycleLegOffset: 0.2
+  m_MoveSpeedMultiplier: 1
+  m_AnimSpeedMultiplier: 1
+  m_GroundCheckDistance: 0.1
 --- !u!1 &1185566856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,7 +1069,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuController: {fileID: 0}
   myEnemy: {fileID: 0}
-  cardList: 
+  deck: 
+  enemyHand: 
+  myHand: 
 --- !u!4 &1185566858
 Transform:
   m_ObjectHideFlags: 0
