@@ -9,8 +9,8 @@ public class CombatController : MonoBehaviour {
     public bool proceed;
     public GameObject enemyHand, myHand;
     public int myHandNumber, enemyHandNumber;
-    string myHandText = "";
-    string enemyHandText = "";
+    public string myHandText = "";
+    public string enemyHandText = "";
 
     public void PlayersTurn() {
         myHandNumber = 0;
@@ -21,7 +21,6 @@ public class CombatController : MonoBehaviour {
 
     //Players turn routine
     IEnumerator PlayerTurn() {
-        
         for (int i = 0; i < encounterController.myHand.Count; i++) {
             myHandNumber += encounterController.myHand[i];
             myHandText += encounterController.myHand[i].ToString() + " ";
@@ -44,11 +43,23 @@ public class CombatController : MonoBehaviour {
         }
         else {
             encounterController.myHand.Add(encounterController.deck[0]);
+            myHandNumber += encounterController.deck[0];
             encounterController.deck.RemoveAt(0);
             encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
             encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
             myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
             myHand.GetComponent<Text>().text = myHandText;
-        }       
+        }
+        if (myHandNumber > 21) {
+            encounterController.RoundLost();
+            encounterController.enemyScore += 1;
+            if(encounterController.enemyScore == 3) {
+                encounterController.GameLost();
+            }
+            else {
+                encounterController.NewRound();
+            }
+        }
     }
+
 }

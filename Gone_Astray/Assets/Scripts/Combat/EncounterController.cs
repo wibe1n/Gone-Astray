@@ -14,13 +14,16 @@ public class EncounterController : MonoBehaviour {
     public List<int> deck = new List<int>() { };
     public List<int> enemyHand;
     public List<int> myHand;
-    public GameObject gameCanvas, textPanel, runButton, approachButton, fireflyIcon, darknessIcon;
+    public int myScore, enemyScore, winTarget;
+    public GameObject gameCanvas, textPanel, runButton, approachButton, fireflyIcon, darknessIcon, loseIcon;
     public GameObject runAwayScreen;
     public bool reached = false;
     
     public void StartEncounter(Enemy enemy, List<Firefly> fireflyList) {
 
         //TODO: Turn camera to make player feel small
+
+        //starting Fireflies for testing purposes
         for (int i = 0; i < 6; i++) {
             Firefly newfirefly = new Firefly(0);
             character.myFireflies.Add(newfirefly);
@@ -31,26 +34,34 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void StartBlackJack() {
-        textPanel.SetActive(false);
-        runButton.SetActive(false);
-        approachButton.SetActive(false);
-        fireflyIcon.SetActive(true);
-        darknessIcon.SetActive(true);
-        GenerateBlackJackDeck();
-        ShuffleDeck();
-        enemyHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        myHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        enemyHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        myHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-        myFireflies.RemoveAt(myFireflies.Count - 1);
-        usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-        myFireflies.RemoveAt(myFireflies.Count - 1);
-        combatController.PlayersTurn();
+        Debug.Log(myFireflies.Count);
+        if(myFireflies.Count < 3) {
+            Debug.Log("ei uskalla");
+            RunAway();
+        }
+        else {
+            textPanel.SetActive(false);
+            runButton.SetActive(false);
+            approachButton.SetActive(false);
+            fireflyIcon.SetActive(true);
+            darknessIcon.SetActive(true);
+            GenerateBlackJackDeck();
+            ShuffleDeck();
+            enemyHand.Add(deck[0]);
+            deck.RemoveAt(0);
+            myHand.Add(deck[0]);
+            deck.RemoveAt(0);
+            enemyHand.Add(deck[0]);
+            deck.RemoveAt(0);
+            myHand.Add(deck[0]);
+            deck.RemoveAt(0);
+            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
+            myFireflies.RemoveAt(myFireflies.Count - 1);
+            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
+            myFireflies.RemoveAt(myFireflies.Count - 1);
+            combatController.PlayersTurn();
+        }
+        
     }
 
     public void RunAway() {
@@ -66,6 +77,8 @@ public class EncounterController : MonoBehaviour {
         character.inCombat = false;
         gameCanvas.SetActive(false);
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 3.0f, false);
+        yield return new WaitForSeconds(3f);
+        runAwayScreen.SetActive(false);
     }
 
     void GenerateBlackJackDeck() {
@@ -92,5 +105,87 @@ public class EncounterController : MonoBehaviour {
             deck[i] = deck[k];
             deck[k] = temp;
         }
+    }
+
+    public void RoundLost() {
+        StartCoroutine(RoundLostRoutine());
+    }
+
+    IEnumerator RoundLostRoutine() {
+        loseIcon.SetActive(true);
+        loseIcon.GetComponentInChildren<Text>().CrossFadeAlpha(1.0f, 0.0f, false);
+        loseIcon.GetComponentInChildren<Text>().CrossFadeAlpha(0.0f, 2.0f, false);
+        yield return new WaitForSeconds(2);
+        loseIcon.SetActive(false);
+    }
+
+
+    public void NewRound() {
+        foreach (int item in enemyHand) {
+            deck.Add(item);
+        }
+        enemyHand.Clear();
+        foreach (int item in myHand) {
+            deck.Add(item);
+        }
+        myHand.Clear();
+        ShuffleDeck();
+        combatController.myHandText = "";
+        combatController.enemyHandText = "";
+        combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
+        combatController.enemyHand.GetComponent<Text>().text = combatController.enemyHandText;
+        if (myFireflies.Count < 3)
+        {
+            deck.Clear();
+            textPanel.SetActive(true);
+            runButton.SetActive(true);
+            approachButton.SetActive(true);
+            fireflyIcon.SetActive(false);
+            darknessIcon.SetActive(false);
+            RunAway();
+            
+        }
+        else {
+            enemyHand.Add(deck[0]);
+            deck.RemoveAt(0);
+            myHand.Add(deck[0]);
+            deck.RemoveAt(0);
+            enemyHand.Add(deck[0]);
+            deck.RemoveAt(0);
+            myHand.Add(deck[0]);
+            deck.RemoveAt(0);
+            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
+            myFireflies.RemoveAt(myFireflies.Count - 1);
+            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
+            myFireflies.RemoveAt(myFireflies.Count - 1);
+            combatController.PlayersTurn();
+        }
+        
+    }
+
+    public void GameLost() {
+        Debug.Log("hävisin pelin");
+        foreach (int item in enemyHand) {
+            deck.Add(item);
+        }
+        enemyHand.Clear();
+        foreach (int item in myHand) {
+            deck.Add(item);
+        }
+        myHand.Clear();
+        deck.Clear();
+        enemyScore = 0;
+        combatController.myHandText = "";
+        combatController.enemyHandText = "";
+        combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
+        combatController.enemyHand.GetComponent<Text>().text = combatController.enemyHandText;
+        textPanel.SetActive(true);
+        runButton.SetActive(true);
+        approachButton.SetActive(true);
+        fireflyIcon.SetActive(false);
+        darknessIcon.SetActive(false);
+        RunAway();
+        //TODO affect world???
+        
     }
 }
