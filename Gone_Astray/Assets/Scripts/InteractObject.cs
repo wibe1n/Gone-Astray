@@ -20,7 +20,7 @@ public class InteractObject : MonoBehaviour
         if(player.gameObject.GetComponent<Character>() != null) {
             if (Input.GetKeyDown("4") && isCollectable) {
                 if (isFirefly) {
-                    Firefly firefly = new Firefly();
+                    Firefly firefly = new Firefly(0);
                     chara.myFireflies.Add(firefly);
                 }
                 Destroy(gameObject);

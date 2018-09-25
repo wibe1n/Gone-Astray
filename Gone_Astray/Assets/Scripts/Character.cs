@@ -54,7 +54,7 @@ public class Character : MonoBehaviour {
     }
 
     private IEnumerator StartEncounterIenum(Enemy enemy) {       
-        CombatController comCon = GameObject.FindGameObjectWithTag("CombatController").GetComponent<CombatController>();
+        EncounterController comCon = GameObject.FindGameObjectWithTag("CombatController").GetComponent<EncounterController>();
         comCon.StartEncounter(enemy, myFireflies);
         yield return new WaitForSeconds(1);
     }

@@ -26,7 +26,6 @@ public class CameraCollisionRay : MonoBehaviour {
         if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.forward), out hit, Mathf.Ceil(cameraDistance)))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.forward) * cameraDistance, Color.yellow);
-            Debug.Log("Did Hit");
 
             mainCamera.transform.position = hit.point;
         }

@@ -5,83 +5,50 @@ using UnityEngine.UI;
 
 public class CombatController : MonoBehaviour {
 
-    public GameObject player;
-    public Character character;
-    public MenuController menuController;
-    public Enemy myEnemy;
-    public List<Firefly> myFireflies;
-    public List<int> deck = new List<int>() { };
-    public List<int> enemyHand;
-    public List<int> myHand;
-    public GameObject gameCanvas, textPanel, runButton, approachButton, fireflyIcon, darknessIcon;
-    public GameObject runAwayScreen;
-    public bool reached = false;
-    
-    public void StartEncounter(Enemy enemy, List<Firefly> fireflyList) {
+    public EncounterController encounterController;
+    public bool proceed;
+    public GameObject enemyHand, myHand;
+    public int myHandNumber, enemyHandNumber;
+    string myHandText = "";
+    string enemyHandText = "";
 
-        //TODO: Turn camera to make player feel small
-        myEnemy = enemy;
-        myFireflies = fireflyList;
-        gameCanvas.SetActive(true);
+    public void PlayersTurn() {
+        myHandNumber = 0;
+        enemyHandNumber = 0;
+        StartCoroutine(PlayerTurn());
     }
 
-    public void StartBlackJack() {
-        textPanel.SetActive(false);
-        runButton.SetActive(false);
-        approachButton.SetActive(false);
-        fireflyIcon.SetActive(true);
-        darknessIcon.SetActive(true);
-        GenerateBlackJackDeck();
-        ShuffleDeck();
-        enemyHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        myHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        enemyHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        myHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        menuController.PlayersTurn();
-    }
 
-    public void RunAway() {
-        StartCoroutine(RunAwayRoutine());
-    }
-
-    IEnumerator RunAwayRoutine() {
-        runAwayScreen.SetActive(true);
-        runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.0f, false);
-        //TODO: fancy effects for running away
-        yield return new WaitForSeconds(1f);
-        player.transform.position = myEnemy.checkpoint.transform.position;
-        character.inCombat = false;
-        gameCanvas.SetActive(false);
-        runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 3.0f, false);
-    }
-
-    void GenerateBlackJackDeck() {
-        for (int i = 0; i < 4; i++) {
-            deck.Add(2);
-            deck.Add(3);
-            deck.Add(4);
-            deck.Add(5);
-            deck.Add(6);
-            deck.Add(7);
-            deck.Add(8);
-            deck.Add(9);
-            deck.Add(11);
+    //Players turn routine
+    IEnumerator PlayerTurn() {
+        
+        for (int i = 0; i < encounterController.myHand.Count; i++) {
+            myHandNumber += encounterController.myHand[i];
+            myHandText += encounterController.myHand[i].ToString() + " ";
         }
-        for(int i = 0; i < 16; i++) {
-            deck.Add(10);
+        myHand.GetComponent<Text>().text = myHandText;
+        //TODO: animation for adding the hand
+        yield return new WaitForSeconds(1);
+        for (int i = 0; i < encounterController.enemyHand.Count; i++) {
+            enemyHandNumber += encounterController.enemyHand[i];
+            enemyHandText += encounterController.enemyHand[i].ToString() + " ";
         }
+        enemyHand.GetComponent<Text>().text = enemyHandText;
+        //TODO: animation for adding the hand
+        yield return new WaitForSeconds(1);
     }
 
-    void ShuffleDeck() {
-        for (int i = deck.Count - 1; i > 0; --i) {
-            int k = Random.Range(0, i);
-            int temp = deck[i];
-            deck[i] = deck[k];
-            deck[k] = temp;
+    public void AddFirefly() {
+        if (encounterController.myFireflies.Count == 0) {
+            Debug.Log("Not enough fireflies!");
         }
+        else {
+            encounterController.myHand.Add(encounterController.deck[0]);
+            encounterController.deck.RemoveAt(0);
+            encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
+            encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
+            myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
+            myHand.GetComponent<Text>().text = myHandText;
+        }       
     }
 }

@@ -5,4 +5,8 @@ using UnityEngine;
 public class Firefly  {
 
     public int color;
+
+    public Firefly(int _colour) {
+        _colour = color;
+    }
 }

@@ -1080,8 +1080,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 0, y: -3}
+  m_SizeDelta: {x: 60, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &777272025
 MonoBehaviour:
@@ -1115,7 +1115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 
 --- !u!222 &777272026
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1909,6 +1909,7 @@ GameObject:
   - component: {fileID: 1173830939}
   - component: {fileID: 1173830941}
   - component: {fileID: 1173830940}
+  - component: {fileID: 1173830942}
   m_Layer: 5
   m_Name: FireflyIcon
   m_TagString: Untagged
@@ -1969,6 +1970,58 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1173830938}
   m_CullTransparentMesh: 0
+--- !u!114 &1173830942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1173830938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1173830940}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2119371039}
+        m_MethodName: AddFirefly
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1185566856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,7 +2032,7 @@ GameObject:
   - component: {fileID: 1185566858}
   - component: {fileID: 1185566857}
   m_Layer: 0
-  m_Name: CombatController
+  m_Name: EncounterController
   m_TagString: CombatController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1998,7 +2051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1172204311}
   character: {fileID: 1172204312}
-  menuController: {fileID: 2119371039}
+  combatController: {fileID: 2119371039}
   myEnemy: {fileID: 0}
   deck: 
   enemyHand: 
@@ -2150,8 +2203,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 0, y: -5}
+  m_SizeDelta: {x: 60, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748459792
 MonoBehaviour:
@@ -2185,7 +2238,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 
 --- !u!222 &1748459793
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2488,6 +2541,29 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f2e91fceabe6c546a0af867d285954f, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &2094394342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1199851171030044, guid: 3f2e91fceabe6c546a0af867d285954f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2094394341}
+--- !u!20 &2094394343 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20943833085248046, guid: 3f2e91fceabe6c546a0af867d285954f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2094394341}
+--- !u!114 &2094394344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2094394342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bb5b07af4c690488e3b211bbb3ed0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 2094394343}
+  cameraDistance: 3
 --- !u!1 &2119371037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,7 +2574,7 @@ GameObject:
   - component: {fileID: 2119371038}
   - component: {fileID: 2119371039}
   m_Layer: 0
-  m_Name: MenuController
+  m_Name: CombatController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2528,7 +2604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8cdc9e137170d7438707f4677eaf5c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatController: {fileID: 1185566857}
+  encounterController: {fileID: 1185566857}
   proceed: 0
   enemyHand: {fileID: 777272023}
   myHand: {fileID: 1748459790}
