@@ -71,9 +71,9 @@ public class EncounterController : MonoBehaviour {
     IEnumerator RunAwayRoutine() {
         runAwayScreen.SetActive(true);
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.0f, false);
+        player.transform.position = myEnemy.checkpoint.transform.position;
         //TODO: fancy effects for running away
         yield return new WaitForSeconds(1f);
-        player.transform.position = myEnemy.checkpoint.transform.position;
         character.inCombat = false;
         gameCanvas.SetActive(false);
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 3.0f, false);
