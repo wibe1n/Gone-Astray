@@ -2690,3 +2690,5 @@ MonoBehaviour:
   myHand: {fileID: 1748459790}
   myHandNumber: 0
   enemyHandNumber: 0
+  myHandText: 
+  enemyHandText: 
