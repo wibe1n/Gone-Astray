@@ -27,14 +27,14 @@ public class CombatController : MonoBehaviour {
         }
         myHand.GetComponent<Text>().text = myHandText;
         //TODO: animation for adding the hand
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < encounterController.enemyHand.Count; i++) {
             enemyHandNumber += encounterController.enemyHand[i];
             enemyHandText += encounterController.enemyHand[i].ToString() + " ";
         }
         enemyHand.GetComponent<Text>().text = enemyHandText;
         //TODO: animation for adding the hand
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
     }
 
     public void AddFirefly() {
@@ -60,6 +60,45 @@ public class CombatController : MonoBehaviour {
                 encounterController.NewRound();
             }
         }
+    }
+
+    public void Proceed() {
+        StartCoroutine(EnemyTurn());
+    }
+
+    IEnumerator EnemyTurn() {
+        while(enemyHandNumber < myHandNumber) {
+            encounterController.enemyHand.Add(encounterController.deck[0]);
+            enemyHandNumber += encounterController.deck[0];
+            encounterController.deck.RemoveAt(0);
+            enemyHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
+            enemyHand.GetComponent<Text>().text = enemyHandText;
+            yield return new WaitForSeconds(0.5f);
+        }
+        if(enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
+            encounterController.RoundWon();
+            encounterController.myScore += 1;
+            if (encounterController.myScore == 3) {
+                encounterController.GameWon();
+            }
+            else {
+                encounterController.NewRound();
+            }
+        }
+        else if (enemyHandNumber > myHandNumber) {
+            encounterController.RoundLost();
+            encounterController.enemyScore += 1;
+            if (encounterController.enemyScore == 3) {
+                encounterController.GameLost();
+            }
+            else {
+                encounterController.NewRound();
+            }
+        }
+        else {
+            encounterController.NewRound();
+        }
+
     }
 
 }

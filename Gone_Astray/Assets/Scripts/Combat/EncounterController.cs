@@ -15,7 +15,7 @@ public class EncounterController : MonoBehaviour {
     public List<int> enemyHand;
     public List<int> myHand;
     public int myScore, enemyScore, winTarget;
-    public GameObject gameCanvas, textPanel, runButton, approachButton, fireflyIcon, darknessIcon, loseIcon;
+    public GameObject gameCanvas, textPanel, runButton, approachButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon;
     public GameObject runAwayScreen;
     public bool reached = false;
     
@@ -24,7 +24,7 @@ public class EncounterController : MonoBehaviour {
         //TODO: Turn camera to make player feel small
 
         //starting Fireflies for testing purposes
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 12; i++) {
             Firefly newfirefly = new Firefly(0);
             character.myFireflies.Add(newfirefly);
         }
@@ -45,6 +45,7 @@ public class EncounterController : MonoBehaviour {
             approachButton.SetActive(false);
             fireflyIcon.SetActive(true);
             darknessIcon.SetActive(true);
+            proceedButton.SetActive(true);
             GenerateBlackJackDeck();
             ShuffleDeck();
             enemyHand.Add(deck[0]);
@@ -119,6 +120,18 @@ public class EncounterController : MonoBehaviour {
         loseIcon.SetActive(false);
     }
 
+    public void RoundWon() {
+        StartCoroutine(RoundWonRoutine());
+    }
+
+    IEnumerator RoundWonRoutine() {
+        winIcon.SetActive(true);
+        winIcon.GetComponentInChildren<Text>().CrossFadeAlpha(1.0f, 0.0f, false);
+        winIcon.GetComponentInChildren<Text>().CrossFadeAlpha(0.0f, 2.0f, false);
+        yield return new WaitForSeconds(2);
+        winIcon.SetActive(false);
+    }
+
 
     public void NewRound() {
         foreach (int item in enemyHand) {
@@ -142,6 +155,7 @@ public class EncounterController : MonoBehaviour {
             approachButton.SetActive(true);
             fireflyIcon.SetActive(false);
             darknessIcon.SetActive(false);
+            proceedButton.SetActive(false);
             RunAway();
             
         }
@@ -165,16 +179,11 @@ public class EncounterController : MonoBehaviour {
 
     public void GameLost() {
         Debug.Log("hävisin pelin");
-        foreach (int item in enemyHand) {
-            deck.Add(item);
-        }
         enemyHand.Clear();
-        foreach (int item in myHand) {
-            deck.Add(item);
-        }
         myHand.Clear();
         deck.Clear();
         enemyScore = 0;
+        myScore = 0;
         combatController.myHandText = "";
         combatController.enemyHandText = "";
         combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
@@ -184,8 +193,31 @@ public class EncounterController : MonoBehaviour {
         approachButton.SetActive(true);
         fireflyIcon.SetActive(false);
         darknessIcon.SetActive(false);
+        proceedButton.SetActive(false);
         RunAway();
-        //TODO affect world???
-        
+        //TODO affect world???       
+    }
+
+    public void GameWon() {
+        Debug.Log("voitin pelin");
+        enemyHand.Clear();
+        myHand.Clear();
+        deck.Clear();
+        Destroy(myEnemy);
+        character.myEnemy = null;
+        character.enemyIsNear = false;
+        character.inCombat = false;
+        combatController.myHandText = "";
+        combatController.enemyHandText = "";
+        combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
+        combatController.enemyHand.GetComponent<Text>().text = combatController.enemyHandText;
+        textPanel.SetActive(true);
+        runButton.SetActive(true);
+        approachButton.SetActive(true);
+        fireflyIcon.SetActive(false);
+        darknessIcon.SetActive(false);
+        proceedButton.SetActive(false);
+        gameCanvas.SetActive(false);
+        //TODO animation for monster transforming to something regiular???
     }
 }
