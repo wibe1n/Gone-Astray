@@ -16,7 +16,7 @@ public class Character : MonoBehaviour {
     public Enemy myEnemy;
     public List<Firefly> myFireflies = new List<Firefly> { };
     public float stressLevel = 0;
-    List<bool> items = new List<bool> { };
+    public List<bool> items = new List<bool> { };
     List<Firefly> fiaFamily = new List<Firefly> { };
 
 	void Start () {
