@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class CombatController : MonoBehaviour {
 
     public EncounterController encounterController;
-    public bool proceed;
     public GameObject enemyHand, myHand;
     public int myHandNumber, enemyHandNumber;
     public string myHandText = "";
@@ -35,6 +34,7 @@ public class CombatController : MonoBehaviour {
         enemyHand.GetComponent<Text>().text = enemyHandText;
         //TODO: animation for adding the hand
         yield return new WaitForSeconds(0.5f);
+        encounterController.character.proceed = true;
     }
 
     public void AddFirefly() {
@@ -52,6 +52,7 @@ public class CombatController : MonoBehaviour {
         }
         if (myHandNumber > 21) {
             encounterController.RoundLost();
+            Debug.Log("mennään täällä");
             encounterController.enemyScore += 1;
             if(encounterController.enemyScore == 3) {
                 encounterController.GameLost();
@@ -67,6 +68,7 @@ public class CombatController : MonoBehaviour {
     }
 
     IEnumerator EnemyTurn() {
+        Debug.Log("enemyTurn");
         while(enemyHandNumber < myHandNumber) {
             encounterController.enemyHand.Add(encounterController.deck[0]);
             enemyHandNumber += encounterController.deck[0];
@@ -76,6 +78,7 @@ public class CombatController : MonoBehaviour {
             yield return new WaitForSeconds(0.5f);
         }
         if(enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
+            Debug.Log("minä voitin");
             encounterController.RoundWon();
             encounterController.myScore += 1;
             if (encounterController.myScore == 3) {
@@ -86,6 +89,7 @@ public class CombatController : MonoBehaviour {
             }
         }
         else if (enemyHandNumber > myHandNumber) {
+            Debug.Log("vihollinen voitti");
             encounterController.RoundLost();
             encounterController.enemyScore += 1;
             if (encounterController.enemyScore == 3) {

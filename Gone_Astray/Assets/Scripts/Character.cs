@@ -5,6 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour {
 
     public SpeechBubbleCreator speechCreator;
+    public CombatController combatController;
     public bool interactableNear = false;
     public bool enemyIsNear = false;
     public bool bossIsNear = false;
@@ -12,6 +13,7 @@ public class Character : MonoBehaviour {
     public bool talking = false;
     public bool playerInCombat = false;
     public bool inCombat = false;
+    public bool proceed = false;
     public NPC myNPC;
     public Enemy myEnemy;
     public List<Firefly> myFireflies = new List<Firefly> { };
@@ -54,7 +56,7 @@ public class Character : MonoBehaviour {
     }
 
     private IEnumerator StartEncounterIenum(Enemy enemy) {       
-        EncounterController comCon = GameObject.FindGameObjectWithTag("CombatController").GetComponent<EncounterController>();
+        EncounterController comCon = GameObject.FindGameObjectWithTag("EncounterController").GetComponent<EncounterController>();
         comCon.StartEncounter(enemy, myFireflies);
         yield return new WaitForSeconds(1);
     }
