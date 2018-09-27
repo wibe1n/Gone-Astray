@@ -37,31 +37,6 @@ public class CombatController : MonoBehaviour {
         encounterController.character.proceed = true;
     }
 
-    public void AddFirefly() {
-        if (encounterController.myFireflies.Count == 0) {
-            Debug.Log("Not enough fireflies!");
-        }
-        else {
-            encounterController.myHand.Add(encounterController.deck[0]);
-            myHandNumber += encounterController.deck[0];
-            encounterController.deck.RemoveAt(0);
-            encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
-            encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
-            myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
-            myHand.GetComponent<Text>().text = myHandText;
-        }
-        if (myHandNumber > 21) {
-            encounterController.RoundLost();
-            Debug.Log("mennään täällä");
-            encounterController.enemyScore += 1;
-            if(encounterController.enemyScore == 3) {
-                encounterController.GameLost();
-            }
-            else {
-                encounterController.NewRound();
-            }
-        }
-    }
 
     public void Proceed() {
         StartCoroutine(EnemyTurn());
@@ -102,7 +77,36 @@ public class CombatController : MonoBehaviour {
         else {
             encounterController.NewRound();
         }
+        Debug.Log("vuoro ohitse");
+    }
 
+    public void AddFirefly() {
+        Debug.Log("lisätään firefly");
+        if (encounterController.myFireflies.Count == 0) {
+            Debug.Log("Not enough fireflies!");
+        }
+        else {
+            encounterController.myHand.Add(encounterController.deck[0]);
+            myHandNumber += encounterController.deck[0];
+            encounterController.deck.RemoveAt(0);
+            encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
+            encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
+            myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
+            myHand.GetComponent<Text>().text = myHandText;
+        }
+        if (myHandNumber > 21) {
+            encounterController.RoundLost();
+            Debug.Log("mennään täällä");
+            encounterController.enemyScore += 1;
+            if (encounterController.enemyScore == 3) {
+                encounterController.GameLost();
+            }
+            else {
+                encounterController.NewRound();
+            }
+        }
+
+        Debug.Log("pois lisäämisestä");
     }
 
 }

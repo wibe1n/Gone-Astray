@@ -45,8 +45,8 @@ public class MovementControls : MonoBehaviour {
             v = CrossPlatformInputManager.GetAxis("Vertical");
         }
         else {
-            if (character.proceed == true) {
-                if (Input.GetKeyDown(KeyCode.KeypadEnter)) {
+            if (Input.GetKeyDown(KeyCode.G)) {
+                if (character.proceed == true) {
                     Debug.Log("painetaan alas");
                     character.proceed = false;
                     character.combatController.Proceed();
