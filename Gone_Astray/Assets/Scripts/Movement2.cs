@@ -17,8 +17,8 @@ public class Movement2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 horizontalMovement = new Vector3(0, 0, 0);
-        Vector3 verticalMovement = new Vector3(0, 0, 0);
+        //Vector3 horizontalMovement = new Vector3(0, 0, 0);
+        //Vector3 verticalMovement = new Vector3(0, 0, 0);
         //var forward = camera.transform.forward;
         //var right = camera.transform.right;
 

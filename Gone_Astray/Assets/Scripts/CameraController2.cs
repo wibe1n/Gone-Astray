@@ -12,10 +12,11 @@ public class CameraController2 : MonoBehaviour {
     public Movement2 pelihahmoScript;
     public Quaternion originalRotationValue;
 
+    private bool rotationLock = true;
+    private float rotationDir = 1;
 
     // Use this for initialization
     void Start () {
-        transform.LookAt(target.transform.position);
 		Cursor.lockState = CursorLockMode.Locked;
         originalRotationValue = transform.rotation; // save the initial rotation
 
@@ -23,6 +24,9 @@ public class CameraController2 : MonoBehaviour {
         target = GameObject.Find("pelihahmo");
         pelihahmoScript = target.GetComponent<Movement2>();
         cameraPos = GameObject.Find("pelihahmo/CameraPos"); //hakee pelihahmon lapsista tyhjän objektin nimeltä CameraPos
+
+        transform.position = cameraPos.transform.position;
+        transform.LookAt(target.transform.position);
     }
 
     // Update is called once per frame
@@ -32,10 +36,48 @@ public class CameraController2 : MonoBehaviour {
         //Kamera pyrkii aina CameraPos-objektin sijaintiin, kun hiiren nappeja ei paineta
         if (Input.GetAxis("Fire1") == 0)
         {
-            if ((cameraPos.transform.position - transform.position).magnitude > 0)
+            if ((target.transform.position - transform.position).magnitude <= (cameraPos.transform.position - target.transform.position).magnitude && transform.position != cameraPos.transform.position && (cameraPos.transform.position - transform.position).magnitude > 1)
             {
-                transform.position = Vector3.MoveTowards(transform.position, cameraPos.transform.position, pelihahmoScript.speed * Time.deltaTime);
+                //Vector3.MoveTowards(transform.position, target.transform.position, -1 * pelihahmoScript.speed * Time.deltaTime);
+                //if ((target.transform.position - transform.position).magnitude > (cameraPos.transform.position - target.transform.position).magnitude)
+                //{
+                //    Vector3 temp = (transform.position - target.transform.position).normalized * (cameraPos.transform.position - target.transform.position).magnitude;
+                //    transform.position = temp - target.transform.position;
+                //}
+
+                //lyhyempi suunta cameraposiin kun kierretään hahmon ympäri
+                if (Input.GetAxis("Horizontal") != 0)
+                {
+                    if (Input.GetAxis("Horizontal") < 0)
+                        rotationDir = -1;
+                    else
+                        rotationDir = 1;
+                    rotationLock = false;
+                }
+                if (rotationLock == false && (transform.position - cameraPos.transform.position).magnitude < 1)
+                {
+                    rotationLock = true;
+                }
+                if (rotationLock == false)
+                {
+                    transform.RotateAround(target.transform.position, Vector3.up, rotationDir * rotationSpeed * Time.deltaTime);
+                }
+
+                //suoraan kameraa päin kävellessä kamera peruuttaa
+                if (Input.GetAxis("Vertical") < 0)
+                {
+                    transform.Translate(0f, 0f, Input.GetAxis("Vertical") * Time.deltaTime * pelihahmoScript.speed * 5);
+                }
+
                 transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
+            }
+            else
+            {
+                if ((cameraPos.transform.position - transform.position).magnitude > 0)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, cameraPos.transform.position, pelihahmoScript.speed * Time.deltaTime);
+                    transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
+                }
             }
         }
 
