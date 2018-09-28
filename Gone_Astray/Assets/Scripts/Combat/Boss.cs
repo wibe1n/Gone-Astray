@@ -38,7 +38,8 @@ public class Boss : MonoBehaviour {
 			thisBoss.gameObject.SetActive (false);
 		}
 		if (fail) {
-			chara.gameObject.transform.position = chara.startPosition;
+			//chara.gameObject.transform.position = chara.startPosition;
+			//tähän se respawnaus
 		}
 	}
 	void StartBossBattle(){
