@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour {
 
     public int disturbTreshold;
     public GameObject checkpoint;
-	
+	public bool isBoss;
 
 	void OnTriggerEnter(Collider player){
         if (player.gameObject.GetComponent<Character>() != null) {
