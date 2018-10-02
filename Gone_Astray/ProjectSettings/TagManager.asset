@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - CombatController
   - EncounterController
+  - Leshen
   layers:
   - Default
   - TransparentFX
