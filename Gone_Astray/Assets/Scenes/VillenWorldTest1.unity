@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 704277919}
-  m_IndirectSpecularColor: {r: 0.12181299, g: 0.1531966, b: 0.268543, a: 1}
+  m_IndirectSpecularColor: {r: 0.12181314, g: 0.15319681, b: 0.26854357, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2180,6 +2180,11 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 0.5
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
+--- !u!4 &1172204319 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4839810966748716, guid: f34a3d6f1d031fa4189e85feb2fce423,
+    type: 2}
+  m_PrefabInternal: {fileID: 1172204310}
 --- !u!1 &1173830938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,6 +2644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disturbTreshold: 0
   checkpoint: {fileID: 1922933850}
+  isBoss: 0
 --- !u!65 &1779884126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2809,6 +2815,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1951408254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1951408255}
+  m_Layer: 0
+  m_Name: CameraPosTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1951408255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951408254}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.06, y: 2.45, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1172204319}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1963419396
 Prefab:
   m_ObjectHideFlags: 0
@@ -2902,6 +2936,8 @@ Prefab:
       objectReference: {fileID: 879644352}
     m_RemovedComponents:
     - {fileID: 114320939205922892, guid: 3f2e91fceabe6c546a0af867d285954f, type: 2}
+    - {fileID: 114321794124648476, guid: 3f2e91fceabe6c546a0af867d285954f, type: 2}
+    - {fileID: 114216737276289804, guid: 3f2e91fceabe6c546a0af867d285954f, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 3f2e91fceabe6c546a0af867d285954f, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &2094394342 stripped
@@ -2927,6 +2963,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2094394343}
   cameraDistance: 3
+--- !u!114 &2094394345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2094394342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3a9a88b19bd849b4a14a802d8063e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 50
+  followRotationSpeed: 1
+  target: {fileID: 2143823797}
+  cameraPos: {fileID: 1951408254}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
+  movementSpeed: 7
+  backwardsSpeed: 0
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &2119371037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,3 +3029,31 @@ MonoBehaviour:
   enemyHandNumber: 0
   myHandText: 
   enemyHandText: 
+--- !u!1 &2143823797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2143823798}
+  m_Layer: 0
+  m_Name: FollowTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2143823798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2143823797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 1.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1172204319}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
