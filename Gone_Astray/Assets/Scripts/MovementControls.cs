@@ -41,8 +41,14 @@ public class MovementControls : MonoBehaviour {
         // read inputs
         float h, v;
         if (!character.enemyIsNear) {
-            h = CrossPlatformInputManager.GetAxis("Horizontal");
-            v = CrossPlatformInputManager.GetAxis("Vertical");
+            if (Input.GetAxis("Fire1") != 0) {
+                h = 0;
+                v = 0;
+            }
+            else{
+                h = CrossPlatformInputManager.GetAxis("Horizontal");
+                v = CrossPlatformInputManager.GetAxis("Vertical");
+            }            
         }
         else {
             if (Input.GetKeyDown(KeyCode.G)) {
