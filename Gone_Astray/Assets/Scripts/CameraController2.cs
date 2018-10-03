@@ -27,7 +27,7 @@ public class CameraController2 : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         //Kamera pyrkii aina CameraPos-objektin sijaintiin, kun hiiren nappeja ei paineta
         if (Input.GetAxis("Fire1") == 0)
         {
@@ -52,7 +52,7 @@ public class CameraController2 : MonoBehaviour {
                 }
 
 
-                //transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
             }
             else
             {
@@ -60,7 +60,7 @@ public class CameraController2 : MonoBehaviour {
                 {
                     if (Input.GetAxis("Vertical") < 0)
                     {
-                        transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * 1, 0f, Space.World);
+                        //transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * 1, 0f, Space.World);
                     }
                     else {
                         transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed, 0f, Space.World);
