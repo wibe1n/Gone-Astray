@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 505451106}
   - component: {fileID: 505451105}
   - component: {fileID: 505451104}
+  - component: {fileID: 505451108}
   m_Layer: 0
   m_Name: testLeshen
   m_TagString: Leshen
@@ -333,11 +334,23 @@ Transform:
   m_GameObject: {fileID: 505451103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15, y: 11.690001, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &505451108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505451103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be44dee89d4fed7409d14259ca6ad1b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
 --- !u!1001 &510904505
 Prefab:
   m_ObjectHideFlags: 0
@@ -511,6 +524,51 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 696d1fdd1b41aa44facb480db53e0c37, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &986880438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 986880440}
+  - component: {fileID: 986880439}
+  m_Layer: 0
+  m_Name: LeshenController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &986880439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 986880438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d0356a1b2642445806088a95e687f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atArea: 0
+  grownLeshen: {fileID: 505451103}
+  sapling: {fileID: 1838617317875924, guid: 1b60b16fbdc0c7243ba378df00e89f50, type: 2}
+  lastLeshen: {fileID: 0}
+  saplingLocation: {fileID: 1093586644}
+--- !u!4 &986880440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 986880438}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 11.690001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1093586644
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,13 +836,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1726584282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84d0356a1b2642445806088a95e687f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 085176fbaf7e10d4099ab42863a5c2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grownLeshen: {fileID: 505451103}
-  sapling: {fileID: 1838617317875924, guid: 1b60b16fbdc0c7243ba378df00e89f50, type: 2}
-  lastLeshen: {fileID: 0}
-  saplingLocation: {fileID: 1093586644}
+  leshen: {fileID: 986880439}
 --- !u!65 &1726584284
 BoxCollider:
   m_ObjectHideFlags: 0
