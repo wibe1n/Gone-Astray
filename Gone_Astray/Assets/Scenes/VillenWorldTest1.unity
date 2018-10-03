@@ -2837,7 +2837,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1951408254}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.06, y: 1.75, z: -1.5}
+  m_LocalPosition: {x: 0.06, y: 2.45, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1172204319}
@@ -2971,30 +2971,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2094394342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 246cc59c7a84ea44f87f6b70acfe30c5, type: 3}
+  m_Script: {fileID: 11500000, guid: afd3a9a88b19bd849b4a14a802d8063e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 879644352}
-  offset: {x: 0, y: 7.5, z: 0}
---- !u!114 &2094394346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2094394342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7b05450367cb2d4b97c9dfac19a8932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axes: 0
-  sensitivityX: 15
-  sensitivityY: 15
-  minimumX: -360
-  maximumX: 360
-  minimumY: -60
-  maximumY: 60
-  frameCounter: 20
+  rotationSpeed: 50
+  followRotationSpeed: 1
+  target: {fileID: 2143823797}
+  cameraPos: {fileID: 1951408254}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
+  movementSpeed: 7
+  backwardsSpeed: 0
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &2119371037
 GameObject:
   m_ObjectHideFlags: 0

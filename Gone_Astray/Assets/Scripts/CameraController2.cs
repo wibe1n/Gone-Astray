@@ -60,7 +60,9 @@ public class CameraController2 : MonoBehaviour {
                 {
                     if (Input.GetAxis("Vertical") < 0)
                     {
-                        //transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * 1, 0f, Space.World);
+                        
+                        
+                        transform.Translate(0f, 0f, 0f, Space.World);
                     }
                     else {
                         transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed, 0f, Space.World);
