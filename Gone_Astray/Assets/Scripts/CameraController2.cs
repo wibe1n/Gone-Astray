@@ -4,26 +4,23 @@ using UnityEngine;
 
 public class CameraController2 : MonoBehaviour {
 
-    //public Camera myCam;
     public float rotationSpeed; // kameran nopeus kun sitä käännetään hiirellä
     public float followRotationSpeed; // smoothisti seuraavan kameran kääntönopeus
     public GameObject target; //kohde, mitä kamera seuraa
     public GameObject cameraPos;
-    public Movement2 pelihahmoScript;
     public Quaternion originalRotationValue;
+    public float movementSpeed;
+    public float backwardsSpeed;
+    private bool goingBackwards;
+    public Vector3 offset;
 
     private bool rotationLock = true;
     private float rotationDir = 1;
 
     // Use this for initialization
     void Start () {
-		Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         originalRotationValue = transform.rotation; // save the initial rotation
-
-
-        target = GameObject.Find("pelihahmo");
-        pelihahmoScript = target.GetComponent<Movement2>();
-        cameraPos = GameObject.Find("pelihahmo/CameraPos"); //hakee pelihahmon lapsista tyhjän objektin nimeltä CameraPos
 
         transform.position = cameraPos.transform.position;
         transform.LookAt(target.transform.position);
@@ -31,20 +28,11 @@ public class CameraController2 : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * pelihahmoScript.speed, 0f, Space.World);
-
         //Kamera pyrkii aina CameraPos-objektin sijaintiin, kun hiiren nappeja ei paineta
         if (Input.GetAxis("Fire1") == 0)
         {
             if ((target.transform.position - transform.position).magnitude <= (cameraPos.transform.position - target.transform.position).magnitude && transform.position != cameraPos.transform.position && (cameraPos.transform.position - transform.position).magnitude > 1)
             {
-                //Vector3.MoveTowards(transform.position, target.transform.position, -1 * pelihahmoScript.speed * Time.deltaTime);
-                //if ((target.transform.position - transform.position).magnitude > (cameraPos.transform.position - target.transform.position).magnitude)
-                //{
-                //    Vector3 temp = (transform.position - target.transform.position).normalized * (cameraPos.transform.position - target.transform.position).magnitude;
-                //    transform.position = temp - target.transform.position;
-                //}
-
                 //lyhyempi suunta cameraposiin kun kierretään hahmon ympäri
                 if (Input.GetAxis("Horizontal") != 0)
                 {
@@ -63,20 +51,23 @@ public class CameraController2 : MonoBehaviour {
                     transform.RotateAround(target.transform.position, Vector3.up, rotationDir * rotationSpeed * Time.deltaTime);
                 }
 
-                //suoraan kameraa päin kävellessä kamera peruuttaa
-                if (Input.GetAxis("Vertical") < 0)
-                {
-                    transform.Translate(0f, 0f, Input.GetAxis("Vertical") * Time.deltaTime * pelihahmoScript.speed * 5);
-                }
 
-                transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
+                //transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
             }
             else
             {
                 if ((cameraPos.transform.position - transform.position).magnitude > 0)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, cameraPos.transform.position, pelihahmoScript.speed * Time.deltaTime);
-                    transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
+                    if (Input.GetAxis("Vertical") < 0)
+                    {
+                        transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * 1, 0f, Space.World);
+                    }
+                    else {
+                        transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed, 0f, Space.World);
+                        transform.position = Vector3.MoveTowards(transform.position, cameraPos.transform.position, movementSpeed * Time.deltaTime);
+                        transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
+                    }
+                    
                 }
             }
         }
@@ -100,13 +91,11 @@ public class CameraController2 : MonoBehaviour {
 
             }
 
-            //Kameran kääntö ylös ja alas, näyttää jotenkin sekavalta imo??
-
-            //if (mouseInputY != 0)
-            //{
-            //    Vector3 lookHereY = new Vector3(-1 * mouseInputY * rotationSpeed * Time.deltaTime, 0, 0);
-            //    transform.Rotate(lookHereY);
-            //}
+            if (mouseInputY != 0)
+            {
+                Vector3 lookHereY = new Vector3(-1 * mouseInputY * rotationSpeed * Time.deltaTime, 0, 0);
+                transform.Rotate(lookHereY);
+            }
         }
         else if (Input.GetAxis("Fire2") != 0)
         {
@@ -116,12 +105,10 @@ public class CameraController2 : MonoBehaviour {
         {
             Vector3 newRotation = target.transform.position - transform.position;
             Quaternion targetRotation = Quaternion.LookRotation(newRotation);
-            //Quaternion targetRotation = Quaternion.FromToRotation(transform.forward, newRotation);
 
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, followRotationSpeed * Time.deltaTime);
         }
 
-        //transform.LookAt(target.transform.position);
 
     }
 }
