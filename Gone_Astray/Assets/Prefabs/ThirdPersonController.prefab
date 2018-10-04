@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 114170645910739722}
   - component: {fileID: 114695896363385478}
   - component: {fileID: 20631481377140106}
+  - component: {fileID: 114962987939269730}
   m_Layer: 0
   m_Name: ThirdPersonController
   m_TagString: Untagged
@@ -675,6 +676,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1920485704800026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4255204031657996}
+  m_Layer: 0
+  m_Name: Sapling location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1923591346253784
 GameObject:
   m_ObjectHideFlags: 1
@@ -881,6 +897,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4660190744923166}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4255204031657996
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1920485704800026}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.32, z: 0.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4839810966748716}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4310004531885918
 Transform:
@@ -1201,14 +1230,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349998118768314}
-  m_LocalRotation: {x: 0, y: 0.90408254, z: 0, w: 0.42735794}
-  m_LocalPosition: {x: 0, y: 10.89, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4312219350923190}
+  - {fileID: 4255204031657996}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 129.4, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4871659161292162
 Transform:
   m_ObjectHideFlags: 1
@@ -1510,6 +1540,31 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 0.5
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
+--- !u!114 &114962987939269730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349998118768314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ae3d280851bed4789cfd239dedbb4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechCreator: {fileID: 0}
+  combatController: {fileID: 0}
+  interactableNear: 0
+  enemyIsNear: 0
+  bossIsNear: 0
+  npcIsNear: 0
+  talking: 0
+  playerInCombat: 0
+  inCombat: 0
+  proceed: 0
+  myNPC: {fileID: 0}
+  myEnemy: {fileID: 0}
+  stressLevel: 0
+  items: 
 --- !u!136 &136383307457134352
 CapsuleCollider:
   m_ObjectHideFlags: 1
