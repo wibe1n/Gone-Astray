@@ -9,6 +9,7 @@ public class SaveGame
 	//serialized
 	public Vector3 playerPosition = Vector3.zero;
 	public List<Firefly> fireflies;
+	public List<Firefly> fiaFamily;
 
 	private static string _gameDataFileName = "data.json";
 	private static SaveGame _instance;
