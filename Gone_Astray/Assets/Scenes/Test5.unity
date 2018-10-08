@@ -153,6 +153,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114962987939269730, guid: f34a3d6f1d031fa4189e85feb2fce423,
+        type: 2}
+      propertyPath: rayCastDrawer
+      value: 
+      objectReference: {fileID: 1093586644}
+    - target: {fileID: 114962987939269730, guid: f34a3d6f1d031fa4189e85feb2fce423,
+        type: 2}
+      propertyPath: sapling
+      value: 
+      objectReference: {fileID: 1009525950408194, guid: bb1818d8897f20a4d89b9142af87f855,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f34a3d6f1d031fa4189e85feb2fce423, type: 2}
   m_IsPrefabAsset: 0
@@ -439,7 +450,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 986880440}
-  - component: {fileID: 986880439}
   m_Layer: 0
   m_Name: LeshenController
   m_TagString: Untagged
@@ -447,25 +457,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &986880439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 986880438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84d0356a1b2642445806088a95e687f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atArea: 0
-  grownLeshen: {fileID: 1009525950408194, guid: bb1818d8897f20a4d89b9142af87f855,
-    type: 2}
-  sapling: {fileID: 1838617317875924, guid: 1b60b16fbdc0c7243ba378df00e89f50, type: 2}
-  lastLeshen: {fileID: 0}
-  saplingLocation: {fileID: 1093586644}
-  leshenLocation: {fileID: 0}
-  leshenActive: 0
 --- !u!4 &986880440
 Transform:
   m_ObjectHideFlags: 0
@@ -773,8 +764,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085176fbaf7e10d4099ab42863a5c2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leshen: {fileID: 986880439}
   spawnPosition: {fileID: 870259966}
+  lastSapling: {fileID: 0}
+  vegetation: {fileID: 1009525950408194, guid: bb1818d8897f20a4d89b9142af87f855, type: 2}
 --- !u!65 &1726584284
 BoxCollider:
   m_ObjectHideFlags: 0
