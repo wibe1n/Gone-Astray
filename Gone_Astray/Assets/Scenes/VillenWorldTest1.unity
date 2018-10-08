@@ -707,6 +707,7 @@ MonoBehaviour:
   Canvas: {fileID: 824585860}
   currentSpeechInstance: 0
   maxSpeechInstance: 0
+  talking: 0
 --- !u!65 &329788249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -728,7 +729,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 329788247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -57.353947, y: 20.322237, z: 22.307497}
+  m_LocalPosition: {x: 121.06, y: 7.28, z: -193.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 505329372}
@@ -2150,8 +2151,6 @@ MonoBehaviour:
   interactableNear: 0
   enemyIsNear: 0
   bossIsNear: 0
-  npcIsNear: 0
-  talking: 0
   playerInCombat: 0
   inCombat: 0
   proceed: 0
