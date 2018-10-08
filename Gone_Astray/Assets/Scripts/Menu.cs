@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour {
 
+	public Character chara;
 	// Use this for initialization
 	void Start () {
 		
@@ -24,5 +25,13 @@ public class Menu : MonoBehaviour {
 		//ei toimi inspectorissa, toimii buildissa
 		Debug.Log ("quit");
 		Application.Quit();
+	}
+	public void OnLoadGame(){
+		Debug.Log ("load press");
+		SaveGame.Load ();
+		chara.transform.position = SaveGame.Instance.playerPosition;
+		chara.myFireflies = SaveGame.Instance.fireflies;
+		chara.fiaFamily = SaveGame.Instance.fiaFamily;
+		Game_Manager.StartLevel1();
 	}
 }
