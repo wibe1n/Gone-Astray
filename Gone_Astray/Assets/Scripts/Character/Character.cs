@@ -12,6 +12,7 @@ public class Character : MonoBehaviour {
     public bool inCombat = false;
     public bool proceed = false;
     public bool leshenObjectNear = false;
+    public int level = 0;
     public Enemy myEnemy;
     public List<Firefly> myFireflies = new List<Firefly> { };
     public float stressLevel = 0;

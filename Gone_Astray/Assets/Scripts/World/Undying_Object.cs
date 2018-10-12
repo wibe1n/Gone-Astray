@@ -36,4 +36,24 @@ public class Undying_Object : MonoBehaviour {
     private IEnumerator StartTutorial() {
         yield return SceneManager.LoadSceneAsync("Tutorial");
     }
+
+    public void LoadGame() {
+        StartCoroutine(LoadGameInstance());
+    }
+
+    private IEnumerator LoadGameInstance() {
+        yield return SceneManager.LoadSceneAsync("VillenWorldTest1");
+        string loadPath = "Levels/" + SaveGame.Instance.level.ToString();
+        ResourceRequest levelRequest;
+        GameObject nextLevel;
+        levelRequest = Resources.LoadAsync(loadPath);
+        yield return levelRequest;
+        nextLevel = (GameObject)levelRequest.asset;
+        Debug.Log(nextLevel);
+        Instantiate(nextLevel);
+        GameObject chara = GameObject.FindGameObjectWithTag("player");
+        chara.GetComponent<Character>().transform.position = SaveGame.Instance.playerPosition;
+        chara.GetComponent<Character>().myFireflies = SaveGame.Instance.fireflies;
+        chara.GetComponent<Character>().fiaFamily = SaveGame.Instance.fiaFamily;
+    }
 }

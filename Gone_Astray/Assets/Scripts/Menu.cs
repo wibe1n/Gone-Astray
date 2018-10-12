@@ -29,9 +29,6 @@ public class Menu : MonoBehaviour {
 	public void OnLoadGame(){
 		Debug.Log ("load press");
 		SaveGame.Load ();
-		chara.transform.position = SaveGame.Instance.playerPosition;
-		chara.myFireflies = SaveGame.Instance.fireflies;
-		chara.fiaFamily = SaveGame.Instance.fiaFamily;
-		Game_Manager.StartLevel1();
+		Game_Manager.LoadGame();
 	}
 }

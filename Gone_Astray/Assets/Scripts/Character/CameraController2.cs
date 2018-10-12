@@ -19,7 +19,6 @@ public class CameraController2 : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Cursor.lockState = CursorLockMode.Locked;
         originalRotationValue = transform.rotation; // save the initial rotation
 
         transform.position = cameraPos.transform.position;

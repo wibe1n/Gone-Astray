@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class SaveAtCheckpoint : MonoBehaviour {
 
-	public Character chara;
+	
 
 	void OnTriggerEnter(Collider player){
-		SaveGame.Instance.playerPosition = transform.position;
-		SaveGame.Instance.fireflies = chara.myFireflies;
-		SaveGame.Instance.fiaFamily = chara.fiaFamily;
-		//todo: levelin tila, collectablet, mätkityt vihut, sidequestit, itemit
-		SaveGame.Save ();
+        if (player.GetComponent<Character>() != null) {
+            SaveGame.Instance.playerPosition = transform.position;
+            SaveGame.Instance.fireflies = player.GetComponent<Character>().myFireflies;
+            SaveGame.Instance.fiaFamily = player.GetComponent<Character>().fiaFamily;
+            SaveGame.Instance.level = player.GetComponent<Character>().level;
+            //todo: levelin tila, collectablet, mätkityt vihut, sidequestit, itemit
+            SaveGame.Save();
+        }
+		
 	}
 }

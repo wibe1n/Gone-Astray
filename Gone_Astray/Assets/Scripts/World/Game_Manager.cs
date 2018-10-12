@@ -15,4 +15,8 @@ public static class Game_Manager  {
     public static void StartMenu() {
         GameObject.FindGameObjectWithTag("UndyingObject").GetComponent<Undying_Object>().Menu();
     }
+
+    public static void LoadGame() {
+        GameObject.FindGameObjectWithTag("UndyingObject").GetComponent<Undying_Object>().LoadGame();
+    }
 }
