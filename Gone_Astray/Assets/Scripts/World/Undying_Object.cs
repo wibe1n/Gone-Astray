@@ -19,6 +19,17 @@ public class Undying_Object : MonoBehaviour {
 	
 	private IEnumerator ToTheWorld() {
         yield return SceneManager.LoadSceneAsync("VillenWorldTest1");
+
+        //Testivaiheen jälkeen ladataan ensiksi varsinainen taso, mutta itse scene on tyhjä
+
+        //string loadPath = "Levels/tutorial";
+        //ResourceRequest levelRequest;
+        //GameObject nextLevel;
+        //levelRequest = Resources.LoadAsync(loadPath);
+        //yield return levelRequest;
+        //nextLevel = (GameObject)levelRequest.asset;
+        //Debug.Log(nextLevel);
+        //Instantiate(nextLevel);
     }
 
     public void Menu() {
@@ -43,7 +54,8 @@ public class Undying_Object : MonoBehaviour {
 
     private IEnumerator LoadGameInstance() {
         yield return SceneManager.LoadSceneAsync("VillenWorldTest1");
-        string loadPath = "Levels/" + SaveGame.Instance.level.ToString();
+        Debug.Log(SaveGame.Instance.playerPosition);
+        string loadPath = "Levels/level" + SaveGame.Instance.level.ToString();
         ResourceRequest levelRequest;
         GameObject nextLevel;
         levelRequest = Resources.LoadAsync(loadPath);
@@ -51,7 +63,9 @@ public class Undying_Object : MonoBehaviour {
         nextLevel = (GameObject)levelRequest.asset;
         Debug.Log(nextLevel);
         Instantiate(nextLevel);
-        GameObject chara = GameObject.FindGameObjectWithTag("player");
+        GameObject chara = GameObject.FindGameObjectWithTag("Player");
+        GameObject camera = GameObject.FindGameObjectWithTag("CameraRig");
+        camera.transform.position = SaveGame.Instance.cameraPosition;
         chara.GetComponent<Character>().transform.position = SaveGame.Instance.playerPosition;
         chara.GetComponent<Character>().myFireflies = SaveGame.Instance.fireflies;
         chara.GetComponent<Character>().fiaFamily = SaveGame.Instance.fiaFamily;
