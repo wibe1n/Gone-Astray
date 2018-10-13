@@ -84,10 +84,17 @@ public class Movement2 : MonoBehaviour {
             transform.rotation = Quaternion.LookRotation(direction);
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        //pause ja journal
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
             _pauseController.ActivatePauseMenu();
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            _pauseController.JournalShortcut();
+            _pauseController.ActivateJournal();
         }
     }
 }
