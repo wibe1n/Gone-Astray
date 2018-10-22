@@ -10,6 +10,7 @@ public class SaveGame
 	public Vector3 playerPosition = Vector3.zero;
 	public List<Firefly> fireflies;
 	public List<Firefly> fiaFamily;
+    public Vector3 cameraPosition = Vector3.zero;
     public int level;
 
 	private static string _gameDataFileName = "data.json";

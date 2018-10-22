@@ -33,6 +33,5 @@ public class LeshenTriggerArea : MonoBehaviour {
         }
         lastSapling = Instantiate(vegetation, spawnPosition.transform.position, gameObject.transform.rotation);
         vegetationGrown = true;
-
     }
 }

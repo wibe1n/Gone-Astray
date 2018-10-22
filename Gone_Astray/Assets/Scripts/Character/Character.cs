@@ -41,6 +41,9 @@ public class Character : MonoBehaviour {
             inCombat = true;
             Encounter();
         }
+        if (Input.GetKeyDown("8")) {
+
+        }
 
     }
 

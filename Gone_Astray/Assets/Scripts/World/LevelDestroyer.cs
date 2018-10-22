@@ -11,5 +11,6 @@ public class LevelDestroyer : MonoBehaviour {
             player.GetComponent<Character>().level++;
         }
         Destroy(previousLevel);
+        
     }
 }
