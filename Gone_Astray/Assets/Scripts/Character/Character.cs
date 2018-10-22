@@ -26,23 +26,28 @@ public class Character : MonoBehaviour {
     }
 	
 	void Update () {
-        if (!leshenObjectNear) {
-			if (Input.GetAxis("Leshen") != 0) {
-                RaycastHit objectHit;
-                Vector3 down = rayCastDrawer.transform.TransformDirection(Vector3.down);
-                Physics.Raycast(rayCastDrawer.transform.position, down, out objectHit, dist);
-                if (!(lastSapling == null)) {
-                        Destroy(lastSapling);
-                }
-                lastSapling = Instantiate(sapling, objectHit.point, Quaternion.identity);
-            }
-        }
+		if (!leshenObjectNear) {
+			if (Input.GetKeyDown ("7")) {
+				RaycastHit objectHit;
+				Vector3 down = rayCastDrawer.transform.TransformDirection (Vector3.down);
+				Physics.Raycast (rayCastDrawer.transform.position, down, out objectHit, dist);
+				if (!(lastSapling == null)) {
+
+					Destroy (lastSapling);
+				}
+				lastSapling = Instantiate (sapling, objectHit.point, Quaternion.identity);
+			}
+		} else {
+			if (!(lastSapling == null) && Input.GetKeyDown ("7")) {
+				Destroy (lastSapling);
+			}
+		}
         if (enemyIsNear == true && inCombat == false) {
             inCombat = true;
             Encounter();
         }
         if (Input.GetKeyDown("8")) {
-			//tänne jotain tai pois
+
         }
 
     }

@@ -27,9 +27,8 @@ public class CameraController2 : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-		
         //Kamera pyrkii aina CameraPos-objektin sijaintiin, kun hiiren nappeja ei paineta
-        if (Input.GetAxis("CameraControl") == 0)
+        if (Input.GetAxis("Fire1") == 0)
         {
             if ((target.transform.position - transform.position).magnitude <= (cameraPos.transform.position - target.transform.position).magnitude && transform.position != cameraPos.transform.position && (cameraPos.transform.position - transform.position).magnitude > 1)
             {

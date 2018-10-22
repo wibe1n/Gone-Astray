@@ -247,7 +247,7 @@ MonoBehaviour:
   _fogVoidTopology: 0
   _fogVoidFallOff: 1
   _fogVoidRadius: 10
-  _fogVoidPosition: {x: 0, y: 10.89, z: 0}
+  _fogVoidPosition: {x: 0, y: 11, z: 0}
   _fogVoidDepth: 0
   _fogVoidHeight: 0
   _fogVoidInverted: 0
