@@ -21,7 +21,7 @@ public class LeshenTriggerArea : MonoBehaviour {
     }
 
     private void Update() {
-		if (Input.GetAxis("Fire3") != 0 && m_MyEvent != null) {
+        if (Input.GetKeyDown("7") && m_MyEvent != null) {
 			if (!(lastLeshen == null)) { 
 
 				Destroy(lastLeshen);
