@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,6 +220,58 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 358751462}
   m_Mesh: {fileID: 4300000, guid: ea043b92ca537f24a87696d4de484ad0, type: 3}
+--- !u!1001 &381517451
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224832206759340642, guid: d8332726bb2be44419e36f52cc349dcf,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224666310460908360, guid: d8332726bb2be44419e36f52cc349dcf,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700881928869448, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 350.23254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700881928869448, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 161.83534
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700881928869448, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.31651038
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700881928869448, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700881928869448, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700881928869448, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700881928869448, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700881928869448, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &451000566
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +320,7 @@ MonoBehaviour:
   speed: 2
   rotationSpeed: 5
   camera: {fileID: 930111637}
+  _pauseController: {fileID: 871486738}
 --- !u!143 &451000569
 CharacterController:
   m_ObjectHideFlags: 0
@@ -513,6 +566,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 821111221}
   m_Mesh: {fileID: 4300000, guid: ea043b92ca537f24a87696d4de484ad0, type: 3}
+--- !u!114 &871486738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114841362596276250, guid: d8332726bb2be44419e36f52cc349dcf,
+    type: 2}
+  m_PrefabInternal: {fileID: 381517451}
+  m_Script: {fileID: 11500000, guid: 6e9609216dfc4804682edf28148963dc, type: 3}
 --- !u!1 &930111637
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,8 +665,10 @@ MonoBehaviour:
   followRotationSpeed: 20
   target: {fileID: 451000566}
   cameraPos: {fileID: 1596340493}
-  pelihahmoScript: {fileID: 0}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
+  movementSpeed: 0
+  backwardsSpeed: 0
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1596340493
 GameObject:
   m_ObjectHideFlags: 0

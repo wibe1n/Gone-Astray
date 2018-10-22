@@ -8,6 +8,8 @@ public class Movement2 : MonoBehaviour {
 	public float rotationSpeed;
     public GameObject camera;
 
+    public PauseMenuController _pauseController;
+
     CharacterController characterController;
 
 	// Use this for initialization
@@ -80,6 +82,19 @@ public class Movement2 : MonoBehaviour {
         {
             Vector3 direction = dir;
             transform.rotation = Quaternion.LookRotation(direction);
+        }
+
+        //pause ja journal
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            _pauseController.ActivatePauseMenu();
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            _pauseController.JournalShortcut();
+            _pauseController.ActivateJournal();
         }
     }
 }
