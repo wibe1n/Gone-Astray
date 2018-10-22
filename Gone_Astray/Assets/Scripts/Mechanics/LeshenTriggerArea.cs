@@ -21,7 +21,7 @@ public class LeshenTriggerArea : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown("7") && m_MyEvent != null) {
+		if (Input.GetAxis("Leshen") != 0 && m_MyEvent != null) {
             m_MyEvent.Invoke();
         }
     }
