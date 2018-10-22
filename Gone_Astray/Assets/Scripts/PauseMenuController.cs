@@ -7,7 +7,7 @@ public class PauseMenuController : MonoBehaviour {
 
     public Canvas pauseMenuCanvas;
     public Canvas journalCanvas;
-    public Canvas inGameCanvas;
+//    public Canvas inGameCanvas;
     public JournalController journalController;
 
     private bool journalShortcut = false;
@@ -26,6 +26,36 @@ public class PauseMenuController : MonoBehaviour {
         journalShortcut = false;
     }
 
+    void Update ()
+    {
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (pauseMenuCanvas.enabled == false && journalCanvas.enabled == false)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                ActivatePauseMenu();
+            }
+            else if (journalCanvas.enabled == false)
+            {
+                ClosePauseMenu();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if (pauseMenuCanvas.enabled == false && journalCanvas.enabled == false)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                JournalShortcut();
+                ActivateJournal();
+            }
+            else if (pauseMenuCanvas.enabled == false)
+            {
+                CloseJournal();
+            }
+        }
+    }
+
     public void ActivatePauseMenu()
     {
         if (pauseMenuCanvas.enabled == true)
@@ -35,7 +65,7 @@ public class PauseMenuController : MonoBehaviour {
 
         Time.timeScale = 0;
         pauseMenuCanvas.enabled = true;
-        inGameCanvas.enabled = false;
+//        inGameCanvas.enabled = false;
     }
 
     public void ClosePauseMenu()
@@ -47,7 +77,7 @@ public class PauseMenuController : MonoBehaviour {
 
         Time.timeScale = 1;
         pauseMenuCanvas.enabled = false;
-        inGameCanvas.enabled = true;
+//        inGameCanvas.enabled = true;
     }
 
     public void ActivateJournal()
@@ -61,7 +91,9 @@ public class PauseMenuController : MonoBehaviour {
             pauseMenuCanvas.enabled = false;
 
         if (pauseMenuCanvas.enabled == true)
-            inGameCanvas.enabled = false;
+        {
+//            inGameCanvas.enabled = false;
+        }
 
         Time.timeScale = 0;
         journalCanvas.enabled = true;
@@ -83,7 +115,7 @@ public class PauseMenuController : MonoBehaviour {
             if (pauseMenuCanvas.enabled == true)
                 pauseMenuCanvas.enabled = false;
             journalCanvas.enabled = false;
-            inGameCanvas.enabled = true;
+//            inGameCanvas.enabled = true;
         }
         else
         {
