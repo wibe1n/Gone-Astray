@@ -41,13 +41,6 @@ public class Character : MonoBehaviour {
             inCombat = true;
             Encounter();
         }
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) {
-            _pauseController.ActivatePauseMenu();
-        }
-        if (Input.GetKeyDown(KeyCode.J)) {
-            _pauseController.JournalShortcut();
-            _pauseController.ActivateJournal();
-        }
 
     }
 
