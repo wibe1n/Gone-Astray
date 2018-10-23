@@ -18,7 +18,10 @@ public class EncounterController : MonoBehaviour {
     public GameObject gameCanvas, textPanel, runButton, approachButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon;
     public GameObject runAwayScreen;
     public bool reached = false;
-    
+    public Image fireFlyImage;
+    public Image darknessImage;
+
+
     public void StartEncounter(Enemy enemy, List<Firefly> fireflyList) {
 
         //TODO: Turn camera to make player feel small
@@ -62,7 +65,7 @@ public class EncounterController : MonoBehaviour {
             myFireflies.RemoveAt(myFireflies.Count - 1);
             combatController.PlayersTurn();
         }
-        
+
     }
 
     public void RunAway() {
@@ -173,6 +176,11 @@ public class EncounterController : MonoBehaviour {
             usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
             myFireflies.RemoveAt(myFireflies.Count - 1);
             combatController.PlayersTurn();
+            
+            fireFlyImage.rectTransform.sizeDelta = new Vector2(combatController.myHandNumber * 100 / 21, combatController.myHandNumber * 100 / 21);
+
+            //MIKSI TÄMÄ EI TOIMI??????????????????????????????????????????????????????????????????+++++
+            //darknessImage.rectTransform.sizeDelta = new Vector2(combatController.enemyHandNumber * 100 / 21, combatController.enemyHandNumber * 100 / 21);
         }
         
     }
