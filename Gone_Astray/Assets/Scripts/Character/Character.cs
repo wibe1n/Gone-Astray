@@ -5,7 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour {
 
     public GameObject rayCastDrawer, lastSapling, sapling;
-    public bool interactableNear = false;
+    public PauseMenuController _pauseController;
     public bool enemyIsNear = false;
     public bool bossIsNear = false;
     public bool playerInCombat = false;
@@ -40,9 +40,6 @@ public class Character : MonoBehaviour {
         if (enemyIsNear == true && inCombat == false) {
             inCombat = true;
             Encounter();
-        }
-        if (Input.GetKeyDown("8")) {
-
         }
 
     }

@@ -75,7 +75,6 @@ public class PauseMenuController : MonoBehaviour {
             return;
         }
 
-        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         pauseMenuCanvas.enabled = false;
 //        inGameCanvas.enabled = true;
@@ -111,8 +110,6 @@ public class PauseMenuController : MonoBehaviour {
         if (journalShortcut)
         {
             journalShortcut = false;
-
-            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
 
             if (pauseMenuCanvas.enabled == true)

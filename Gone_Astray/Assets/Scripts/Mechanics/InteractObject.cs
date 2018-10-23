@@ -12,7 +12,6 @@ public class InteractObject : MonoBehaviour
     void OnTriggerEnter(Collider player) {
         if (player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(true);
-            player.gameObject.GetComponent<Character>().interactableNear = true;
         }       
     }
 
@@ -35,7 +34,6 @@ public class InteractObject : MonoBehaviour
     void OnTriggerExit(Collider player) {
         if(player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(false);
-            player.gameObject.GetComponent<Character>().interactableNear = false;
         }
         
     }

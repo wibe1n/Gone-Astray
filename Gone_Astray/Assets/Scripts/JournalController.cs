@@ -72,5 +72,6 @@ public class JournalController : MonoBehaviour {
         //leftPageFrameen sivunumeron perusteella kuva
 
         //rightPageFrameen sivunumeron perusteella teksti ja otsikko
+
     }
 }
