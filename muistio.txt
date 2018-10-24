@@ -1,2 +1,0 @@
-- tietyillä hahmoilla omat grafiikat puhekupliin
-- avattava kirja pelin aikana, jossa on luettava journal
