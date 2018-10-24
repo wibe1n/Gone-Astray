@@ -25,6 +25,7 @@ public class CombatController : MonoBehaviour {
             myHandText += encounterController.myHand[i].ToString() + " ";
         }
         myHand.GetComponent<Text>().text = myHandText;
+
         //TODO: animation for adding the hand
         yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < encounterController.enemyHand.Count; i++) {
@@ -77,6 +78,7 @@ public class CombatController : MonoBehaviour {
         else {
             encounterController.NewRound();
         }
+
         Debug.Log("vuoro ohitse");
     }
 
@@ -105,6 +107,13 @@ public class CombatController : MonoBehaviour {
                 encounterController.NewRound();
             }
         }
+
+
+        //ball of darkness size update
+        encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+
+        //ball of light size update
+        encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
 
         Debug.Log("pois lisäämisestä");
     }
