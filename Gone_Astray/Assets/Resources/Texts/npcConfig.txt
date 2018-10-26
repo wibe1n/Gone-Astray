@@ -1,8 +1,0 @@
-%npc_npc1_0_part1
-&npc_npc1_part1_My, my. Have you lost little one?
-
-%npc_npc1_0_part2
-&npc_npc1_part2_There is a safehaven for the likes of you in the centre of the forest.
-
-%npc_npc1_0_part3
-&npc_npc1_part3_I would suggest you to search for it...
