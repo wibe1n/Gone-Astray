@@ -1,0 +1,2 @@
+%item_item_0_Shiny Object
+&item_item_0_It's a shiny object. Looks very sentimental, has someone dropped it behind...?
