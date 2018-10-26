@@ -57,17 +57,17 @@ public class CameraController2 : MonoBehaviour {
             {
                 if ((cameraPos.transform.position - transform.position).magnitude > 0)
                 {
-                    if (Input.GetAxis("Vertical") < 0)
-                    {
+                    
                         
                         
-                        transform.Translate(0f, 0f, 0f, Space.World);
-                    }
-                    else {
+                        
+                        
+                    
+                    
                         transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed, 0f, Space.World);
                         transform.position = Vector3.MoveTowards(transform.position, cameraPos.transform.position, movementSpeed * Time.deltaTime);
                         transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
-                    }
+                    
                     
                 }
             }
@@ -104,10 +104,17 @@ public class CameraController2 : MonoBehaviour {
         }
         else
         {
-            Vector3 newRotation = target.transform.position - transform.position;
-            Quaternion targetRotation = Quaternion.LookRotation(newRotation);
+            if (Input.GetAxis("Vertical") < 0)
+            {
 
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, followRotationSpeed * Time.deltaTime);
+            }
+            else
+            {
+                Vector3 newRotation = target.transform.position - transform.position;
+                Quaternion targetRotation = Quaternion.LookRotation(newRotation);
+
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, followRotationSpeed * Time.deltaTime);
+            }
         }
 
 
