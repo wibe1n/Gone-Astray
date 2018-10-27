@@ -34,6 +34,10 @@ public class CombatController : MonoBehaviour {
         }
         enemyHand.GetComponent<Text>().text = enemyHandText;
         //TODO: animation for adding the hand
+        //ball of light size update
+        encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
+        //ball of darkness size update
+        encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
         yield return new WaitForSeconds(0.5f);
         encounterController.character.proceed = true;
     }
@@ -51,7 +55,9 @@ public class CombatController : MonoBehaviour {
             encounterController.deck.RemoveAt(0);
             enemyHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
             enemyHand.GetComponent<Text>().text = enemyHandText;
-            yield return new WaitForSeconds(0.5f);
+            //ball of darkness size update
+            encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+            yield return new WaitForSeconds(1f);
         }
         if(enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
             Debug.Log("minä voitin");
@@ -107,10 +113,6 @@ public class CombatController : MonoBehaviour {
                 encounterController.NewRound();
             }
         }
-
-
-        //ball of darkness size update
-        encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
 
         //ball of light size update
         encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
