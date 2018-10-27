@@ -55,20 +55,10 @@ public class CameraController2 : MonoBehaviour {
             }
             else
             {
-                if ((cameraPos.transform.position - transform.position).magnitude > 0)
-                {
-                    
-                        
-                        
-                        
-                        
-                    
-                    
+                if ((cameraPos.transform.position - transform.position).magnitude > 0) {                   
                         transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed, 0f, Space.World);
                         transform.position = Vector3.MoveTowards(transform.position, cameraPos.transform.position, movementSpeed * Time.deltaTime);
-                        transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
-                    
-                    
+                        transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);                   
                 }
             }
         }
@@ -82,13 +72,13 @@ public class CameraController2 : MonoBehaviour {
             {
                 if (mouseInputX > 0)
                 {
-                    transform.RotateAround(target.transform.position, Vector3.up, rotationSpeed * Time.deltaTime);
+                    transform.RotateAround(cameraPos.transform.position, Vector3.up, rotationSpeed * Time.deltaTime);
                 }
                 else
                 {
-                    transform.RotateAround(target.transform.position, Vector3.up, -1 * rotationSpeed * Time.deltaTime);
+                    transform.RotateAround(cameraPos.transform.position, Vector3.up, -1 * rotationSpeed * Time.deltaTime);
                 }
-                transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
+                //transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
 
             }
 
