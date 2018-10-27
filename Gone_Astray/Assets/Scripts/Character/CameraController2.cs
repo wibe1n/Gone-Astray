@@ -78,7 +78,7 @@ public class CameraController2 : MonoBehaviour {
                 {
                     transform.RotateAround(cameraPos.transform.position, Vector3.up, -1 * rotationSpeed * Time.deltaTime);
                 }
-                //transform.position = new Vector3(transform.position.x, cameraPos.transform.position.y, transform.position.z);
+                
 
             }
 
