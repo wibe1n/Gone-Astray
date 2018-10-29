@@ -34,6 +34,7 @@ public class InteractObject : MonoBehaviour
         }
         else {
             speechCreator.GenerateInfoBox(this);
+            open = true;
         }
     }
 
