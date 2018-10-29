@@ -9,11 +9,35 @@ public class PauseMenuController : MonoBehaviour {
     public Canvas journalCanvas;
 //    public Canvas inGameCanvas;
     public JournalController journalController;
+	public Undying_Object undyObj;
+	public KeyCode pauseKey = KeyCode.None;
+	public KeyCode journalKey = KeyCode.None;
+	public KeyCode altPauseKey = KeyCode.None;
 
     private bool journalShortcut = false;
 
 	// Use this for initialization
 	void Start () {
+		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
+			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
+			if (undyObj.pauseKey == KeyCode.None)
+				pauseKey = KeyCode.P;
+			else
+				pauseKey = undyObj.pauseKey;
+			if (undyObj.altPauseKey == KeyCode.None)
+				altPauseKey = KeyCode.Escape;
+			else
+				altPauseKey = undyObj.altPauseKey;
+			if (undyObj.journalKey == KeyCode.None)
+				journalKey = KeyCode.J;
+			else
+				journalKey = undyObj.journalKey;
+		} else {
+			journalKey = KeyCode.J;
+			pauseKey = KeyCode.P;
+			altPauseKey = KeyCode.Escape;
+		}
+
         if (pauseMenuCanvas.enabled == true)
         {
             pauseMenuCanvas.enabled = false;
@@ -28,7 +52,7 @@ public class PauseMenuController : MonoBehaviour {
 
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+		if (Input.GetKeyDown(pauseKey) || Input.GetKeyDown(altPauseKey))
         {
             if (pauseMenuCanvas.enabled == false && journalCanvas.enabled == false)
             {
@@ -41,7 +65,7 @@ public class PauseMenuController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.J))
+		if (Input.GetKeyDown(journalKey))
         {
             if (pauseMenuCanvas.enabled == false && journalCanvas.enabled == false)
             {

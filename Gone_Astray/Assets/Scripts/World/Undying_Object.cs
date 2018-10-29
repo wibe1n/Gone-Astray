@@ -4,7 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Undying_Object : MonoBehaviour {
-
+	
+	public KeyCode pauseKey;
+	public KeyCode journalKey;
+	public KeyCode altPauseKey;
+	public KeyCode leshenKey;
+	public KeyCode crouchKey;
 	
 	void Start () {
         DontDestroyOnLoad(this);
