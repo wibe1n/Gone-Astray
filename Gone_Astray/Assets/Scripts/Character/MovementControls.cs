@@ -12,6 +12,7 @@ public class MovementControls : MonoBehaviour {
     private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 	public Undying_Object undyObj;
 	KeyCode crouchKey = KeyCode.None;
+	KeyCode jumpKey = KeyCode.None;
 
     private void Start()
     {
@@ -21,8 +22,14 @@ public class MovementControls : MonoBehaviour {
 				crouchKey = KeyCode.C;
 			else
 				crouchKey = undyObj.crouchKey;
-		}else
+			if (undyObj.jumpKey == KeyCode.None)
+				jumpKey = KeyCode.Space;
+			else
+				jumpKey = undyObj.jumpKey;
+		} else {
 			crouchKey = KeyCode.C;
+			jumpKey = KeyCode.Space;
+		}
         // get the transform of the main camera
         if (Camera.main != null)
         {
@@ -44,7 +51,7 @@ public class MovementControls : MonoBehaviour {
     {
         if (!m_Jump)
         {
-            m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+			m_Jump = Input.GetKeyDown(jumpKey);
         }
     }
 
