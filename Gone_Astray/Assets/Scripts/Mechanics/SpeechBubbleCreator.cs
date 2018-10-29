@@ -21,6 +21,16 @@ public class SpeechBubbleCreator : MonoBehaviour {
         bubbleText.text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
     }
 
+    public void GenerateInfoBox(InteractObject target) {
+        int itemID = target.itemIndex;
+        bubbleText.text = NameDescContainer.GetDescription(NameType.item, itemID);
+    }
+
+    public void CloseInfoBox(InteractObject targert)
+    {
+
+    }
+
     public void CloseSpeechBubble(NPC npc) {
         npc.currentSpeechInstance = 1;
         speechbubble.SetActive(false);
