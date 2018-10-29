@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractObject : MonoBehaviour
 {
     public int itemIndex;
+    private bool open;
+    UnityEvent m_MyEvent = new UnityEvent();
+    public SpeechBubbleCreator speechCreator;
     public GameObject Canvas; // drag from hierarchy
 	public bool isCollectable;
 	public bool isFirefly;
@@ -12,7 +16,21 @@ public class InteractObject : MonoBehaviour
     void OnTriggerEnter(Collider player) {
         if (player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(true);
-        }       
+            m_MyEvent.AddListener(LookObject);
+        }
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.O) && m_MyEvent != null) {
+            m_MyEvent.Invoke();
+        }
+
+    }
+
+    public void LookObject() {
+        if (open) {
+
+        }
     }
 
     private void OnTriggerStay(Collider player) {
@@ -34,6 +52,7 @@ public class InteractObject : MonoBehaviour
     void OnTriggerExit(Collider player) {
         if(player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(false);
+            m_MyEvent.RemoveListener(LookObject);
         }
         
     }

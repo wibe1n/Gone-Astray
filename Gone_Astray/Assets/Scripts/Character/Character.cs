@@ -19,15 +19,23 @@ public class Character : MonoBehaviour {
     public List<bool> items = new List<bool> { };
     public List<Firefly> fiaFamily = new List<Firefly> { };
     float dist = 10;
-    
+	public Undying_Object undyObj;
+	public KeyCode leshenKey = KeyCode.None;
 
     void Start () {
-        
+		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
+			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
+			if (undyObj.leshenKey == KeyCode.None)
+				leshenKey = KeyCode.L;
+			else
+				leshenKey = undyObj.leshenKey;
+		}else
+			leshenKey = KeyCode.L;
     }
 	
 	void Update () {
 		if (!leshenObjectNear) {
-			if (Input.GetKeyDown ("7")) {
+			if (Input.GetKeyDown (leshenKey)) {
 				RaycastHit objectHit;
 				Vector3 down = rayCastDrawer.transform.TransformDirection (Vector3.down);
 				Physics.Raycast (rayCastDrawer.transform.position, down, out objectHit, dist);
@@ -38,7 +46,7 @@ public class Character : MonoBehaviour {
 				lastSapling = Instantiate (sapling, objectHit.point, Quaternion.identity);
 			}
 		} else {
-			if (!(lastSapling == null) && Input.GetKeyDown ("7")) {
+			if (!(lastSapling == null) && Input.GetKeyDown (leshenKey)) {
 				Destroy (lastSapling);
 			}
 		}
