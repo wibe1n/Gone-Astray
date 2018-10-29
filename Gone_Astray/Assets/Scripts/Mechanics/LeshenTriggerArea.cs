@@ -10,6 +10,19 @@ public class LeshenTriggerArea : MonoBehaviour {
 	public GameObject spawnPosition;
     public GameObject lastLeshen, vegetation;
     //private bool vegetationGrown;
+	public Undying_Object undyObj;
+	public KeyCode leshenKey = KeyCode.None;
+
+	void Start(){
+		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
+			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
+			if (undyObj.leshenKey == KeyCode.None)
+				leshenKey = KeyCode.L;
+			else
+				leshenKey = undyObj.leshenKey;
+		}else
+			leshenKey = KeyCode.L;
+	}
 
 	void OnTriggerEnter(Collider player){
         m_MyEvent.AddListener(ActivateLeshen);
@@ -21,7 +34,7 @@ public class LeshenTriggerArea : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown("7") && m_MyEvent != null) {
+		if (Input.GetKeyDown(leshenKey) && m_MyEvent != null) {
 			if (!(lastLeshen == null)) { 
 
 				Destroy(lastLeshen);
