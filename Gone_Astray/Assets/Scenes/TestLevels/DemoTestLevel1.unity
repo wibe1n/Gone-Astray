@@ -14,13 +14,13 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.13333334, g: 0.15686275, b: 0.3254902, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.03433981, g: 0.045186214, b: 0.12213881, a: 1}
+  m_AmbientSkyColor: {r: 0.06074226, g: 0.07947467, b: 0.1981132, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -42049,23 +42049,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4438718429872210, guid: 1bb8bb6ba1aa1ef49b64da3f436894ab, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.11334999
+      value: 0.07777488
       objectReference: {fileID: 0}
     - target: {fileID: 4438718429872210, guid: 1bb8bb6ba1aa1ef49b64da3f436894ab, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.39569148
+      value: -0.83362836
       objectReference: {fileID: 0}
     - target: {fileID: 4438718429872210, guid: 1bb8bb6ba1aa1ef49b64da3f436894ab, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.04928598
+      value: 0.121613204
       objectReference: {fileID: 0}
     - target: {fileID: 4438718429872210, guid: 1bb8bb6ba1aa1ef49b64da3f436894ab, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.91002804
+      value: 0.53312755
       objectReference: {fileID: 0}
     - target: {fileID: 4438718429872210, guid: 1bb8bb6ba1aa1ef49b64da3f436894ab, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438718429872210, guid: 1bb8bb6ba1aa1ef49b64da3f436894ab, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 16.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438718429872210, guid: 1bb8bb6ba1aa1ef49b64da3f436894ab, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -114.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bb8bb6ba1aa1ef49b64da3f436894ab, type: 2}
@@ -68367,15 +68375,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4372837649682586, guid: f34a3d6f1d031fa4189e85feb2fce423, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 392
+      value: 242
       objectReference: {fileID: 0}
     - target: {fileID: 4372837649682586, guid: f34a3d6f1d031fa4189e85feb2fce423, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 98
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4372837649682586, guid: f34a3d6f1d031fa4189e85feb2fce423, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 154
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 4372837649682586, guid: f34a3d6f1d031fa4189e85feb2fce423, type: 2}
       propertyPath: m_LocalRotation.x
@@ -118513,6 +118521,31 @@ Prefab:
       propertyPath: m_Mat
       value: 
       objectReference: {fileID: 2100000, guid: 8d676ec5443167b4b8896bcc295629d3, type: 2}
+    - target: {fileID: 20943833085248046, guid: 3f2e91fceabe6c546a0af867d285954f,
+        type: 2}
+      propertyPath: near clip plane
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114184434287208890, guid: 3f2e91fceabe6c546a0af867d285954f,
+        type: 2}
+      propertyPath: _height
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114184434287208890, guid: 3f2e91fceabe6c546a0af867d285954f,
+        type: 2}
+      propertyPath: _lightDirection.x
+      value: -0.86994356
+      objectReference: {fileID: 0}
+    - target: {fileID: 114184434287208890, guid: 3f2e91fceabe6c546a0af867d285954f,
+        type: 2}
+      propertyPath: _lightDirection.y
+      value: -0.28568828
+      objectReference: {fileID: 0}
+    - target: {fileID: 114184434287208890, guid: 3f2e91fceabe6c546a0af867d285954f,
+        type: 2}
+      propertyPath: _lightDirection.z
+      value: -0.4019703
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114320939205922892, guid: 3f2e91fceabe6c546a0af867d285954f, type: 2}
     - {fileID: 114321794124648476, guid: 3f2e91fceabe6c546a0af867d285954f, type: 2}
