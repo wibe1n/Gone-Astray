@@ -40,5 +40,14 @@ public class SpeechBubbleCreator : MonoBehaviour {
         npc.currentSpeechInstance = setInstance;
     }
 
-	
+    public bool StillTalking()
+    {
+        return speechbubble.activeSelf;
+    }
+
+    public void WentTooFar(NPC npc)
+    {
+        NameType npcID = (NameType)npc.id;
+        bubbleText.text = NameDescContainer.GetSpeechBubble("part" + 0, npcID);
+    }
 }
