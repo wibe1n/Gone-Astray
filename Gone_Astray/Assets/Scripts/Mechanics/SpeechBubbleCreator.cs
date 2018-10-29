@@ -24,11 +24,11 @@ public class SpeechBubbleCreator : MonoBehaviour {
     public void GenerateInfoBox(InteractObject target) {
         int itemID = target.itemIndex;
         bubbleText.text = NameDescContainer.GetDescription(NameType.item, itemID);
+        speechbubble.SetActive(true);
     }
 
-    public void CloseInfoBox(InteractObject targert)
-    {
-
+    public void CloseInfoBox() {
+        speechbubble.SetActive(false);
     }
 
     public void CloseSpeechBubble(NPC npc) {
