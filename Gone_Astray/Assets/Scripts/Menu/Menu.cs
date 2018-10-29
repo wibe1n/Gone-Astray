@@ -31,4 +31,12 @@ public class Menu : MonoBehaviour {
 		SaveGame.Load ();
 		Game_Manager.LoadGame();
 	}
+	public void OnSettings(){
+		Debug.Log ("ei vielä implementoitu");
+		//tässä laita äänisliderit ja keybinding napit päälle ja muut napit pois
+	}
+	public void OnReturn(){
+		Debug.Log ("paluu main menuun");
+		//tässä laita äänisliderit ja keybinding napit pois ja muut napit päälle
+	}
 }
