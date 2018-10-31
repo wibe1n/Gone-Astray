@@ -118612,8 +118612,6 @@ Prefab:
       propertyPath: near clip plane
       value: 0.3
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 114184434287208890, guid: 3f2e91fceabe6c546a0af867d285954f,
         type: 2}
       propertyPath: _height
@@ -118634,7 +118632,6 @@ Prefab:
       propertyPath: _lightDirection.z
       value: -0.4019703
       objectReference: {fileID: 0}
->>>>>>> c0bd3339c5974e57c3004b649f6f6e8f4aa10b4a
     m_RemovedComponents:
     - {fileID: 114320939205922892, guid: 3f2e91fceabe6c546a0af867d285954f, type: 2}
     - {fileID: 114321794124648476, guid: 3f2e91fceabe6c546a0af867d285954f, type: 2}
