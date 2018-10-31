@@ -11,13 +11,13 @@ public class NPC : MonoBehaviour {
     public GameObject Canvas; // drag from hierarchy
     public int currentSpeechInstance, maxSpeechInstance;
     public bool talking = false;
+    public bool walkedAway = false;
+
     private void Start() {
         id = 5;
         currentSpeechInstance = 1;
         maxSpeechInstance = 3;
     }
-
-    public bool walkedAway = false;
 
     void OnTriggerEnter(Collider player) {
         walkedAway = false;
@@ -42,6 +42,7 @@ public class NPC : MonoBehaviour {
             else if (!(currentSpeechInstance == maxSpeechInstance))
             {
                 speechCreator.WentTooFar(this);
+                StartCoroutine(CloseWhineBox(20));
             }
         }
     }
@@ -76,5 +77,23 @@ public class NPC : MonoBehaviour {
             talking = true;
         }
         
+    }
+
+    IEnumerator CloseWhineBox(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if (walkedAway)
+        {
+            speechCreator.CloseSpeechBubble(this);
+            talking = false;
+            m_MyEvent.RemoveListener(TalkEvent);
+        }
+        else
+        {
+            Canvas.SetActive(true);
+            speechCreator.CloseSpeechBubble(this);
+            talking = false;
+        }
     }
 }
