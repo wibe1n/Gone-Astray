@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{91c47959-7760-4cff-8363-ab101d22a192}">
+        <property name="name">
+            <value>Ignore</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b9dac4cf-8b90-45a6-b91c-648b5abfec13}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{9f51a465-b81b-4c4e-9a0e-86bd27834ceb}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{9f51a465-b81b-4c4e-9a0e-86bd27834ceb}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>
