@@ -64995,13 +64995,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1092062409}
-  m_LocalRotation: {x: -0, y: 0.38354486, z: -0, w: 0.9235223}
+  m_LocalRotation: {x: -0, y: 0.38130483, z: -0, w: 0.9244494}
   m_LocalPosition: {x: 553.5, y: 2.3, z: 98.8}
   m_LocalScale: {x: 24.249573, y: 41.667713, z: 9.8764}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 23
-  m_LocalEulerAnglesHint: {x: 0, y: 45.107002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 44.829002, z: 0}
 --- !u!1 &1093066036
 GameObject:
   m_ObjectHideFlags: 0
@@ -69592,6 +69592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1172204311}
+  camera: {fileID: 0}
   character: {fileID: 1172204312}
   combatController: {fileID: 2119371039}
   myEnemy: {fileID: 0}
@@ -114231,7 +114232,7 @@ GameObject:
   - component: {fileID: 2005741791}
   - component: {fileID: 2005741790}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: LeshenTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114250,7 +114251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 1092062409}
   lastLeshen: {fileID: 0}
-  vegetation: {fileID: 1067938519410500, guid: 25d8499320291ea428b91a9b7bd49cfb, type: 2}
+  vegetation: {fileID: 1674352230049074, guid: 25d8499320291ea428b91a9b7bd49cfb, type: 2}
   undyObj: {fileID: 0}
   leshenKey: 0
 --- !u!65 &2005741791
