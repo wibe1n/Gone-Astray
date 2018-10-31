@@ -29,7 +29,12 @@ public class InteractObject : MonoBehaviour
 
     public void LookObject() {
         if (open) {
-
+            speechCreator.CloseInfoBox();
+            open = false;
+        }
+        else {
+            speechCreator.GenerateInfoBox(this);
+            open = true;
         }
     }
 

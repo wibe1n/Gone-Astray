@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EncounterController : MonoBehaviour {
 
-    public GameObject player;
+    public GameObject player, camera;
     public Character character;
     public CombatController combatController;
     public Enemy myEnemy;
@@ -76,6 +76,7 @@ public class EncounterController : MonoBehaviour {
         runAwayScreen.SetActive(true);
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.0f, false);
         player.transform.position = myEnemy.checkpoint.transform.position;
+        camera.transform.position = myEnemy.checkpoint.transform.position;
         //TODO: fancy effects for running away
         yield return new WaitForSeconds(1f);
         character.inCombat = false;

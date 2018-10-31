@@ -26,11 +26,20 @@ public class NPC : MonoBehaviour {
     }
     void OnTriggerExit(Collider player) {
         if (player.gameObject.GetComponent<Character>() != null) {
-            Canvas.SetActive(false);
-            talking = false;
-            currentSpeechInstance = 1;
-            speechCreator.CloseSpeechBubble(this);
-            m_MyEvent.RemoveListener(TalkEvent);
+            if (!speechCreator.StillTalking())
+            {
+                Canvas.SetActive(false);
+                talking = false;
+                currentSpeechInstance = 1;
+                speechCreator.CloseSpeechBubble(this);
+                m_MyEvent.RemoveListener(TalkEvent);
+            }
+            //Jos pelaaja kävelee liian kauas puhujasta
+            else
+            {
+                speechCreator.WentTooFar(this);
+                OnTriggerExit(player);
+            }
         }
 
     }
@@ -43,7 +52,7 @@ public class NPC : MonoBehaviour {
 
     public void TalkEvent() {
         if (talking == true) {
-            if (currentSpeechInstance == maxSpeechInstance) {
+            if (currentSpeechInstance == maxSpeechInstance/* || currentSpeechInstance == 0*/) {
                 speechCreator.CloseSpeechBubble(this);
                 talking = false;
                 Canvas.SetActive(true);

@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour {
 
-	public Character chara;
+	//public Character chara;
 	// Use this for initialization
+	public GameObject mainMenu;
+	public GameObject options;
 	void Start () {
 		
 	}
@@ -30,5 +32,15 @@ public class Menu : MonoBehaviour {
 		Debug.Log ("load press");
 		SaveGame.Load ();
 		Game_Manager.LoadGame();
+	}
+	public void OnSettings(){
+		options.SetActive (true);
+		mainMenu.SetActive (false);
+		//tässä laita äänisliderit ja keybinding napit päälle ja muut napit pois
+	}
+	public void OnReturn(){
+		options.SetActive (false);
+		mainMenu.SetActive (true);
+		//tässä laita äänisliderit ja keybinding napit pois ja muut napit päälle
 	}
 }

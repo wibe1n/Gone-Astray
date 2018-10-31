@@ -53,12 +53,13 @@ public class CombatController : MonoBehaviour {
             encounterController.enemyHand.Add(encounterController.deck[0]);
             enemyHandNumber += encounterController.deck[0];
             encounterController.deck.RemoveAt(0);
-            enemyHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
+            enemyHandText += encounterController.enemyHand[encounterController.enemyHand.Count - 1].ToString() + " ";
             enemyHand.GetComponent<Text>().text = enemyHandText;
             //ball of darkness size update
             encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
             yield return new WaitForSeconds(1f);
         }
+        Debug.Log(enemyHandNumber);
         if(enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
             Debug.Log("minä voitin");
             encounterController.RoundWon();
@@ -116,8 +117,6 @@ public class CombatController : MonoBehaviour {
 
         //ball of light size update
         encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
-
-        Debug.Log("pois lisäämisestä");
     }
 
 }

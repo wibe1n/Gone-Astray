@@ -9,7 +9,7 @@ public enum NameType {
 
 public enum ChapterParts
 {
-    part1, part2, part3, part4
+    part0, part1, part2, part3, part4
 };
 
 
