@@ -44,7 +44,7 @@ public class LeshenTriggerArea : MonoBehaviour {
     }
 
     public void ActivateLeshen() {
-		lastLeshen = Instantiate(vegetation, spawnPosition.transform.position, gameObject.transform.rotation);
+		lastLeshen = Instantiate(vegetation, spawnPosition.transform.position, vegetation.transform.rotation);
         //vegetationGrown = true;
     }
 }

@@ -43,7 +43,7 @@ public class Character : MonoBehaviour {
 
 					Destroy (lastSapling);
 				}
-				lastSapling = Instantiate (sapling, objectHit.point, Quaternion.identity);
+				lastSapling = Instantiate (sapling, objectHit.point, sapling.transform.rotation);
 			}
 		} else {
 			if (!(lastSapling == null) && Input.GetKeyDown (leshenKey)) {
