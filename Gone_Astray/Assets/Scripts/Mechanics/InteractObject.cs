@@ -50,6 +50,9 @@ public class InteractObject : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
+            //else if (itemIndex == se_rashkovnikin_näköinen_kasvi_joka_ei_sitten_olekaan_se) {
+            //  JOTAIN huomataan että eipäs otetakkaan mukaan
+            //}
         }
         
     }
