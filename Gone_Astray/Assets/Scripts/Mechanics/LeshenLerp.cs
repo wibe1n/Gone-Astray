@@ -5,11 +5,11 @@ using UnityEngine;
 public class LeshenLerp : MonoBehaviour {
 
 	float timeStartedLerping;
-	float lerpTime = 2.0f;
+	public float lerpTime = 2.0f;
 
-	Vector3 startScale = new Vector3(0.1f,0.1f,0.1f);
-	Vector3 endScale = new Vector3(1.3f,1.3f,1.3f);
-	Vector3 finalScale = new Vector3(1.0f,1.0f,1.0f);
+	public Vector3 startScale = new Vector3(0.1f,0.1f,0.1f);
+	public Vector3 endScale = new Vector3(1.3f,1.3f,1.3f);
+	public Vector3 finalScale = new Vector3(1.0f,1.0f,1.0f);
 	bool bounceBack = false;
 	Vector3 currentScale;
 
