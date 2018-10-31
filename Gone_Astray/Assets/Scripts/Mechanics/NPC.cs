@@ -17,16 +17,20 @@ public class NPC : MonoBehaviour {
         maxSpeechInstance = 3;
     }
 
+    public bool walkedAway = false;
+
     void OnTriggerEnter(Collider player) {
-        if (player.gameObject.GetComponent<Character>() != null) {
+        walkedAway = false;
+        if (player.gameObject.GetComponent<Character>() != null && !speechCreator.StillTalking()) {
             Canvas.SetActive(true);
             m_MyEvent.AddListener(TalkEvent);
         }
 
     }
     void OnTriggerExit(Collider player) {
+        walkedAway = true;
         if (player.gameObject.GetComponent<Character>() != null) {
-            if (!speechCreator.StillTalking())
+            if (!speechCreator.StillTalking() || currentSpeechInstance == maxSpeechInstance)
             {
                 Canvas.SetActive(false);
                 talking = false;
@@ -35,13 +39,11 @@ public class NPC : MonoBehaviour {
                 m_MyEvent.RemoveListener(TalkEvent);
             }
             //Jos pelaaja kävelee liian kauas puhujasta
-            else
+            else if (!(currentSpeechInstance == maxSpeechInstance))
             {
                 speechCreator.WentTooFar(this);
-                OnTriggerExit(player);
             }
         }
-
     }
 
     private void Update() {
@@ -52,10 +54,18 @@ public class NPC : MonoBehaviour {
 
     public void TalkEvent() {
         if (talking == true) {
-            if (currentSpeechInstance == maxSpeechInstance/* || currentSpeechInstance == 0*/) {
+            if (currentSpeechInstance == maxSpeechInstance)
+            {
                 speechCreator.CloseSpeechBubble(this);
                 talking = false;
-                Canvas.SetActive(true);
+                if (!walkedAway)
+                    Canvas.SetActive(true);
+            }
+            else if (walkedAway == true)
+            {
+                speechCreator.CloseSpeechBubble(this);
+                talking = false;
+                m_MyEvent.RemoveListener(TalkEvent);
             }
             else {
                 speechCreator.UpdateSpeechBubble(this);
