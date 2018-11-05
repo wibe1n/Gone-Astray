@@ -85,6 +85,9 @@ public class MovementControls : MonoBehaviour {
         if (Input.GetAxis("Fire1") != 0) {
             m_Move = Vector3.zero;
         }
+        if (stop) {
+            m_Move = Vector3.zero;
+        }
         // pass all parameters to the character control script
         m_Character.Move(m_Move, crouch, m_Jump);
         m_Jump = false;
