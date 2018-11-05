@@ -16,10 +16,33 @@ MonoBehaviour:
   - {fileID: 114563276198986002}
   EditorEvents:
   - {fileID: 114789993453993786}
+  - {fileID: 114006301556301502}
   MasterBankRef: {fileID: 114563276198986002}
   StringsBankRef: {fileID: 114977714950321654}
-  stringsBankWriteTime: 636765941840983603
+  stringsBankWriteTime: 636770231231022979
   cacheVersion: 2
+--- !u!114 &114006301556301502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Movement/Footsteps
+  guid: 086348bc1ebfe941a915054c30b881b4
+  Banks:
+  - {fileID: 114563276198986002}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 912
 --- !u!114 &114104896036035826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,11 +130,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Minttu\Documents\Gone Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
     Bank.bank
-  lastModified: 636765941840873695
+  lastModified: 636770231230777000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1979104
+    Value: 2050336
   Exists: 1
 --- !u!114 &114672215142826664
 MonoBehaviour:
@@ -203,9 +226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Gone_Astray_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636765941840983603
+  lastModified: 636770231231022979
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 740
+    Value: 812
   Exists: 1

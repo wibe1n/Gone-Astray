@@ -68,6 +68,10 @@ public class EncounterController : MonoBehaviour {
 
     }
 
+    public void StartTutorialEncounter() {
+
+    }
+
     public void RunAway() {
         StartCoroutine(RunAwayRoutine());
     }

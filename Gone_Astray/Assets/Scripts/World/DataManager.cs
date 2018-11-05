@@ -6,7 +6,7 @@ using System.IO;
 
 
 public enum DataManagerDictionaryType {
-    itemDesc, story, npc
+    itemDesc, story, npc, tutorial
 };
 
 public static class DataManager {
@@ -50,7 +50,7 @@ public static class DataManager {
         DownloadSingleFile("StoryConfig", configDatas[(int)DataManagerDictionaryType.story], nameListGeneric);
         DownloadSingleFile("ItemDescConfig", configDatas[(int)DataManagerDictionaryType.itemDesc], nameListGeneric);
         DownloadSingleFile("npcConfig", configDatas[(int)DataManagerDictionaryType.npc], nameListGeneric);
-
+        DownloadSingleFile("tutorialConfig", configDatas[(int)DataManagerDictionaryType.tutorial], nameListGeneric);
         readBool = true;
 
         NameDescContainer.GenerateNames(nameListGeneric, descriptionListGeneric); // Must be before any other stuffgeneration

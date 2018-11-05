@@ -1,0 +1,5 @@
+%tutorial_chapter1_0_part1
+&tutorial_chapter1_part1_Once upon a time there was a little girl called Mila. She lived in a tiny cabin in the woods.
+
+%tutorial_chapter1_0_part2
+&tutorial_chapter1_part2_Mila had a brother, but one day she suddenly realized that her brother had vanished.
