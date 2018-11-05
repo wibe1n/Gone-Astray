@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour {
         if (player.gameObject.GetComponent<Character>() != null) {
             player.gameObject.GetComponent<Character>().enemyIsNear = true;
             player.gameObject.GetComponent<Character>().myEnemy = this;
+            player.gameObject.GetComponent<MovementControls>().stop = true;
         }
         
 	}
@@ -19,6 +20,7 @@ public class Enemy : MonoBehaviour {
         if (player.gameObject.GetComponent<Character>() != null) {
             player.gameObject.GetComponent<Character>().enemyIsNear = false;
             player.gameObject.GetComponent<Character>().myEnemy = null;
+            player.gameObject.GetComponent<MovementControls>().stop = false;
         }
     }
 }
