@@ -79,7 +79,6 @@ public class EncounterController : MonoBehaviour {
         camera.transform.position = myEnemy.checkpoint.transform.position;
         //TODO: fancy effects for running away
         yield return new WaitForSeconds(1f);
-        character.inCombat = false;
         gameCanvas.SetActive(false);
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 3.0f, false);
         yield return new WaitForSeconds(3f);
@@ -213,9 +212,6 @@ public class EncounterController : MonoBehaviour {
         myHand.Clear();
         deck.Clear();
         Destroy(myEnemy);
-        character.myEnemy = null;
-        character.enemyIsNear = false;
-        character.inCombat = false;
         combatController.myHandText = "";
         combatController.enemyHandText = "";
         combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
@@ -227,6 +223,7 @@ public class EncounterController : MonoBehaviour {
         darknessIcon.SetActive(false);
         proceedButton.SetActive(false);
         gameCanvas.SetActive(false);
+        player.GetComponent<MovementControls>().stop = false;
         //TODO animation for monster transforming to something regiular???
     }
 }

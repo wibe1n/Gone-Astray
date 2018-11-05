@@ -7,20 +7,29 @@ public class Enemy : MonoBehaviour {
     public int disturbTreshold;
     public GameObject checkpoint;
 	public bool isBoss;
+    private List<Firefly> availableFireflies = new List<Firefly> { };
 
-	void OnTriggerEnter(Collider player){
+    void OnTriggerEnter(Collider player){
         if (player.gameObject.GetComponent<Character>() != null) {
-            player.gameObject.GetComponent<Character>().enemyIsNear = true;
-            player.gameObject.GetComponent<Character>().myEnemy = this;
             player.gameObject.GetComponent<MovementControls>().stop = true;
+            availableFireflies = player.gameObject.GetComponent<Character>().myFireflies;
+            Encounter();
         }
         
 	}
 	void OnTriggerExit(Collider player){
         if (player.gameObject.GetComponent<Character>() != null) {
-            player.gameObject.GetComponent<Character>().enemyIsNear = false;
-            player.gameObject.GetComponent<Character>().myEnemy = null;
             player.gameObject.GetComponent<MovementControls>().stop = false;
         }
+    }
+
+    private void Encounter() {
+        StartCoroutine(StartEncounterIenum(this));
+    }
+
+    private IEnumerator StartEncounterIenum(Enemy enemy) {
+        EncounterController enCon = GameObject.FindGameObjectWithTag("EncounterController").GetComponent<EncounterController>();
+        enCon.StartEncounter(enemy, availableFireflies);
+        yield return new WaitForSeconds(1);
     }
 }
