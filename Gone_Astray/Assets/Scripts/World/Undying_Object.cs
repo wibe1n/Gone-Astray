@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Undying_Object : MonoBehaviour {
 	
+	public GameObject loadingScreen;
+	[HideInInspector]
 	public KeyCode pauseKey;
 	public KeyCode journalKey;
 	public KeyCode altPauseKey;
@@ -52,6 +54,7 @@ public class Undying_Object : MonoBehaviour {
 
     private IEnumerator StartTutorial() {
         yield return SceneManager.LoadSceneAsync("Tutorial");
+		loadingScreen.SetActive (false);
     }
 
     public void LoadGame() {
@@ -59,6 +62,7 @@ public class Undying_Object : MonoBehaviour {
     }
 
     private IEnumerator LoadGameInstance() {
+		//loadingScreen.SetActive (true);
         yield return SceneManager.LoadSceneAsync("VillenWorldTest1");
         Debug.Log(SaveGame.Instance.playerPosition);
         string loadPath = "Levels/level" + SaveGame.Instance.level.ToString();
@@ -75,5 +79,6 @@ public class Undying_Object : MonoBehaviour {
         chara.GetComponent<Character>().transform.position = SaveGame.Instance.playerPosition;
         chara.GetComponent<Character>().myFireflies = SaveGame.Instance.fireflies;
         chara.GetComponent<Character>().fiaFamily = SaveGame.Instance.fiaFamily;
+		loadingScreen.SetActive (false);
     }
 }
