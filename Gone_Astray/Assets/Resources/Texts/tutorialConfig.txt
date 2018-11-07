@@ -1,5 +1,21 @@
-%tutorial_chapter1_0_part1
-&tutorial_chapter1_part1_Once upon a time there was a little girl called Mila. She lived in a tiny cabin in the woods.
+%tutorial_combatTutorial_0_part0
+&tutorial_combatTutorial_part0_This is the tutorial for fighting monsters in Sestra. The fight is a game of light and darkness.
 
-%tutorial_chapter1_0_part2
-&tutorial_chapter1_part2_Mila had a brother, but one day she suddenly realized that her brother had vanished.
+%tutorial_combatTutorial_0_part1
+&tutorial_combatTutorial_part2_On the right you see sphere of light and a sphere of dark.
+
+%tutorial_combatTutorial_0_part2
+&tutorial_combatTutorial_part2_Your goal is to try to have stronger aura of light than the enemys aura of darkness
+
+%tutorial_combatTutorial_0_part3
+&tutorial_combatTutorial_part3_Right now your sphere of light is smaller than the sphere of dark, press L to add more light.
+
+%tutorial_combatTutorial_0_part4
+&tutorial_combatTutorial_part4_Great! When you add more light you use one of your collected fireflies. The strenght of one firefly varies, so the light added varies too
+
+%tutorial_combatTutorial_0_part5
+&tutorial_combatTutorial_part5_However, be careful when adding more light! If the light amount exceeds the circle around it you lose!
+
+%tutorial_combatTutorial_0_part6
+&tutorial_combatTutorial_part6_
+
