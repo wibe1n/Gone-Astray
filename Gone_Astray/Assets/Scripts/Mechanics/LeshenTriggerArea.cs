@@ -10,7 +10,7 @@ public class LeshenTriggerArea : MonoBehaviour {
 	public GameObject spawnPosition;
     public GameObject lastLeshen, vegetation;
     //private bool vegetationGrown;
-	public Undying_Object undyObj;
+	private Undying_Object undyObj;
 	public KeyCode leshenKey = KeyCode.None;
 
 	void Start(){

@@ -6,14 +6,10 @@ public class Character : MonoBehaviour {
 
     public GameObject rayCastDrawer, lastSapling, sapling;
     public PauseMenuController _pauseController;
-    public bool enemyIsNear = false;
     public bool bossIsNear = false;
-    public bool playerInCombat = false;
-    public bool inCombat = false;
     public bool proceed = false;
     public bool leshenObjectNear = false;
     public int level = 0;
-    public Enemy myEnemy;
     public List<Firefly> myFireflies = new List<Firefly> { };
     public float stressLevel = 0;
     public List<bool> items = new List<bool> { };
@@ -53,6 +49,7 @@ public class Character : MonoBehaviour {
 				Destroy (lastSapling);
 			}
 		}
+<<<<<<< HEAD
         if (enemyIsNear == true && inCombat == false) {
             inCombat = true;
             Encounter();
@@ -60,16 +57,9 @@ public class Character : MonoBehaviour {
 		if (transform.position.y < -300) {
 			transform.position = mapDropRescue;
 		}
-    }
+=======
 
-    private void Encounter() {
-        StartCoroutine(StartEncounterIenum(myEnemy));       
-    }
-
-    private IEnumerator StartEncounterIenum(Enemy enemy) {       
-        EncounterController comCon = GameObject.FindGameObjectWithTag("EncounterController").GetComponent<EncounterController>();
-        comCon.StartEncounter(enemy, myFireflies);
-        yield return new WaitForSeconds(1);
+>>>>>>> master
     }
 
 

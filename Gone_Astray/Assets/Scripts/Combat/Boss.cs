@@ -26,10 +26,6 @@ public class Boss : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (chara.myEnemy.isBoss && !bossBattleOn && !win) {
-			bossBattleOn = true;
-			StartBossBattle ();
-		}
 		if (bossBattleOn) {
 			BossBattleTurn ();
 		}

@@ -10,7 +10,8 @@ public class MovementControls : MonoBehaviour {
     private Vector3 m_CamForward;             // The current forward direction of the camera
     private Vector3 m_Move;
     private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-	public Undying_Object undyObj;
+    public bool stop;
+	private Undying_Object undyObj;
 	KeyCode crouchKey = KeyCode.None;
 	KeyCode jumpKey = KeyCode.None;
 
@@ -44,6 +45,7 @@ public class MovementControls : MonoBehaviour {
 
         // get the third person character ( this should never be null due to require component )
         m_Character = GetComponent<Movement>();
+        stop = false;
     }
 
 
@@ -81,6 +83,9 @@ public class MovementControls : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 0.5f;
 #endif
         if (Input.GetAxis("Fire1") != 0) {
+            m_Move = Vector3.zero;
+        }
+        if (stop) {
             m_Move = Vector3.zero;
         }
         // pass all parameters to the character control script
