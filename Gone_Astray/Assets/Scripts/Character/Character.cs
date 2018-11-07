@@ -49,18 +49,8 @@ public class Character : MonoBehaviour {
 				Destroy (lastSapling);
 			}
 		}
-<<<<<<< HEAD
-        if (enemyIsNear == true && inCombat == false) {
-            inCombat = true;
-            Encounter();
-        }
 		if (transform.position.y < -300) {
 			transform.position = mapDropRescue;
 		}
-=======
-
->>>>>>> master
     }
-
-
 }
