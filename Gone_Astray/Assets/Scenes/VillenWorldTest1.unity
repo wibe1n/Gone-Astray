@@ -1642,6 +1642,13 @@ MonoBehaviour:
   m_Sand: 0
   m_StepDistance: 0.5
   m_Debug: 0
+  moveControls: {fileID: 1172204314}
+--- !u!114 &1172204314 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114872077277568770, guid: f34a3d6f1d031fa4189e85feb2fce423,
+    type: 2}
+  m_PrefabInternal: {fileID: 1172204310}
+  m_Script: {fileID: 11500000, guid: 4a307263ce189fb42a96215f1f3ce6f4, type: 3}
 --- !u!114 &1173323425 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114343565778421008, guid: 4d9ab53ef8d7eb94595f40df8e77bbe4,
