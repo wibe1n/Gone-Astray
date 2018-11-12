@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JournalController : MonoBehaviour {
 
@@ -15,6 +16,9 @@ public class JournalController : MonoBehaviour {
     public GameObject leftPageFrame;
     public GameObject rightPageFrame;
 
+	public GameObject fireflyAmount;
+	public Character chara;
+
     // Use this for initialization
     public void OpenJournal () {
         leftPageNumber = 1;
@@ -22,6 +26,7 @@ public class JournalController : MonoBehaviour {
         backButton.gameObject.SetActive(false);
         leftPageFrame.gameObject.SetActive(false);
         rightPageFrame.gameObject.SetActive(false);
+		fireflyAmount.GetComponent<Text>().text = chara.myFireflies.Count.ToString();
 	}
 
     // Update is called once per frame

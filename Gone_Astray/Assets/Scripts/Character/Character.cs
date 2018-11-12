@@ -17,6 +17,7 @@ public class Character : MonoBehaviour {
     float dist = 10;
 	public Undying_Object undyObj;
 	public KeyCode leshenKey = KeyCode.None;
+	Vector3 mapDropRescue;
 
     void Start () {
 		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
@@ -27,6 +28,8 @@ public class Character : MonoBehaviour {
 				leshenKey = undyObj.leshenKey;
 		}else
 			leshenKey = KeyCode.L;
+		mapDropRescue = transform.position;
+		mapDropRescue.y = mapDropRescue.y + 3.0f;
     }
 	
 	void Update () {
@@ -46,8 +49,8 @@ public class Character : MonoBehaviour {
 				Destroy (lastSapling);
 			}
 		}
-
+		if (transform.position.y < -300) {
+			transform.position = mapDropRescue;
+		}
     }
-
-
 }

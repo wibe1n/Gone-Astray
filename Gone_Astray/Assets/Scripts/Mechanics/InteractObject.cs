@@ -12,6 +12,25 @@ public class InteractObject : MonoBehaviour
     public GameObject Canvas; // drag from hierarchy
 	public bool isCollectable;
 	public bool isFirefly;
+	public Undying_Object undyObj;
+	public KeyCode actionKey = KeyCode.None;
+	public KeyCode collectKey = KeyCode.None;
+
+	void Start () {
+		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
+			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
+			if (undyObj.actionKey == KeyCode.None)
+				actionKey = KeyCode.O;
+			else
+				actionKey = undyObj.actionKey;
+			if (undyObj.collectKey == KeyCode.None)
+				collectKey = KeyCode.K;
+			else
+				collectKey = undyObj.collectKey;
+		} else
+			collectKey = KeyCode.K;
+			actionKey = KeyCode.O;
+	}
 
     void OnTriggerEnter(Collider player) {
         if (player.gameObject.GetComponent<Character>() != null) {
@@ -21,7 +40,7 @@ public class InteractObject : MonoBehaviour
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.O) && m_MyEvent != null) {
+		if (Input.GetKeyDown(actionKey) && m_MyEvent != null) {
             m_MyEvent.Invoke();
         }
 
@@ -40,7 +59,7 @@ public class InteractObject : MonoBehaviour
 
     private void OnTriggerStay(Collider player) {
         if(player.gameObject.GetComponent<Character>() != null) {
-            if (Input.GetKeyDown("4") && isCollectable) {
+			if (Input.GetKeyDown(collectKey) && isCollectable) {
                 if (isFirefly) {
                     Firefly firefly = new Firefly(0);
                     player.GetComponent<Character>().myFireflies.Add(firefly);
