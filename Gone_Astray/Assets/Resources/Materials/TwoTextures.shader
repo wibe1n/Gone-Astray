@@ -1,7 +1,7 @@
 ﻿Shader "GoneAstray/TwoTextures" {
 	Properties {
-		_MainTex("Image", 2D) = "black"{}
-		_AlphaTex("Frame", 2D) = "black"{}
+		_MainTex("Base Image", 2D) = "black"{}
+		_AlphaTex("Transparent Image", 2D) = "black"{}
 	}
 	SubShader {
 		CGPROGRAM
