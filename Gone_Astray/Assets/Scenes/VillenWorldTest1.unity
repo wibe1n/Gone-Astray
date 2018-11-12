@@ -1642,13 +1642,13 @@ MonoBehaviour:
   m_Sand: 0
   m_StepDistance: 0.5
   m_Debug: 0
-  moveControls: {fileID: 1172204314}
---- !u!114 &1172204314 stripped
+  movement: {fileID: 1172204316}
+--- !u!114 &1172204316 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114872077277568770, guid: f34a3d6f1d031fa4189e85feb2fce423,
+  m_CorrespondingSourceObject: {fileID: 114734113048691602, guid: f34a3d6f1d031fa4189e85feb2fce423,
     type: 2}
   m_PrefabInternal: {fileID: 1172204310}
-  m_Script: {fileID: 11500000, guid: 4a307263ce189fb42a96215f1f3ce6f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 99b1d0f264e51d84788142a76c85e8ff, type: 3}
 --- !u!114 &1173323425 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114343565778421008, guid: 4d9ab53ef8d7eb94595f40df8e77bbe4,
@@ -2733,6 +2733,18 @@ MonoBehaviour:
   movementSpeed: 7
   backwardsSpeed: 0
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &2094394346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2094394342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &2119371037
 GameObject:
   m_ObjectHideFlags: 0

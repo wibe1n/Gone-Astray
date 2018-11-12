@@ -75,13 +75,13 @@ public class Footsteps : MonoBehaviour
             if (m_Debug)
                 m_LinePos = transform.position;
 
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))//The Viking Village terrain mesh (terrain_near_01) is set to the Ground layer.
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 int materialIndex = GetMaterialIndex(hit);
                 if (materialIndex != -1)
                 {
                     Material material = hit.collider.gameObject.GetComponent<Renderer>().materials[materialIndex];
-                    if (material.name == "mat_terrain_near_01 (Instance)")//This texture name is specific to the terrain mesh in the Viking Village scene.
+                    if (material.name == "mat_terrain_near_01 (Instance)")
                     {
                         if (m_Debug)
                         {//Calculate the points for the triangle in the mesh that we have hit with our raycast.
@@ -118,7 +118,7 @@ public class Footsteps : MonoBehaviour
                     }
                 }
             }
-            else//If the ray hits somethign other than the ground, we assume it hit a wooden prop (This is specific to the Viking Village scene) - and set the parameter values for wood.
+            else//If the ray hits somethign other than the ground, we assume it hit a wooden prop - and set the parameter values for wood.
             {
                 m_Water = 0.0f;
                 m_Dirt = 0.0f;
