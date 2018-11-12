@@ -166,12 +166,12 @@ public class Footsteps : MonoBehaviour
     {
         FMOD.Studio.ParameterInstance parameter;
         e.getParameter(name, out parameter);
-        if (parameter == null)
-        {
-            if (m_Debug)
-                Debug.Log("Parameter named: " + name + " does not exist");
-            return;
-        }
+        //if (parameter == null)
+        //{
+        //    if (m_Debug)
+        //        Debug.Log("Parameter named: " + name + " does not exist");
+        //    return;
+        //}
         parameter.setValue(value);
     }
 
