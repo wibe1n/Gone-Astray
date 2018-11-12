@@ -13,8 +13,6 @@ public class Undying_Object : MonoBehaviour {
 	public KeyCode leshenKey;
 	public KeyCode crouchKey;
 	public KeyCode jumpKey;
-	public KeyCode actionKey;
-	public KeyCode collectKey;
 	
 	void Start () {
         DontDestroyOnLoad(this);

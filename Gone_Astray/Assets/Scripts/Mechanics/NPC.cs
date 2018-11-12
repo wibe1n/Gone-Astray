@@ -12,21 +12,11 @@ public class NPC : MonoBehaviour {
     public int currentSpeechInstance, maxSpeechInstance;
     public bool talking = false;
     public bool walkedAway = false;
-	public Undying_Object undyObj;
-	public KeyCode actionKey = KeyCode.None;
 
     private void Start() {
         id = 5;
         currentSpeechInstance = 1;
         maxSpeechInstance = 3;
-		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
-			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
-			if (undyObj.actionKey == KeyCode.None)
-				actionKey = KeyCode.O;
-			else
-				actionKey = undyObj.actionKey;
-		} else
-			actionKey = KeyCode.O;
     }
 
     void OnTriggerEnter(Collider player) {
@@ -58,7 +48,7 @@ public class NPC : MonoBehaviour {
     }
 
     private void Update() {
-		if (Input.GetKeyDown(actionKey) && m_MyEvent != null) {
+        if (Input.GetKeyDown(KeyCode.O) && m_MyEvent != null) {
             m_MyEvent.Invoke();
         }
     }
