@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
     public int disturbTreshold;
     public GameObject checkpoint;
 	public bool isBoss;
+    public bool isTutorial;
     private List<Firefly> availableFireflies = new List<Firefly> { };
 
     void OnTriggerEnter(Collider player){

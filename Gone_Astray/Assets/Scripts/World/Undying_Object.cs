@@ -19,6 +19,7 @@ public class Undying_Object : MonoBehaviour {
         StartCoroutine(StartMenuScreen());
         DataManager.ReadDataString("nonexistent");
         Debug.Log(Application.persistentDataPath);
+        Debug.Log(NameDescContainer.GetChapterPart("part1", NameType.chapter1));
     }
 
     public void Level1() {

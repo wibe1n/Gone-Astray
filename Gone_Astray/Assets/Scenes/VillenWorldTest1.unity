@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 704277919}
-  m_IndirectSpecularColor: {r: 0.12181307, g: 0.15319666, b: 0.26854318, a: 1}
+  m_IndirectSpecularColor: {r: 0.12181299, g: 0.1531966, b: 0.268543, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -631,8 +631,6 @@ MonoBehaviour:
   maxSpeechInstance: 0
   talking: 0
   walkedAway: 0
-  undyObj: {fileID: 0}
-  actionKey: 0
 --- !u!65 &329788249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1410,8 +1408,6 @@ MonoBehaviour:
   maxSpeechInstance: 0
   talking: 0
   walkedAway: 0
-  undyObj: {fileID: 0}
-  actionKey: 0
 --- !u!65 &1027676616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1628,6 +1624,31 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1172204310}
   m_Script: {fileID: 11500000, guid: 80ae3d280851bed4789cfd239dedbb4c, type: 3}
+--- !u!114 &1172204313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1172204311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7dce02a6bb3ff4fbc41a313ad0fd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventPath: event:/Character/Movement/Footsteps
+  m_Wood: 0
+  m_Water: 0
+  m_Dirt: 0
+  m_Sand: 0
+  m_StepDistance: 0.5
+  m_Debug: 0
+  moveControls: {fileID: 1172204314}
+--- !u!114 &1172204314 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114872077277568770, guid: f34a3d6f1d031fa4189e85feb2fce423,
+    type: 2}
+  m_PrefabInternal: {fileID: 1172204310}
+  m_Script: {fileID: 11500000, guid: 4a307263ce189fb42a96215f1f3ce6f4, type: 3}
 --- !u!114 &1173323425 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114343565778421008, guid: 4d9ab53ef8d7eb94595f40df8e77bbe4,
@@ -1778,11 +1799,13 @@ MonoBehaviour:
   textPanel: {fileID: 293630829}
   runButton: {fileID: 667912636}
   approachButton: {fileID: 859566677}
+  tutorialButton: {fileID: 0}
   fireflyIcon: {fileID: 1173830938}
   darknessIcon: {fileID: 1038307999}
   proceedButton: {fileID: 866727641}
   loseIcon: {fileID: 1343946624}
   winIcon: {fileID: 129010504}
+  infoText: {fileID: 0}
   runAwayScreen: {fileID: 1465157303}
   reached: 0
   fireFlyImage: {fileID: 1173323425}
@@ -2157,6 +2180,7 @@ MonoBehaviour:
   disturbTreshold: 0
   checkpoint: {fileID: 1922933850}
   isBoss: 0
+  isTutorial: 0
 --- !u!65 &1779884126
 BoxCollider:
   m_ObjectHideFlags: 0
