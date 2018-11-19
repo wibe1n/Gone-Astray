@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{c238b35e-ad93-4c37-82e5-0672cf08a232}">
+        <property name="name">
+            <value>Spoopy</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b9dac4cf-8b90-45a6-b91c-648b5abfec13}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{39a4f66e-0f9f-4d1f-b882-fd2805c0b1c9}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{39a4f66e-0f9f-4d1f-b882-fd2805c0b1c9}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.15000000596046448</value>
+        </property>
+    </object>
+</objects>
