@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{36ce01b6-c8d0-4606-8101-5b0d77f2efb1}">
+        <property name="assetPath">
+            <value>RAVEN-01_DRY.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>4.3520000000000003</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{df0116cc-b72d-40e2-a893-d3e2240bd351}</destination>
+        </relationship>
+    </object>
+</objects>
