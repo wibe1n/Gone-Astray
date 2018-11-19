@@ -14,7 +14,7 @@ public class NPC : MonoBehaviour {
     public bool walkedAway = false;
 
     private void Start() {
-        id = 5;
+        id = 6;
         currentSpeechInstance = 1;
         maxSpeechInstance = 3;
     }

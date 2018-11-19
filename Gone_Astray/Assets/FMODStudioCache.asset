@@ -13,13 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114977714950321654}
-  - {fileID: 114143868379218656}
+  - {fileID: 114188872631636226}
   EditorEvents:
   - {fileID: 114789993453993786}
   - {fileID: 114688908725486538}
-  MasterBankRef: {fileID: 114143868379218656}
+  MasterBankRef: {fileID: 114188872631636226}
   StringsBankRef: {fileID: 114977714950321654}
-  stringsBankWriteTime: 636776454270991342
+  stringsBankWriteTime: 636776257062435687
   cacheVersion: 2
 --- !u!114 &114104896036035826
 MonoBehaviour:
@@ -58,6 +58,25 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 2050368
+  Exists: 0
+--- !u!114 &114188872631636226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Minttu\Documents\Gone Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636776257062355750
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2050336
   Exists: 1
 --- !u!114 &114334973625866152
 MonoBehaviour:
@@ -165,7 +184,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Footsteps
   guid: 086348bc1ebfe941a915054c30b881b4
   Banks:
-  - {fileID: 114143868379218656}
+  - {fileID: 114188872631636226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -206,7 +225,7 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_theme_demo_3
   guid: 289a505cd77b09409dfda1be5c9bb021
   Banks:
-  - {fileID: 114143868379218656}
+  - {fileID: 114188872631636226}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -267,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Gone_Astray_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636776454270991342
+  lastModified: 636776257062435687
   LoadResult: 0
   FileSizes:
   - Name: Desktop
