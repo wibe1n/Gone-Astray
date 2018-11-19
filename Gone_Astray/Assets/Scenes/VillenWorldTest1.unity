@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 704277919}
-  m_IndirectSpecularColor: {r: 0.12181314, g: 0.15319681, b: 0.26854357, a: 1}
+  m_IndirectSpecularColor: {r: 0.12181299, g: 0.1531966, b: 0.268543, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -334,7 +334,7 @@ Prefab:
     - target: {fileID: 224768057384295322, guid: 4d9ab53ef8d7eb94595f40df8e77bbe4,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -262
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 224768057384295322, guid: 4d9ab53ef8d7eb94595f40df8e77bbe4,
         type: 2}
@@ -1927,6 +1927,90 @@ Prefab:
       propertyPath: m_ChildControlWidth
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1827723467048858, guid: 201e758607eba54489242c8a547fba92, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224630799802989064, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -138
+      objectReference: {fileID: 0}
+    - target: {fileID: 224630799802989064, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -334
+      objectReference: {fileID: 0}
+    - target: {fileID: 224630799802989064, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 147
+      objectReference: {fileID: 0}
+    - target: {fileID: 224630799802989064, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224630799802989064, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224630799802989064, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -9.200012
+      objectReference: {fileID: 0}
+    - target: {fileID: 114042309865356908, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_Padding.m_Left
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 224718782549215456, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 201
+      objectReference: {fileID: 0}
+    - target: {fileID: 114042309865356908, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_Padding.m_Bottom
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114981936746049972, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_Text
+      value: "                                                         \n\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 224718782549215456, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -54
+      objectReference: {fileID: 0}
+    - target: {fileID: 224718782549215456, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 68
+      objectReference: {fileID: 0}
+    - target: {fileID: 114981936746049972, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114981936746049972, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114963780291674414, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_FillCenter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224718782549215456, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 342
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 201e758607eba54489242c8a547fba92, type: 2}
   m_IsPrefabAsset: 0
@@ -2429,7 +2513,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1725411527120770, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1503777566948672, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
       propertyPath: m_IsActive

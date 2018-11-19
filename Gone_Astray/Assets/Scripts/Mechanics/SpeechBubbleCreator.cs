@@ -12,6 +12,7 @@ public class SpeechBubbleCreator : MonoBehaviour {
         askCanvas.SetActive(false);
         NameType npcID = (NameType)npc.id;
         bubbleText.text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
+        Debug.Log(NameDescContainer.GetSpeechBubble("part1", NameType.npc1));
         speechbubble.SetActive(true);
     }
 
