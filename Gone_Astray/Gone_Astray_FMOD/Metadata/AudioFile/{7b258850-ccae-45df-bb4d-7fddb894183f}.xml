@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{7b258850-ccae-45df-bb4d-7fddb894183f}">
+        <property name="assetPath">
+            <value>FOX.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>16.055187499999999</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{df0116cc-b72d-40e2-a893-d3e2240bd351}</destination>
+        </relationship>
+    </object>
+</objects>
