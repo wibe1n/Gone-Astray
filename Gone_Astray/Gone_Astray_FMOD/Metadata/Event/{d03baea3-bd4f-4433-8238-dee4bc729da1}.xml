@@ -133,6 +133,9 @@
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{b157f42d-4edb-4af5-88cb-8d6ad68b2f7c}">
+        <property name="volume">
+            <value>7</value>
+        </property>
         <relationship name="effectChain">
             <destination>{edba6fd3-f69e-4ef0-9b80-2324eaa16b80}</destination>
         </relationship>
@@ -161,6 +164,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{21467935-770e-4d83-9433-48876edc6b18}">
+        <property name="volume">
+            <value>10</value>
+        </property>
         <property name="name">
             <value>Pohja</value>
         </property>
@@ -195,6 +201,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{76bdf8ce-84c0-4b46-b17c-959ba987138b}">
+        <property name="volume">
+            <value>10</value>
+        </property>
         <property name="name">
             <value>Birbs</value>
         </property>
@@ -232,6 +241,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{95bd5ef9-4ed7-453e-9d10-d23e2e1c6542}">
+        <property name="volume">
+            <value>10</value>
+        </property>
         <property name="name">
             <value>Crickets</value>
         </property>
@@ -269,6 +281,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{b3c1057a-ce20-4c02-93d8-556d6234cfcd}">
+        <property name="volume">
+            <value>10</value>
+        </property>
         <property name="name">
             <value>SpoopySynth</value>
         </property>
@@ -306,6 +321,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{039368c3-5607-4bdf-becf-97fcc155cbfc}">
+        <property name="volume">
+            <value>10</value>
+        </property>
         <property name="name">
             <value>Animals</value>
         </property>
@@ -324,7 +342,14 @@
             <destination>{bdff9d2e-9e8f-4847-86fe-5a5130bb2d35}</destination>
         </relationship>
     </object>
-    <object class="MixerBusPanner" id="{9227015d-fd8b-4fee-a4ff-33773acdc690}"/>
+    <object class="MixerBusPanner" id="{9227015d-fd8b-4fee-a4ff-33773acdc690}">
+        <property name="surroundPanDirection">
+            <value>-14.0362434</value>
+        </property>
+        <property name="surroundPanExtent">
+            <value>359.716675</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{e828833a-1c97-4f27-bbaa-1b86cee37a46}"/>
     <object class="MixerBusEffectChain" id="{41eecb63-0fd3-4e39-8bb0-bcc6acb746c1}">
         <relationship name="effects">
