@@ -13,14 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114977714950321654}
-  - {fileID: 114188872631636226}
+  - {fileID: 114449755849127976}
   EditorEvents:
   - {fileID: 114789993453993786}
   - {fileID: 114688908725486538}
-  - {fileID: 114318819391160652}
-  MasterBankRef: {fileID: 114188872631636226}
+  MasterBankRef: {fileID: 114449755849127976}
   StringsBankRef: {fileID: 114977714950321654}
-  stringsBankWriteTime: 636782314917188686
+  stringsBankWriteTime: 636776454270991342
   cacheVersion: 2
 --- !u!114 &114038023984860562
 MonoBehaviour:
@@ -152,6 +151,25 @@ MonoBehaviour:
   - Name: Desktop
     Value: 672
   Exists: 1
+--- !u!114 &114449755849127976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Ville\Documents\Gone-Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636776454270961391
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2050368
+  Exists: 1
 --- !u!114 &114453888136301142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +288,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Footsteps
   guid: 086348bc1ebfe941a915054c30b881b4
   Banks:
-  - {fileID: 114188872631636226}
+  - {fileID: 114449755849127976}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -311,7 +329,7 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_theme_demo_3
   guid: 289a505cd77b09409dfda1be5c9bb021
   Banks:
-  - {fileID: 114188872631636226}
+  - {fileID: 114449755849127976}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -402,9 +420,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Gone_Astray_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636782314917188686
+  lastModified: 636776454270991342
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 858
+    Value: 812
   Exists: 1
