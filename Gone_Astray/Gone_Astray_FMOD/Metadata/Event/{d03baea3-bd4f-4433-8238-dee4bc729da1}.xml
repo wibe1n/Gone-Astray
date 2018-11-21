@@ -164,9 +164,6 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{21467935-770e-4d83-9433-48876edc6b18}">
-        <property name="volume">
-            <value>10</value>
-        </property>
         <property name="name">
             <value>Pohja</value>
         </property>
@@ -201,9 +198,6 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{76bdf8ce-84c0-4b46-b17c-959ba987138b}">
-        <property name="volume">
-            <value>10</value>
-        </property>
         <property name="name">
             <value>Birbs</value>
         </property>
@@ -241,9 +235,6 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{95bd5ef9-4ed7-453e-9d10-d23e2e1c6542}">
-        <property name="volume">
-            <value>10</value>
-        </property>
         <property name="name">
             <value>Crickets</value>
         </property>
@@ -281,9 +272,6 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{b3c1057a-ce20-4c02-93d8-556d6234cfcd}">
-        <property name="volume">
-            <value>10</value>
-        </property>
         <property name="name">
             <value>SpoopySynth</value>
         </property>
@@ -321,9 +309,6 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{039368c3-5607-4bdf-becf-97fcc155cbfc}">
-        <property name="volume">
-            <value>10</value>
-        </property>
         <property name="name">
             <value>Animals</value>
         </property>
