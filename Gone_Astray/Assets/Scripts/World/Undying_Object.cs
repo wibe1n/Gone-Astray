@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Undying_Object : MonoBehaviour {
 	
 	public GameObject loadingScreen;
-	public int whichScene = 0;
 	[HideInInspector]
 	public KeyCode pauseKey;
 	public KeyCode journalKey;
@@ -28,14 +27,7 @@ public class Undying_Object : MonoBehaviour {
     }
 	
 	private IEnumerator ToTheWorld() {
-		switch (whichScene) {
-		case 1:
-			yield return SceneManager.LoadSceneAsync ("TiinaWorldTest");
-			break;
-		default:
-			yield return SceneManager.LoadSceneAsync ("VillenWorldTest1");
-			break;
-		}
+        yield return SceneManager.LoadSceneAsync("VillenWorldTest1");
 
         //Testivaiheen jälkeen ladataan ensiksi varsinainen taso, mutta itse scene on tyhjä
 
