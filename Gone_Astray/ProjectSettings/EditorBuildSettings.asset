@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VillenWorldTest1.unity
     guid: 5a88df4632623994cafdc488146e4ef8
+  - enabled: 1
+    path: Assets/Scenes/TestLevels/TiinaSceneLauncher.unity
+    guid: 4041c0d477453fd4e98d480d83ca87ab
+  - enabled: 1
+    path: Assets/Scenes/TestLevels/TiinaWorldTest.unity
+    guid: 19eaeed269b8cbf4487aa75d21c80de5
   m_configObjects: {}
