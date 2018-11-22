@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class OtherCanvasController : MonoBehaviour {
 
-    public GameObject shooBirdsCanvas;
+    public Canvas shooBirdsCanvas;
     //nyt helvetti päivityt
 
 	// Use this for initialization
 	void Start () {
-        shooBirdsCanvas.SetActive(false);
+        shooBirdsCanvas.enabled = false;
 	}
+
+    public void ActivateShooBirdsCanvas()
+    {
+        shooBirdsCanvas.enabled = true;
+    }
 
     public void ThrowRock()
     {
-        shooBirdsCanvas.SetActive(false);
+        shooBirdsCanvas.enabled = false;
 
         //Tekemättä:
         //Play animation
@@ -23,7 +28,7 @@ public class OtherCanvasController : MonoBehaviour {
 
     public void MakeNoise()
     {
-        shooBirdsCanvas.SetActive(false);
+        shooBirdsCanvas.enabled = false;
 
         //Tekemättä:
         //Play animation

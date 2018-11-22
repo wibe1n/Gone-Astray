@@ -43,7 +43,7 @@ public class SpeechBubbleCreator : MonoBehaviour {
 
     public bool StillTalking()
     {
-        return speechbubble.activeInHierarchy;
+        return speechbubble.activeSelf;
     }
 
     public void WentTooFar(NPC npc)
