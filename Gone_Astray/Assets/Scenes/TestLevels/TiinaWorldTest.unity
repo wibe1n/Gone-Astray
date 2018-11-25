@@ -554,6 +554,31 @@ Prefab:
       propertyPath: m_Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114754471995584404, guid: 4d9ab53ef8d7eb94595f40df8e77bbe4,
+        type: 2}
+      propertyPath: m_Padding.m_Left
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114754471995584404, guid: 4d9ab53ef8d7eb94595f40df8e77bbe4,
+        type: 2}
+      propertyPath: m_Padding.m_Right
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114754471995584404, guid: 4d9ab53ef8d7eb94595f40df8e77bbe4,
+        type: 2}
+      propertyPath: m_Padding.m_Top
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114754471995584404, guid: 4d9ab53ef8d7eb94595f40df8e77bbe4,
+        type: 2}
+      propertyPath: m_Padding.m_Bottom
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436826424249064, guid: 4d9ab53ef8d7eb94595f40df8e77bbe4,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d9ab53ef8d7eb94595f40df8e77bbe4, type: 2}
   m_IsPrefabAsset: 0
@@ -838,8 +863,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 4, y: 2}
-  m_SizeDelta: {x: 20, y: 15}
+  m_AnchoredPosition: {x: 15, y: 2}
+  m_SizeDelta: {x: 17, y: 18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604687038
 MonoBehaviour:
@@ -2259,7 +2284,7 @@ Prefab:
     - target: {fileID: 114042309865356908, guid: 201e758607eba54489242c8a547fba92,
         type: 2}
       propertyPath: m_Padding.m_Left
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 224718782549215456, guid: 201e758607eba54489242c8a547fba92,
         type: 2}
@@ -2269,7 +2294,7 @@ Prefab:
     - target: {fileID: 114042309865356908, guid: 201e758607eba54489242c8a547fba92,
         type: 2}
       propertyPath: m_Padding.m_Bottom
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114981936746049972, guid: 201e758607eba54489242c8a547fba92,
         type: 2}
@@ -2289,7 +2314,7 @@ Prefab:
     - target: {fileID: 114981936746049972, guid: 201e758607eba54489242c8a547fba92,
         type: 2}
       propertyPath: m_FontData.m_Alignment
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114981936746049972, guid: 201e758607eba54489242c8a547fba92,
         type: 2}
@@ -2346,6 +2371,16 @@ Prefab:
         type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114042309865356908, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_Padding.m_Right
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114042309865356908, guid: 201e758607eba54489242c8a547fba92,
+        type: 2}
+      propertyPath: m_Padding.m_Top
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 201e758607eba54489242c8a547fba92, type: 2}
