@@ -21,6 +21,7 @@ public class Keybind : MonoBehaviour {
 	public GameObject altPauseButton;
 	public GameObject journalButton;
 	public GameObject jumpButton;
+	public GameObject talkButton;
 	bool pressing = false;
 	int whichButton = 0;
 
@@ -67,6 +68,10 @@ public class Keybind : MonoBehaviour {
 					undyObj.jumpKey = keyCode;
 					jumpButton.GetComponentInChildren<Text> ().text = keyCode.ToString ();
 					break;
+				case 7:
+					undyObj.talkKey = keyCode;
+					talkButton.GetComponentInChildren<Text> ().text = keyCode.ToString ();
+					break;
 				default:
 					Debug.Log("switchi unohtui");
 					break;
@@ -99,5 +104,9 @@ public class Keybind : MonoBehaviour {
 	public void jumpPress(){
 		whichButton = 6;
 		jumpButton.GetComponentInChildren<Text> ().text = "press key to bind";
+	}
+	public void talkPress(){
+		whichButton = 7;
+		talkButton.GetComponentInChildren<Text> ().text = "press key to bind";
 	}
 }
