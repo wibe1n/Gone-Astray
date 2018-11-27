@@ -36,8 +36,7 @@ public class Character : MonoBehaviour {
 				Vector3 down = rayCastDrawer.transform.TransformDirection (Vector3.down);
 				Physics.Raycast (rayCastDrawer.transform.position, down, out objectHit, dist);
 				if (!(lastSapling == null)) {
-
-					Destroy (lastSapling);
+					Destroy(lastSapling);
 				}
 				lastSapling = Instantiate (sapling, objectHit.point, sapling.transform.rotation);
 			}
