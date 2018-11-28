@@ -22,6 +22,16 @@ public class SpeechBubbleCreator : MonoBehaviour {
         bubbleText.text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
     }
 
+    public void BackWards(NPC npc) {
+        if (npc.currentSpeechInstance == 1){ }
+        else{
+            npc.currentSpeechInstance -= 1;
+            NameType npcID = (NameType)npc.id;
+            bubbleText.text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
+        }
+        
+    }
+
     public void GenerateInfoBox(InteractObject target) {
         int itemID = target.itemIndex;
         bubbleText.text = NameDescContainer.GetDescription(NameType.item, itemID);

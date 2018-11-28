@@ -13,14 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114977714950321654}
-  - {fileID: 114449755849127976}
+  - {fileID: 114060090706408064}
   EditorEvents:
   - {fileID: 114789993453993786}
   - {fileID: 114688908725486538}
   - {fileID: 114640244881062560}
-  MasterBankRef: {fileID: 114449755849127976}
+  MasterBankRef: {fileID: 114060090706408064}
   StringsBankRef: {fileID: 114977714950321654}
-  stringsBankWriteTime: 636784941023892134
+  stringsBankWriteTime: 636782329519859173
   cacheVersion: 2
 --- !u!114 &114038023984860562
 MonoBehaviour:
@@ -37,6 +37,25 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114060090706408064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Minttu\Documents\Gone Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636782329519725320
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12215712
+  Exists: 1
 --- !u!114 &114081909700635504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,6 +72,21 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114089818098039124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114097421159369530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,6 +246,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 672
   Exists: 1
+--- !u!114 &114378487521809856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114449755849127976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +396,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2050336
   Exists: 1
+--- !u!114 &114585145237315856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ignore
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114640244881062560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,14 +425,14 @@ MonoBehaviour:
   Path: event:/Ambience/Forest
   guid: a3ae3bd04fbd33448238dee4bc729da1
   Banks:
-  - {fileID: 114449755849127976}
+  - {fileID: 114060090706408064}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114266369153505710}
-  - {fileID: 114089818098039124}
-  - {fileID: 114530365009429146}
+  - {fileID: 114585145237315856}
+  - {fileID: 114097421159369530}
+  - {fileID: 114378487521809856}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -419,7 +483,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Footsteps
   guid: 086348bc1ebfe941a915054c30b881b4
   Banks:
-  - {fileID: 114449755849127976}
+  - {fileID: 114060090706408064}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -490,7 +554,7 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_theme_demo_3
   guid: 289a505cd77b09409dfda1be5c9bb021
   Banks:
-  - {fileID: 114449755849127976}
+  - {fileID: 114060090706408064}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -611,7 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Gone_Astray_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636784941023892134
+  lastModified: 636782329519859173
   LoadResult: 0
   FileSizes:
   - Name: Desktop

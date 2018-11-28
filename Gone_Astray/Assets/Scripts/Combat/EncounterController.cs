@@ -72,7 +72,7 @@ public class EncounterController : MonoBehaviour {
         tutorialPart++;
         infoText.text = NameDescContainer.GetCombatTutorialPart("part" + tutorialPart.ToString());
         if(tutorialPart == 3) {
-            tutorialButton.SetActive(false);
+            nextButton.SetActive(false);
             combatController.PlayersTurn();
         }
     }

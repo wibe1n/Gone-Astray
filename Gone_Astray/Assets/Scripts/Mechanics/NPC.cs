@@ -6,14 +6,15 @@ using UnityEngine.Events;
 public class NPC : MonoBehaviour {
 
     UnityEvent m_MyEvent = new UnityEvent();
+    UnityEvent m_SecondEvent = new UnityEvent();
     public SpeechBubbleCreator speechCreator;
     public int id;
     public GameObject Canvas; // drag from hierarchy
     public int currentSpeechInstance, maxSpeechInstance;
     public bool talking = false;
     public bool walkedAway = false;
-	public Undying_Object undyObj;
 	public KeyCode talkKey = KeyCode.None;
+    public KeyCode talkBackKey = KeyCode.None;
 
     private void Start() {
         id = 6;
@@ -21,13 +22,14 @@ public class NPC : MonoBehaviour {
         maxSpeechInstance = 3;
 
 		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
-			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
+			Undying_Object undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
 			if (undyObj.talkKey == KeyCode.None)
 				talkKey = KeyCode.O;
 			else
 				talkKey = undyObj.talkKey;
 		}else
 			talkKey = KeyCode.O;
+        talkBackKey = KeyCode.P;
     }
 
     void OnTriggerEnter(Collider player) {
@@ -35,6 +37,7 @@ public class NPC : MonoBehaviour {
         if (player.gameObject.GetComponent<Character>() != null && !speechCreator.StillTalking()) {
             Canvas.SetActive(true);
             m_MyEvent.AddListener(TalkEvent);
+            m_SecondEvent.AddListener(Backwards);
         }
 
     }
@@ -62,6 +65,9 @@ public class NPC : MonoBehaviour {
 		if (Input.GetKeyDown(talkKey) && m_MyEvent != null) {
             m_MyEvent.Invoke();
         }
+        else if (Input.GetKeyDown(talkBackKey) && m_MyEvent != null) {
+            m_SecondEvent.Invoke();
+        }
     }
 
     public void TalkEvent() {
@@ -88,6 +94,10 @@ public class NPC : MonoBehaviour {
             talking = true;
         }
         
+    }
+
+    public void Backwards() {
+        speechCreator.BackWards(this);
     }
 
     IEnumerator CloseWhineBox(float time)

@@ -8,7 +8,7 @@
 &tutorial_combatTutorial_part2_Your goal is to try to have stronger aura of light than the enemys aura of darkness
 
 %tutorial_combatTutorial_0_part3
-&tutorial_combatTutorial_part3_Right now your sphere of light is smaller than the sphere of dark, press L to add more light.
+&tutorial_combatTutorial_part3_Right now your sphere of light is smaller than the sphere of dark, click on the lightball to add more light.
 
 %tutorial_combatTutorial_0_part4
 &tutorial_combatTutorial_part4_Great! When you add more light you use one of your collected fireflies. The strenght of one firefly varies, so the light added varies too
