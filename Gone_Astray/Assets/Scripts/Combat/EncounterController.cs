@@ -15,7 +15,8 @@ public class EncounterController : MonoBehaviour {
     public List<int> enemyHand;
     public List<int> myHand;
     public int myScore, enemyScore, winTarget;
-    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon;
+    private int tutorialPart = 0;
+    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton;
     public Text infoText;
     public GameObject runAwayScreen;
     public bool reached = false;
@@ -45,12 +46,14 @@ public class EncounterController : MonoBehaviour {
             RunAway();
         }
         else {
+            fireFlyImage.rectTransform.sizeDelta = new Vector2(combatController.myHandNumber * 100 / 21, combatController.myHandNumber * 100 / 21);
+            darknessImage.rectTransform.sizeDelta = new Vector2(combatController.enemyHandNumber * 100 / 21, combatController.enemyHandNumber * 100 / 21);
             runButton.SetActive(false);
             tutorialButton.SetActive(false);
             approachButton.SetActive(false);
             fireflyIcon.SetActive(true);
             darknessIcon.SetActive(true);
-            proceedButton.SetActive(true);
+            nextButton.SetActive(true);
             infoText.text = NameDescContainer.GetCombatTutorialPart("part0");
             GenerateBlackJackDeck();
             ShuffleDeck();
@@ -62,6 +65,14 @@ public class EncounterController : MonoBehaviour {
             myFireflies.RemoveAt(myFireflies.Count - 1);
             usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
             myFireflies.RemoveAt(myFireflies.Count - 1);
+        }
+    }
+
+    public void NextTutorialPart() {
+        tutorialPart++;
+        infoText.text = NameDescContainer.GetCombatTutorialPart("part" + tutorialPart.ToString());
+        if(tutorialPart == 3) {
+            tutorialButton.SetActive(false);
             combatController.PlayersTurn();
         }
     }
