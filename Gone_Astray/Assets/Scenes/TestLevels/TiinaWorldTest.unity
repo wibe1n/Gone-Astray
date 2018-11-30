@@ -1934,16 +1934,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 224134451281879766, guid: d8332726bb2be44419e36f52cc349dcf,
+    - target: {fileID: 114256804169518948, guid: d8332726bb2be44419e36f52cc349dcf,
         type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224985853829159898, guid: d8332726bb2be44419e36f52cc349dcf,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: chara
+      value: 
+      objectReference: {fileID: 1172204312}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8332726bb2be44419e36f52cc349dcf, type: 2}
   m_IsPrefabAsset: 0

@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 224407065389790634}
   - component: {fileID: 222818178973079604}
   - component: {fileID: 114127146904140400}
+  - component: {fileID: 114256804169518948}
   m_Layer: 5
   m_Name: Fireflies
   m_TagString: Untagged
@@ -682,7 +683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1853350088441060
 GameObject:
   m_ObjectHideFlags: 1
@@ -1502,6 +1503,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: '------->'
+--- !u!114 &114256804169518948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1641485883752566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc35890e843cea94d8ba3ff9229be84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chara: {fileID: 0}
 --- !u!114 &114259261474605108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3277,7 +3290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -99}
+  m_AnchoredPosition: {x: -33.9, y: -99}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224420158196924578
