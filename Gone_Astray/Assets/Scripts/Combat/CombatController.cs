@@ -48,8 +48,44 @@ public class CombatController : MonoBehaviour {
     }
 
     IEnumerator EnemyTurn() {
-        if(encounterController.tutorial == true) {
+        //Tutorial version
 
+        if(encounterController.tutorial == true) {
+            encounterController.enemyHand.Add(2);
+            enemyHandNumber += 2;
+            enemyHandText += encounterController.enemyHand[encounterController.enemyHand.Count - 1].ToString() + " ";
+            enemyHand.GetComponent<Text>().text = enemyHandText;
+            //ball of darkness size update
+            encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+            encounterController.nextButton.SetActive(true);
+            encounterController.proceedButton.SetActive(false);
+            encounterController.NextTutorialPart();
+            yield return new WaitUntil(() => encounterController.reached == true);
+            if (enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
+                Debug.Log("minä voitin");
+                encounterController.RoundWon();
+                encounterController.myScore += 1;
+                if (encounterController.myScore == 3) {
+                    encounterController.GameWon();
+                }
+                else {
+                    encounterController.NewRound();
+                }
+            }
+            else if (enemyHandNumber > myHandNumber) {
+                Debug.Log("vihollinen voitti");
+                encounterController.RoundLost();
+                encounterController.enemyScore += 1;
+                if (encounterController.enemyScore == 3) {
+                    encounterController.GameLost();
+                }
+                else {
+                    encounterController.NewRound();
+                }
+            }
+            else {
+                encounterController.NewRound();
+            }
         }
         else {
             while (enemyHandNumber < myHandNumber) {
@@ -64,15 +100,8 @@ public class CombatController : MonoBehaviour {
             }
             Debug.Log(enemyHandNumber);
             if (enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
-                Debug.Log("minä voitin");
                 encounterController.RoundWon();
-                encounterController.myScore += 1;
-                if (encounterController.myScore == 3) {
-                    encounterController.GameWon();
-                }
-                else {
-                    encounterController.NewRound();
-                }
+                encounterController.GameWon();                
             }
             else if (enemyHandNumber > myHandNumber) {
                 Debug.Log("vihollinen voitti");
@@ -101,6 +130,7 @@ public class CombatController : MonoBehaviour {
             myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
             myHand.GetComponent<Text>().text = myHandText;
             encounterController.nextButton.SetActive(true);
+            encounterController.fireflyIcon.GetComponent<Button>().interactable = false;
             encounterController.NextTutorialPart();
         }
         else {

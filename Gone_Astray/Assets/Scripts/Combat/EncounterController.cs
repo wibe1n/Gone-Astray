@@ -77,9 +77,12 @@ public class EncounterController : MonoBehaviour {
             nextButton.SetActive(false);
             combatController.PlayersTurn();
         }
-        else if (tutorialPart == 7) {
+        else if (tutorialPart == 8) {
             nextButton.SetActive(false);
             proceedButton.SetActive(true);
+        }
+        else if (tutorialPart == 10) {
+            reached = true;
         }
     }
 
