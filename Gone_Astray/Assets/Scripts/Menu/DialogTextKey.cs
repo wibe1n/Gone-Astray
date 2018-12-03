@@ -23,6 +23,5 @@ public class DialogTextKey : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		gameObject.GetComponent<Text> ().text = "Press " + talkKey;
-		Debug.Log (talkKey);
 	}
 }
