@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.03433981, g: 0.045186214, b: 0.12213881, a: 1}
+  m_AmbientSkyColor: {r: 0.0069419676, g: 0.011141133, b: 0.03773582, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 704277919}
-  m_IndirectSpecularColor: {r: 0.12181307, g: 0.15319666, b: 0.26854318, a: 1}
+  m_IndirectSpecularColor: {r: 0.12181299, g: 0.1531966, b: 0.268543, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1463,6 +1463,19 @@ Prefab:
       propertyPath: _pauseController
       value: 
       objectReference: {fileID: 828547718}
+    - target: {fileID: 95166056063917136, guid: b58735da606e12946adb26838cd7cbec,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 18b4f07e93ccb984e87dee3ed75fc97d, type: 2}
+    - target: {fileID: 4163750938434142, guid: b58735da606e12946adb26838cd7cbec, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.0011356967
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163750938434142, guid: b58735da606e12946adb26838cd7cbec, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.0009879747
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b58735da606e12946adb26838cd7cbec, type: 2}
   m_IsPrefabAsset: 0
@@ -3003,12 +3016,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 50
   followRotationSpeed: 1
+  player: {fileID: 1172204311}
   target: {fileID: 2143823797}
   cameraPos: {fileID: 1951408254}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
   movementSpeed: 7
   backwardsSpeed: 0
   offset: {x: 0, y: 0, z: 0}
+  fixedCamMode: 0
 --- !u!114 &2094394346
 MonoBehaviour:
   m_ObjectHideFlags: 0
