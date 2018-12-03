@@ -22,12 +22,23 @@ public class Undying_Object : MonoBehaviour {
         DataManager.ReadDataString("nonexistent");
         Debug.Log(Application.persistentDataPath);
         Debug.Log(NameDescContainer.GetChapterPart("part1", NameType.chapter1));
+		setDefaultKeys ();
     }
 
     public void Level1() {
         StartCoroutine(ToTheWorld());
     }
-	
+
+	public void setDefaultKeys(){
+		pauseKey = KeyCode.P;
+		journalKey = KeyCode.J;
+		altPauseKey = KeyCode.Escape;
+		leshenKey = KeyCode.L;
+		crouchKey = KeyCode.C;
+		jumpKey = KeyCode.Space;
+		talkKey = KeyCode.O;
+	}
+
 	private IEnumerator ToTheWorld() {
 		switch (whichScene) {
 		case 1:
