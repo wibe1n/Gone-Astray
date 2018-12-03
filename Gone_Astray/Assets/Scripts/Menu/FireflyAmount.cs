@@ -7,8 +7,8 @@ public class FireflyAmount : MonoBehaviour {
 
 	public Character chara;
 	
-	// Update is called once per frame
-	void Update () {
-		gameObject.GetComponent<Text> ().text = "Fireflies: " + chara.myFireflies.Count;
-	}
+	//// Update is called once per frame
+	//void Update () {
+	//	gameObject.GetComponent<Text> ().text = "Fireflies: " + chara.myFireflies.Count;
+	//}
 }
