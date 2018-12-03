@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 704277919}
-  m_IndirectSpecularColor: {r: 0.12181299, g: 0.1531966, b: 0.268543, a: 1}
+  m_IndirectSpecularColor: {r: 0.12181314, g: 0.15319681, b: 0.26854357, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -616,6 +616,17 @@ Prefab:
       propertyPath: runAwayScreen
       value: 
       objectReference: {fileID: 1465157303}
+    - target: {fileID: 114700029930647670, guid: eb38d85b21f5243409f9bc9118db8d90,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c516c97407ec1114da720dea08241b8c,
+        type: 3}
+    - target: {fileID: 114700029930647670, guid: eb38d85b21f5243409f9bc9118db8d90,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb38d85b21f5243409f9bc9118db8d90, type: 2}
   m_IsPrefabAsset: 0

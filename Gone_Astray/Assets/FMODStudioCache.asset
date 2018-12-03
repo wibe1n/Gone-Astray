@@ -13,15 +13,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114977714950321654}
-  - {fileID: 114060090706408064}
+  - {fileID: 114734663450228458}
   EditorEvents:
   - {fileID: 114789993453993786}
   - {fileID: 114688908725486538}
   - {fileID: 114640244881062560}
-  MasterBankRef: {fileID: 114060090706408064}
+  MasterBankRef: {fileID: 114734663450228458}
   StringsBankRef: {fileID: 114977714950321654}
-  stringsBankWriteTime: 636782329519859173
+  stringsBankWriteTime: 636784941023892134
   cacheVersion: 2
+--- !u!114 &114005165689989658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114038023984860562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,14 +440,14 @@ MonoBehaviour:
   Path: event:/Ambience/Forest
   guid: a3ae3bd04fbd33448238dee4bc729da1
   Banks:
-  - {fileID: 114060090706408064}
+  - {fileID: 114734663450228458}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114585145237315856}
-  - {fileID: 114097421159369530}
-  - {fileID: 114378487521809856}
+  - {fileID: 114993500345513934}
+  - {fileID: 114005165689989658}
+  - {fileID: 114727519327167200}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -483,7 +498,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Footsteps
   guid: 086348bc1ebfe941a915054c30b881b4
   Banks:
-  - {fileID: 114060090706408064}
+  - {fileID: 114734663450228458}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -492,6 +507,21 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 912
 --- !u!114 &114711506424199088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114727519327167200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -525,6 +555,25 @@ MonoBehaviour:
   - Name: Desktop
     Value: 12474
   Exists: 1
+--- !u!114 &114734663450228458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Ville\Documents\Gone-Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636784941023852123
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12215744
+  Exists: 1
 --- !u!114 &114776827901224034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,7 +603,7 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_theme_demo_3
   guid: 289a505cd77b09409dfda1be5c9bb021
   Banks:
-  - {fileID: 114060090706408064}
+  - {fileID: 114734663450228458}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -675,12 +724,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Gone_Astray_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636782329519859173
+  lastModified: 636784941023892134
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 858
   Exists: 1
+--- !u!114 &114993500345513934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ignore
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114996303033422442
 MonoBehaviour:
   m_ObjectHideFlags: 0
