@@ -13,6 +13,8 @@ public class PauseMenuController : MonoBehaviour {
 	public KeyCode pauseKey = KeyCode.None;
 	public KeyCode journalKey = KeyCode.None;
 	public KeyCode altPauseKey = KeyCode.None;
+	public GameObject mainPage;
+	public GameObject helpPage;
 
     private bool journalShortcut = false;
 
@@ -158,4 +160,12 @@ public class PauseMenuController : MonoBehaviour {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
+	public void HelpOn(){
+		helpPage.SetActive (true);
+		mainPage.SetActive (false);
+	}
+	public void HelpOff(){
+		helpPage.SetActive (false);
+		mainPage.SetActive (true);
+	}
 }
