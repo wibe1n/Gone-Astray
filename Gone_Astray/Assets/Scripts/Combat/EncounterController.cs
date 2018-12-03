@@ -20,6 +20,7 @@ public class EncounterController : MonoBehaviour {
     public Text infoText;
     public GameObject runAwayScreen;
     public bool reached = false;
+    public bool tutorial;
     public Image fireFlyImage;
     public Image darknessImage;
 
@@ -46,6 +47,7 @@ public class EncounterController : MonoBehaviour {
             RunAway();
         }
         else {
+            tutorial = true;
             fireFlyImage.rectTransform.sizeDelta = new Vector2(combatController.myHandNumber * 100 / 21, combatController.myHandNumber * 100 / 21);
             darknessImage.rectTransform.sizeDelta = new Vector2(combatController.enemyHandNumber * 100 / 21, combatController.enemyHandNumber * 100 / 21);
             runButton.SetActive(false);
@@ -75,6 +77,19 @@ public class EncounterController : MonoBehaviour {
             nextButton.SetActive(false);
             combatController.PlayersTurn();
         }
+        else if (tutorialPart == 8) {
+            nextButton.SetActive(false);
+            proceedButton.SetActive(true);
+        }
+        else if (tutorialPart == 10) {
+            reached = true;
+        }
+        else  if (tutorialPart == 12) {
+            reached = true;
+        }
+        else if (tutorialPart == 14) {
+            reached = true;
+        }
     }
 
     public void StartBlackJack() {
@@ -82,7 +97,8 @@ public class EncounterController : MonoBehaviour {
             Debug.Log("ei uskalla");
             RunAway();
         }
-        else {     
+        else {
+            tutorial = false;
             textPanel.SetActive(false);
             runButton.SetActive(false);
             tutorialButton.SetActive(false);

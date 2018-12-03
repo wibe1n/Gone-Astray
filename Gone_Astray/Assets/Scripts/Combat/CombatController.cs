@@ -48,73 +48,125 @@ public class CombatController : MonoBehaviour {
     }
 
     IEnumerator EnemyTurn() {
-        Debug.Log("enemyTurn");
-        while(enemyHandNumber < myHandNumber) {
-            encounterController.enemyHand.Add(encounterController.deck[0]);
-            enemyHandNumber += encounterController.deck[0];
-            encounterController.deck.RemoveAt(0);
-            enemyHandText += encounterController.enemyHand[encounterController.enemyHand.Count - 1].ToString() + " ";
-            enemyHand.GetComponent<Text>().text = enemyHandText;
-            //ball of darkness size update
-            encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
-            yield return new WaitForSeconds(1f);
-        }
-        Debug.Log(enemyHandNumber);
-        if(enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
-            Debug.Log("minä voitin");
-            encounterController.RoundWon();
-            encounterController.myScore += 1;
-            if (encounterController.myScore == 3) {
-                encounterController.GameWon();
+        //Tutorial version
+
+        if(encounterController.tutorial == true) {
+            while (enemyHandNumber < myHandNumber) {
+                if(enemyHandNumber == 14) {
+                    encounterController.enemyHand.Add(2);
+                    enemyHandNumber += 2;
+                }
+                else {
+                    encounterController.enemyHand.Add(9);
+                    enemyHandNumber += 9;
+                }
+                enemyHandText += encounterController.enemyHand[encounterController.enemyHand.Count - 1].ToString() + " ";
+                enemyHand.GetComponent<Text>().text = enemyHandText;
+                //ball of darkness size update
+                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+                encounterController.nextButton.SetActive(true);
+                encounterController.proceedButton.SetActive(false);
+                encounterController.NextTutorialPart();
+                yield return new WaitUntil(() => encounterController.reached == true);
+                encounterController.reached = false;
             }
-            else {
-                encounterController.NewRound();
+            if (enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
+                encounterController.RoundWon();
+                enemyHandNumber = 0;
+                myHandNumber = 0;
+                encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
+                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+                enemyHand.GetComponent<Text>().text = "";
+                myHand.GetComponent<Text>().text = "";
+                yield return new WaitUntil(() => encounterController.reached == true);
+                encounterController.GameWon();                
             }
-        }
-        else if (enemyHandNumber > myHandNumber) {
-            Debug.Log("vihollinen voitti");
-            encounterController.RoundLost();
-            encounterController.enemyScore += 1;
-            if (encounterController.enemyScore == 3) {
-                encounterController.GameLost();
+            else if (enemyHandNumber > myHandNumber) {
+                Debug.Log("vihollinen voitti");
+                encounterController.RoundLost();
+                encounterController.enemyScore += 1;
+                if (encounterController.enemyScore == 3) {
+                    encounterController.GameLost();
+                }
+                else {
+                    encounterController.NewRound();
+                }
             }
             else {
                 encounterController.NewRound();
             }
         }
         else {
-            encounterController.NewRound();
+            while (enemyHandNumber < myHandNumber) {
+                encounterController.enemyHand.Add(encounterController.deck[0]);
+                enemyHandNumber += encounterController.deck[0];
+                encounterController.deck.RemoveAt(0);
+                enemyHandText += encounterController.enemyHand[encounterController.enemyHand.Count - 1].ToString() + " ";
+                enemyHand.GetComponent<Text>().text = enemyHandText;
+                //ball of darkness size update
+                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+                yield return new WaitForSeconds(1f);
+            }
+            Debug.Log(enemyHandNumber);
+            if (enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
+                encounterController.RoundWon();
+                encounterController.GameWon();                
+            }
+            else if (enemyHandNumber > myHandNumber) {
+                Debug.Log("vihollinen voitti");
+                encounterController.RoundLost();
+                encounterController.enemyScore += 1;
+                if (encounterController.enemyScore == 3) {
+                    encounterController.GameLost();
+                }
+                else {
+                    encounterController.NewRound();
+                }
+            }
+            else {
+                encounterController.NewRound();
+            }
         }
 
-        Debug.Log("vuoro ohitse");
     }
 
     public void AddFirefly() {
-        Debug.Log("lisätään firefly");
-        if (encounterController.myFireflies.Count == 0) {
-            Debug.Log("Not enough fireflies!");
-        }
-        else {
-            encounterController.myHand.Add(encounterController.deck[0]);
-            myHandNumber += encounterController.deck[0];
-            encounterController.deck.RemoveAt(0);
+        if (encounterController.tutorial == true) {
+            encounterController.myHand.Add(9);
+            myHandNumber += 9;
             encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
             encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
             myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
             myHand.GetComponent<Text>().text = myHandText;
+            encounterController.nextButton.SetActive(true);
+            encounterController.fireflyIcon.GetComponent<Button>().interactable = false;
+            encounterController.NextTutorialPart();
         }
-        if (myHandNumber > 21) {
-            encounterController.RoundLost();
-            Debug.Log("mennään täällä");
-            encounterController.enemyScore += 1;
-            if (encounterController.enemyScore == 3) {
-                encounterController.GameLost();
+        else {
+            if (encounterController.myFireflies.Count == 0) {
+                Debug.Log("Not enough fireflies!");
             }
             else {
-                encounterController.NewRound();
+                encounterController.myHand.Add(encounterController.deck[0]);
+                myHandNumber += encounterController.deck[0];
+                encounterController.deck.RemoveAt(0);
+                encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
+                encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
+                myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
+                myHand.GetComponent<Text>().text = myHandText;
+            }
+            if (myHandNumber > 21) {
+                encounterController.RoundLost();
+                Debug.Log("mennään täällä");
+                encounterController.enemyScore += 1;
+                if (encounterController.enemyScore == 3) {
+                    encounterController.GameLost();
+                }
+                else {
+                    encounterController.NewRound();
+                }
             }
         }
-
         //ball of light size update
         encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
     }

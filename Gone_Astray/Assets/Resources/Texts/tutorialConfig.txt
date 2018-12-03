@@ -5,17 +5,41 @@
 &tutorial_combatTutorial_part1_On the right you see sphere of light and a sphere of dark.
 
 %tutorial_combatTutorial_0_part2
-&tutorial_combatTutorial_part2_Your goal is to try to have stronger aura of light than the enemys aura of darkness
+&tutorial_combatTutorial_part2_Your goal is to try to have stronger aura of light than the enemys aura of darkness.
 
 %tutorial_combatTutorial_0_part3
 &tutorial_combatTutorial_part3_Right now your sphere of light is smaller than the sphere of dark, click on the lightball to add more light.
 
 %tutorial_combatTutorial_0_part4
-&tutorial_combatTutorial_part4_Great! When you add more light you use one of your collected fireflies. The strenght of one firefly varies, so the light added varies too
+&tutorial_combatTutorial_part4_Great! When you add more light you use one of your collected fireflies.
 
 %tutorial_combatTutorial_0_part5
-&tutorial_combatTutorial_part5_However, be careful when adding more light! If the light amount exceeds the circle around it you lose!
+&tutorial_combatTutorial_part5_The strenght of one firefly varies, so the light added varies too.
 
 %tutorial_combatTutorial_0_part6
-&tutorial_combatTutorial_part6_
+&tutorial_combatTutorial_part6_However, be careful when adding more light! If the light amount exceeds the circle around it you lose!
+
+%tutorial_combatTutorial_0_part7
+&tutorial_combatTutorial_part7_Now your light is pretty close the circle and it's bigger than sphere of dark so you have a good chance of winning!
+
+%tutorial_combatTutorial_0_part8
+&tutorial_combatTutorial_part8_Press proceed to pass your turn to enemy
+
+%tutorial_combatTutorial_0_part9
+&tutorial_combatTutorial_part9_Nice! As you saw, the enemy is now also trying to grow its sphere of dark. It will continue to do so, as long as it is losing.
+
+%tutorial_combatTutorial_0_part10
+&tutorial_combatTutorial_part10_The enemy is still behind so it has no other choice than to try add more darkness.
+
+%tutorial_combatTutorial_0_part11
+&tutorial_combatTutorial_part11_Oh my, the darkness exceeded to circle!
+
+%tutorial_combatTutorial_0_part12
+&tutorial_combatTutorial_part12_Gongratulations! You managed to conquer your fears and defeated the darkness!
+
+%tutorial_combatTutorial_0_part13
+&tutorial_combatTutorial_part13_You have gained all the fireflies you used back! In case you would have lost, the fireflies would run away...so be careful.
+
+%tutorial_combatTutorial_0_part14
+&tutorial_combatTutorial_part14_
 
