@@ -17,5 +17,11 @@
 &tutorial_combatTutorial_part5_However, be careful when adding more light! If the light amount exceeds the circle around it you lose!
 
 %tutorial_combatTutorial_0_part6
-&tutorial_combatTutorial_part6_
+&tutorial_combatTutorial_part6_Now the light is pretty close the circle and it's bigger than sphere of dark so you have a good chance of winning
+
+%tutorial_combatTutorial_0_part7
+&tutorial_combatTutorial_part7_Press proceed to pass your turn to enemy
+
+%tutorial_combatTutorial_0_part8
+&tutorial_combatTutorial_part8_
 
