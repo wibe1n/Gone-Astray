@@ -51,26 +51,35 @@ public class CombatController : MonoBehaviour {
         //Tutorial version
 
         if(encounterController.tutorial == true) {
-            encounterController.enemyHand.Add(2);
-            enemyHandNumber += 2;
-            enemyHandText += encounterController.enemyHand[encounterController.enemyHand.Count - 1].ToString() + " ";
-            enemyHand.GetComponent<Text>().text = enemyHandText;
-            //ball of darkness size update
-            encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
-            encounterController.nextButton.SetActive(true);
-            encounterController.proceedButton.SetActive(false);
-            encounterController.NextTutorialPart();
-            yield return new WaitUntil(() => encounterController.reached == true);
-            if (enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
-                Debug.Log("minä voitin");
-                encounterController.RoundWon();
-                encounterController.myScore += 1;
-                if (encounterController.myScore == 3) {
-                    encounterController.GameWon();
+            while (enemyHandNumber < myHandNumber) {
+                if(enemyHandNumber == 14) {
+                    encounterController.enemyHand.Add(2);
+                    enemyHandNumber += 2;
                 }
                 else {
-                    encounterController.NewRound();
+                    encounterController.enemyHand.Add(9);
+                    enemyHandNumber += 9;
                 }
+                enemyHandText += encounterController.enemyHand[encounterController.enemyHand.Count - 1].ToString() + " ";
+                enemyHand.GetComponent<Text>().text = enemyHandText;
+                //ball of darkness size update
+                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+                encounterController.nextButton.SetActive(true);
+                encounterController.proceedButton.SetActive(false);
+                encounterController.NextTutorialPart();
+                yield return new WaitUntil(() => encounterController.reached == true);
+                encounterController.reached = false;
+            }
+            if (enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
+                encounterController.RoundWon();
+                enemyHandNumber = 0;
+                myHandNumber = 0;
+                encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
+                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+                enemyHand.GetComponent<Text>().text = "";
+                myHand.GetComponent<Text>().text = "";
+                yield return new WaitUntil(() => encounterController.reached == true);
+                encounterController.GameWon();                
             }
             else if (enemyHandNumber > myHandNumber) {
                 Debug.Log("vihollinen voitti");
@@ -158,9 +167,6 @@ public class CombatController : MonoBehaviour {
                 }
             }
         }
-        
-        
-
         //ball of light size update
         encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
     }

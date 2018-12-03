@@ -38,5 +38,8 @@
 &tutorial_combatTutorial_part12_Gongratulations! You managed to conquer your fears and defeated the darkness!
 
 %tutorial_combatTutorial_0_part13
-&tutorial_combatTutorial_part13_You have gained all the fireflies you used back! In case you would have lost, the fireflies would run away...
+&tutorial_combatTutorial_part13_You have gained all the fireflies you used back! In case you would have lost, the fireflies would run away...so be careful.
+
+%tutorial_combatTutorial_0_part14
+&tutorial_combatTutorial_part14_
 

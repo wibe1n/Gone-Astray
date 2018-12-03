@@ -84,6 +84,12 @@ public class EncounterController : MonoBehaviour {
         else if (tutorialPart == 10) {
             reached = true;
         }
+        else  if (tutorialPart == 12) {
+            reached = true;
+        }
+        else if (tutorialPart == 14) {
+            reached = true;
+        }
     }
 
     public void StartBlackJack() {
