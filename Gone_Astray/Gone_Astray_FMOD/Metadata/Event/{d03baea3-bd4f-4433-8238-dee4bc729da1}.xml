@@ -190,6 +190,9 @@
         <property name="volume">
             <value>-8</value>
         </property>
+        <property name="looping">
+            <value>true</value>
+        </property>
         <relationship name="fadeInCurve">
             <destination>{3755380b-f3c8-483d-a73c-e975d8c0a421}</destination>
         </relationship>
