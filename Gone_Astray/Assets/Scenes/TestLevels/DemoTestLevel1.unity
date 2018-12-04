@@ -9228,6 +9228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb05a502fd6a19499c74e1fd03ccad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pencilEffects: {fileID: 1457618966}
 --- !u!1001 &1389450172
 Prefab:
   m_ObjectHideFlags: 0
@@ -9728,6 +9729,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: 0
+--- !u!114 &1457618966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114519234434835962, guid: 3f2e91fceabe6c546a0af867d285954f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2094394341}
+  m_Script: {fileID: 11500000, guid: 91775e6e025025d4c8ff272d647721e4, type: 3}
 --- !u!1 &1465157303
 GameObject:
   m_ObjectHideFlags: 0
@@ -14061,7 +14068,9 @@ MonoBehaviour:
   AllowFadeout: 0
   TriggerOnce: 0
   Preload: 0
-  Params: []
+  Params:
+  - Name: BirdsCrickets
+    Value: 0.563
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
