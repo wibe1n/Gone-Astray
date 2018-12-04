@@ -133,6 +133,9 @@
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{b157f42d-4edb-4af5-88cb-8d6ad68b2f7c}">
+        <property name="volume">
+            <value>6.5</value>
+        </property>
         <relationship name="modulators">
             <destination>{8f6f689b-95f6-4c51-bc7e-45860fb49ea1}</destination>
         </relationship>
@@ -346,7 +349,7 @@
     </object>
     <object class="MixerBusPanner" id="{9227015d-fd8b-4fee-a4ff-33773acdc690}">
         <property name="surroundPanDirection">
-            <value>-14.0362434</value>
+            <value>165.96376</value>
         </property>
         <property name="surroundPanExtent">
             <value>359.716675</value>
