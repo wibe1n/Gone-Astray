@@ -134,8 +134,11 @@
     </object>
     <object class="EventMixerMaster" id="{b157f42d-4edb-4af5-88cb-8d6ad68b2f7c}">
         <property name="volume">
-            <value>7</value>
+            <value>6.5</value>
         </property>
+        <relationship name="modulators">
+            <destination>{8f6f689b-95f6-4c51-bc7e-45860fb49ea1}</destination>
+        </relationship>
         <relationship name="effectChain">
             <destination>{edba6fd3-f69e-4ef0-9b80-2324eaa16b80}</destination>
         </relationship>
@@ -189,6 +192,9 @@
         </property>
         <property name="volume">
             <value>-8</value>
+        </property>
+        <property name="looping">
+            <value>true</value>
         </property>
         <relationship name="fadeInCurve">
             <destination>{3755380b-f3c8-483d-a73c-e975d8c0a421}</destination>
@@ -322,6 +328,20 @@
             <destination>{b157f42d-4edb-4af5-88cb-8d6ad68b2f7c}</destination>
         </relationship>
     </object>
+    <object class="ADSRModulator" id="{8f6f689b-95f6-4c51-bc7e-45860fb49ea1}">
+        <property name="nameOfPropertyBeingModulated">
+            <value>volume</value>
+        </property>
+        <property name="initialValue">
+            <value>-80</value>
+        </property>
+        <property name="decayTime">
+            <value>5000</value>
+        </property>
+        <property name="releaseTime">
+            <value>6800</value>
+        </property>
+    </object>
     <object class="MixerBusEffectChain" id="{edba6fd3-f69e-4ef0-9b80-2324eaa16b80}">
         <relationship name="effects">
             <destination>{bdff9d2e-9e8f-4847-86fe-5a5130bb2d35}</destination>
@@ -329,7 +349,7 @@
     </object>
     <object class="MixerBusPanner" id="{9227015d-fd8b-4fee-a4ff-33773acdc690}">
         <property name="surroundPanDirection">
-            <value>-14.0362434</value>
+            <value>165.96376</value>
         </property>
         <property name="surroundPanExtent">
             <value>359.716675</value>
