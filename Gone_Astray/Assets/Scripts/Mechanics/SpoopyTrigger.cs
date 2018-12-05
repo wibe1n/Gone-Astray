@@ -6,6 +6,7 @@ public class SpoopyTrigger : MonoBehaviour {
 
     private FMOD.Studio.EventInstance spoopySounds;
     private FMOD.Studio.ParameterInstance spoopyParameter;
+    private GameObject ambienceSounds;
     public PencilContourEffect pencilEffects;
     float currentDarkness, endDarkness;
 
@@ -13,22 +14,22 @@ public class SpoopyTrigger : MonoBehaviour {
     
 
     void Start () {
+        ambienceSounds = GameObject.FindGameObjectWithTag("CameraRig");
         spoopySounds = FMODUnity.RuntimeManager.CreateInstance("event:/Ambience/AmbientMusic");
         spoopySounds.getParameter("Progression", out spoopyParameter);
-        Debug.Log(spoopyParameter);
         currentDarkness = 0;
         endDarkness = 0.6f;
         duration = 10f;
+
     }
 
     private void OnTriggerEnter(Collider player) {
         if (player.GetComponent<Character>()) {
-            Debug.Log("täällä");
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(spoopySounds, player.GetComponent<Transform>(), player.GetComponent<Rigidbody>());
             spoopySounds.start();
             spoopyParameter.setValue(0.2f);
+            ambienceSounds.GetComponent<FMODUnity.StudioEventEmitter>().Stop();
             StartCoroutine(TurnLightsSpoopy());
-            
         }
     }
 

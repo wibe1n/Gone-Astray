@@ -10,6 +10,8 @@ TagManager:
   - EncounterController
   - Leshen
   - CameraRig
+  - CalmTrigger
+  - SpoopyTrigger
   layers:
   - Default
   - TransparentFX
