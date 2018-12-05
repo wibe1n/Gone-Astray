@@ -129,6 +129,7 @@ ModelImporter:
     2100006: Material
     2100008: SmallStone
     2100010: tinyStone
+    2100012: Ground
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -368,6 +369,11 @@ ModelImporter:
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground
+    second: {fileID: 2100000, guid: 8bb2e64cf0cd99348ad127ac6af0c595, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
