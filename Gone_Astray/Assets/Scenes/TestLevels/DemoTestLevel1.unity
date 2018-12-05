@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 704277919}
-  m_IndirectSpecularColor: {r: 0.12182041, g: 0.15329567, b: 0.26973724, a: 1}
+  m_IndirectSpecularColor: {r: 0.12182029, g: 0.15329543, b: 0.2697369, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6946,16 +6946,18 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b975a31c3b2b1714d87e99bbdfe570c2, type: 2}
-    - target: {fileID: 6400064, guid: 5470b7d6f49e98a4585ca368100e32d5, type: 3}
-      propertyPath: m_Material
+    - target: {fileID: 100116, guid: 5470b7d6f49e98a4585ca368100e32d5, type: 3}
+      propertyPath: m_Name
+      value: water
+      objectReference: {fileID: 0}
+    - target: {fileID: 100116, guid: 5470b7d6f49e98a4585ca368100e32d5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300116, guid: 5470b7d6f49e98a4585ca368100e32d5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 13400000, guid: e52fb17f9b1e7fd48b8955f1391d3688,
-        type: 2}
-    - target: {fileID: 6400074, guid: 5470b7d6f49e98a4585ca368100e32d5, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: e52fb17f9b1e7fd48b8955f1391d3688,
-        type: 2}
+      objectReference: {fileID: 2100000, guid: f10a99678a65a0a4ab15b70eeb02f961, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5470b7d6f49e98a4585ca368100e32d5, type: 3}
   m_IsPrefabAsset: 0
@@ -13709,7 +13711,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2013956633}
   m_LocalRotation: {x: 0, y: 0.9698051, z: 0, w: 0.24388133}
-  m_LocalPosition: {x: 219.49, y: 51.52, z: 153.07}
+  m_LocalPosition: {x: 334.7, y: 51.52, z: 83.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 527051903}
