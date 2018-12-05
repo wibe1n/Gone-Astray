@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 20e89cddfa43fac408748005e292861e
+guid: 1e4dee98661f08a4fb8a8354c62fbb80
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -14,63 +14,78 @@ ModelImporter:
     100016: Mila_Body
     100018: Mila_Ear.L
     100020: Mila_Ear.L_end
-    100022: Mila_Ear.R
-    100024: Mila_Ear.R_end
-    100026: Mila_Eye.L
-    100028: Mila_Eye.L_end
-    100030: Mila_Eye.R
-    100032: Mila_Eye.R_end
-    100034: Mila_Foot.L
-    100036: Mila_Foot.R
-    100038: Mila_FootIK.L
-    100040: Mila_FootIK.L_end
-    100042: Mila_FootIK.R
-    100044: Mila_FootIK.R_end
-    100046: Mila_Hand.L
-    100048: Mila_Hand.L.001
-    100050: Mila_Hand.L.002
-    100052: Mila_Hand.L.003
-    100054: Mila_Hand.L.004
-    100056: Mila_Hand.L.005
-    100058: Mila_Hand.L.005_end
-    100060: Mila_Hand.L.006
-    100062: Mila_Hand.L.006_end
-    100064: Mila_Hand.R
-    100066: Mila_Hand.R.001
-    100068: Mila_Hand.R.002
-    100070: Mila_Hand.R.003
-    100072: Mila_Hand.R.004
-    100074: Mila_Hand.R.005
-    100076: Mila_Hand.R.005_end
-    100078: Mila_Hand.R.006
-    100080: Mila_Hand.R.006_end
-    100082: Mila_Head
-    100084: Mila_Hips
-    100086: Mila_Hips.001
-    100088: Mila_Hips.002
-    100090: Mila_Hips.003
-    100092: Mila_Hips.003_end
-    100094: Mila_LowerLeg.L
-    100096: Mila_LowerLeg.R
-    100098: Mila_Neck
-    100100: Mila_Spine
-    100102: Mila_Toes.L
-    100104: Mila_Toes.L_end
-    100106: Mila_Toes.R
-    100108: Mila_Toes.R_end
-    100110: //RootNode
-    100112: Mila_Upper_Leg.L
-    100114: Mila_Upper_Leg.R
-    100116: Plane.000
-    100118: Plane.001
-    100120: Pole_Target.L
-    100122: Pole_Target.L_end
-    100124: Pole_Target.R
-    100126: Pole_Target.R_end
-    100128: Shoulder.L
-    100130: Shoulder.R
-    100132: Upper_Arm.L
-    100134: Upper_Arm.R
+    100022: Mila_Ear.L_end_end
+    100024: Mila_Ear.R
+    100026: Mila_Ear.R_end
+    100028: Mila_Ear.R_end_end
+    100030: Mila_Eye.L
+    100032: Mila_Eye.L_end
+    100034: Mila_Eye.L_end_end
+    100036: Mila_Eye.R
+    100038: Mila_Eye.R_end
+    100040: Mila_Eye.R_end_end
+    100042: Mila_Foot.L
+    100044: Mila_Foot.R
+    100046: Mila_FootIK.L
+    100048: Mila_FootIK.L_end
+    100050: Mila_FootIK.L_end_end
+    100052: Mila_FootIK.R
+    100054: Mila_FootIK.R_end
+    100056: Mila_FootIK.R_end_end
+    100058: Mila_Hand.L
+    100060: Mila_Hand.L.001
+    100062: Mila_Hand.L.002
+    100064: Mila_Hand.L.003
+    100066: Mila_Hand.L.004
+    100068: Mila_Hand.L.005
+    100070: Mila_Hand.L.005_end
+    100072: Mila_Hand.L.005_end_end
+    100074: Mila_Hand.L.006
+    100076: Mila_Hand.L.006_end
+    100078: Mila_Hand.L.006_end_end
+    100080: Mila_Hand.R
+    100082: Mila_Hand.R.001
+    100084: Mila_Hand.R.002
+    100086: Mila_Hand.R.003
+    100088: Mila_Hand.R.004
+    100090: Mila_Hand.R.005
+    100092: Mila_Hand.R.005_end
+    100094: Mila_Hand.R.005_end_end
+    100096: Mila_Hand.R.006
+    100098: Mila_Hand.R.006_end
+    100100: Mila_Hand.R.006_end_end
+    100102: Mila_Head
+    100104: Mila_Hips
+    100106: Mila_Hips.001
+    100108: Mila_Hips.002
+    100110: Mila_Hips.003
+    100112: Mila_Hips.003_end
+    100114: Mila_Hips.003_end_end
+    100116: Mila_LowerLeg.L
+    100118: Mila_LowerLeg.R
+    100120: Mila_Neck
+    100122: Mila_Spine
+    100124: Mila_Toes.L
+    100126: Mila_Toes.L_end
+    100128: Mila_Toes.L_end_end
+    100130: Mila_Toes.R
+    100132: Mila_Toes.R_end
+    100134: Mila_Toes.R_end_end
+    100136: //RootNode
+    100138: Mila_Upper_Leg.L
+    100140: Mila_Upper_Leg.R
+    100142: Plane.000
+    100144: Plane.001
+    100146: Pole_Target.L
+    100148: Pole_Target.L_end
+    100150: Pole_Target.L_end_end
+    100152: Pole_Target.R
+    100154: Pole_Target.R_end
+    100156: Pole_Target.R_end_end
+    100158: Shoulder.L
+    100160: Shoulder.R
+    100162: Upper_Arm.L
+    100164: Upper_Arm.R
     400000: Armature
     400002: Coat
     400004: Eye_Left
@@ -82,83 +97,98 @@ ModelImporter:
     400016: Mila_Body
     400018: Mila_Ear.L
     400020: Mila_Ear.L_end
-    400022: Mila_Ear.R
-    400024: Mila_Ear.R_end
-    400026: Mila_Eye.L
-    400028: Mila_Eye.L_end
-    400030: Mila_Eye.R
-    400032: Mila_Eye.R_end
-    400034: Mila_Foot.L
-    400036: Mila_Foot.R
-    400038: Mila_FootIK.L
-    400040: Mila_FootIK.L_end
-    400042: Mila_FootIK.R
-    400044: Mila_FootIK.R_end
-    400046: Mila_Hand.L
-    400048: Mila_Hand.L.001
-    400050: Mila_Hand.L.002
-    400052: Mila_Hand.L.003
-    400054: Mila_Hand.L.004
-    400056: Mila_Hand.L.005
-    400058: Mila_Hand.L.005_end
-    400060: Mila_Hand.L.006
-    400062: Mila_Hand.L.006_end
-    400064: Mila_Hand.R
-    400066: Mila_Hand.R.001
-    400068: Mila_Hand.R.002
-    400070: Mila_Hand.R.003
-    400072: Mila_Hand.R.004
-    400074: Mila_Hand.R.005
-    400076: Mila_Hand.R.005_end
-    400078: Mila_Hand.R.006
-    400080: Mila_Hand.R.006_end
-    400082: Mila_Head
-    400084: Mila_Hips
-    400086: Mila_Hips.001
-    400088: Mila_Hips.002
-    400090: Mila_Hips.003
-    400092: Mila_Hips.003_end
-    400094: Mila_LowerLeg.L
-    400096: Mila_LowerLeg.R
-    400098: Mila_Neck
-    400100: Mila_Spine
-    400102: Mila_Toes.L
-    400104: Mila_Toes.L_end
-    400106: Mila_Toes.R
-    400108: Mila_Toes.R_end
-    400110: //RootNode
-    400112: Mila_Upper_Leg.L
-    400114: Mila_Upper_Leg.R
-    400116: Plane.000
-    400118: Plane.001
-    400120: Pole_Target.L
-    400122: Pole_Target.L_end
-    400124: Pole_Target.R
-    400126: Pole_Target.R_end
-    400128: Shoulder.L
-    400130: Shoulder.R
-    400132: Upper_Arm.L
-    400134: Upper_Arm.R
-    2100000: Lashes
-    2100002: Eye
-    2100004: Material
-    2100006: Fur
-    2100008: Nose
-    2100010: Coat
+    400022: Mila_Ear.L_end_end
+    400024: Mila_Ear.R
+    400026: Mila_Ear.R_end
+    400028: Mila_Ear.R_end_end
+    400030: Mila_Eye.L
+    400032: Mila_Eye.L_end
+    400034: Mila_Eye.L_end_end
+    400036: Mila_Eye.R
+    400038: Mila_Eye.R_end
+    400040: Mila_Eye.R_end_end
+    400042: Mila_Foot.L
+    400044: Mila_Foot.R
+    400046: Mila_FootIK.L
+    400048: Mila_FootIK.L_end
+    400050: Mila_FootIK.L_end_end
+    400052: Mila_FootIK.R
+    400054: Mila_FootIK.R_end
+    400056: Mila_FootIK.R_end_end
+    400058: Mila_Hand.L
+    400060: Mila_Hand.L.001
+    400062: Mila_Hand.L.002
+    400064: Mila_Hand.L.003
+    400066: Mila_Hand.L.004
+    400068: Mila_Hand.L.005
+    400070: Mila_Hand.L.005_end
+    400072: Mila_Hand.L.005_end_end
+    400074: Mila_Hand.L.006
+    400076: Mila_Hand.L.006_end
+    400078: Mila_Hand.L.006_end_end
+    400080: Mila_Hand.R
+    400082: Mila_Hand.R.001
+    400084: Mila_Hand.R.002
+    400086: Mila_Hand.R.003
+    400088: Mila_Hand.R.004
+    400090: Mila_Hand.R.005
+    400092: Mila_Hand.R.005_end
+    400094: Mila_Hand.R.005_end_end
+    400096: Mila_Hand.R.006
+    400098: Mila_Hand.R.006_end
+    400100: Mila_Hand.R.006_end_end
+    400102: Mila_Head
+    400104: Mila_Hips
+    400106: Mila_Hips.001
+    400108: Mila_Hips.002
+    400110: Mila_Hips.003
+    400112: Mila_Hips.003_end
+    400114: Mila_Hips.003_end_end
+    400116: Mila_LowerLeg.L
+    400118: Mila_LowerLeg.R
+    400120: Mila_Neck
+    400122: Mila_Spine
+    400124: Mila_Toes.L
+    400126: Mila_Toes.L_end
+    400128: Mila_Toes.L_end_end
+    400130: Mila_Toes.R
+    400132: Mila_Toes.R_end
+    400134: Mila_Toes.R_end_end
+    400136: //RootNode
+    400138: Mila_Upper_Leg.L
+    400140: Mila_Upper_Leg.R
+    400142: Plane.000
+    400144: Plane.001
+    400146: Pole_Target.L
+    400148: Pole_Target.L_end
+    400150: Pole_Target.L_end_end
+    400152: Pole_Target.R
+    400154: Pole_Target.R_end
+    400156: Pole_Target.R_end_end
+    400158: Shoulder.L
+    400160: Shoulder.R
+    400162: Upper_Arm.L
+    400164: Upper_Arm.R
+    2100000: Coat
+    2100002: Fur
+    2100004: Nose
+    2100006: Eye
+    2100008: Material.001
+    2100010: Lashes
     2300000: Coat
     2300002: Plane.000
     2300004: Plane.001
     3300000: Coat
     3300002: Plane.000
     3300004: Plane.001
-    4300000: Eyebrow_Right
-    4300002: Eyebrow_Left
-    4300004: Plane.000
-    4300006: Plane.001
-    4300008: Eye_Left
-    4300010: Eye_Right
-    4300012: Mila_Body
-    4300014: Coat
+    4300000: Coat
+    4300002: Mila_Body
+    4300004: Eye_Right
+    4300006: Eye_Left
+    4300008: Eyebrow_Left
+    4300010: Plane.000
+    4300012: Eyebrow_Right
+    4300014: Plane.001
     9500000: //RootNode
     13700000: Eye_Left
     13700002: Eye_Right
@@ -190,7 +220,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
+      name: Material.001
     second: {fileID: 2100000, guid: 2d16c7358c860b64ab0c566884c315a5, type: 2}
   - first:
       type: UnityEngine:Material
