@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpoopyTrigger : MonoBehaviour {
 
-    private FMOD.Studio.EventInstance spoopySounds;
-    private FMOD.Studio.ParameterInstance spoopyParameter;
-    private GameObject ambienceSounds;
+    public FMOD.Studio.EventInstance spoopySounds;
+    public FMOD.Studio.ParameterInstance spoopyParameter;
+    public GameObject ambienceSounds;
     public PencilContourEffect pencilEffects;
     float currentDarkness, endDarkness;
 
@@ -24,7 +24,8 @@ public class SpoopyTrigger : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider player) {
-        if (player.GetComponent<Character>()) {
+        if (player.GetComponent<Character>() && player.GetComponent<Character>().spooped == false) {
+            player.GetComponent<Character>().spooped = true;
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(spoopySounds, player.GetComponent<Transform>(), player.GetComponent<Rigidbody>());
             spoopySounds.start();
             spoopyParameter.setValue(0.2f);

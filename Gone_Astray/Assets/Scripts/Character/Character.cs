@@ -7,7 +7,7 @@ public class Character : MonoBehaviour {
     public GameObject rayCastDrawer, lastSapling, sapling;
     public PauseMenuController _pauseController;
     public bool bossIsNear = false;
-    public bool proceed = false;
+    public bool spooped = false;
     public bool leshenObjectNear = false;
     public int level = 0;
     public List<Firefly> myFireflies = new List<Firefly> { };
