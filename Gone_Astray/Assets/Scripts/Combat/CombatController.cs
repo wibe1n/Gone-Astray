@@ -39,7 +39,6 @@ public class CombatController : MonoBehaviour {
         //ball of darkness size update
         encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
         yield return new WaitForSeconds(0.5f);
-        encounterController.character.proceed = true;
     }
 
 
