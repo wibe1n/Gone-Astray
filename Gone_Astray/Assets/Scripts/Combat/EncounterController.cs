@@ -267,6 +267,8 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void GameWon() {
+        myEnemy.eye1.SetActive(false);
+        myEnemy.eye2.SetActive(false);
         battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         enemyHand.Clear();
         myHand.Clear();
