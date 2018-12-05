@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.01.10.00">
-    <object class="AudioFile" id="{d3ae8690-82b3-4e93-b5c7-91fa049a9ea4}">
+    <object class="AudioFile" id="{c655ed63-e367-4cd7-b713-d793399d8113}">
         <property name="assetPath">
-            <value>Gone_Astray_theme_demo_3.mp3</value>
+            <value>Gone_Astray_Theme_051218.wav</value>
         </property>
         <property name="isStreaming">
             <value>true</value>
@@ -14,7 +14,7 @@
             <value>2</value>
         </property>
         <property name="length">
-            <value>164.62367346938777</value>
+            <value>164.57142857142858</value>
         </property>
         <relationship name="masterAssetFolder">
             <destination>{df0116cc-b72d-40e2-a893-d3e2240bd351}</destination>
