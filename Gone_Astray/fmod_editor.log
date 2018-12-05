@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000000044376068 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000000CE86F318 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -15,16 +15,434 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000D7FFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB991D1220
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB991D11F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB991D12F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB991D13B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000C5A3DB38
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footsteps-06', format=2, channels=1, frequency=48000, lengthbytes=8512, lengthpcm=43776, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.125640.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000D7FFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB991D1220
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB991D11F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB991D12F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB991D13B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000C5A3DB38
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footsteps-03', format=2, channels=1, frequency=48000, lengthbytes=8096, lengthpcm=39040, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.082524.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000D7FFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB991D1220
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB991D11F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB991D12F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB991D13B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000C5A3DB38
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footsteps', format=2, channels=1, frequency=48000, lengthbytes=7104, lengthpcm=37888, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.175571.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000D7FFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB991D1220
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB991D11F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB991D12F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB991D13B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000C5A3DB38
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footsteps-07', format=2, channels=1, frequency=48000, lengthbytes=8256, lengthpcm=43136, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.051676.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000D7FFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB991D1220
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB991D11F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB991D12F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB991D13B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000C5A3DB38
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footsteps-08', format=2, channels=1, frequency=48000, lengthbytes=6688, lengthpcm=32768, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057021.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000D7FFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB991D1220
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB991D11F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB991D12F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB991D13B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000C5A3DB38
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footsteps-10', format=2, channels=1, frequency=48000, lengthbytes=6400, lengthpcm=31360, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057032.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000D7FFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB991D1220
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB991D11F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB991D12F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB991D13B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000C5A3DB38
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footsteps-02', format=2, channels=1, frequency=48000, lengthbytes=7328, lengthpcm=35968, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.185210.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000D7FFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB991D1220
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB991D11F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB991D12F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB991D13B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000C5A3DB38
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footsteps-01', format=2, channels=1, frequency=48000, lengthbytes=7520, lengthpcm=36224, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.251331.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000D7FFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB991D1220
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB991D11F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB991D12F0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB991D13B0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000C5A3DB38
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footsteps-09', format=2, channels=1, frequency=48000, lengthbytes=7488, lengthpcm=35968, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.081037.
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] SystemI::createSound                     : filename = Gone_Astray_FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000BE4C4478 : node = 00000000BE3B59D0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000044398548.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000BE4C4478
+[LOG] SystemI::createSoundInternal             :     Create name='Gone_Astray_FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000BE3B5AE8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='FOX_DRY', format=2, channels=2, frequency=48000, lengthbytes=72800, lengthpcm=676978, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.044222.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000BE4C4478
+[LOG] SoundI::getSubSound                      : sound 00000000BE4C4478.  Subsound index 0 / 1
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] SoundI::release                          : FOX_DRY (00000000BE4C4478)
+[LOG] SoundI::release                          :     FOX_DRY (000000008C4B37F8)
+[LOG] SoundI::release                          :     FOX_DRY (00000000BDE94948)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] SystemI::createSound                     : filename = Gone_Astray_FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000008C23BA48 : node = 00000000BE3B6300
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000044398548.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000008C23BA48
+[LOG] SystemI::createSound                     : filename = Gone_Astray_FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='Gone_Astray_FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSound                     :     setdata soundi = 000000008C23B6E8 : node = 00000000BE3B5DC0
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 31328032
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000000044398548.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     filename = Gone_Astray_FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000BE3B6418
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     setdata soundi = 000000008C23B898 : node = 00000000BE3B6450
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000000044398548.  list count = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = Gone_Astray_FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 00000000C6049668 : node = 00000000BE3B65A0
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000000044398548.  list count = 2
+[LOG] SystemI::createSound                     :     filename = Gone_Astray_FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 00000000C6049818 : node = 00000000BE3B87C0
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000000044398548.  list count = 3
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Gone_Astray_Ambient_Natinaa', format=2, channels=2, frequency=48000, lengthbytes=5267168, lengthpcm=23834958, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.581940.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000008C23BA48
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000008C23B6E8
+[LOG] SystemI::createSoundInternal             :     Create name='Gone_Astray_FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000BE3B5ED8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Gone_Astray_Ambient_Whooh', format=2, channels=2, frequency=48000, lengthbytes=604288, lengthpcm=10498306, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.063278.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000008C23B6E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000008C23B898
+[LOG] SystemI::createSoundInternal             :     Create name='Gone_Astray_FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000BE3B6568
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Gone_Astray_Ambient_Bala_Jousi', format=2, channels=2, frequency=48000, lengthbytes=6323872, lengthpcm=23834958, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.659119.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000008C23B898
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000C6049668
+[LOG] SystemI::createSoundInternal             :     Create name='Gone_Astray_FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000BE3B66B8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Gone_Astray_Ambient_Bala_Chords', format=2, channels=2, frequency=48000, lengthbytes=1130080, lengthpcm=10498306, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.211959.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000C6049668
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000C6049818
+[LOG] SystemI::createSoundInternal             :     Create name='Gone_Astray_FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000BE3B88D8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Gone_Astray_Ambient_Synth', format=2, channels=2, frequency=48000, lengthbytes=2581056, lengthpcm=10498306, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.379164.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000C6049818
+[LOG] SoundI::getSubSound                      : sound 000000008C23BA48.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 000000008C23B6E8.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 000000008C23B898.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000000C6049668.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000000C6049818.  Subsound index 0 / 1
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] SoundI::release                          : BIRBS (0000000082C0BC38)
+[LOG] SoundI::release                          :     BIRBS (000000007D8DD4C8)
+[LOG] SoundI::release                          :     BIRBS (000000007DB16038)
+[LOG] SoundI::release                          : POHJA (0000000082C0BA88)
+[LOG] SoundI::release                          :     POHJA (000000007D8DCCA8)
+[LOG] SoundI::release                          :     POHJA (000000007DB152B8)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] SystemI::createSound                     : filename = Gone_Astray_FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000000082C0BA88 : node = 00000000BE3B8520
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000044398548.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000082C0BA88
+[LOG] SystemI::createSoundInternal             :     Create name='Gone_Astray_FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000BE3B8638
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Gone_Astray_Battle_Music_051218', format=2, channels=2, frequency=48000, lengthbytes=3147648, lengthpcm=11963077, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.685608.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000082C0BA88
+[LOG] SoundI::getSubSound                      : sound 0000000082C0BA88.  Subsound index 0 / 1
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] SoundI::release                          : Gone_Astray_Battle_Music_051218 (0000000082C0BA88)
+[LOG] SoundI::release                          :     Gone_Astray_Battle_Music_051218 (000000007D39E0A8)
+[LOG] SoundI::release                          :     Gone_Astray_Battle_Music_051218 (00000000834E3BC8)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] SystemI::createSound                     : filename = Gone_Astray_FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000C5647408 : node = 00000000BE3B8520
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000044398548.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000C5647408
+[LOG] SystemI::createSoundInternal             :     Create name='Gone_Astray_FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000BE3B8638
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     filename = Gone_Astray_FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 00000000C5647258 : node = 00000000BE3B8670
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000000044398548.  list count = 0
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='POHJA', format=2, channels=2, frequency=48000, lengthbytes=3019040, lengthpcm=14400000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.007768.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000C5647408
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000C5647258
+[LOG] SystemI::createSoundInternal             :     Create name='Gone_Astray_FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 31328032
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 28640
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000BE3B8788
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BIRBS', format=2, channels=2, frequency=48000, lengthbytes=1217056, lengthpcm=14399520, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.069886.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000C5647258
+[LOG] SoundI::getSubSound                      : sound 00000000C5647408.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000000C5647258.  Subsound index 0 / 1
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] SoundI::release                          : Gone_Astray_Ambient_Synth (00000000C6049818)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Synth (00000000BDE94258)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Synth (00000000C56470A8)
+[LOG] SoundI::release                          : Gone_Astray_Ambient_Bala_Chords (00000000C6049668)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Bala_Chords (0000000044398738)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Bala_Chords (00000000C5646EF8)
+[LOG] SoundI::release                          : Gone_Astray_Ambient_Bala_Jousi (000000008C23B898)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Bala_Jousi (000000008C103D68)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Bala_Jousi (00000000C5646688)
+[LOG] SoundI::release                          : Gone_Astray_Ambient_Whooh (000000008C23B6E8)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Whooh (000000008C104248)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Whooh (0000000083487978)
+[LOG] SoundI::release                          : Gone_Astray_Ambient_Natinaa (000000008C23BA48)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Natinaa (000000008C104588)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Natinaa (0000000083487468)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
+[LOG] SoundI::release                          : BIRBS (00000000C5647258)
+[LOG] SoundI::release                          :     BIRBS (000000008C4B3B38)
+[LOG] SoundI::release                          :     BIRBS (0000000082C0BC38)
+[LOG] SoundI::release                          : POHJA (00000000C5647408)
+[LOG] SoundI::release                          :     POHJA (000000008C4B37F8)
+[LOG] SoundI::release                          :     POHJA (0000000082C0BA88)
+[LOG] SoundI::release                          :  (00000000CE833AD8)
+[LOG] SoundI::release                          :     footsteps-01 (00000000C5903A18)
+[LOG] SoundI::release                          :  (00000000CE8323D8)
+[LOG] SoundI::release                          :     footsteps-02 (00000000C5903BB8)
+[LOG] SoundI::release                          :  (00000000CE834098)
+[LOG] SoundI::release                          :     footsteps-03 (0000000080819CD8)
+[LOG] SoundI::release                          :  (00000000CE8351D8)
+[LOG] SoundI::release                          :     footsteps-06 (0000000080819998)
+[LOG] SoundI::release                          :  (00000000CE834EF8)
+[LOG] SoundI::release                          :     footsteps-07 (00000000C59031F8)
+[LOG] SoundI::release                          :  (00000000CE8305A8)
+[LOG] SoundI::release                          :     footsteps-08 (00000000C5903538)
+[LOG] SoundI::release                          :  (00000000CE82FE78)
+[LOG] SoundI::release                          :     footsteps-09 (00000000C5903398)
+[LOG] SoundI::release                          :  (00000000CE834C18)
+[LOG] SoundI::release                          :     footsteps-10 (00000000C5903058)
+[LOG] SoundI::release                          :  (00000000CE830438)
+[LOG] SoundI::release                          :     footsteps (0000000080819178)
+[LOG] SoundI::release                          :  (00000000CE8347C8)
+[LOG] SoundI::release                          :     BIRD_FLYBY_DRY (00000000808194B8)
+[LOG] SoundI::release                          :  (00000000CE831128)
+[LOG] SoundI::release                          :     OWL_DRY (0000000080819B38)
+[LOG] SoundI::release                          :  (00000000CE8302C8)
+[LOG] SoundI::release                          :     RAVEN-01_DRY (0000000080819318)
+[LOG] SoundI::release                          :  (00000000CE832998)
+[LOG] SoundI::release                          :     RAVEN-02_DRY (00000000808197F8)
+[LOG] SoundI::release                          :  (00000000CE830CD8)
+[LOG] SoundI::release                          :     WOLF_DRY (0000000080819658)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] SystemI::close                           : Closed.
