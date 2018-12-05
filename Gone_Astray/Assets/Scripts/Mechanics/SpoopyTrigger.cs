@@ -33,8 +33,7 @@ public class SpoopyTrigger : MonoBehaviour {
         }
     }
 
-    public IEnumerator TurnLightsSpoopy()
-    {
+    public IEnumerator TurnLightsSpoopy() {
         float timeRemaining = duration;
         while (timeRemaining > 0)
         {
