@@ -126,6 +126,7 @@ ModelImporter:
     2100000: Water
     2100002: unnamed
     2100004: Stone
+    2100006: Material
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
