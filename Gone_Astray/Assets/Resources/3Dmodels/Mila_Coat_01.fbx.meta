@@ -165,7 +165,37 @@ ModelImporter:
     13700008: Eyebrow_Right
     13700010: Mila_Body
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coat
+    second: {fileID: 2100000, guid: 2d16c7358c860b64ab0c566884c315a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye
+    second: {fileID: 2100000, guid: 2d16c7358c860b64ab0c566884c315a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fur
+    second: {fileID: 2100000, guid: 2d16c7358c860b64ab0c566884c315a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lashes
+    second: {fileID: 2100000, guid: f9d03e080d270094e9d65af6e0cb332c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 2d16c7358c860b64ab0c566884c315a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nose
+    second: {fileID: 2100000, guid: 2d16c7358c860b64ab0c566884c315a5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -185,7 +215,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -227,8 +257,524 @@ ModelImporter:
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
-    human: []
-    skeleton: []
+    human:
+    - boneName: Mila_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Upper_Leg.L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Upper_Leg.R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_LowerLeg.L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_LowerLeg.R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Foot.L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Foot.R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Shoulder.L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Shoulder.R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Upper_Arm.L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Upper_Arm.R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lower_Arm.L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lower_Arm.R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Toes.L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Toes.R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Eye.L
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Eye.R
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Hand.R.005
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mila_Hand.L.005
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Mila_Coat_01(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armature
+      parentName: Mila_Coat_01(Clone)
+      position: {x: -1.9852335e-23, y: 0, z: 0}
+      rotation: {x: 0.000000021855694, y: -1.1102232e-16, z: 1.1102232e-16, w: 1}
+      scale: {x: 200, y: 200, z: 200}
+    - name: Mila_Hips
+      parentName: Armature
+      position: {x: 1.7560345e-18, y: 0.008860538, z: -0.0009520629}
+      rotation: {x: 0.016121572, y: 1.6801543e-10, z: -8.610579e-11, w: 0.99987006}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Mila_Spine
+      parentName: Mila_Hips
+      position: {x: -8.673617e-20, y: 0.0033068685, z: 3.7252902e-11}
+      rotation: {x: 0.08346395, y: -2.2922905e-10, z: 3.1089284e-10, w: 0.9965108}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Shoulder.L
+      parentName: Mila_Spine
+      position: {x: -0.001581568, y: 0.0016718343, z: 0.00009478766}
+      rotation: {x: -0.10679066, y: 0.0596295, z: 0.5786315, w: 0.8063658}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1}
+    - name: Upper_Arm.L
+      parentName: Shoulder.L
+      position: {x: 4.6449714e-10, y: 0.0015949546, z: -3.7252902e-11}
+      rotation: {x: 0.018886825, y: -0.019964794, z: 0.20411994, w: 0.9785601}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Lower_Arm.L
+      parentName: Upper_Arm.L
+      position: {x: 2.0257646e-10, y: 0.0016758173, z: 7.397105e-12}
+      rotation: {x: 0.0224716, y: -0.025799155, z: -0.009035501, w: 0.99937373}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Mila_Hand.L
+      parentName: Lower_Arm.L
+      position: {x: -0.0000000016903504, y: 0.0019027161, z: -3.7252902e-11}
+      rotation: {x: -0.024873374, y: 0.02572536, z: 0.00001541153, w: 0.99935955}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Mila_Hand.L.001
+      parentName: Mila_Hand.L
+      position: {x: -0.000014275273, y: 0.0002697466, z: 0.00024125008}
+      rotation: {x: 0.44268295, y: -0.45784596, z: -0.3181105, w: 0.7022924}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Mila_Hand.L.004
+      parentName: Mila_Hand.L.001
+      position: {x: 0.0000000012200325, y: 0.0005142071, z: -7.7765433e-10}
+      rotation: {x: -0.11895575, y: 0.19976121, z: 0.17185065, w: 0.9572943}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Mila_Hand.L.005
+      parentName: Mila_Hand.L.004
+      position: {x: -5.587935e-10, y: 0.00040999067, z: 4.0978193e-10}
+      rotation: {x: 0.0061941855, y: -0.009366296, z: -0.007369353, w: 0.9999098}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Mila_Hand.L.005_end
+      parentName: Mila_Hand.L.005
+      position: {x: -0, y: 0.00035799935, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Hand.L.002
+      parentName: Mila_Hand.L
+      position: {x: -2.2059118e-10, y: 0.00069352373, z: -7.832685e-12}
+      rotation: {x: 0.0051594204, y: -0.0053361463, z: 0.028657028, w: 0.9995618}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Mila_Hand.L.003
+      parentName: Mila_Hand.L.002
+      position: {x: -1.193257e-11, y: 0.0004715231, z: -9.3132255e-12}
+      rotation: {x: 0.008444085, y: -0.009492878, z: -0.022090783, w: 0.9996753}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Mila_Hand.L.006
+      parentName: Mila_Hand.L.003
+      position: {x: 6.2747857e-10, y: 0.00045442316, z: -3.7252902e-11}
+      rotation: {x: -0.0042472044, y: 0.004779349, z: 0.011269683, w: 0.9999161}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.9999999}
+    - name: Mila_Hand.L.006_end
+      parentName: Mila_Hand.L.006
+      position: {x: -0, y: 0.0003085629, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Shoulder.R
+      parentName: Mila_Spine
+      position: {x: 0.001581568, y: 0.0016718343, z: 0.00009478766}
+      rotation: {x: -0.10679065, y: -0.059629492, z: -0.5786315, w: 0.8063658}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1}
+    - name: Upper_Arm.R
+      parentName: Shoulder.R
+      position: {x: -4.6449714e-10, y: 0.0015949546, z: -3.7252902e-11}
+      rotation: {x: 0.018886818, y: 0.019964805, z: -0.20411992, w: 0.9785601}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Lower_Arm.R
+      parentName: Upper_Arm.R
+      position: {x: -2.0257646e-10, y: 0.0016758173, z: 7.397105e-12}
+      rotation: {x: 0.022471793, y: 0.025799163, z: 0.009035278, w: 0.99937373}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Mila_Hand.R
+      parentName: Lower_Arm.R
+      position: {x: 0.0000000016903504, y: 0.0019027161, z: -3.7252902e-11}
+      rotation: {x: -0.024873374, y: -0.02572536, z: -0.00001541153, w: 0.99935955}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Mila_Hand.R.001
+      parentName: Mila_Hand.R
+      position: {x: 0.000014275273, y: 0.0002697466, z: 0.00024125008}
+      rotation: {x: 0.44268295, y: 0.45784596, z: 0.3181105, w: 0.7022924}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Mila_Hand.R.004
+      parentName: Mila_Hand.R.001
+      position: {x: -0.0000000012200325, y: 0.0005142071, z: -7.7765433e-10}
+      rotation: {x: -0.11895575, y: -0.19976121, z: -0.17185065, w: 0.9572943}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Mila_Hand.R.005
+      parentName: Mila_Hand.R.004
+      position: {x: 5.587935e-10, y: 0.00040999067, z: 4.0978193e-10}
+      rotation: {x: 0.0061941855, y: 0.009366296, z: 0.007369353, w: 0.9999098}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Mila_Hand.R.005_end
+      parentName: Mila_Hand.R.005
+      position: {x: -0, y: 0.00035799935, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Hand.R.002
+      parentName: Mila_Hand.R
+      position: {x: 2.2059118e-10, y: 0.00069352373, z: -7.832685e-12}
+      rotation: {x: 0.0051594204, y: 0.0053361463, z: -0.028657028, w: 0.9995618}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Mila_Hand.R.003
+      parentName: Mila_Hand.R.002
+      position: {x: 1.193257e-11, y: 0.0004715231, z: -9.3132255e-12}
+      rotation: {x: 0.008444085, y: 0.009492878, z: 0.022090783, w: 0.9996753}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Mila_Hand.R.006
+      parentName: Mila_Hand.R.003
+      position: {x: -6.2747857e-10, y: 0.00045442316, z: -3.7252902e-11}
+      rotation: {x: -0.0042472044, y: -0.004779349, z: -0.011269683, w: 0.9999161}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.9999999}
+    - name: Mila_Hand.R.006_end
+      parentName: Mila_Hand.R.006
+      position: {x: -0, y: 0.0003085629, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Neck
+      parentName: Mila_Spine
+      position: {x: 6.461845e-19, y: 0.0029451966, z: -5.5879353e-11}
+      rotation: {x: -0.075180404, y: 6.888186e-11, z: -2.090736e-10, w: 0.99717}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Head
+      parentName: Mila_Neck
+      position: {x: -1.9573585e-20, y: 0.0013379024, z: 1.8626451e-11}
+      rotation: {x: 0.069219515, y: 3.1331139e-18, z: -4.3408103e-17, w: 0.99760145}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Mila_Eye.R
+      parentName: Mila_Head
+      position: {x: 0.0019472934, y: 0.0041982126, z: 0.0021244492}
+      rotation: {x: 0.63784075, y: 1.0230471e-16, z: 8.472705e-17, w: 0.77016836}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Mila_Eye.R_end
+      parentName: Mila_Eye.R
+      position: {x: -0, y: 0.0012749993, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Eye.L
+      parentName: Mila_Head
+      position: {x: -0.0019472934, y: 0.0041982126, z: 0.0021244492}
+      rotation: {x: 0.63784075, y: 1.0230471e-16, z: 8.472705e-17, w: 0.77016836}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Mila_Eye.L_end
+      parentName: Mila_Eye.L
+      position: {x: -0, y: 0.0012749993, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Ear.R
+      parentName: Mila_Head
+      position: {x: 0.0019472933, y: 0.006574995, z: -0.0019508555}
+      rotation: {x: -0.093569875, y: -1.2578175e-17, z: 1.1821267e-18, w: 0.99561274}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Mila_Ear.R_end
+      parentName: Mila_Ear.R
+      position: {x: -0, y: 0.004275, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Ear.L
+      parentName: Mila_Head
+      position: {x: -0.0019472933, y: 0.006574995, z: -0.0019508555}
+      rotation: {x: -0.093569875, y: -1.2578175e-17, z: 1.1821267e-18, w: 0.99561274}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Mila_Ear.L_end
+      parentName: Mila_Ear.L
+      position: {x: -0, y: 0.004275, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Upper_Leg.R
+      parentName: Mila_Hips
+      position: {x: 0.0021025352, y: -0.00025946076, z: 0.000056523735}
+      rotation: {x: 0.95643336, y: 0.011133452, z: -0.25830904, w: 0.13560124}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1.0000007}
+    - name: Mila_LowerLeg.R
+      parentName: Mila_Upper_Leg.R
+      position: {x: -3.7252902e-11, y: 0.0024631748, z: -3.7252902e-11}
+      rotation: {x: 0.3189804, y: 0.29212645, z: -0.044170547, w: 0.9005346}
+      scale: {x: 1.0000001, y: 0.9999998, z: 1.0000002}
+    - name: Mila_Foot.R
+      parentName: Mila_LowerLeg.R
+      position: {x: 1.0681105e-10, y: 0.0030104676, z: -1.8098945e-10}
+      rotation: {x: -0.37108853, y: -0.0350886, z: 0.0035843104, w: 0.92792743}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Toes.R
+      parentName: Mila_Foot.R
+      position: {x: 1.0535586e-10, y: 0.0034064292, z: -4.1909514e-11}
+      rotation: {x: -0.5199473, y: -0.003795739, z: -0.00063418294, w: 0.85418975}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Toes.R_end
+      parentName: Mila_Toes.R
+      position: {x: -0, y: 0.0011638136, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Upper_Leg.L
+      parentName: Mila_Hips
+      position: {x: -0.0021025352, y: -0.00025946076, z: 0.000056523735}
+      rotation: {x: 0.9564333, y: -0.011133539, z: 0.2583092, w: 0.13560116}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1.0000008}
+    - name: Mila_LowerLeg.L
+      parentName: Mila_Upper_Leg.L
+      position: {x: 9.313225e-11, y: 0.0024631748, z: -2.9802322e-10}
+      rotation: {x: 0.31898054, y: -0.29212645, z: 0.044170607, w: 0.90053463}
+      scale: {x: 1, y: 0.9999998, z: 1.0000002}
+    - name: Mila_Foot.L
+      parentName: Mila_LowerLeg.L
+      position: {x: 8.58563e-11, y: 0.003010467, z: 1.4275428e-10}
+      rotation: {x: -0.3710892, y: 0.03508854, z: -0.003584154, w: 0.9279272}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Mila_Toes.L
+      parentName: Mila_Foot.L
+      position: {x: -6.068149e-11, y: 0.0034064292, z: -1.4901161e-10}
+      rotation: {x: -0.5199473, y: 0.003795739, z: 0.00063418306, w: 0.85418975}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Mila_Toes.L_end
+      parentName: Mila_Toes.L
+      position: {x: -0, y: 0.0011638136, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Hips.001
+      parentName: Mila_Hips
+      position: {x: 1.5954739e-12, y: 0.0007746002, z: -0.0034384474}
+      rotation: {x: -0.842021, y: 0.00000006414489, z: -0.000000100301264, w: 0.53944474}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+    - name: Mila_Hips.002
+      parentName: Mila_Hips.001
+      position: {x: 1.3648804e-16, y: 0.0031638413, z: 2.9802322e-10}
+      rotation: {x: 0.34807724, y: -0.000000111655844, z: 0.000000041358348, w: 0.93746585}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Mila_Hips.003
+      parentName: Mila_Hips.002
+      position: {x: -4.2351646e-24, y: 0.0026497452, z: -5.9604643e-10}
+      rotation: {x: 0.4289619, y: -6.0581406e-15, z: -1.28888624e-14, w: 0.9033226}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_Hips.003_end
+      parentName: Mila_Hips.003
+      position: {x: -0, y: 0.0035802317, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_FootIK.R
+      parentName: Armature
+      position: {x: 0.0024927615, y: 0.0040215733, z: -0.0020727057}
+      rotation: {x: -0.7071068, y: 1.5700923e-16, z: -1.5700924e-16, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_FootIK.R_end
+      parentName: Mila_FootIK.R
+      position: {x: -0, y: 0.0025, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pole_Target.R
+      parentName: Armature
+      position: {x: 0.0025, y: 0.005, z: 0.005999999}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pole_Target.R_end
+      parentName: Pole_Target.R
+      position: {x: -0, y: 0.0020000003, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_FootIK.L
+      parentName: Armature
+      position: {x: -0.0024927615, y: 0.0040215733, z: -0.0020727057}
+      rotation: {x: -0.7071068, y: 1.5700923e-16, z: -1.5700924e-16, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mila_FootIK.L_end
+      parentName: Mila_FootIK.L
+      position: {x: -0, y: 0.0025, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pole_Target.L
+      parentName: Armature
+      position: {x: -0.0025, y: 0.005, z: 0.005999999}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pole_Target.L_end
+      parentName: Pole_Target.L
+      position: {x: -0, y: 0.0020000003, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Coat
+      parentName: Mila_Coat_01(Clone)
+      position: {x: 6.220486e-23, y: 3, z: 0}
+      rotation: {x: -0.7071068, y: 6.863095e-24, z: 5.5907e-31, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Eye_Left
+      parentName: Mila_Coat_01(Clone)
+      position: {x: -0.000000029802322, y: -0.00000023841858, z: -6.617445e-24}
+      rotation: {x: 1, y: -1.1102236e-16, z: 1.1102233e-16, w: 0.0000000754979}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Eye_Right
+      parentName: Mila_Coat_01(Clone)
+      position: {x: -0.000000029802322, y: -0.00000023841858, z: -6.617445e-24}
+      rotation: {x: 1, y: -1.1102236e-16, z: 1.1102233e-16, w: 0.0000000754979}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Eyebrow_Left
+      parentName: Mila_Coat_01(Clone)
+      position: {x: -1.9852335e-23, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 6.863095e-24, z: 5.5907e-31, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Eyebrow_Right
+      parentName: Mila_Coat_01(Clone)
+      position: {x: -1.9852335e-23, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 6.863095e-24, z: 5.5907e-31, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Mila_Body
+      parentName: Mila_Coat_01(Clone)
+      position: {x: -1.9852335e-23, y: 0, z: 0}
+      rotation: {x: 0.000000081460335, y: -1.1102233e-16, z: 1.1102236e-16, w: 1}
+      scale: {x: 200, y: 200, z: 200}
+    - name: Plane.000
+      parentName: Mila_Coat_01(Clone)
+      position: {x: -1.9852335e-23, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 6.863095e-24, z: 5.5907e-31, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Plane.001
+      parentName: Mila_Coat_01(Clone)
+      position: {x: -1.9852335e-23, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 6.863095e-24, z: 5.5907e-31, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -239,10 +785,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
