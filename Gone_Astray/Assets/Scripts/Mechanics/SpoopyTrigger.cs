@@ -27,12 +27,12 @@ public class SpoopyTrigger : MonoBehaviour {
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(spoopySounds, player.GetComponent<Transform>(), player.GetComponent<Rigidbody>());
             spoopySounds.start();
             spoopyParameter.setValue(0.2f);
-            StartCoroutine(TurnMusicSpoopy());
+            StartCoroutine(TurnLightsSpoopy());
             
         }
     }
 
-    public IEnumerator TurnMusicSpoopy()
+    public IEnumerator TurnLightsSpoopy()
     {
         float timeRemaining = duration;
         while (timeRemaining > 0)
