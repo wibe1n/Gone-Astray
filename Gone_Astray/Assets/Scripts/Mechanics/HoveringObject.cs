@@ -21,4 +21,9 @@ public class HoveringObject : MonoBehaviour {
         tempPosition.y = Mathf.Sin(Time.realtimeSinceStartup * verticalSpeed) * amplitude + startingPosition.y;
         transform.position = tempPosition;
 	}
+
+    public void GetPosition() {
+        tempPosition = transform.position;
+        startingPosition = transform.position;
+    }
 }

@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class SpeechBubbleCreator : MonoBehaviour {
 
-    public GameObject speechbubble, continueImage, askCanvas;
+    public GameObject speechbubble, askCanvas;
     public Text bubbleText;
 
     public void GenerateSpeechBubble(NPC npc) {
         askCanvas.SetActive(false);
         NameType npcID = (NameType)npc.id;
         bubbleText.text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
-        Debug.Log(NameDescContainer.GetSpeechBubble("part1", NameType.npc1));
         speechbubble.SetActive(true);
     }
 
@@ -43,7 +42,9 @@ public class SpeechBubbleCreator : MonoBehaviour {
     }
 
     public void CloseSpeechBubble(NPC npc) {
-        npc.currentSpeechInstance = 1;
+        if(npc.id != 6) {
+            npc.currentSpeechInstance = 1;
+        }
         speechbubble.SetActive(false);
     }
 
