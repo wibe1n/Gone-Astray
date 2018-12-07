@@ -9,14 +9,6 @@ public class Menu : MonoBehaviour {
 	// Use this for initialization
 	public GameObject mainMenu;
 	public GameObject options;
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	public void OnStartGame(){
 		Debug.Log ("start press");
