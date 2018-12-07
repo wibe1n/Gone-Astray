@@ -71,12 +71,14 @@ public class NPC : MonoBehaviour {
 
     public void TalkEvent() {
         if (talking == true) {
-            if (currentSpeechInstance == maxSpeechInstance)
-            {
+            if (currentSpeechInstance == maxSpeechInstance) {
                 speechCreator.CloseSpeechBubble(this);
                 talking = false;
                 if (!walkedAway)
                     Canvas.SetActive(true);
+                if(id == 6) {
+                    gameObject.GetComponent<MoveToWaypoints>().DisableHovering();
+                }
             }
             else if (walkedAway == true)
             {
