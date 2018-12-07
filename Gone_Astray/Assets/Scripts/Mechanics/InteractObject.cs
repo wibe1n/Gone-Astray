@@ -42,8 +42,7 @@ public class InteractObject : MonoBehaviour
         if(player.gameObject.GetComponent<Character>() != null) {
             if (Input.GetKeyDown(KeyCode.O) && isCollectable) {
                 if (isFirefly) {
-                    Firefly firefly = new Firefly(0);
-                    player.GetComponent<Character>().myFireflies.Add(firefly);
+                    player.GetComponent<Character>().AddFirefly();
                 }
                 else {
                     player.GetComponent<Character>().items[itemIndex] = true;
