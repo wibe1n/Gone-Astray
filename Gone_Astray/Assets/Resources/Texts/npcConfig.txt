@@ -17,7 +17,7 @@
 &npc_npc1_part5_Your name is Mila? What a pretty name. Nice to meet you Mila.
 
 %npc_npc1_0_part6
-&npc_npc1_part6_What are you doing out here in the forest all by yourself. It gets very dangerous after dark.
+&npc_npc1_part6_What are you doing out here in the forest all by yourself? It gets very dangerous after dark.
 
 %npc_npc1_0_part7
 &npc_npc1_part7_You're looking for your sister? That's funny, I'm also looking for my family.
@@ -34,3 +34,11 @@
 %npc_npc1_0_part11
 &npc_npc1_part11_You'll help me out? That's great! Okay, first, let's walk out from this cave.
 
+%npc_npc1_0_part12
+&npc_npc1_part12_See that big tree over ahead? Isn't it pretty? That is where we fireflies call home.
+
+%npc_npc1_0_part13
+&npc_npc1_part13_But something has scared my family away. Could you help me find them?
+
+%npc_npc1_0_part14
+&npc_npc1_part14_Great! Let's go!
