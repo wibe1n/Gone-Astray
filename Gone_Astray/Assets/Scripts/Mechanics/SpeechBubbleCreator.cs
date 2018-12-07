@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SpeechBubbleCreator : MonoBehaviour {
 
-    public GameObject speechbubble, continueImage, askCanvas;
+    public GameObject speechbubble, askCanvas;
     public Text bubbleText;
 
     public void GenerateSpeechBubble(NPC npc) {
@@ -13,6 +13,7 @@ public class SpeechBubbleCreator : MonoBehaviour {
         NameType npcID = (NameType)npc.id;
         bubbleText.text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
         Debug.Log(NameDescContainer.GetSpeechBubble("part1", NameType.npc1));
+        Debug.Log(NameDescContainer.GetCombatTutorialPart("part1"));
         speechbubble.SetActive(true);
     }
 

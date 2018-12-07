@@ -2,10 +2,35 @@
 &npc_npc1_part0_Hey, wait, come back!! It's rude to walk away when someone's talking to you, you know!
 
 %npc_npc1_0_part1
-&npc_npc1_part1_My, my. Have you lost little one?
+&npc_npc1_part1_Hello? Are you hurt?
 
 %npc_npc1_0_part2
-&npc_npc1_part2_There is a safehaven for the likes of you in the centre of the forest.
+&npc_npc1_part2_Oh, thank goodness. You can at least stand.
 
 %npc_npc1_0_part3
-&npc_npc1_part3_I would suggest you to search for it...
+&npc_npc1_part3_Don't be frightened, I'm not going to hurt you.
+
+%npc_npc1_0_part4
+&npc_npc1_part4_My name's Fia. I'm a firefly. What's your name?
+
+%npc_npc1_0_part5
+&npc_npc1_part5_Your name is Mila? What a pretty name. Nice to meet you Mila.
+
+%npc_npc1_0_part6
+&npc_npc1_part6_What are you doing out here in the forest all by yourself. It gets very dangerous after dark.
+
+%npc_npc1_0_part7
+&npc_npc1_part7_You're looking for your sister? That's funny, I'm also looking for my family.
+
+%npc_npc1_0_part8
+&npc_npc1_part8_You know, it's not safe out here in the dark, especially not all alone. 
+
+%npc_npc1_0_part9
+&npc_npc1_part9_I know! Why Don't we work together!
+
+%npc_npc1_0_part10
+&npc_npc1_part10_I'll help you find your sister, if you help me find the rest of my family.
+
+%npc_npc1_0_part11
+&npc_npc1_part11_You'll help me out? That's great! Okay, first, let's walk out from this cave.
+

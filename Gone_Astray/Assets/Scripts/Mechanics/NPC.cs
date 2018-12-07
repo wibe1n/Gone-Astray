@@ -17,9 +17,8 @@ public class NPC : MonoBehaviour {
     public KeyCode talkBackKey = KeyCode.None;
 
     private void Start() {
-        id = 6;
         currentSpeechInstance = 1;
-        maxSpeechInstance = 3;
+
 
 		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			Undying_Object undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
@@ -34,7 +33,9 @@ public class NPC : MonoBehaviour {
 
     void OnTriggerEnter(Collider player) {
         walkedAway = false;
+        Debug.Log("tultiin sisään");
         if (player.gameObject.GetComponent<Character>() != null && !speechCreator.StillTalking()) {
+            Debug.Log("mennään täällä");
             Canvas.SetActive(true);
             m_MyEvent.AddListener(TalkEvent);
             m_SecondEvent.AddListener(Backwards);
