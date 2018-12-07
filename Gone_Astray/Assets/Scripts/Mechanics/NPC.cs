@@ -33,9 +33,7 @@ public class NPC : MonoBehaviour {
 
     void OnTriggerEnter(Collider player) {
         walkedAway = false;
-        Debug.Log("tultiin sisään");
         if (player.gameObject.GetComponent<Character>() != null && !speechCreator.StillTalking()) {
-            Debug.Log("mennään täällä");
             Canvas.SetActive(true);
             m_MyEvent.AddListener(TalkEvent);
             m_SecondEvent.AddListener(Backwards);
@@ -101,18 +99,15 @@ public class NPC : MonoBehaviour {
         speechCreator.BackWards(this);
     }
 
-    IEnumerator CloseWhineBox(float time)
-    {
+    IEnumerator CloseWhineBox(float time) {
         yield return new WaitForSeconds(time);
 
-        if (walkedAway)
-        {
+        if (walkedAway) {
             speechCreator.CloseSpeechBubble(this);
             talking = false;
             m_MyEvent.RemoveListener(TalkEvent);
         }
-        else
-        {
+        else {
             Canvas.SetActive(true);
             speechCreator.CloseSpeechBubble(this);
             talking = false;
