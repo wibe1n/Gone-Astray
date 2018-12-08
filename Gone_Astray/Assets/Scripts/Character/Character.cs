@@ -6,8 +6,9 @@ public class Character : MonoBehaviour {
 
     public GameObject rayCastDrawer, lastSapling, sapling;
     public PauseMenuController _pauseController;
+    public ParticleSystem fireflies;
     public bool bossIsNear = false;
-    public bool proceed = false;
+    public bool spooped = false;
     public bool leshenObjectNear = false;
     public int level = 0;
     public List<Firefly> myFireflies = new List<Firefly> { };
@@ -46,6 +47,15 @@ public class Character : MonoBehaviour {
 			}
 		}
 
+    }
+
+    public void AddFirefly() {
+        Firefly firefly = new Firefly(0);
+        myFireflies.Add(firefly);
+        
+        
+        ParticleSystem.MainModule system = fireflies.main;
+        system.maxParticles += 1;
     }
 
 

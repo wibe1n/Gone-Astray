@@ -23,6 +23,11 @@ public class EncounterController : MonoBehaviour {
     public bool tutorial;
     public Image fireFlyImage;
     public Image darknessImage;
+    private FMOD.Studio.EventInstance battleMusic;
+
+    private void Start() {
+        battleMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Gone_Astray_Battle_Music_demo_2");
+    }
 
 
     public void StartEncounter(Enemy enemy, List<Firefly> fireflyList) {
@@ -43,6 +48,7 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void StartTutorial() {
+        battleMusic.start();
         if (myFireflies.Count < 3) {
             RunAway();
         }
@@ -93,6 +99,7 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void StartBlackJack() {
+        battleMusic.start();
         if(myFireflies.Count < 3) {
             Debug.Log("ei uskalla");
             RunAway();
@@ -239,7 +246,7 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void GameLost() {
-        Debug.Log("hävisin pelin");
+        battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         enemyHand.Clear();
         myHand.Clear();
         deck.Clear();
@@ -260,7 +267,9 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void GameWon() {
-        Debug.Log("voitin pelin");
+        myEnemy.eye1.SetActive(false);
+        myEnemy.eye2.SetActive(false);
+        battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         enemyHand.Clear();
         myHand.Clear();
         deck.Clear();

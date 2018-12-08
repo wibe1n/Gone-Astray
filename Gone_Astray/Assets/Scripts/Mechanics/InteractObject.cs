@@ -21,7 +21,7 @@ public class InteractObject : MonoBehaviour
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.O) && m_MyEvent != null) {
+        if (Input.GetKeyDown(KeyCode.P) && m_MyEvent != null) {
             m_MyEvent.Invoke();
         }
 
@@ -40,7 +40,7 @@ public class InteractObject : MonoBehaviour
 
     private void OnTriggerStay(Collider player) {
         if(player.gameObject.GetComponent<Character>() != null) {
-            if (Input.GetKeyDown("4") && isCollectable) {
+            if (Input.GetKeyDown(KeyCode.O) && isCollectable) {
                 if (isFirefly) {
                     Firefly firefly = new Firefly(0);
                     player.GetComponent<Character>().myFireflies.Add(firefly);
@@ -48,6 +48,7 @@ public class InteractObject : MonoBehaviour
                 else {
                     player.GetComponent<Character>().items[itemIndex] = true;
                 }
+                Canvas.SetActive(false);
                 Destroy(gameObject);
             }
             //else if (itemIndex == se_rashkovnikin_näköinen_kasvi_joka_ei_sitten_olekaan_se) {

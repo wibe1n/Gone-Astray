@@ -20,8 +20,6 @@ public class Undying_Object : MonoBehaviour {
         DontDestroyOnLoad(this);
         StartCoroutine(StartMenuScreen());
         DataManager.ReadDataString("nonexistent");
-        Debug.Log(Application.persistentDataPath);
-        Debug.Log(NameDescContainer.GetChapterPart("part1", NameType.chapter1));
 		setDefaultKeys ();
     }
 
@@ -45,7 +43,7 @@ public class Undying_Object : MonoBehaviour {
 			yield return SceneManager.LoadSceneAsync ("TiinaWorldTest");
 			break;
 		default:
-			yield return SceneManager.LoadSceneAsync ("VillenWorldTest1");
+			yield return SceneManager.LoadSceneAsync ("DemoTestLevel1");
 			break;
 		}
 

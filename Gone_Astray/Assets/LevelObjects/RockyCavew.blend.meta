@@ -125,6 +125,11 @@ ModelImporter:
     400118: //RootNode
     2100000: Water
     2100002: unnamed
+    2100004: Stone
+    2100006: Material
+    2100008: SmallStone
+    2100010: tinyStone
+    2100012: Ground
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -363,7 +368,27 @@ ModelImporter:
     6400116: Plane_002
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground
+    second: {fileID: 2100000, guid: 8bb2e64cf0cd99348ad127ac6af0c595, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SmallStone
+    second: {fileID: 2100000, guid: 8e930d128254de64b841daa48b87c551, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone
+    second: {fileID: 2100000, guid: 5b3ac079b9ea6f84d8e9491a1c9772a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tinyStone
+    second: {fileID: 2100000, guid: b777c1682d030ad42b20cf8542dfb996, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
