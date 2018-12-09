@@ -497,6 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   cutsceneCamera: {fileID: 1074306220195340}
+  cutsceneHolder: {fileID: 0}
   director: {fileID: 320011864606214960}
   checkTimeline: 0
 --- !u!114 &114600422227082926
