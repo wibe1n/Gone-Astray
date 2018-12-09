@@ -25,6 +25,7 @@ public class CalmTrigger : MonoBehaviour {
             spoopyTrigger.spoopySounds.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             ambienceSounds.GetComponent<FMODUnity.StudioEventEmitter>().Play();
             StartCoroutine(TurnLightsBack());
+            player.GetComponent<Character>().spooped = false;
         }
     }
 

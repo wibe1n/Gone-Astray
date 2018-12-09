@@ -15,7 +15,7 @@ public class MoveToWaypoints : MonoBehaviour {
 
     private void Start() {
         hovering = gameObject.GetComponent<HoveringObject>();
-        proceed = true;
+        proceed = false;
     }
 
     private void FixedUpdate() {
@@ -38,6 +38,7 @@ public class MoveToWaypoints : MonoBehaviour {
 
     public void DisableHovering() {
         hovering.enabled = false;
+        proceed = true;
     }
 
     public void StartHovering() {

@@ -2693,6 +2693,16 @@ Prefab:
       propertyPath: m_Name
       value: Firefly (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: speechCreator
+      value: 
+      objectReference: {fileID: 1891647690}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 824585860}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f4c689b975cd3445ad692615227d1cd, type: 2}
   m_IsPrefabAsset: 0
@@ -8248,6 +8258,16 @@ Prefab:
       propertyPath: m_Name
       value: Firefly (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: speechCreator
+      value: 
+      objectReference: {fileID: 1891647690}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 824585860}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f4c689b975cd3445ad692615227d1cd, type: 2}
   m_IsPrefabAsset: 0
@@ -11070,8 +11090,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1027004530}
-  - component: {fileID: 1027004529}
   - component: {fileID: 1027004531}
+  - component: {fileID: 1027004529}
   m_Layer: 0
   m_Name: CalmTrigger
   m_TagString: CalmTrigger
@@ -11079,8 +11099,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1027004529
-CapsuleCollider:
+--- !u!65 &1027004529
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -11088,9 +11108,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 15
-  m_Height: 1
-  m_Direction: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20, z: 40}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1027004530
 Transform:
@@ -11098,13 +11117,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1027004528}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 205, y: 54.43, z: 168.4}
+  m_LocalRotation: {x: -0.0011412819, y: 0.23081242, z: 0.00047044206, w: 0.97299755}
+  m_LocalPosition: {x: 221.4, y: 54.4, z: 160.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 38
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.14, y: 26.69, z: 0.022000002}
 --- !u!114 &1027004531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11424,6 +11443,16 @@ Prefab:
       propertyPath: m_Radius
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: speechCreator
+      value: 
+      objectReference: {fileID: 1891647690}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 824585860}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f4c689b975cd3445ad692615227d1cd, type: 2}
   m_IsPrefabAsset: 0
@@ -15317,6 +15346,16 @@ Prefab:
       propertyPath: m_Name
       value: Firefly (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 824585860}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: speechCreator
+      value: 
+      objectReference: {fileID: 1891647690}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f4c689b975cd3445ad692615227d1cd, type: 2}
   m_IsPrefabAsset: 0
@@ -20432,6 +20471,16 @@ Prefab:
       propertyPath: m_Name
       value: Firefly (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: speechCreator
+      value: 
+      objectReference: {fileID: 1891647690}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 824585860}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f4c689b975cd3445ad692615227d1cd, type: 2}
   m_IsPrefabAsset: 0
@@ -22939,7 +22988,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2013956633}
   m_LocalRotation: {x: 0, y: 0.9698051, z: 0, w: 0.24388133}
-  m_LocalPosition: {x: 341, y: 27.88, z: 515}
+  m_LocalPosition: {x: 341.23596, y: 27.75871, z: 515.3743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 825963764}
@@ -23008,6 +23057,25 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f95ce58ec11037d44932c6cd320bbd71, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &2014929933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: f95ce58ec11037d44932c6cd320bbd71,
+    type: 3}
+  m_PrefabInternal: {fileID: 2014929932}
+--- !u!64 &2014929934
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2014929933}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: f95ce58ec11037d44932c6cd320bbd71, type: 3}
 --- !u!1 &2017660431
 GameObject:
   m_ObjectHideFlags: 0
@@ -23500,11 +23568,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a2f37ebd3ab339747bcd736fa33563aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 61.36296
+      value: 59.93
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a2f37ebd3ab339747bcd736fa33563aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 48.25554
+      value: 47.41
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a2f37ebd3ab339747bcd736fa33563aa, type: 3}
       propertyPath: m_LocalRotation.x

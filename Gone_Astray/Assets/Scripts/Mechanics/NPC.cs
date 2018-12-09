@@ -70,7 +70,10 @@ public class NPC : MonoBehaviour {
 
     private void Update() {
 		if (Input.GetKeyDown(talkKey) && m_MyEvent != null) {
-            m_MyEvent.Invoke();
+            if (id == 6 && gameObject.GetComponent<MoveToWaypoints>().proceed) { }
+            else{
+                m_MyEvent.Invoke();
+            }
         }
         else if (Input.GetKeyDown(talkBackKey) && m_MyEvent != null) {
             m_SecondEvent.Invoke();
