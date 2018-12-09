@@ -14679,7 +14679,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4152780578506524, guid: 8f4c689b975cd3445ad692615227d1cd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 26.994535
+      value: 27.58
       objectReference: {fileID: 0}
     - target: {fileID: 4152780578506524, guid: 8f4c689b975cd3445ad692615227d1cd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -14709,6 +14709,16 @@ Prefab:
       propertyPath: m_Name
       value: Firefly (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: speechCreator
+      value: 
+      objectReference: {fileID: 1891647690}
+    - target: {fileID: 114776631513554322, guid: 8f4c689b975cd3445ad692615227d1cd,
+        type: 2}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 824585860}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f4c689b975cd3445ad692615227d1cd, type: 2}
   m_IsPrefabAsset: 0
