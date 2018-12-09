@@ -5,7 +5,7 @@ using UnityEngine.Playables;
 
 public class CutsceneScript : MonoBehaviour {
 
-    public GameObject mainCamera, cutsceneCamera;
+    public GameObject mainCamera, cutsceneCamera, cutsceneHolder;
     public PlayableDirector director;
     public bool checkTimeline = false;
 
@@ -23,15 +23,13 @@ public class CutsceneScript : MonoBehaviour {
 	
     void Update()
     {
-
-        Debug.Log(director.state);
-
         if (checkTimeline == true)
         {
             if(director.state == PlayState.Paused)
             {
                 cutsceneCamera.SetActive(false);
                 mainCamera.SetActive(true);
+                cutsceneHolder.SetActive(false);
             }
         }
     }

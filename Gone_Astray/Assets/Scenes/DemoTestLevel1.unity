@@ -6669,6 +6669,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4749191324042796, guid: f4e2ddab45a47f5439a5bb54b0cff9a8,
     type: 2}
   m_PrefabInternal: {fileID: 632359990}
+--- !u!1 &639184154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1502786664890822, guid: f5f7feaa5416f9149a193d07ef3db88c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1791076501}
 --- !u!1001 &639822728
 Prefab:
   m_ObjectHideFlags: 0
@@ -20147,7 +20152,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4689969923332328, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.6094081
       objectReference: {fileID: 0}
     - target: {fileID: 4689969923332328, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
       propertyPath: m_LocalPosition.x
@@ -20181,6 +20186,40 @@ Prefab:
       propertyPath: m_ExposedReferences.m_References.Array.data[3].second
       value: 
       objectReference: {fileID: 1874769343}
+    - target: {fileID: 4307904767705792, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307904767705792, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307904767705792, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047328564945734, guid: f5f7feaa5416f9149a193d07ef3db88c,
+        type: 2}
+      propertyPath: m_PathPosition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307904767705792, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307904767705792, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307904767705792, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114378264829990346, guid: f5f7feaa5416f9149a193d07ef3db88c,
+        type: 2}
+      propertyPath: cutsceneHolder
+      value: 
+      objectReference: {fileID: 639184154}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
   m_IsPrefabAsset: 0
