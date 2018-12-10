@@ -12,6 +12,8 @@ public class MovementControls : MonoBehaviour {
     public bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
     public bool stop;
 	private Undying_Object undyObj;
+    public PhysicMaterial physMaterial;
+    public PhysicMaterial physMaterial2;
 	KeyCode crouchKey = KeyCode.None;
 	KeyCode jumpKey = KeyCode.None;
 
@@ -31,6 +33,8 @@ public class MovementControls : MonoBehaviour {
 			crouchKey = KeyCode.C;
 			jumpKey = KeyCode.Space;
 		}
+
+        physMaterial = GetComponent<CapsuleCollider>().material;
         // get the transform of the main camera
         if (Camera.main != null)
         {
@@ -54,6 +58,11 @@ public class MovementControls : MonoBehaviour {
         if (!m_Jump)
         {
 			m_Jump = Input.GetKeyDown(jumpKey);
+        }
+        if (!m_Character.m_IsGrounded)
+        {
+            physMaterial.staticFriction = 0f;
+            physMaterial.dynamicFriction = 0f;
         }
     }
 
