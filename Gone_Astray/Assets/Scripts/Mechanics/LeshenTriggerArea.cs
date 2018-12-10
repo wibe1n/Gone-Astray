@@ -25,11 +25,13 @@ public class LeshenTriggerArea : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider player){
-        m_MyEvent.AddListener(ActivateLeshen);
+		if(player.GetComponent<Character>().hasLeshen)
+        	m_MyEvent.AddListener(ActivateLeshen);
         player.GetComponent<Character>().leshenObjectNear = true;
     }
 	void OnTriggerExit(Collider player){
-        m_MyEvent.RemoveListener(ActivateLeshen);
+		if(player.GetComponent<Character>().hasLeshen)
+        	m_MyEvent.RemoveListener(ActivateLeshen);
         player.GetComponent<Character>().leshenObjectNear = false;
     }
 
