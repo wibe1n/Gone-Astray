@@ -13,17 +13,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114977714950321654}
-  - {fileID: 114541096000431244}
+  - {fileID: 114770101543542662}
   EditorEvents:
   - {fileID: 114789993453993786}
   - {fileID: 114688908725486538}
   - {fileID: 114640244881062560}
   - {fileID: 114537472122402226}
   - {fileID: 114550359763953310}
-  - {fileID: 114067790729099684}
-  MasterBankRef: {fileID: 114541096000431244}
+  - {fileID: 114381517657666336}
+  MasterBankRef: {fileID: 114770101543542662}
   StringsBankRef: {fileID: 114977714950321654}
-  stringsBankWriteTime: 636798160640091909
+  stringsBankWriteTime: 636800386123891212
   cacheVersion: 2
 --- !u!114 &114005165689989658
 MonoBehaviour:
@@ -272,6 +272,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 12474
   Exists: 1
+--- !u!114 &114106433023430748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ignore
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114129428197130600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,6 +543,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114282541680358434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Progression
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114298645288701448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,6 +714,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114351606601305932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114351796431823502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,6 +789,28 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114381517657666336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Misc/Chime
+  guid: 56f0b96c39a7c34e8d41e50403daa2af
+  Banks:
+  - {fileID: 114770101543542662}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1193
 --- !u!114 &114413685596959862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,6 +991,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 12474
   Exists: 1
+--- !u!114 &114531214862067272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114533875354343840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,12 +1035,12 @@ MonoBehaviour:
   Path: event:/Ambience/AmbientMusic
   guid: 6e41c225fc2475468b2ba3e6e6a45bed
   Banks:
-  - {fileID: 114541096000431244}
+  - {fileID: 114770101543542662}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114307079426001292}
+  - {fileID: 114982554494235218}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -1010,7 +1092,7 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_Battle_Music_demo_2
   guid: c00afdc4e1cca748b8e2cc06ce02be69
   Banks:
-  - {fileID: 114541096000431244}
+  - {fileID: 114770101543542662}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1037,6 +1119,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2050336
   Exists: 1
+--- !u!114 &114572556260171260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114585145237315856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,14 +1208,14 @@ MonoBehaviour:
   Path: event:/Ambience/Forest
   guid: a3ae3bd04fbd33448238dee4bc729da1
   Banks:
-  - {fileID: 114541096000431244}
+  - {fileID: 114770101543542662}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114859933760345734}
-  - {fileID: 114624637856159954}
-  - {fileID: 114527011719489182}
+  - {fileID: 114106433023430748}
+  - {fileID: 114704430417646384}
+  - {fileID: 114531214862067272}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -1149,6 +1246,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114671374858608890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ignore
   Min: 0
   Max: 1
   Default: 0
@@ -1199,7 +1311,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Footsteps
   guid: 086348bc1ebfe941a915054c30b881b4
   Banks:
-  - {fileID: 114541096000431244}
+  - {fileID: 114770101543542662}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1207,6 +1319,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 912
+--- !u!114 &114704430417646384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114711506424199088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1305,6 +1432,25 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114770101543542662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Minttu\Documents\Gone Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636800386123704898
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 31373888
+  Exists: 1
 --- !u!114 &114776827901224034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,7 +1480,7 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_theme_demo_3
   guid: 289a505cd77b09409dfda1be5c9bb021
   Banks:
-  - {fileID: 114541096000431244}
+  - {fileID: 114770101543542662}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1530,7 +1676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Gone_Astray_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636798160640091909
+  lastModified: 636800386123891212
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1548,6 +1694,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114982554494235218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Progression
   Min: 0
   Max: 1
   Default: 0
