@@ -10,6 +10,7 @@ public class Character : MonoBehaviour {
     public bool bossIsNear = false;
     public bool spooped = false;
     public bool leshenObjectNear = false;
+	public bool hasLeshen = false;
     public int level = 0;
     public List<Firefly> myFireflies = new List<Firefly> { };
     public float stressLevel = 0;
@@ -31,22 +32,23 @@ public class Character : MonoBehaviour {
     }
 	
 	void Update () {
-		if (!leshenObjectNear) {
-			if (Input.GetKeyDown (leshenKey)) {
-				RaycastHit objectHit;
-				Vector3 down = rayCastDrawer.transform.TransformDirection (Vector3.down);
-				Physics.Raycast (rayCastDrawer.transform.position, down, out objectHit, dist);
-				if (!(lastSapling == null)) {
-					Destroy(lastSapling);
+		if (hasLeshen) {
+			if (!leshenObjectNear) {
+				if (Input.GetKeyDown (leshenKey)) {
+					RaycastHit objectHit;
+					Vector3 down = rayCastDrawer.transform.TransformDirection (Vector3.down);
+					Physics.Raycast (rayCastDrawer.transform.position, down, out objectHit, dist);
+					if (!(lastSapling == null)) {
+						Destroy (lastSapling);
+					}
+					lastSapling = Instantiate (sapling, objectHit.point, sapling.transform.rotation);
 				}
-				lastSapling = Instantiate (sapling, objectHit.point, sapling.transform.rotation);
-			}
-		} else {
-			if (!(lastSapling == null) && Input.GetKeyDown (leshenKey)) {
-				Destroy (lastSapling);
+			} else {
+				if (!(lastSapling == null) && Input.GetKeyDown (leshenKey)) {
+					Destroy (lastSapling);
+				}
 			}
 		}
-
     }
 
     public void AddFirefly() {
