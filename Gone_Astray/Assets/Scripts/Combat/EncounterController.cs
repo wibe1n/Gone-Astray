@@ -62,6 +62,7 @@ public class EncounterController : MonoBehaviour {
             fireflyIcon.SetActive(true);
             darknessIcon.SetActive(true);
             nextButton.SetActive(true);
+            textPanel.SetActive(true);
             infoText.text = NameDescContainer.GetCombatTutorialPart("part0");
             GenerateBlackJackDeck();
             ShuffleDeck();
@@ -262,6 +263,7 @@ public class EncounterController : MonoBehaviour {
         fireflyIcon.SetActive(false);
         darknessIcon.SetActive(false);
         proceedButton.SetActive(false);
+        textPanel.SetActive(false);
         RunAway();
         //TODO affect world???       
     }
@@ -285,6 +287,7 @@ public class EncounterController : MonoBehaviour {
         darknessIcon.SetActive(false);
         proceedButton.SetActive(false);
         gameCanvas.SetActive(false);
+        textPanel.SetActive(false);
         player.GetComponent<MovementControls>().stop = false;
         //TODO animation for monster transforming to something regiular???
     }
