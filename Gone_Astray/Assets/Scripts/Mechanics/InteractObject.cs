@@ -12,6 +12,7 @@ public class InteractObject : MonoBehaviour
     public GameObject Canvas; // drag from hierarchy
 	public bool isCollectable;
 	public bool isFirefly;
+	public bool isLeshen;
 
     void OnTriggerEnter(Collider player) {
         if (player.gameObject.GetComponent<Character>() != null) {
@@ -43,7 +44,9 @@ public class InteractObject : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.O) && isCollectable) {
                 if (isFirefly) {
                     player.GetComponent<Character>().AddFirefly();
-                }
+				}else if (isLeshen) {
+					player.GetComponent<Character>().hasLeshen = true;
+				}
                 else {
                     player.GetComponent<Character>().items[itemIndex] = true;
                 }
