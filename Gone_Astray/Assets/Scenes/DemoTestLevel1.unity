@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 704277919}
-  m_IndirectSpecularColor: {r: 0.12182022, g: 0.15329531, b: 0.26973668, a: 1}
+  m_IndirectSpecularColor: {r: 0.12182029, g: 0.15329543, b: 0.2697369, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20596,6 +20596,16 @@ Prefab:
       propertyPath: cutsceneHolder
       value: 
       objectReference: {fileID: 639184154}
+    - target: {fileID: 114378264829990346, guid: f5f7feaa5416f9149a193d07ef3db88c,
+        type: 2}
+      propertyPath: eyeIconCanvas
+      value: 
+      objectReference: {fileID: 1938242053}
+    - target: {fileID: 114378264829990346, guid: f5f7feaa5416f9149a193d07ef3db88c,
+        type: 2}
+      propertyPath: movementControls
+      value: 
+      objectReference: {fileID: 2013956636}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
   m_IsPrefabAsset: 0
@@ -22314,6 +22324,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae2d7ee236a8904d9c36c28c3688df7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1938242053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1117203573370820, guid: 0ae2d7ee236a8904d9c36c28c3688df7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1938242052}
 --- !u!1001 &1939978453
 Prefab:
   m_ObjectHideFlags: 0

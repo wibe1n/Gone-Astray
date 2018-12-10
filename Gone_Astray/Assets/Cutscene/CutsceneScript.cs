@@ -5,9 +5,10 @@ using UnityEngine.Playables;
 
 public class CutsceneScript : MonoBehaviour {
 
-    public GameObject mainCamera, cutsceneCamera, cutsceneHolder;
+    public GameObject mainCamera, cutsceneCamera, cutsceneHolder, eyeIconCanvas;
     public PlayableDirector director;
     public bool checkTimeline = false;
+    public MovementControls movementControls;
 
 	// Use this for initialization
 	void Start () {
@@ -25,20 +26,30 @@ public class CutsceneScript : MonoBehaviour {
     {
         if (checkTimeline == true)
         {
-            if(director.state == PlayState.Paused)
+            if(director.state == PlayState.Paused || Input.GetKeyDown(KeyCode.O))
             {
-                cutsceneCamera.SetActive(false);
-                mainCamera.SetActive(true);
-                cutsceneHolder.SetActive(false);
+                EndCutscene();
             }
+
         }
     }
 
 	void OnTriggerEnter(Collider player)
     {
+        movementControls.stop = true;
         mainCamera.SetActive(false);
         cutsceneCamera.SetActive(true);
         director.Play();
         checkTimeline = true;
+        eyeIconCanvas.SetActive(true);
+    }
+
+    void EndCutscene()
+    {
+        eyeIconCanvas.SetActive(false);
+        cutsceneCamera.SetActive(false);
+        mainCamera.SetActive(true);
+        cutsceneHolder.SetActive(false);
+        movementControls.stop = false;
     }
 }
