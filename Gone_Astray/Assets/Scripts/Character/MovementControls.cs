@@ -13,7 +13,6 @@ public class MovementControls : MonoBehaviour {
     public bool stop;
 	private Undying_Object undyObj;
     public PhysicMaterial physMaterial;
-    public PhysicMaterial physMaterial2;
 	KeyCode crouchKey = KeyCode.None;
 	KeyCode jumpKey = KeyCode.None;
 
@@ -33,8 +32,6 @@ public class MovementControls : MonoBehaviour {
 			crouchKey = KeyCode.C;
 			jumpKey = KeyCode.Space;
 		}
-
-        physMaterial = GetComponent<CapsuleCollider>().material;
         // get the transform of the main camera
         if (Camera.main != null)
         {
@@ -63,6 +60,10 @@ public class MovementControls : MonoBehaviour {
         {
             physMaterial.staticFriction = 0f;
             physMaterial.dynamicFriction = 0f;
+        }
+        else {
+            physMaterial.staticFriction = 1f;
+            physMaterial.dynamicFriction = 1f;
         }
     }
 
