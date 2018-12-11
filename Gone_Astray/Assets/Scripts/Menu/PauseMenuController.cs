@@ -158,7 +158,7 @@ public class PauseMenuController : MonoBehaviour {
     public void GotoMainMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        Game_Manager.StartMenu();
     }
 	public void HelpOn(){
 		helpPage.SetActive (true);
