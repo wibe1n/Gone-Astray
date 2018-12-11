@@ -135,6 +135,7 @@ public class EncounterController : MonoBehaviour {
 
     IEnumerator RunAwayRoutine() {
         runAwayScreen.SetActive(true);
+        battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.0f, false);
         player.transform.position = myEnemy.checkpoint.transform.position;
         camera.transform.position = myEnemy.checkpoint.transform.position;
@@ -271,7 +272,7 @@ public class EncounterController : MonoBehaviour {
         myHand.Clear();
         deck.Clear();
         Destroy(myEnemy);
-        for(int i = 0; i < usedFireflies.Capacity; i++) {
+        for(int i = 0; i < usedFireflies.Count; i++) {
             player.GetComponent<Character>().myFireflies.Add(usedFireflies[i]);
         }
         combatController.myHandText = "";
