@@ -13,11 +13,11 @@ public class DialogTextKey : MonoBehaviour {
 		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
 			if (undyObj.talkKey == KeyCode.None)
-				talkKey = KeyCode.O;
+				talkKey = KeyCode.E;
 			else
 				talkKey = undyObj.talkKey;
 		}else
-			talkKey = KeyCode.O;
+			talkKey = KeyCode.E;
 	}
 	
 	// Update is called once per frame
