@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class EncounterController : MonoBehaviour {
 
     public GameObject player, camera;
+    UnityEvent m_MyEvent = new UnityEvent();
     public Character character;
     public CombatController combatController;
     public Enemy myEnemy;
@@ -29,6 +31,11 @@ public class EncounterController : MonoBehaviour {
         battleMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Gone_Astray_Battle_Music_demo_2");
     }
 
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.E) && m_MyEvent != null) {
+            m_MyEvent.Invoke();
+        }
+    }
 
     public void StartEncounter(Enemy enemy, List<Firefly> fireflyList) {
 
@@ -49,6 +56,7 @@ public class EncounterController : MonoBehaviour {
         }
         else {
             tutorial = true;
+            m_MyEvent.AddListener(NextTutorialPart);
             fireFlyImage.rectTransform.sizeDelta = new Vector2(combatController.myHandNumber * 100 / 21, combatController.myHandNumber * 100 / 21);
             darknessImage.rectTransform.sizeDelta = new Vector2(combatController.enemyHandNumber * 100 / 21, combatController.enemyHandNumber * 100 / 21);
             runButton.SetActive(false);
