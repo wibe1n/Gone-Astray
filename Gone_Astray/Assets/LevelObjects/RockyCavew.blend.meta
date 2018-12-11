@@ -130,6 +130,7 @@ ModelImporter:
     2100008: SmallStone
     2100010: tinyStone
     2100012: Ground
+    2100014: Wood
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -384,6 +385,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Stone
     second: {fileID: 2100000, guid: 5b3ac079b9ea6f84d8e9491a1c9772a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: cc60ec32b64abd84ba21af6ca87441bf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
