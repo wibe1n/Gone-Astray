@@ -5,7 +5,7 @@ using UnityEngine.Playables;
 
 public class CutsceneScript : MonoBehaviour {
 
-    public GameObject mainCamera, cutsceneCamera, cutsceneHolder, cutsceneCanvas;
+    public GameObject mainCamera, cutsceneCamera, cutsceneHolder, cutsceneCanvas, player;
     public PlayableDirector director;
     public bool checkTimeline = false;
     public MovementControls movementControls;
@@ -36,6 +36,9 @@ public class CutsceneScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider player)
     {
+        var rotation = player.transform.rotation.eulerAngles;
+        rotation.y = 178;
+        player.transform.rotation = Quaternion.Euler(rotation);
         movementControls.stop = true;
         mainCamera.SetActive(false);
         cutsceneCamera.SetActive(true);
