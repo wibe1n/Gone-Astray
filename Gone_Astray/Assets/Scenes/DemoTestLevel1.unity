@@ -11487,7 +11487,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100116, guid: 5470b7d6f49e98a4585ca368100e32d5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300116, guid: 5470b7d6f49e98a4585ca368100e32d5, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -12963,12 +12963,12 @@ Prefab:
     - target: {fileID: 108581014692048860, guid: 8f4c689b975cd3445ad692615227d1cd,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.8089572
+      value: 0.96862745
       objectReference: {fileID: 0}
     - target: {fileID: 108581014692048860, guid: 8f4c689b975cd3445ad692615227d1cd,
         type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.56078434
       objectReference: {fileID: 0}
     - target: {fileID: 135730862187056306, guid: 8f4c689b975cd3445ad692615227d1cd,
         type: 2}
@@ -13035,7 +13035,7 @@ MonoBehaviour:
   - {fileID: 1370520811}
   - {fileID: 1448767014}
   tempPosition: {x: 0, y: 0, z: 0}
-  speed: 2
+  speed: 10
   proceed: 0
 --- !u!4 &1163341488 stripped
 Transform:
