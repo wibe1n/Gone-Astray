@@ -5,7 +5,7 @@ using UnityEngine.Playables;
 
 public class CutsceneScript : MonoBehaviour {
 
-    public GameObject mainCamera, cutsceneCamera, cutsceneHolder, eyeIconCanvas;
+    public GameObject mainCamera, cutsceneCamera, cutsceneHolder, cutsceneCanvas;
     public PlayableDirector director;
     public bool checkTimeline = false;
     public MovementControls movementControls;
@@ -41,12 +41,12 @@ public class CutsceneScript : MonoBehaviour {
         cutsceneCamera.SetActive(true);
         director.Play();
         checkTimeline = true;
-        eyeIconCanvas.SetActive(true);
+        cutsceneCanvas.SetActive(true);
     }
 
     void EndCutscene()
     {
-        eyeIconCanvas.SetActive(false);
+        cutsceneCanvas.SetActive(false);
         cutsceneCamera.SetActive(false);
         mainCamera.SetActive(true);
         cutsceneHolder.SetActive(false);
