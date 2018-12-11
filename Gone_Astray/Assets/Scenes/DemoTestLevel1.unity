@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 704277919}
-  m_IndirectSpecularColor: {r: 0.12182041, g: 0.15329567, b: 0.26973724, a: 1}
+  m_IndirectSpecularColor: {r: 0.12182022, g: 0.15329531, b: 0.26973668, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23648,6 +23648,83 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c41312b83e6f19a478a46ca195c846dd, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1001 &2005457483
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 457078945}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+      propertyPath: m_Name
+      value: FiastreeStep (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
+  m_IsPrefabAsset: 0
+--- !u!1 &2005457484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 3491ec268106cd54fb2877ff4bb92405,
+    type: 3}
+  m_PrefabInternal: {fileID: 2005457483}
+--- !u!64 &2005457485
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2005457484}
+  m_Material: {fileID: 13400000, guid: e52fb17f9b1e7fd48b8955f1391d3688, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
 --- !u!1 &2005741789
 GameObject:
   m_ObjectHideFlags: 0
@@ -24349,11 +24426,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.49
+      value: -13.79
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.03
+      value: 7.38
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3491ec268106cd54fb2877ff4bb92405, type: 3}
       propertyPath: m_LocalPosition.z
