@@ -34,7 +34,7 @@ public class Undying_Object : MonoBehaviour {
 		leshenKey = KeyCode.L;
 		crouchKey = KeyCode.C;
 		jumpKey = KeyCode.Space;
-		talkKey = KeyCode.O;
+		talkKey = KeyCode.E;
 	}
 
 	private IEnumerator ToTheWorld() {

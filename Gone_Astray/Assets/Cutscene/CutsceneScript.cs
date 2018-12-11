@@ -26,7 +26,7 @@ public class CutsceneScript : MonoBehaviour {
     {
         if (checkTimeline == true)
         {
-            if(director.state == PlayState.Paused || Input.GetKeyDown(KeyCode.O))
+            if(director.state == PlayState.Paused || Input.GetKeyDown(KeyCode.E))
             {
                 EndCutscene();
             }
