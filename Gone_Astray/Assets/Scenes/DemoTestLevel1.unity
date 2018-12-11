@@ -13186,7 +13186,7 @@ Transform:
   m_LocalScale: {x: 24.249573, y: 41.667713, z: 9.8764}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 63
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 44.829002, z: 0}
 --- !u!1001 &1093764946
 Prefab:
@@ -20663,17 +20663,17 @@ Prefab:
     - target: {fileID: 198814208675654442, guid: 3df47a00fe7f17e498250f3c478ae4be,
         type: 2}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.87156934
+      value: 0.85925037
       objectReference: {fileID: 0}
     - target: {fileID: 198814208675654442, guid: 3df47a00fe7f17e498250f3c478ae4be,
         type: 2}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.38959593
+      value: 0.19339621
       objectReference: {fileID: 0}
     - target: {fileID: 198814208675654442, guid: 3df47a00fe7f17e498250f3c478ae4be,
         type: 2}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.9716981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3df47a00fe7f17e498250f3c478ae4be, type: 2}
@@ -21718,7 +21718,7 @@ Transform:
   m_Children:
   - {fileID: 1138280685}
   m_Father: {fileID: 0}
-  m_RootOrder: 61
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1681398006
 Prefab:
