@@ -42,6 +42,9 @@ public class NPC : MonoBehaviour {
             Canvas.SetActive(true);
             m_MyEvent.AddListener(TalkEvent);
             m_SecondEvent.AddListener(Backwards);
+            if (id == 6 && currentSpeechInstance == 1) {
+                m_MyEvent.Invoke();
+            }
         }
 
     }

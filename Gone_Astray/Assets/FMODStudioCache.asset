@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114977714950321654}
-  - {fileID: 114770101543542662}
+  - {fileID: 114271009219973966}
   EditorEvents:
   - {fileID: 114789993453993786}
   - {fileID: 114688908725486538}
@@ -21,9 +21,9 @@ MonoBehaviour:
   - {fileID: 114537472122402226}
   - {fileID: 114550359763953310}
   - {fileID: 114381517657666336}
-  MasterBankRef: {fileID: 114770101543542662}
+  MasterBankRef: {fileID: 114271009219973966}
   StringsBankRef: {fileID: 114977714950321654}
-  stringsBankWriteTime: 636800386123891212
+  stringsBankWriteTime: 636798160640091909
   cacheVersion: 2
 --- !u!114 &114005165689989658
 MonoBehaviour:
@@ -423,6 +423,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114214874723956976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114236820919432668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,7 +558,41 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114271009219973966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Ville\Documents\Gone-Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636798160640051904
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 31373760
+  Exists: 1
 --- !u!114 &114282541680358434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Progression
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114289024059927298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -774,6 +823,40 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114377680874952694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114377871800708020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Ville\Documents\Gone-Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636798160640051904
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 31373760
+  Exists: 1
 --- !u!114 &114378487521809856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,7 +886,7 @@ MonoBehaviour:
   Path: event:/Misc/Chime
   guid: 56f0b96c39a7c34e8d41e50403daa2af
   Banks:
-  - {fileID: 114770101543542662}
+  - {fileID: 114271009219973966}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -913,6 +996,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 12474
   Exists: 1
+--- !u!114 &114501497904201954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ignore
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114523028087010822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,12 +1133,12 @@ MonoBehaviour:
   Path: event:/Ambience/AmbientMusic
   guid: 6e41c225fc2475468b2ba3e6e6a45bed
   Banks:
-  - {fileID: 114770101543542662}
+  - {fileID: 114271009219973966}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114982554494235218}
+  - {fileID: 114289024059927298}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -1092,7 +1190,7 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_Battle_Music_demo_2
   guid: c00afdc4e1cca748b8e2cc06ce02be69
   Banks:
-  - {fileID: 114770101543542662}
+  - {fileID: 114271009219973966}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1208,14 +1306,14 @@ MonoBehaviour:
   Path: event:/Ambience/Forest
   guid: a3ae3bd04fbd33448238dee4bc729da1
   Banks:
-  - {fileID: 114770101543542662}
+  - {fileID: 114271009219973966}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114106433023430748}
-  - {fileID: 114704430417646384}
-  - {fileID: 114531214862067272}
+  - {fileID: 114948412305402190}
+  - {fileID: 114889003359481646}
+  - {fileID: 114377680874952694}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -1311,7 +1409,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Footsteps
   guid: 086348bc1ebfe941a915054c30b881b4
   Banks:
-  - {fileID: 114770101543542662}
+  - {fileID: 114271009219973966}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1480,7 +1578,7 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_theme_demo_3
   guid: 289a505cd77b09409dfda1be5c9bb021
   Banks:
-  - {fileID: 114770101543542662}
+  - {fileID: 114271009219973966}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1567,6 +1665,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114889003359481646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114896286044446238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1634,6 +1747,36 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 912
+--- !u!114 &114945376727381592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Progression
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114948412305402190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ignore
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114969200041398826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1676,7 +1819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Gone_Astray_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636800386123891212
+  lastModified: 636798160640091909
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1709,6 +1852,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Progression
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114989658246738508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spoopy
   Min: 0
   Max: 1
   Default: 0

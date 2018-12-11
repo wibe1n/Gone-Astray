@@ -42,3 +42,15 @@
 
 %npc_npc1_0_part14
 &npc_npc1_part14_Great! Let's go!
+
+%npc_npc2_1_part0
+&npc_npc2_part0_Alright then, let's go.
+
+%npc_npc2_1_part1
+&npc_npc2_part1_Fia: I seem to have, ummm... lost the key...
+
+%npc_npc2_1_part2
+&npc_npc2_part2_Fia: Could you help me look for it? It's a magical plant called Raskovnik.
+
+%npc_npc2_1_part3
+&npc_npc2_part3_Fia: It has to be somewhere in this forest. Let's just hope some creature hasn't took it.
