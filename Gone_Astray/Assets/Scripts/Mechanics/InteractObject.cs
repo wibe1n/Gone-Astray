@@ -14,6 +14,20 @@ public class InteractObject : MonoBehaviour
 	public bool isFirefly;
 	public bool isLeshen;
 
+	private Undying_Object undyObj;
+	public KeyCode pickKey = KeyCode.None;
+
+	void Start(){
+		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
+			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
+			if (undyObj.talkKey == KeyCode.None)
+				pickKey = KeyCode.E;
+			else
+				pickKey = undyObj.talkKey;
+		}else
+			pickKey = KeyCode.E;
+	}
+
     void OnTriggerEnter(Collider player) {
         if (player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(true);
@@ -41,7 +55,7 @@ public class InteractObject : MonoBehaviour
 
     private void OnTriggerStay(Collider player) {
         if(player.gameObject.GetComponent<Character>() != null) {
-            if (Input.GetKeyDown(KeyCode.O) && isCollectable) {
+			if (Input.GetKeyDown(pickKey) && isCollectable) {
                 if (isFirefly) {
                     player.GetComponent<Character>().AddFirefly();
 				}else if (isLeshen) {
