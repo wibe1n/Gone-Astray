@@ -22,17 +22,14 @@ public class NPC : MonoBehaviour {
         if(id == 6) {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
         }
-        
-
-
         if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			Undying_Object undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
 			if (undyObj.talkKey == KeyCode.None)
-				talkKey = KeyCode.O;
+				talkKey = KeyCode.E;
 			else
 				talkKey = undyObj.talkKey;
 		}else
-			talkKey = KeyCode.O;
+			talkKey = KeyCode.E;
         talkBackKey = KeyCode.P;
     }
 
