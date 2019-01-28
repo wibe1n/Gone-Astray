@@ -19,6 +19,8 @@ public static class DataManager {
     public static List<string> nameListGeneric = new List<string> { };
     public static List<string> descriptionListGeneric = new List<string> { };
 
+    //Ladataan tekstidata ja tarkistetaan että data löytyy, lähetetään virheviesti jos tyhjää
+
     static public string ReadDataString(string entryName) {
         if (!readBool) {
             DownloadTextData();
@@ -44,6 +46,7 @@ public static class DataManager {
     }
 
     static private void DownloadTextData() {
+        //Luodaan jokaista tiedostoa kohti dictionary ja ladataan tiedostot yksitellen. Sen jälkeen lähetetään tiedostot Containeriin
         for (int i = 0; i < System.Enum.GetNames(typeof(DataManagerDictionaryType)).Length; i++) {
             configDatas.Add(new Dictionary<string, string>());
         }
@@ -57,6 +60,9 @@ public static class DataManager {
     }
 
     static private void DownloadSingleFile(string filename, Dictionary<string, string> dic, List<string> namelist) {
+        //Otetaan datareitti yksitellen, jos ei löydy niin virheviesti
+        //Parsetaan data niin että % merkki aloittaa uuden dictionary avaimen ja & merkki on sen sisältö # on kommentteja eli ne säilötään irrallisina
+
         string path = "Texts/" + filename;
         TextAsset fullData = Resources.Load(path) as TextAsset;
         if (fullData == null) {

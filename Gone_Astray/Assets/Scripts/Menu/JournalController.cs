@@ -15,7 +15,7 @@ public class JournalController : MonoBehaviour {
     public GameObject leftPageFrame;
     public GameObject rightPageFrame;
 
-    // Use this for initialization
+    //Avataan journal, aktivoidaan sivut
     public void OpenJournal () {
         leftPageNumber = 1;
         rightPageNumber = 2;
@@ -24,7 +24,6 @@ public class JournalController : MonoBehaviour {
         rightPageFrame.gameObject.SetActive(false);
 	}
 
-    // Update is called once per frame
     public void Forward()
     {
         if (leftPageNumber == 1)

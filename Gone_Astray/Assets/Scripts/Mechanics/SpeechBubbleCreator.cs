@@ -8,6 +8,7 @@ public class SpeechBubbleCreator : MonoBehaviour {
     public GameObject speechbubble, askCanvas;
     public Text bubbleText;
 
+    //Tekstit haetaan teksticontainerista allaolevista funktioista
     public void GenerateSpeechBubble(NPC npc) {
         askCanvas.SetActive(false);
         NameType npcID = (NameType)npc.id;

@@ -30,6 +30,7 @@ using UnityEngine;
         bool m_Crouching;
 
 
+        //Alustetaan animaattori ja hahmo
         void Start() {
             m_Animator = GetComponent<Animator>();
             m_Rigidbody = GetComponent<Rigidbody>();

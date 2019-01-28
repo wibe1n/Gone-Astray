@@ -5,7 +5,7 @@ using UnityEngine;
 public class SaveAtCheckpoint : MonoBehaviour {
 
 	
-
+    //Pelaajan tullessä checkpointtiin, tallennetaan kameran ja pelaajan positio, tulikärpästen määrä ja mikä levelin osa on instantioitu
 	void OnTriggerEnter(Collider player){
         if (player.GetComponent<Character>() != null) {
             SaveGame.Instance.cameraPosition = transform.position;

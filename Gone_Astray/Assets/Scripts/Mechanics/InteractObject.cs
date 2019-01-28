@@ -17,6 +17,7 @@ public class InteractObject : MonoBehaviour
 	private Undying_Object undyObj;
 	public KeyCode pickKey = KeyCode.None;
 
+    //Haetaan keybindingit
 	void Start(){
 		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
@@ -28,6 +29,7 @@ public class InteractObject : MonoBehaviour
 			pickKey = KeyCode.E;
 	}
 
+    //Lisätään eventinkuuntelija
     void OnTriggerEnter(Collider player) {
         if (player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(true);
@@ -42,6 +44,7 @@ public class InteractObject : MonoBehaviour
 
     }
 
+    //Vanhaa koodia? Infoboksin avaaminen
     public void LookObject() {
         if (open) {
             speechCreator.CloseInfoBox();
@@ -53,6 +56,7 @@ public class InteractObject : MonoBehaviour
         }
     }
 
+    //Otetaan objekti
     private void OnTriggerStay(Collider player) {
         if(player.gameObject.GetComponent<Character>() != null) {
 			if (Input.GetKeyDown(pickKey) && isCollectable) {
@@ -67,13 +71,11 @@ public class InteractObject : MonoBehaviour
                 Canvas.SetActive(false);
                 Destroy(gameObject);
             }
-            //else if (itemIndex == se_rashkovnikin_näköinen_kasvi_joka_ei_sitten_olekaan_se) {
-            //  JOTAIN huomataan että eipäs otetakkaan mukaan
-            //}
         }
         
     }
 
+    //poistetaan kuuntelija
     void OnTriggerExit(Collider player) {
         if(player.gameObject.GetComponent<Character>() != null) {
             Canvas.SetActive(false);

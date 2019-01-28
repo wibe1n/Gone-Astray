@@ -18,6 +18,7 @@ public class MovementControls : MonoBehaviour {
 
     private void Start()
     {
+        //Haetaan keybindingit
 		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
 			if (undyObj.crouchKey == KeyCode.None)
@@ -56,6 +57,7 @@ public class MovementControls : MonoBehaviour {
         {
 			m_Jump = Input.GetKeyDown(jumpKey);
         }
+        // Jos hahmo on maassa niin kitka on maksimi, jos hahmo on ilmassa kitkaa ei ole
         if (!m_Character.m_IsGrounded)
         {
             physMaterial.staticFriction = 0f;

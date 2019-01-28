@@ -40,6 +40,7 @@ public class Footsteps : MonoBehaviour
 
     void Update()
     {
+        // Kun ollaan edetty tietyn verran matkaa ja ollaan maassa soitetaan jalanjälki ääni
         m_DistanceTravelled += (transform.position - m_PrevPos).magnitude;
         if (m_DistanceTravelled >= m_StepDistance + m_StepRand)//TODO: Play footstep sound based on position from headbob script
         {
@@ -70,6 +71,7 @@ public class Footsteps : MonoBehaviour
         m_Wood = 0.0f;
 
         RaycastHit hit;
+        // lähetetään maahan raycasti, haetaan maaston materiaali ja soitetaan oikea ääni sen perusteella. Jos ei ole materiaalia, niin soitetaan default ääni
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 1000.0f))
         {
             if (m_Debug)

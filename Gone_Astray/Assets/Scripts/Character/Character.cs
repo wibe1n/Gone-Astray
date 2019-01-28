@@ -21,6 +21,8 @@ public class Character : MonoBehaviour {
 	public KeyCode leshenKey = KeyCode.None;
 
     void Start () {
+        //Hae keybindingit
+
 		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
 			if (undyObj.leshenKey == KeyCode.None)
@@ -32,6 +34,9 @@ public class Character : MonoBehaviour {
     }
 	
 	void Update () {
+
+         //Jos pelaajalla on leshen, niin leshen nappia painettaessa hahmo lähettää raycastin alas ja kun säde osuu maahan nii osumakohtaan
+         //kasvaa itu ellei ole kasvukohdalla
 		if (hasLeshen) {
 			if (!leshenObjectNear) {
 				if (Input.GetKeyDown (leshenKey)) {
@@ -51,6 +56,7 @@ public class Character : MonoBehaviour {
 		}
     }
 
+    //Kun pelaaja saa tulikärpäsen, Partikkeliefektin maksimi partikkelit lisääntyvät yhdellä
     public void AddFirefly() {
         Firefly firefly = new Firefly(0);
         myFireflies.Add(firefly);

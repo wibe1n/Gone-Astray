@@ -15,6 +15,7 @@ public class SaveGame
 
 	private static string _gameDataFileName = "data.json";
 	private static SaveGame _instance;
+
 	public static SaveGame Instance
 	{
 		get

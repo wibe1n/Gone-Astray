@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class Game_Manager  {
 
+    //Lataa skenet
+
     public  static void StartLevel1() {
         GameObject.FindGameObjectWithTag("UndyingObject").GetComponent<Undying_Object>().Level1();
     }

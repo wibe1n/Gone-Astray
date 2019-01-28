@@ -16,6 +16,7 @@ public class LevelLoader : MonoBehaviour {
         StartCoroutine(AsyncLoad());
     }
 
+    //Lataa levelin uuden osan taustalla
     IEnumerator AsyncLoad() {
         levelRequest = Resources.LoadAsync(loadPath);
         yield return levelRequest; 

@@ -12,7 +12,7 @@ public class SpoopyTrigger : MonoBehaviour {
 
     float duration;
     
-
+    //haetaan pelottava musiikki ja asetetaan valaistus parametrit
     void Start () {
         ambienceSounds = GameObject.FindGameObjectWithTag("CameraRig");
         spoopySounds = FMODUnity.RuntimeManager.CreateInstance("event:/Ambience/AmbientMusic");
@@ -23,6 +23,7 @@ public class SpoopyTrigger : MonoBehaviour {
 
     }
 
+    //Pelaajan tullessa, muutetaan boolean, aloitetaan spoopy musiikki, pysäytetään ambienssi ja vaihdedtaan valaistus
     private void OnTriggerEnter(Collider player) {
         if (player.GetComponent<Character>() && player.GetComponent<Character>().spooped == false) {
             player.GetComponent<Character>().spooped = true;
@@ -34,6 +35,7 @@ public class SpoopyTrigger : MonoBehaviour {
         }
     }
 
+    //valaistuksen lerppaus
     public IEnumerator TurnLightsSpoopy() {
         float timeRemaining = duration;
         while (timeRemaining > 0)

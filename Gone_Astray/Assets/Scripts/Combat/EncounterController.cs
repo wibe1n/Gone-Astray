@@ -16,7 +16,7 @@ public class EncounterController : MonoBehaviour {
     public List<int> deck = new List<int>() { };
     public List<int> enemyHand;
     public List<int> myHand;
-    public int myScore, enemyScore, winTarget;
+    public int myScore, enemyScore, winTarget, minimFireflies;
     private int tutorialPart = 0;
     public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton;
     public Text infoText;
@@ -37,6 +37,7 @@ public class EncounterController : MonoBehaviour {
         }
     }
 
+    // haetaan vihollinen ja tulikärpäset saadulta objektilta, kyssäri lähestymisestä näkyviin
     public void StartEncounter(Enemy enemy, List<Firefly> fireflyList) {
 
         //TODO: Turn camera to make player feel small
@@ -49,6 +50,7 @@ public class EncounterController : MonoBehaviour {
         }
     }
 
+    //Aloitetaan tutoriaaali versio, muuten sama kuin normaaliversio alempana, mutta tesktiavut näkyvissä ja tauotettu taistelu
     public void StartTutorial() {
         battleMusic.start();
         if (myFireflies.Count < 3) {
@@ -80,6 +82,7 @@ public class EncounterController : MonoBehaviour {
         }
     }
 
+    //Lisää tutoriaalilaskinta ja laittaa seuraavan puhekuplan sen mukaan. Vihollinen myös käyttäytyy tiettyjen kohtien aikana
     public void NextTutorialPart() {
         tutorialPart++;
         infoText.text = NameDescContainer.GetCombatTutorialPart("part" + tutorialPart.ToString());
@@ -102,12 +105,18 @@ public class EncounterController : MonoBehaviour {
         }
     }
 
+    //Pelin aloitus
     public void StartBlackJack() {
         battleMusic.start();
-        if(myFireflies.Count < 3) {
+
+        //Jos tulikärpäsiä ei ole tarpeeksi niin pelaaja juoksee karkuun
+        if(myFireflies.Count < minimFireflies) {
             Debug.Log("ei uskalla");
             RunAway();
         }
+
+        //Muuten, laitetaan oikeat napit esille, luodaan ja sekoitetaan pakka otetaan saatavilla olevista tulikärpäsistä pois kaksi
+        //Aloitetaan pelaajan vuoro
         else {
             tutorial = false;
             textPanel.SetActive(false);
@@ -184,7 +193,7 @@ public class EncounterController : MonoBehaviour {
     public void RoundLost() {
         StartCoroutine(RoundLostRoutine());
     }
-
+    //häviö ikonin väläytys
     IEnumerator RoundLostRoutine() {
         loseIcon.SetActive(true);
         loseIcon.GetComponentInChildren<Text>().CrossFadeAlpha(1.0f, 0.0f, false);
@@ -196,7 +205,7 @@ public class EncounterController : MonoBehaviour {
     public void RoundWon() {
         StartCoroutine(RoundWonRoutine());
     }
-
+    //Voitto ikonin väläytys
     IEnumerator RoundWonRoutine() {
         winIcon.SetActive(true);
         winIcon.GetComponentInChildren<Text>().CrossFadeAlpha(1.0f, 0.0f, false);
@@ -205,7 +214,7 @@ public class EncounterController : MonoBehaviour {
         winIcon.SetActive(false);
     }
 
-
+    //Putsataan kädet tyhjiksi ja sekoitetaan pakka
     public void NewRound() {
         foreach (int item in enemyHand) {
             deck.Add(item);
@@ -220,6 +229,7 @@ public class EncounterController : MonoBehaviour {
         combatController.enemyHandText = "";
         combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
         combatController.enemyHand.GetComponent<Text>().text = combatController.enemyHandText;
+        //Jos ei ole tulikärpäsiä uuteen kierrokseen, lähdetään karkuun
         if (myFireflies.Count < 3)
         {
             deck.Clear();
@@ -232,6 +242,7 @@ public class EncounterController : MonoBehaviour {
             RunAway();
             
         }
+        //Muuten uudet kortit ja taas pelaajan vuoro
         else {
             enemyHand.Add(deck[0]);
             deck.RemoveAt(0);
@@ -250,6 +261,8 @@ public class EncounterController : MonoBehaviour {
         
     }
 
+    //Lopetetaan taistelumusiikki, tyhjennetään kädet ja pakka, laitetaan encounternapit esille ja taistelunapit piiloon
+    //Lopuksi juostaan karkuun
     public void GameLost() {
         battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         enemyHand.Clear();
@@ -273,6 +286,7 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void GameWon() {
+        //Vihollisen silmät kiinni, muuten sama kuin ylhäällä, paitsi että pelaaja ei lähde karkuun ja vapautetaan liikkuminen
         myEnemy.eye1.SetActive(false);
         myEnemy.eye2.SetActive(false);
         battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);

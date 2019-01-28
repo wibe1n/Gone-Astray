@@ -42,6 +42,7 @@ public class LeshenLerp : MonoBehaviour {
 		*/
 	}
 
+    // Lerpataan leshen kasvi
 	public void LerpScale(){
 		if (!bounceBack) {
 			timeSinceStarted = Time.time - timeStartedLerping;
