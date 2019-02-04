@@ -15,6 +15,7 @@ public class PauseMenuController : MonoBehaviour {
 	public KeyCode altPauseKey = KeyCode.None;
 	public GameObject mainPage;
 	public GameObject helpPage;
+	public FireflyAmount fireflies;
 
     private bool journalShortcut = false;
 
@@ -126,6 +127,7 @@ public class PauseMenuController : MonoBehaviour {
         Time.timeScale = 0;
         journalCanvas.enabled = true;
         journalController.OpenJournal();
+		fireflies.UpdateFireflies ();
     }
 
     public void CloseJournal()

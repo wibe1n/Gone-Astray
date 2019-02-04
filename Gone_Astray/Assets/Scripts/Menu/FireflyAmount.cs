@@ -7,7 +7,7 @@ public class FireflyAmount : MonoBehaviour {
 
 	public Character chara;
 
-	void Update () {
+	public void UpdateFireflies () {
 		gameObject.GetComponent<Text> ().text = "Fireflies: " + chara.myFireflies.Count;
 	}
 }

@@ -2182,6 +2182,7 @@ MonoBehaviour:
   altPauseKey: 0
   mainPage: {fileID: 1659983038503762}
   helpPage: {fileID: 1854579663899794}
+  fireflies: {fileID: 114256804169518948}
 --- !u!114 &114555553136389226
 MonoBehaviour:
   m_ObjectHideFlags: 1
