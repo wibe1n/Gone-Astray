@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class KeyButtonsDefaultCheck : MonoBehaviour {
 
+	//varmistaa että options menun keybind napeissa lukee oikea keycode
+	//kiinni keybind nappien text object lapsissa
+
 	public int whichButton;
 	public Undying_Object undyObj;
 

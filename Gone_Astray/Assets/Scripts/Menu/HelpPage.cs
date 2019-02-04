@@ -15,12 +15,12 @@ public class HelpPage : MonoBehaviour {
 		}else
 			isUndyObjfound = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	//käynnistetään PauseMenuControllerista
+	public void HelpPageOn() {
 		if(isUndyObjfound)
 			gameObject.GetComponent<Text>().text = "talk : "+ undyObj.talkKey +"\ncrouch : "+ undyObj.crouchKey +"\nleshen : "+ undyObj.leshenKey +"\npause : "+ undyObj.pauseKey +" or "+ undyObj.altPauseKey +" \njump : " + undyObj.jumpKey;
 		else
-			gameObject.GetComponent<Text>().text = "talk : O\ncrouch : C\nleshen L\npause : P or esc \njump : space";
+			gameObject.GetComponent<Text>().text = "talk : E\ncrouch : C\nleshen L\npause : P or esc \njump : space";
 	}
 }
