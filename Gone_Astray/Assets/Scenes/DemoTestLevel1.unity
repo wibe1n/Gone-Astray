@@ -27624,6 +27624,34 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 2013956633}
+    - target: {fileID: 4923043269967810, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923043269967810, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923043269967810, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923043269967810, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923043269967810, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 354.8969
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923043269967810, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 47.191723
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923043269967810, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 419.32422
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5f7feaa5416f9149a193d07ef3db88c, type: 2}
   m_IsPrefabAsset: 0
@@ -31238,7 +31266,7 @@ GameObject:
   - component: {fileID: 2013956635}
   - component: {fileID: 2013956634}
   m_Layer: 0
-  m_Name: ThirdPersonController 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31424,7 +31452,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2013956633}
   m_LocalRotation: {x: 0, y: 0.9698051, z: 0, w: 0.24388133}
-  m_LocalPosition: {x: 341.23596, y: 27.75871, z: 515.3743}
+  m_LocalPosition: {x: 416.35, y: 56.62, z: 285.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 825963764}
