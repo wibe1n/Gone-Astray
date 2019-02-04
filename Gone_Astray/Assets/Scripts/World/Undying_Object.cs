@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Undying_Object : MonoBehaviour {
+
+    //sisältää keybindingit
 	
 	public GameObject loadingScreen;
 	public int whichScene = 0;
@@ -16,6 +18,7 @@ public class Undying_Object : MonoBehaviour {
 	public KeyCode jumpKey;
 	public KeyCode talkKey;
 	
+    //Alussa aloitetaan valittu (yleensä menu) skene, ladataan data ja asetetaan default näppäimet
 	void Start () {
         DontDestroyOnLoad(this);
         StartCoroutine(StartMenuScreen());
@@ -76,10 +79,13 @@ public class Undying_Object : MonoBehaviour {
 		loadingScreen.SetActive (false);
     }
 
+
+    
     public void LoadGame() {
         StartCoroutine(LoadGameInstance());
     }
 
+    //Ladataan peli ja haetaan siitä tiedot, jotka asetetaan pelaajalle ja maailmalle
     private IEnumerator LoadGameInstance() {
 		//loadingScreen.SetActive (true);
         yield return SceneManager.LoadSceneAsync("VillenWorldTest1");

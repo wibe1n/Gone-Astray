@@ -18,7 +18,6 @@ public class PauseMenuController : MonoBehaviour {
 
     private bool journalShortcut = false;
 
-	// Use this for initialization
 	void Start () {
 		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
@@ -54,6 +53,7 @@ public class PauseMenuController : MonoBehaviour {
 
     void Update ()
     {
+        //Jos painetaan pausenappia, niin aktivoidaan pausemenu
 		if (Input.GetKeyDown(pauseKey) || Input.GetKeyDown(altPauseKey))
         {
             if (pauseMenuCanvas.enabled == false && journalCanvas.enabled == false)
@@ -66,12 +66,13 @@ public class PauseMenuController : MonoBehaviour {
                 ClosePauseMenu();
             }
         }
-
+        //Jos painetaan journal nappia niin aktivoidaan journal
 		if (Input.GetKeyDown(journalKey))
         {
             if (pauseMenuCanvas.enabled == false && journalCanvas.enabled == false)
             {
                 Cursor.lockState = CursorLockMode.None;
+                //Katsotaan mistä journaliin on menty
                 JournalShortcut();
                 ActivateJournal();
             }
@@ -88,7 +89,7 @@ public class PauseMenuController : MonoBehaviour {
         {
             return;
         }
-
+        //Pysäytetään peli
         Time.timeScale = 0;
         pauseMenuCanvas.enabled = true;
 //        inGameCanvas.enabled = false;
@@ -100,7 +101,7 @@ public class PauseMenuController : MonoBehaviour {
         {
             return;
         }
-
+        //Peli jatkuu
         Time.timeScale = 1;
         pauseMenuCanvas.enabled = false;
 //        inGameCanvas.enabled = true;
@@ -108,6 +109,7 @@ public class PauseMenuController : MonoBehaviour {
 
     public void ActivateJournal()
     {
+        //avataan journal ja pysäytetään aika
         if (journalCanvas.enabled == true)
         {
             return;
@@ -128,6 +130,7 @@ public class PauseMenuController : MonoBehaviour {
 
     public void CloseJournal()
     {
+        //Suljetaan journal ja jatketaan peliä
         if (journalCanvas.enabled == false)
         {
             return;

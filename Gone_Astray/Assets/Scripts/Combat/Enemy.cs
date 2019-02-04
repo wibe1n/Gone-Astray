@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour {
         screenEffects = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PencilContourEffect>();
     }
 
+    //Pelaaja pysähtyy ja aloitetaan encounter
     void OnTriggerEnter(Collider player){
         if (player.gameObject.GetComponent<Character>() != null) {
             player.gameObject.GetComponent<MovementControls>().stop = true;
@@ -38,11 +39,13 @@ public class Enemy : MonoBehaviour {
         StartCoroutine(StartEncounterIenum(this));
     }
 
+    //Laita silmät palamaan 
     private IEnumerator StartEncounterIenum(Enemy enemy) {
         eye1.SetActive(true);
         eye2.SetActive(true);
         EncounterController enCon = GameObject.FindGameObjectWithTag("EncounterController").GetComponent<EncounterController>();
         float timeRemaining = duration;
+        //screenefektien väläytys
         while (timeRemaining > 0) {
             timeRemaining -= Time.deltaTime;
             screenEffects.m_NoiseAmount = Mathf.Lerp(currenAmount, endAmount, Mathf.InverseLerp(duration, 0, timeRemaining));
@@ -55,6 +58,7 @@ public class Enemy : MonoBehaviour {
             yield return null;
         }
         screenEffects.m_NoiseAmount = currenAmount;
+        //lähetetään vihollinen ja pelaajan käytettävissä olevat tulikärpäset encounter controlleriin
         enCon.StartEncounter(enemy, availableFireflies);
         yield return new WaitForSeconds(1);
     }

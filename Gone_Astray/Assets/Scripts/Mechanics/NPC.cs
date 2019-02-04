@@ -34,11 +34,13 @@ public class NPC : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider player) {
+        //Lisätään kuuntelija ja avataan kyssäri-ikoni. 
         walkedAway = false;
         if (player.gameObject.GetComponent<Character>() != null && !speechCreator.StillTalking()) {
             Canvas.SetActive(true);
             m_MyEvent.AddListener(TalkEvent);
             m_SecondEvent.AddListener(Backwards);
+            //Tietyt NPC voivat alkaa älisee heti
             if (id == 6 && currentSpeechInstance == 1) {
                 m_MyEvent.Invoke();
             }
@@ -48,18 +50,19 @@ public class NPC : MonoBehaviour {
     void OnTriggerExit(Collider player) {
         walkedAway = true;
         if (player.gameObject.GetComponent<Character>() != null) {
+            //Jos lähtee pois kesken keskustelun niin keskusteluketju resetoituu ensimmäiseen
             if (!speechCreator.StillTalking() || currentSpeechInstance == maxSpeechInstance)
             {
                 Canvas.SetActive(false);
                 talking = false;
+                //Jotkut NPC ei vät välttämättä resetoidu?
                 if (id != 6) {
-                    Debug.Log("mennään täällä");
                     currentSpeechInstance = 1;
                 } 
                 speechCreator.CloseSpeechBubble(this);
                 m_MyEvent.RemoveListener(TalkEvent);
             }
-            //Jos pelaaja kävelee liian kauas puhujasta
+            //Jos pelaaja kävelee liian kauas puhujasta puhumisen aikana, niin npc ruikuttaa
             else if (!(currentSpeechInstance == maxSpeechInstance))
             {
                 speechCreator.WentTooFar(this);
@@ -82,11 +85,13 @@ public class NPC : MonoBehaviour {
 
     public void TalkEvent() {
         if (talking == true) {
+            //Jos ollaan vikassa puhekerrassa niin suljetaan puhekupla
             if (currentSpeechInstance == maxSpeechInstance) {
                 speechCreator.CloseSpeechBubble(this);
                 talking = false;
                 if (!walkedAway)
                     Canvas.SetActive(true);
+                //Jotkut npc:t voivat lähteä kävelemään tms.
                 if(id == 6) {
                     if (maxSpeechInstance == 11) {
                         gameObject.GetComponent<MoveToWaypoints>().DisableHovering();
@@ -101,16 +106,19 @@ public class NPC : MonoBehaviour {
                     
                 }
             }
+            //Jos kävelee kesken pois suljetaan puhekupla ja poistetaan kuuntelija
             else if (walkedAway == true)
             {
                 speechCreator.CloseSpeechBubble(this);
                 talking = false;
                 m_MyEvent.RemoveListener(TalkEvent);
             }
+            //Muussa tapauksessa päivitetään puhekupla
             else {
                 speechCreator.UpdateSpeechBubble(this);
             }
         }
+        //Jos keskustelu aloitetaan, luodaan enismmäinen puhekupla
         else {
             speechCreator.GenerateSpeechBubble(this);
             talking = true;
@@ -121,7 +129,7 @@ public class NPC : MonoBehaviour {
     public void Backwards() {
         speechCreator.BackWards(this);
     }
-
+    //Ruikutuskupla pysyy tietyn aikaa
     IEnumerator CloseWhineBox(float time) {
         yield return new WaitForSeconds(time);
 

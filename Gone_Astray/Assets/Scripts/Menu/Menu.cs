@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour {
 
 	//public Character chara;
-	// Use this for initialization
 	public GameObject mainMenu;
 	public GameObject options;
 

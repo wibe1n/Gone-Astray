@@ -66,6 +66,8 @@ public class CameraController2 : MonoBehaviour
                 }
                 else
                 {
+                    //Kamera seuraa pelaajaa
+
                     if ((cameraPos.transform.position - transform.position).magnitude > 0)
                     {
                         transform.Translate(0f, Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed, 0f, Space.World);
@@ -74,6 +76,8 @@ public class CameraController2 : MonoBehaviour
                     }
                 }
             }
+
+            // jos painetaan vasen klikkiä ja vedetään, niin kamera kääntyy 
 
             if (Input.GetAxis("Fire1") != 0)
             {
@@ -96,14 +100,19 @@ public class CameraController2 : MonoBehaviour
 
                 if (mouseInputY != 0)
                 {
-                    Vector3 lookHereY = new Vector3(-1 * mouseInputY * rotationSpeed * Time.deltaTime, 0, 0);
-                    transform.Rotate(lookHereY);
+                    //Vector3 lookHereY = new Vector3(-1 * mouseInputY * rotationSpeed * Time.deltaTime, 0, 0);
+                    //transform.Rotate(lookHereY);
                 }
             }
-            else if (Input.GetAxis("Fire2") != 0)
-            {
-                transform.rotation = Quaternion.Slerp(transform.rotation, originalRotationValue, Time.time * rotationSpeed);
-            }
+
+            // Kameran resetointi taakse mutta huonosti
+
+            //else if (Input.GetAxis("Fire2") != 0)
+            //{
+            //    transform.rotation = Quaternion.Slerp(transform.rotation, originalRotationValue, Time.time * rotationSpeed);
+            //}
+
+            // Kun ei paina mitään kamera ajaa automaattisesti pelaajan taakse
             else
             {
                 if (Input.GetAxis("Vertical") < 0)

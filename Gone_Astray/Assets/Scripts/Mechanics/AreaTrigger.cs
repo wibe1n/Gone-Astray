@@ -13,11 +13,13 @@ public class AreaTrigger : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider player)
     {
+        //kameramoodi päälle
         if (camera.GetComponentInParent<CameraController2>() != null)
         {
             camera.GetComponentInParent<CameraController2>().fixedCamMode = true;
         }
 
+        //ideestä riipppuen tehdään oma eventti
         switch (id)
         {
             case 1:

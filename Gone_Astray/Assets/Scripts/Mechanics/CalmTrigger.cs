@@ -8,10 +8,9 @@ public class CalmTrigger : MonoBehaviour {
     private GameObject ambienceSounds;
     public PencilContourEffect pencilEffects;
     float currentLight, endLight;
-
     float duration;
 
-
+    //Asetetaan parametrit
     void Start() {
         ambienceSounds = GameObject.FindGameObjectWithTag("CameraRig");
         currentLight = 0.6f;
@@ -20,6 +19,7 @@ public class CalmTrigger : MonoBehaviour {
 
     }
 
+    //Lopetetaan pelottavat äänet ja aloitetaan ambienssi, vaihdetaan valot takaisin
     private void OnTriggerEnter(Collider player) {
         if (player.GetComponent<Character>() && player.GetComponent<Character>().spooped) {
             spoopyTrigger.spoopySounds.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -29,6 +29,7 @@ public class CalmTrigger : MonoBehaviour {
         }
     }
 
+    //Lerpataan valaistus pimeästä valoisaksi
     public IEnumerator TurnLightsBack() {
         float timeRemaining = duration;
         while (timeRemaining > 0) {
