@@ -45,6 +45,9 @@ public class Undying_Object : MonoBehaviour {
 		case 1:
 			yield return SceneManager.LoadSceneAsync ("tiinatest");
 			break;
+		case 2:
+			yield return SceneManager.LoadSceneAsync ("TutorialLevel");
+			break;
 		default:
 			yield return SceneManager.LoadSceneAsync ("DemoTestLevel1");
 			break;
