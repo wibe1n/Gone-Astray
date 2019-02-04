@@ -12,6 +12,7 @@ public class SaveGame
 	public List<Firefly> fiaFamily;
     public Vector3 cameraPosition = Vector3.zero;
     public int level;
+	public int speechInstance;
 
 	private static string _gameDataFileName = "data.json";
 	private static SaveGame _instance;

@@ -19,6 +19,7 @@ public class Character : MonoBehaviour {
     float dist = 10;
 	public Undying_Object undyObj;
 	public KeyCode leshenKey = KeyCode.None;
+	public int NPCspeechInstance = 0;
 
     void Start () {
         //Hae keybindingit
