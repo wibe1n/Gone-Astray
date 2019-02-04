@@ -7,6 +7,7 @@ public class FireflyAmount : MonoBehaviour {
 
 	public Character chara;
 
+	//käynnistetään PauseMenuControllissa
 	public void UpdateFireflies () {
 		gameObject.GetComponent<Text> ().text = "Fireflies: " + chara.myFireflies.Count;
 	}

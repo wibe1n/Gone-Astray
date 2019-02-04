@@ -127,6 +127,7 @@ public class PauseMenuController : MonoBehaviour {
         Time.timeScale = 0;
         journalCanvas.enabled = true;
         journalController.OpenJournal();
+		//päivitetään tulikärpäset
 		fireflies.UpdateFireflies ();
     }
 
