@@ -18,7 +18,7 @@ public class EncounterController : MonoBehaviour {
     public List<int> myHand;
     public int myScore, enemyScore, winTarget, minimFireflies;
     private int tutorialPart = 0;
-    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton;
+    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton, notEnoughIcon, outOfFliesIcon;
     public Text infoText;
     public GameObject runAwayScreen;
     public bool reached = false;
@@ -45,8 +45,26 @@ public class EncounterController : MonoBehaviour {
         myEnemy = enemy;
         myFireflies = fireflyList;
         gameCanvas.SetActive(true);
-        if (myEnemy.isTutorial) {
+        if (myEnemy.isTutorial)
+        {
             tutorialButton.SetActive(true);
+        }
+        if (approachButton.GetComponent<Button>().interactable == true)
+        {
+            if (myFireflies.Count < minimFireflies)
+            {
+                approachButton.GetComponent<Button>().interactable = false;
+                tutorialButton.GetComponent<Button>().interactable = false;
+                //kuinka monta kärpästä puuttuu KESKEN
+                string tmp = notEnoughIcon.GetComponent<Text>().text;
+                Debug.Log("merkkijono " + tmp.Length);
+                notEnoughIcon.SetActive(true);
+            }
+        }
+        else
+        {
+            approachButton.GetComponent<Button>().interactable = true;
+            notEnoughIcon.SetActive(false);
         }
     }
 
@@ -146,7 +164,8 @@ public class EncounterController : MonoBehaviour {
     }
 
 
-    public void RunAway() {
+    public void RunAway()
+    {
         StartCoroutine(RunAwayRoutine());
     }
 
@@ -162,6 +181,21 @@ public class EncounterController : MonoBehaviour {
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 3.0f, false);
         yield return new WaitForSeconds(3f);
         runAwayScreen.SetActive(false);
+    }
+
+    public void OutOfFlies()
+    {
+        StartCoroutine(OutOfFliesRoutine());
+    }
+
+    //Kun kärpäset ei riitä kesken matsin niin väläytetään teksti
+    IEnumerator OutOfFliesRoutine()
+    {
+        outOfFliesIcon.SetActive(true);
+        outOfFliesIcon.GetComponentInChildren<Text>().CrossFadeAlpha(1.0f, 0.0f, false);
+        outOfFliesIcon.GetComponentInChildren<Text>().CrossFadeAlpha(0.0f, 2.0f, false);
+        yield return new WaitForSeconds(2);
+        outOfFliesIcon.SetActive(false);
     }
 
     void GenerateBlackJackDeck() {

@@ -156,6 +156,7 @@ public class CombatController : MonoBehaviour {
             //Jos ei ole tarpeeksi tulikärpäsiä
             if (encounterController.myFireflies.Count == 0) {
                 Debug.Log("Not enough fireflies!");
+                encounterController.OutOfFlies();
             }
             //Pakan päällimäinen kortti lisätään omaan käteen, poistetaan yksi tulikärpänen varastosta, päivitetään teksti
             else
@@ -186,5 +187,4 @@ public class CombatController : MonoBehaviour {
         //ball of light size update
         encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
     }
-
 }
