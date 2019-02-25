@@ -84,6 +84,8 @@ public class NPC : MonoBehaviour {
     }
 
     public void TalkEvent() {
+		//tallennukselle välitetään pelaajan kautta missä kohtaa keskustelua mennään
+		player.NPCspeechInstance = currentSpeechInstance;
         if (talking == true) {
             //Jos ollaan vikassa puhekerrassa niin suljetaan puhekupla
             if (currentSpeechInstance == maxSpeechInstance) {
@@ -123,7 +125,6 @@ public class NPC : MonoBehaviour {
             speechCreator.GenerateSpeechBubble(this);
             talking = true;
         }
-        
     }
 
     public void Backwards() {

@@ -20,11 +20,6 @@ public class DialogTextKey : MonoBehaviour {
 				talkKey = undyObj.talkKey;
 		}else
 			talkKey = KeyCode.E;
-	}
-	
-    //TODO: ei updatea
-	// Update is called once per frame
-	void Update () {
 		gameObject.GetComponent<Text> ().text = "Press " + talkKey;
 	}
 }

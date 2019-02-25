@@ -22,7 +22,7 @@ public class MoveToWaypoints : MonoBehaviour {
         //Jos ollaan päästy etapin luokse niin
         if(Vector3.Distance(waypoints[current].transform.position, transform.position) < Wpradius) {
             //jos ollaan perillä aletaan leijumaan
-            if(current == 1) {
+			if(current == waypoints.Length) {
                 hovering.GetPosition();
                 StartHovering();
             }

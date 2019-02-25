@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoTestLevel1.unity
     guid: 76d02286cd5a55f45be43c14a7ae3c66
+  - enabled: 1
+    path: Assets/Scenes/TestLevels/tiinatest.unity
+    guid: 619f28869e822184a82f9b4ddecee1f3
+  - enabled: 1
+    path: Assets/Scenes/TutorialLevel.unity
+    guid: 8c6cfb941093e184a8e083caa40dee90
   m_configObjects: {}

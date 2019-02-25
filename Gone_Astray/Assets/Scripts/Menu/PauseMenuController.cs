@@ -15,6 +15,8 @@ public class PauseMenuController : MonoBehaviour {
 	public KeyCode altPauseKey = KeyCode.None;
 	public GameObject mainPage;
 	public GameObject helpPage;
+	public HelpPage helpScript;
+	public FireflyAmount fireflies;
 
     private bool journalShortcut = false;
 
@@ -126,6 +128,8 @@ public class PauseMenuController : MonoBehaviour {
         Time.timeScale = 0;
         journalCanvas.enabled = true;
         journalController.OpenJournal();
+		//päivitetään tulikärpäset
+		fireflies.UpdateFireflies ();
     }
 
     public void CloseJournal()
@@ -165,6 +169,7 @@ public class PauseMenuController : MonoBehaviour {
     }
 	public void HelpOn(){
 		helpPage.SetActive (true);
+		helpScript.HelpPageOn ();
 		mainPage.SetActive (false);
 	}
 	public void HelpOff(){
