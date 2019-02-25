@@ -49,21 +49,20 @@ public class EncounterController : MonoBehaviour {
         {
             tutorialButton.SetActive(true);
         }
-        if (approachButton.GetComponent<Button>().interactable == true)
+        
+        if (myFireflies.Count < minimFireflies)
         {
-            if (myFireflies.Count < minimFireflies)
-            {
-                approachButton.GetComponent<Button>().interactable = false;
-                tutorialButton.GetComponent<Button>().interactable = false;
-                //kuinka monta kärpästä puuttuu KESKEN
-                string tmp = notEnoughIcon.GetComponent<Text>().text;
-                Debug.Log("merkkijono " + tmp.Length);
-                notEnoughIcon.SetActive(true);
-            }
+            approachButton.GetComponent<Button>().interactable = false;
+            tutorialButton.GetComponent<Button>().interactable = false;
+            //kuinka monta kärpästä puuttuu KESKEN
+            int missing = minimFireflies - myFireflies.Count;
+            notEnoughIcon.GetComponent<Text>().text = "Not enough fireflies...\nYou need at least " + missing + " more.";
+            notEnoughIcon.SetActive(true);
         }
         else
         {
             approachButton.GetComponent<Button>().interactable = true;
+            tutorialButton.GetComponent<Button>().interactable = true;
             notEnoughIcon.SetActive(false);
         }
     }
