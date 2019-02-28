@@ -129,11 +129,11 @@ public class CombatController : MonoBehaviour {
                 }
                 //Muuten uusi kierros
                 else {
-                    encounterController.NewRound();
+                    encounterController.ShowScore();
                 }
             }
             else {
-                encounterController.NewRound();
+                encounterController.ShowScore();
             }
         }
 
@@ -180,7 +180,7 @@ public class CombatController : MonoBehaviour {
                 }
                 //Uusi kierros
                 else {
-                    encounterController.NewRound();
+                    encounterController.ShowScore();
                 }
             }
         }
