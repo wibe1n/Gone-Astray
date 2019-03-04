@@ -15,6 +15,7 @@ public class PauseMenuController : MonoBehaviour {
 	public KeyCode altPauseKey = KeyCode.None;
 	public GameObject mainPage;
 	public GameObject helpPage;
+	public GameObject QuitPopup;
 	public HelpPage helpScript;
 	public FireflyAmount fireflies;
 
@@ -161,7 +162,14 @@ public class PauseMenuController : MonoBehaviour {
     {
         journalShortcut = true;
     }
-
+	public void QuitOn()
+	{
+		QuitPopup.SetActive (true);
+	}
+	public void QuitOff()
+	{
+		QuitPopup.SetActive (false);
+	}
     public void GotoMainMenu()
     {
         Time.timeScale = 1;
