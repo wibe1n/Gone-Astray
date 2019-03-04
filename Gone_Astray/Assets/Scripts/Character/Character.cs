@@ -11,6 +11,7 @@ public class Character : MonoBehaviour {
     public bool spooped = false;
     public bool leshenObjectNear = false;
 	public bool hasLeshen = false;
+	public bool hasRaskovnik = false;
     public int level = 0;
     public List<Firefly> myFireflies = new List<Firefly> { };
     public float stressLevel = 0;
