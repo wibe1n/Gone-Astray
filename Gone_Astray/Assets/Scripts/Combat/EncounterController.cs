@@ -10,6 +10,7 @@ public class EncounterController : MonoBehaviour {
     UnityEvent m_MyEvent = new UnityEvent();
     public Character character;
     public CombatController combatController;
+    public InGameCanvasController igcController;
     public Enemy myEnemy;
     public List<Firefly> myFireflies = new List<Firefly>();
     public List<Firefly> usedFireflies = new List<Firefly>();
@@ -41,6 +42,9 @@ public class EncounterController : MonoBehaviour {
     public void StartEncounter(Enemy enemy, List<Firefly> fireflyList) {
 
         //TODO: Turn camera to make player feel small
+
+        //in game canvas käyttökieltoon
+        igcController.ToggleInGameCanvas(false);
 
         myEnemy = enemy;
         myFireflies = fireflyList;
@@ -279,7 +283,6 @@ public class EncounterController : MonoBehaviour {
                 Debug.Log("Encounter result error");
                 break;
         }
-        Debug.Log("AAAAAAAAAAAAAAAAAAAaa");
         StartCoroutine(WhoWonRoutine());
     }
     //väläytetään koko encounterin lopputulos
@@ -394,6 +397,7 @@ public class EncounterController : MonoBehaviour {
         darknessIcon.SetActive(false);
         proceedButton.SetActive(false);
         textPanel.SetActive(false);
+        igcController.ToggleInGameCanvas(true);
 
         RunAway();
         WhoWon(0);
@@ -425,6 +429,7 @@ public class EncounterController : MonoBehaviour {
         gameCanvas.SetActive(false);
         textPanel.SetActive(false);
         player.GetComponent<MovementControls>().stop = false;
+        igcController.ToggleInGameCanvas(true);
 
         WhoWon(1);
         //TODO animation for monster transforming to something regiular???
