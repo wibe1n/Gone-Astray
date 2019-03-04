@@ -18,7 +18,7 @@ public class EncounterController : MonoBehaviour {
     public List<int> myHand;
     public int myScore, enemyScore, winTarget, minimFireflies, round;
     private int tutorialPart = 0;
-    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton, notEnoughIcon, outOfFliesIcon, scoreCanvas, roundText, scoreText;
+    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton, notEnoughIcon, outOfFliesIcon, scoreCanvas, roundText, scoreText, wonOrLostText, encounterEndText, encounterEndCanvas;
     public Text infoText;
     public GameObject runAwayScreen;
     public bool reached = false;
@@ -141,7 +141,7 @@ public class EncounterController : MonoBehaviour {
             tutorialButton.SetActive(false);
             approachButton.SetActive(false);
 
-            ShowScore();
+            ShowScore(-1);
         }
 
     }
@@ -233,7 +233,7 @@ public class EncounterController : MonoBehaviour {
         winIcon.SetActive(false);
     }
 
-    public void ShowScore()
+    public void ShowScore(int result)
     {
         if (round != 1)
         {
@@ -242,11 +242,56 @@ public class EncounterController : MonoBehaviour {
             proceedButton.SetActive(false);
         }
 
+        //Päivitetään scoreruutuun kumpi voitti edellisen kierroksen
+        switch (result)
+        {
+            case 0:
+                wonOrLostText.GetComponent<Text>().text = "Enemy won...";
+                break;
+            case 1:
+                wonOrLostText.GetComponent<Text>().text = "You won!";
+                break;
+            case -1:
+                wonOrLostText.GetComponent<Text>().text = "";
+                break;
+            default:
+                Debug.Log("Round result error");
+                break;
+        }
         //päivitetään oikea kierrosluku ja pisteet tekstiruutuihin
         roundText.GetComponent<Text>().text = "Round " + round;
         scoreText.GetComponent<Text>().text = "Score\nYou: " + myScore + "\nEnemy: " + enemyScore;
 
         scoreCanvas.SetActive(true);
+    }
+
+    public void WhoWon(int result)
+    {
+        switch (result)
+        {
+            case 0:
+                encounterEndText.GetComponent<Text>().text = "Encounter failed";
+                break;
+            case 1:
+                encounterEndText.GetComponent<Text>().text = "Encounter won!!";
+                break;
+            default:
+                Debug.Log("Encounter result error");
+                break;
+        }
+        Debug.Log("AAAAAAAAAAAAAAAAAAAaa");
+        StartCoroutine(WhoWonRoutine());
+    }
+    //väläytetään koko encounterin lopputulos
+    IEnumerator WhoWonRoutine()
+    {
+        encounterEndCanvas.SetActive(true);
+        encounterEndText.SetActive(true);
+        encounterEndText.GetComponentInChildren<Text>().CrossFadeAlpha(1.0f, 0.0f, false);
+        encounterEndText.GetComponentInChildren<Text>().CrossFadeAlpha(0.0f, 2.0f, false);
+        yield return new WaitForSeconds(2);
+        encounterEndText.SetActive(false);
+        encounterEndCanvas.SetActive(false);
     }
 
     public void FirstRound()
@@ -332,7 +377,6 @@ public class EncounterController : MonoBehaviour {
     //Lopetetaan taistelumusiikki, tyhjennetään kädet ja pakka, laitetaan encounternapit esille ja taistelunapit piiloon
     //Lopuksi juostaan karkuun
     public void GameLost() {
-        Debug.Log("AAAAAAAAAAAAA");
         battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         enemyHand.Clear();
         myHand.Clear();
@@ -350,7 +394,9 @@ public class EncounterController : MonoBehaviour {
         darknessIcon.SetActive(false);
         proceedButton.SetActive(false);
         textPanel.SetActive(false);
+
         RunAway();
+        WhoWon(0);
         //TODO affect world???       
     }
 
@@ -379,6 +425,8 @@ public class EncounterController : MonoBehaviour {
         gameCanvas.SetActive(false);
         textPanel.SetActive(false);
         player.GetComponent<MovementControls>().stop = false;
+
+        WhoWon(1);
         //TODO animation for monster transforming to something regiular???
     }
 }

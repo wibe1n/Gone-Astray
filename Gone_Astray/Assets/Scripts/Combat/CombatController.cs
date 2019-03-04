@@ -119,7 +119,7 @@ public class CombatController : MonoBehaviour {
                 encounterController.GameWon();                
             }
             //Jos vihollisen käsi on isompi kuin pelaajan, häviää kierroksen
-            else if (enemyHandNumber > myHandNumber) {
+            else if (enemyHandNumber >= myHandNumber) {
                 Debug.Log("vihollinen voitti");
                 encounterController.RoundLost();
                 encounterController.enemyScore += 1;
@@ -129,11 +129,11 @@ public class CombatController : MonoBehaviour {
                 }
                 //Muuten uusi kierros
                 else {
-                    encounterController.ShowScore();
+                    encounterController.ShowScore(0);
                 }
             }
             else {
-                encounterController.ShowScore();
+                encounterController.ShowScore(1);
             }
         }
 
@@ -180,7 +180,7 @@ public class CombatController : MonoBehaviour {
                 }
                 //Uusi kierros
                 else {
-                    encounterController.ShowScore();
+                    encounterController.ShowScore(0);
                 }
             }
         }
