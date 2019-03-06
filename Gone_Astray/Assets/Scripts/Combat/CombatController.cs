@@ -164,8 +164,14 @@ public class CombatController : MonoBehaviour {
                 encounterController.myHand.Add(encounterController.deck[0]);
                 myHandNumber += encounterController.deck[0];
                 encounterController.deck.RemoveAt(0);
-                encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
-                encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
+                if (encounterController.myFireflies.Count > 0)
+                {
+                    encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
+                    encounterController.UpdateFlyAmount(encounterController.usedFireflyCounter, encounterController.usedFireflies.Count);
+                    encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
+                    encounterController.UpdateFlyAmount(encounterController.fireflyCounter, encounterController.myFireflies.Count);
+                }
+
                 myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
                 myHand.GetComponent<Text>().text = myHandText;
             }

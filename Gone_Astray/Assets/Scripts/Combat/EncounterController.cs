@@ -19,7 +19,7 @@ public class EncounterController : MonoBehaviour {
     public List<int> myHand;
     public int myScore, enemyScore, winTarget, minimFireflies, round;
     private int tutorialPart = 0;
-    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton, notEnoughIcon, outOfFliesIcon, scoreCanvas, roundText, scoreText, wonOrLostText, encounterEndText, encounterEndCanvas;
+    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton, notEnoughIcon, outOfFliesIcon, scoreCanvas, roundText, scoreText, wonOrLostText, encounterEndText, encounterEndCanvas, fireflyCounter, usedFireflyCounter;
     public Text infoText;
     public GameObject runAwayScreen;
     public bool reached = false;
@@ -49,6 +49,7 @@ public class EncounterController : MonoBehaviour {
         myEnemy = enemy;
         myFireflies = fireflyList;
         round = 1;
+        UpdateFlyAmount(fireflyCounter, myFireflies.Count);
         gameCanvas.SetActive(true);
         if (myEnemy.isTutorial)
         {
@@ -144,6 +145,9 @@ public class EncounterController : MonoBehaviour {
             runButton.SetActive(false);
             tutorialButton.SetActive(false);
             approachButton.SetActive(false);
+
+            UpdateFlyAmount(usedFireflyCounter, 0);
+            usedFireflyCounter.SetActive(true);
 
             ShowScore(-1);
         }
@@ -319,6 +323,8 @@ public class EncounterController : MonoBehaviour {
         usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
         myFireflies.RemoveAt(myFireflies.Count - 1);
         combatController.PlayersTurn();
+        UpdateFlyAmount(fireflyCounter, myFireflies.Count);
+        UpdateFlyAmount(usedFireflyCounter, usedFireflies.Count);
     }
 
     //Putsataan kädet tyhjiksi ja sekoitetaan pakka
@@ -354,25 +360,27 @@ public class EncounterController : MonoBehaviour {
                 proceedButton.SetActive(false);
                 RunAway();
             
-            }*/
+            }
             //Muuten uudet kortit ja taas pelaajan vuoro
-            /*else {*/
+            else {*/
             fireflyIcon.SetActive(true);
             darknessIcon.SetActive(true);
             proceedButton.SetActive(true);
             enemyHand.Add(deck[0]);
-                deck.RemoveAt(0);
-                myHand.Add(deck[0]);
-                deck.RemoveAt(0);
-                enemyHand.Add(deck[0]);
-                deck.RemoveAt(0);
-                myHand.Add(deck[0]);
-                deck.RemoveAt(0);
-                usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-                myFireflies.RemoveAt(myFireflies.Count - 1);
-                usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-                myFireflies.RemoveAt(myFireflies.Count - 1);
-                combatController.PlayersTurn();
+            deck.RemoveAt(0);
+            myHand.Add(deck[0]);
+            deck.RemoveAt(0);
+            enemyHand.Add(deck[0]);
+            deck.RemoveAt(0);
+            myHand.Add(deck[0]);
+            deck.RemoveAt(0);
+            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
+            myFireflies.RemoveAt(myFireflies.Count - 1);
+            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
+            myFireflies.RemoveAt(myFireflies.Count - 1);
+            UpdateFlyAmount(fireflyCounter, myFireflies.Count);
+            UpdateFlyAmount(usedFireflyCounter, usedFireflies.Count);
+            combatController.PlayersTurn();
             /*}*/
         }
     }
@@ -426,6 +434,7 @@ public class EncounterController : MonoBehaviour {
         fireflyIcon.SetActive(false);
         darknessIcon.SetActive(false);
         proceedButton.SetActive(false);
+        usedFireflyCounter.SetActive(false);
         gameCanvas.SetActive(false);
         textPanel.SetActive(false);
         player.GetComponent<MovementControls>().stop = false;
@@ -433,5 +442,10 @@ public class EncounterController : MonoBehaviour {
 
         WhoWon(1);
         //TODO animation for monster transforming to something regiular???
+    }
+
+    public void UpdateFlyAmount(GameObject counter, int amount)
+    {
+        counter.GetComponentInChildren<Text>().text = amount.ToString();
     }
 }
