@@ -17,7 +17,17 @@ ModelImporter:
     3300002: Stones
     4300000: Stones
     4300002: Stairs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 7cd4992c7157e9146b299e38a0f2abda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 58d97b218a6b4a1449204507f3828a82, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
