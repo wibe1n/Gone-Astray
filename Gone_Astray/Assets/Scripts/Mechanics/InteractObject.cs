@@ -13,6 +13,7 @@ public class InteractObject : MonoBehaviour
 	public bool isCollectable;
 	public bool isFirefly;
 	public bool isLeshen;
+	public bool isRaskovnik;
 
 	private Undying_Object undyObj;
 	public KeyCode pickKey = KeyCode.None;
@@ -60,10 +61,14 @@ public class InteractObject : MonoBehaviour
     private void OnTriggerStay(Collider player) {
         if(player.gameObject.GetComponent<Character>() != null) {
 			if (Input.GetKeyDown(pickKey) && isCollectable) {
+				//tämän koodin voi varmaan joskus siistiä järkevämpään muotoon.
+				//esim leshen ja raskovnik esinelistaan ja niitä käyttävät scriptit katsoo onko esine listan indexissä n boolean päällä
                 if (isFirefly) {
                     player.GetComponent<Character>().AddFirefly();
 				}else if (isLeshen) {
 					player.GetComponent<Character>().hasLeshen = true;
+				}else if (isRaskovnik) {
+					player.GetComponent<Character>().hasRaskovnik = true;
 				}
                 else {
                     player.GetComponent<Character>().items[itemIndex] = true;

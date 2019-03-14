@@ -10,15 +10,16 @@ public class EncounterController : MonoBehaviour {
     UnityEvent m_MyEvent = new UnityEvent();
     public Character character;
     public CombatController combatController;
+    public InGameCanvasController igcController;
     public Enemy myEnemy;
     public List<Firefly> myFireflies = new List<Firefly>();
     public List<Firefly> usedFireflies = new List<Firefly>();
     public List<int> deck = new List<int>() { };
     public List<int> enemyHand;
     public List<int> myHand;
-    public int myScore, enemyScore, winTarget, minimFireflies;
+    public int myScore, enemyScore, winTarget, minimFireflies, round;
     private int tutorialPart = 0;
-    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton;
+    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton, notEnoughIcon, outOfFliesIcon, scoreCanvas, roundText, scoreText, wonOrLostText, encounterEndText, encounterEndCanvas, fireflyCounter, usedFireflyCounter;
     public Text infoText;
     public GameObject runAwayScreen;
     public bool reached = false;
@@ -42,11 +43,33 @@ public class EncounterController : MonoBehaviour {
 
         //TODO: Turn camera to make player feel small
 
+        //in game canvas käyttökieltoon
+        igcController.ToggleInGameCanvas(false);
+
         myEnemy = enemy;
         myFireflies = fireflyList;
+        round = 1;
+        UpdateFlyAmount(fireflyCounter, myFireflies.Count);
         gameCanvas.SetActive(true);
-        if (myEnemy.isTutorial) {
+        if (myEnemy.isTutorial)
+        {
             tutorialButton.SetActive(true);
+        }
+        
+        if (myFireflies.Count < minimFireflies)
+        {
+            //jos kärpäsiä ei ole tarpeeksi encounteriin, napit disabletaan ja kerrotaan monta puuttuu
+            approachButton.GetComponent<Button>().interactable = false;
+            tutorialButton.GetComponent<Button>().interactable = false;
+            int missing = minimFireflies - myFireflies.Count;
+            notEnoughIcon.GetComponent<Text>().text = "Not enough fireflies...\nYou need at least " + missing + " more.";
+            notEnoughIcon.SetActive(true);
+        }
+        else
+        {
+            approachButton.GetComponent<Button>().interactable = true;
+            tutorialButton.GetComponent<Button>().interactable = true;
+            notEnoughIcon.SetActive(false);
         }
     }
 
@@ -115,38 +138,25 @@ public class EncounterController : MonoBehaviour {
             RunAway();
         }
 
-        //Muuten, laitetaan oikeat napit esille, luodaan ja sekoitetaan pakka otetaan saatavilla olevista tulikärpäsistä pois kaksi
-        //Aloitetaan pelaajan vuoro
+        //Muuten, nykyiset elementit canvaksella pois päältä ja scorecanvas auki
         else {
             tutorial = false;
             textPanel.SetActive(false);
             runButton.SetActive(false);
             tutorialButton.SetActive(false);
             approachButton.SetActive(false);
-            fireflyIcon.SetActive(true);
-            darknessIcon.SetActive(true);
-            proceedButton.SetActive(true);
-            GenerateBlackJackDeck();
-            ShuffleDeck();
-            enemyHand.Add(deck[0]);
-            deck.RemoveAt(0);
-            myHand.Add(deck[0]);
-            deck.RemoveAt(0);
-            enemyHand.Add(deck[0]);
-            deck.RemoveAt(0);
-            myHand.Add(deck[0]);
-            deck.RemoveAt(0);
-            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-            myFireflies.RemoveAt(myFireflies.Count - 1);
-            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-            myFireflies.RemoveAt(myFireflies.Count - 1);
-            combatController.PlayersTurn();
+
+            UpdateFlyAmount(usedFireflyCounter, 0);
+            usedFireflyCounter.SetActive(true);
+
+            ShowScore(-1);
         }
 
     }
 
 
-    public void RunAway() {
+    public void RunAway()
+    {
         StartCoroutine(RunAwayRoutine());
     }
 
@@ -162,6 +172,21 @@ public class EncounterController : MonoBehaviour {
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 3.0f, false);
         yield return new WaitForSeconds(3f);
         runAwayScreen.SetActive(false);
+    }
+
+    public void OutOfFlies()
+    {
+        StartCoroutine(OutOfFliesRoutine());
+    }
+
+    //Kun kärpäset ei riitä kesken matsin niin väläytetään teksti
+    IEnumerator OutOfFliesRoutine()
+    {
+        outOfFliesIcon.SetActive(true);
+        outOfFliesIcon.GetComponentInChildren<Text>().CrossFadeAlpha(1.0f, 0.0f, false);
+        outOfFliesIcon.GetComponentInChildren<Text>().CrossFadeAlpha(0.0f, 2.0f, false);
+        yield return new WaitForSeconds(2);
+        outOfFliesIcon.SetActive(false);
     }
 
     void GenerateBlackJackDeck() {
@@ -191,6 +216,7 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void RoundLost() {
+        round++;
         StartCoroutine(RoundLostRoutine());
     }
     //häviö ikonin väläytys
@@ -203,6 +229,7 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void RoundWon() {
+        round++;
         StartCoroutine(RoundWonRoutine());
     }
     //Voitto ikonin väläytys
@@ -214,36 +241,131 @@ public class EncounterController : MonoBehaviour {
         winIcon.SetActive(false);
     }
 
-    //Putsataan kädet tyhjiksi ja sekoitetaan pakka
-    public void NewRound() {
-        foreach (int item in enemyHand) {
-            deck.Add(item);
-        }
-        enemyHand.Clear();
-        foreach (int item in myHand) {
-            deck.Add(item);
-        }
-        myHand.Clear();
-        ShuffleDeck();
-        combatController.myHandText = "";
-        combatController.enemyHandText = "";
-        combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
-        combatController.enemyHand.GetComponent<Text>().text = combatController.enemyHandText;
-        //Jos ei ole tulikärpäsiä uuteen kierrokseen, lähdetään karkuun
-        if (myFireflies.Count < 3)
+    public void ShowScore(int result)
+    {
+        if (round != 1)
         {
-            deck.Clear();
-            textPanel.SetActive(true);
-            runButton.SetActive(true);
-            approachButton.SetActive(true);
             fireflyIcon.SetActive(false);
             darknessIcon.SetActive(false);
             proceedButton.SetActive(false);
-            RunAway();
+        }
+
+        //Päivitetään scoreruutuun kumpi voitti edellisen kierroksen
+        switch (result)
+        {
+            case 0:
+                wonOrLostText.GetComponent<Text>().text = "Enemy won...";
+                break;
+            case 1:
+                wonOrLostText.GetComponent<Text>().text = "You won!";
+                break;
+            case -1:
+                wonOrLostText.GetComponent<Text>().text = "";
+                break;
+            default:
+                Debug.Log("Round result error");
+                break;
+        }
+        //päivitetään oikea kierrosluku ja pisteet tekstiruutuihin
+        roundText.GetComponent<Text>().text = "Round " + round;
+        scoreText.GetComponent<Text>().text = "Score\nYou: " + myScore + "\nEnemy: " + enemyScore;
+
+        scoreCanvas.SetActive(true);
+    }
+
+    public void WhoWon(int result)
+    {
+        switch (result)
+        {
+            case 0:
+                encounterEndText.GetComponent<Text>().text = "Encounter failed";
+                break;
+            case 1:
+                encounterEndText.GetComponent<Text>().text = "Encounter won!!";
+                break;
+            default:
+                Debug.Log("Encounter result error");
+                break;
+        }
+        StartCoroutine(WhoWonRoutine());
+    }
+    //väläytetään koko encounterin lopputulos
+    IEnumerator WhoWonRoutine()
+    {
+        encounterEndCanvas.SetActive(true);
+        encounterEndText.SetActive(true);
+        encounterEndText.GetComponentInChildren<Text>().CrossFadeAlpha(1.0f, 0.0f, false);
+        encounterEndText.GetComponentInChildren<Text>().CrossFadeAlpha(0.0f, 2.0f, false);
+        yield return new WaitForSeconds(2);
+        encounterEndText.SetActive(false);
+        encounterEndCanvas.SetActive(false);
+    }
+
+    public void FirstRound()
+    {
+        //Laitetaan oikeat napit esille, luodaan ja sekoitetaan pakka otetaan saatavilla olevista tulikärpäsistä pois kaksi
+        //Aloitetaan pelaajan vuoro
+        fireflyIcon.SetActive(true);
+        darknessIcon.SetActive(true);
+        proceedButton.SetActive(true);
+        GenerateBlackJackDeck();
+        ShuffleDeck();
+        enemyHand.Add(deck[0]);
+        deck.RemoveAt(0);
+        myHand.Add(deck[0]);
+        deck.RemoveAt(0);
+        enemyHand.Add(deck[0]);
+        deck.RemoveAt(0);
+        myHand.Add(deck[0]);
+        deck.RemoveAt(0);
+        usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
+        myFireflies.RemoveAt(myFireflies.Count - 1);
+        usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
+        myFireflies.RemoveAt(myFireflies.Count - 1);
+        combatController.PlayersTurn();
+        UpdateFlyAmount(fireflyCounter, myFireflies.Count);
+        UpdateFlyAmount(usedFireflyCounter, usedFireflies.Count);
+    }
+
+    //Putsataan kädet tyhjiksi ja sekoitetaan pakka
+    public void NewRound() {
+        scoreCanvas.SetActive(false);
+
+        if (round == 1) {
+            FirstRound();
+        }
+        else { 
+            foreach (int item in enemyHand) {
+                deck.Add(item);
+            }
+            enemyHand.Clear();
+            foreach (int item in myHand) {
+                deck.Add(item);
+            }
+            myHand.Clear();
+            ShuffleDeck();
+            combatController.myHandText = "";
+            combatController.enemyHandText = "";
+            combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
+            combatController.enemyHand.GetComponent<Text>().text = combatController.enemyHandText;
+            //Jos ei ole tulikärpäsiä uuteen kierrokseen, lähdetään karkuun
+            /*if (myFireflies.Count < 3)
+            {
+                deck.Clear();
+                textPanel.SetActive(true);
+                runButton.SetActive(true);
+                approachButton.SetActive(true);
+                fireflyIcon.SetActive(false);
+                darknessIcon.SetActive(false);
+                proceedButton.SetActive(false);
+                RunAway();
             
-        }
-        //Muuten uudet kortit ja taas pelaajan vuoro
-        else {
+            }
+            //Muuten uudet kortit ja taas pelaajan vuoro
+            else {*/
+            fireflyIcon.SetActive(true);
+            darknessIcon.SetActive(true);
+            proceedButton.SetActive(true);
             enemyHand.Add(deck[0]);
             deck.RemoveAt(0);
             myHand.Add(deck[0]);
@@ -256,9 +378,11 @@ public class EncounterController : MonoBehaviour {
             myFireflies.RemoveAt(myFireflies.Count - 1);
             usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
             myFireflies.RemoveAt(myFireflies.Count - 1);
+            UpdateFlyAmount(fireflyCounter, myFireflies.Count);
+            UpdateFlyAmount(usedFireflyCounter, usedFireflies.Count);
             combatController.PlayersTurn();
+            /*}*/
         }
-        
     }
 
     //Lopetetaan taistelumusiikki, tyhjennetään kädet ja pakka, laitetaan encounternapit esille ja taistelunapit piiloon
@@ -281,7 +405,10 @@ public class EncounterController : MonoBehaviour {
         darknessIcon.SetActive(false);
         proceedButton.SetActive(false);
         textPanel.SetActive(false);
+        igcController.ToggleInGameCanvas(true);
+
         RunAway();
+        WhoWon(0);
         //TODO affect world???       
     }
 
@@ -307,9 +434,18 @@ public class EncounterController : MonoBehaviour {
         fireflyIcon.SetActive(false);
         darknessIcon.SetActive(false);
         proceedButton.SetActive(false);
+        usedFireflyCounter.SetActive(false);
         gameCanvas.SetActive(false);
         textPanel.SetActive(false);
         player.GetComponent<MovementControls>().stop = false;
+        igcController.ToggleInGameCanvas(true);
+
+        WhoWon(1);
         //TODO animation for monster transforming to something regiular???
+    }
+
+    public void UpdateFlyAmount(GameObject counter, int amount)
+    {
+        counter.GetComponentInChildren<Text>().text = amount.ToString();
     }
 }
