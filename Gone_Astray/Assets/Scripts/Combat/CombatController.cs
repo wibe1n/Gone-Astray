@@ -119,7 +119,7 @@ public class CombatController : MonoBehaviour {
                 encounterController.GameWon();                
             }
             //Jos vihollisen käsi on isompi kuin pelaajan, häviää kierroksen
-            else if (enemyHandNumber > myHandNumber) {
+            else if (enemyHandNumber >= myHandNumber) {
                 Debug.Log("vihollinen voitti");
                 encounterController.RoundLost();
                 encounterController.enemyScore += 1;
@@ -129,11 +129,11 @@ public class CombatController : MonoBehaviour {
                 }
                 //Muuten uusi kierros
                 else {
-                    encounterController.NewRound();
+                    encounterController.ShowScore(0);
                 }
             }
             else {
-                encounterController.NewRound();
+                encounterController.ShowScore(1);
             }
         }
 
@@ -156,6 +156,7 @@ public class CombatController : MonoBehaviour {
             //Jos ei ole tarpeeksi tulikärpäsiä
             if (encounterController.myFireflies.Count == 0) {
                 Debug.Log("Not enough fireflies!");
+                encounterController.OutOfFlies();
             }
             //Pakan päällimäinen kortti lisätään omaan käteen, poistetaan yksi tulikärpänen varastosta, päivitetään teksti
             else
@@ -163,8 +164,14 @@ public class CombatController : MonoBehaviour {
                 encounterController.myHand.Add(encounterController.deck[0]);
                 myHandNumber += encounterController.deck[0];
                 encounterController.deck.RemoveAt(0);
-                encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
-                encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
+                if (encounterController.myFireflies.Count > 0)
+                {
+                    encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
+                    encounterController.UpdateFlyAmount(encounterController.usedFireflyCounter, encounterController.usedFireflies.Count);
+                    encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
+                    encounterController.UpdateFlyAmount(encounterController.fireflyCounter, encounterController.myFireflies.Count);
+                }
+
                 myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
                 myHand.GetComponent<Text>().text = myHandText;
             }
@@ -179,12 +186,11 @@ public class CombatController : MonoBehaviour {
                 }
                 //Uusi kierros
                 else {
-                    encounterController.NewRound();
+                    encounterController.ShowScore(0);
                 }
             }
         }
         //ball of light size update
         encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
     }
-
 }

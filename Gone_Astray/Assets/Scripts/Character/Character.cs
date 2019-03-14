@@ -6,6 +6,7 @@ public class Character : MonoBehaviour {
 
     public GameObject rayCastDrawer, lastSapling, sapling;
     public PauseMenuController _pauseController;
+    public InGameCanvasController _igcController;
     public ParticleSystem fireflies;
     public bool bossIsNear = false;
     public bool spooped = false;
@@ -62,7 +63,8 @@ public class Character : MonoBehaviour {
     public void AddFirefly() {
         Firefly firefly = new Firefly(0);
         myFireflies.Add(firefly);
-        
+        //Päivitetään in game canvasiin kärpästen määrä
+        _igcController.UpdateFlyAmount(myFireflies.Count);
         
         ParticleSystem.MainModule system = fireflies.main;
         system.maxParticles += 1;
