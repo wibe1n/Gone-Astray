@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 704277919}
-  m_IndirectSpecularColor: {r: 0.12182029, g: 0.15329543, b: 0.2697369, a: 1}
+  m_IndirectSpecularColor: {r: 0.12182041, g: 0.15329567, b: 0.26973724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27622,6 +27622,7 @@ MonoBehaviour:
   isCollectable: 1
   isFirefly: 0
   isLeshen: 1
+  isRaskovnik: 0
   pickKey: 0
 --- !u!114 &1680984147
 MonoBehaviour:
@@ -33530,10 +33531,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
-  m_JumpPower: 12
+  m_JumpPower: 13
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
-  m_MoveSpeedMultiplier: 0.5
+  m_MoveSpeedMultiplier: 0.6
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
   m_IsGrounded: 0
@@ -33570,11 +33571,13 @@ MonoBehaviour:
   lastSapling: {fileID: 0}
   sapling: {fileID: 100000, guid: 2d9e0240a52be614aa79f972f5f6d643, type: 3}
   _pauseController: {fileID: 0}
+  _igcController: {fileID: 0}
   fireflies: {fileID: 1616347002}
   bossIsNear: 0
   spooped: 0
   leshenObjectNear: 0
   hasLeshen: 0
+  hasRaskovnik: 0
   level: 0
   stressLevel: 0
   items: 
@@ -35450,6 +35453,7 @@ MonoBehaviour:
   camera: {fileID: 1892791255}
   character: {fileID: 2013956637}
   combatController: {fileID: 1919543853}
+  igcController: {fileID: 0}
   myEnemy: {fileID: 0}
   deck: 
   enemyHand: 
@@ -35458,6 +35462,7 @@ MonoBehaviour:
   enemyScore: 0
   winTarget: 0
   minimFireflies: 0
+  round: 0
   gameCanvas: {fileID: 370117952}
   textPanel: {fileID: 1854238028}
   runButton: {fileID: 1457962541}
@@ -35470,7 +35475,15 @@ MonoBehaviour:
   winIcon: {fileID: 1773222404}
   nextButton: {fileID: 1211133296}
   notEnoughIcon: {fileID: 0}
-  outOfIcon: {fileID: 0}
+  outOfFliesIcon: {fileID: 0}
+  scoreCanvas: {fileID: 0}
+  roundText: {fileID: 0}
+  scoreText: {fileID: 0}
+  wonOrLostText: {fileID: 0}
+  encounterEndText: {fileID: 0}
+  encounterEndCanvas: {fileID: 0}
+  fireflyCounter: {fileID: 0}
+  usedFireflyCounter: {fileID: 0}
   infoText: {fileID: 205791257}
   runAwayScreen: {fileID: 683498144}
   reached: 0
