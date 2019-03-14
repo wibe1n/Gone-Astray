@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
-    [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]
     [RequireComponent(typeof(Animator))]
     public class Movement : MonoBehaviour
@@ -28,10 +29,17 @@ using UnityEngine;
         Vector3 m_CapsuleCenter;
         CapsuleCollider m_Capsule;
         bool m_Crouching;
+        public GameObject RaycastDrawer;
+        public GameObject secondRaycastDrawer;
+        float dist = 0.5f;
+        float speed = 2;
+        Vector3 tempPosition;
+
+    Vector3 theMove;
 
 
         //Alustetaan animaattori ja hahmo
-        void Start() {
+    void Start() {
             m_Animator = GetComponent<Animator>();
             m_Rigidbody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
@@ -53,15 +61,16 @@ using UnityEngine;
             move = Vector3.ProjectOnPlane(move, m_GroundNormal);
             m_TurnAmount = Mathf.Atan2(move.x, move.z);
             m_ForwardAmount = move.z;
+            theMove = move;
 
-            ApplyExtraTurnRotation();
+        ApplyExtraTurnRotation();
 
             // control and velocity handling is different when grounded and airborne:
             if (m_IsGrounded) {
                 HandleGroundedMovement(crouch, jump);
             }
             else {
-                HandleAirborneMovement();
+                HandleAirborneMovement(move);
             }
 
             ScaleCapsuleForCrouching(crouch);
@@ -141,11 +150,18 @@ using UnityEngine;
         }
 
 
-        void HandleAirborneMovement() {
-            // apply extra gravity from multiplier:
-            Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
-            m_Rigidbody.AddForce(extraGravityForce);
-            m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
+        void HandleAirborneMovement(Vector3 move) {
+            //airMove = new Vector3(move.x, m_Rigidbody.velocity.y, move.z * 6f);
+            //airMove = (m_Animator.deltaPosition * m_MoveSpeedMultiplier) / Time.deltaTime;
+            // airMove = transform.InverseTransformDirection(airMove);
+            //m_Rigidbody.velocity = Vector3.Lerp(m_Rigidbody.velocity, airMove, Time.deltaTime * 2f);
+
+
+        // apply extra gravity from multiplier:
+        //Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
+        //m_Rigidbody.AddForce(extraGravityForce);
+
+        m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
         }
 
 
@@ -168,16 +184,33 @@ using UnityEngine;
 
 
         public void OnAnimatorMove() {
-            // we implement this function to override the default root motion.
-            // this allows us to modify the positional speed before it's applied.
-            if (m_IsGrounded && Time.deltaTime > 0) {
-                Vector3 v = (m_Animator.deltaPosition * m_MoveSpeedMultiplier) / Time.deltaTime;
+        // we implement this function to override the default root motion.
+        // this allows us to modify the positional speed before it's applied.
+        if (Time.deltaTime > 0)
+        {
 
+            if (m_IsGrounded)
+            {
+                Vector3 v = (m_Animator.deltaPosition * m_MoveSpeedMultiplier) / Time.deltaTime;
                 // we preserve the existing y part of the current velocity.
                 v.y = m_Rigidbody.velocity.y;
                 m_Rigidbody.velocity = v;
             }
+            else
+            {
+                float forwardMultiplier = 5.0f * theMove.magnitude;
+                //Vector3 airMove = new Vector3(theMove.x, m_Rigidbody.velocity.y, theMove.z);
+                float lerpX = Mathf.Lerp(m_Rigidbody.velocity.x, transform.forward.x * forwardMultiplier, Time.deltaTime * 2f);
+                float lerpZ = Mathf.Lerp(m_Rigidbody.velocity.z, transform.forward.z * forwardMultiplier, Time.deltaTime * 2f);
+                //m_Rigidbody.velocity = Vector3.Lerp(m_Rigidbody.velocity, airMove , Time.deltaTime * 2f);
+                m_Rigidbody.velocity = new Vector3(lerpX, m_Rigidbody.velocity.y, lerpZ);
+                Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
+                m_Rigidbody.AddForce(extraGravityForce);
+                Debug.Log(m_Rigidbody.velocity);
+            }
         }
+
+    }
 
 
         void CheckGroundStatus() {
@@ -199,5 +232,33 @@ using UnityEngine;
                 m_Animator.applyRootMotion = false;
             }
         }
+
+    public void TestMoveExample(Vector3 move, bool crouch, bool jump) {
+        CheckGroundStatus();
+        m_TurnAmount = move.y * 0.8f;
+
+        ApplyExtraTurnRotation();
+        Vector3 velocity = transform.forward * move.x * 10 + new Vector3(0,m_Rigidbody.velocity.y);
+        Debug.Log(velocity);
+        if (m_IsGrounded)
+        {
+        
+            m_Rigidbody.velocity = velocity;
+            HandleGroundedMovement(crouch, jump);
+        }
+        else
+        {
+            m_Rigidbody.velocity = Vector3.Lerp(m_Rigidbody.velocity, velocity, Time.deltaTime * 2f);
+            Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
+            m_Rigidbody.AddForce(extraGravityForce);
+            HandleAirborneMovement(move);
+        }
+
+        ScaleCapsuleForCrouching(crouch);
+        PreventStandingInLowHeadroom();
+
+        // send input and other state parameters to the animator
+        UpdateAnimator(move, jump);
+    }
     }
 

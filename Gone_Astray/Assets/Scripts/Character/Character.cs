@@ -10,7 +10,7 @@ public class Character : MonoBehaviour {
     public bool bossIsNear = false;
     public bool spooped = false;
     public bool leshenObjectNear = false;
-	public bool hasLeshen = false;
+	public bool hasLeshen = true;
     public int level = 0;
     public List<Firefly> myFireflies = new List<Firefly> { };
     public float stressLevel = 0;
