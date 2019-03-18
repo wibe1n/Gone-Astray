@@ -43,7 +43,7 @@ public class Undying_Object : MonoBehaviour {
 	private IEnumerator ToTheWorld() {
 		switch (whichScene) {
 		case 1:
-			yield return SceneManager.LoadSceneAsync ("tiinatest");
+			yield return SceneManager.LoadSceneAsync ("DemoTestLevel1");
 			break;
 		case 2:
 			yield return SceneManager.LoadSceneAsync ("TutorialLevel");
