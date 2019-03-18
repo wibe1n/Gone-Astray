@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+    public int disturbLimit;
     public int disturbTreshold;
     public GameObject checkpoint;
 	public bool isBoss;

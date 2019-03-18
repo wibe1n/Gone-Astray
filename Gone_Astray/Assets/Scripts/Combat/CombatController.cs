@@ -7,7 +7,7 @@ public class CombatController : MonoBehaviour {
 
     public EncounterController encounterController;
     public GameObject enemyHand, myHand;
-    public int myHandNumber, enemyHandNumber;
+    public int myHandNumber, enemyHandNumber, enemyTreshold;
     public string myHandText = "";
     public string enemyHandText = "";
 
@@ -31,10 +31,11 @@ public class CombatController : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
 
         //Vihollisen käsi esille
-        for (int i = 0; i < encounterController.enemyHand.Count; i++) {
-            enemyHandNumber += encounterController.enemyHand[i];
-            enemyHandText += encounterController.enemyHand[i].ToString() + " ";
-        }
+        
+        enemyHandNumber = encounterController.enemyHand;
+        enemyTreshold = encounterController.myEnemy.disturbTreshold;
+        enemyHandText = encounterController.enemyHand.ToString() + " ";
+        
         enemyHand.GetComponent<Text>().text = enemyHandText;
         //TODO: animation for adding the hand
 
@@ -54,76 +55,47 @@ public class CombatController : MonoBehaviour {
         //Tutorial version
         // Vihollisen vuoro muutetaan pian, en kommentoi
         if(encounterController.tutorial == true) {
-            while (enemyHandNumber < myHandNumber) {
-                if(enemyHandNumber == 14) {
-                    encounterController.enemyHand.Add(2);
-                    enemyHandNumber += 2;
+            //Katsotaan kummalla on parempi käsi
+            encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+            yield return new WaitForSeconds(1f);
+            //Jos pelaaja ei pääse tresholdin sisään häviää kierroksen
+            encounterController.NextTutorialPart();
+            yield return new WaitUntil(() => encounterController.reached == true);
+            if (myHandNumber < enemyHandNumber - enemyTreshold || myHandNumber > enemyHandNumber + enemyTreshold)
+            {
+                encounterController.RoundLost();
+                encounterController.enemyScore += 1;
+                if (encounterController.enemyScore == 3)
+                {
+                    encounterController.GameLost();
                 }
-                else {
-                    encounterController.enemyHand.Add(9);
-                    enemyHandNumber += 9;
+                //Muuten uusi kierros
+                else
+                {
+                    encounterController.ShowScore(0);
                 }
-                enemyHandText += encounterController.enemyHand[encounterController.enemyHand.Count - 1].ToString() + " ";
-                enemyHand.GetComponent<Text>().text = enemyHandText;
-                //ball of darkness size update
-                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
-                encounterController.nextButton.SetActive(true);
-                encounterController.proceedButton.SetActive(false);
-                encounterController.NextTutorialPart();
-                yield return new WaitUntil(() => encounterController.reached == true);
-                encounterController.reached = false;
             }
-            if (enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
-                encounterController.RoundWon();
+            //Jos pelaaja pääsee Tresholdin sisään hän voittaa pelin
+            else
+            {
+                Debug.Log("voitto");
                 enemyHandNumber = 0;
                 myHandNumber = 0;
                 encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
                 encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
                 enemyHand.GetComponent<Text>().text = "";
                 myHand.GetComponent<Text>().text = "";
-                yield return new WaitUntil(() => encounterController.reached == true);
-                encounterController.GameWon();                
-            }
-            else if (enemyHandNumber > myHandNumber) {
-                Debug.Log("vihollinen voitti");
-                encounterController.RoundLost();
-                encounterController.enemyScore += 1;
-                if (encounterController.enemyScore == 3) {
-                    encounterController.GameLost();
-                }
-                else {
-                    encounterController.NewRound();
-                }
-            }
-            else {
-                encounterController.NewRound();
+                encounterController.GameWon();
             }
         }
         else {
-            //Niin kauan kuin vihollisen käsi on pienempi kuin pelaajan vihollinen jatkaa
-            while (enemyHandNumber < myHandNumber) {
-                //Uusi kortti pakasta. Päivitetään arvo, teksti ja valopallo
-                encounterController.enemyHand.Add(encounterController.deck[0]);
-                enemyHandNumber += encounterController.deck[0];
-                encounterController.deck.RemoveAt(0);
-                enemyHandText += encounterController.enemyHand[encounterController.enemyHand.Count - 1].ToString() + " ";
-                enemyHand.GetComponent<Text>().text = enemyHandText;
-                //ball of darkness size update
-                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
-                yield return new WaitForSeconds(1f);
-            }
-            Debug.Log(enemyHandNumber);
-            //Jos vihollisen käsi on yli 21 voittaa pelin
-            if (enemyHandNumber > 21 || myHandNumber > enemyHandNumber) {
-                encounterController.RoundWon();
-                encounterController.GameWon();                
-            }
-            //Jos vihollisen käsi on isompi kuin pelaajan, häviää kierroksen
-            else if (enemyHandNumber >= myHandNumber) {
-                Debug.Log("vihollinen voitti");
+            //Katsotaan kummalla on parempi käsi
+            encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+            yield return new WaitForSeconds(1f);
+            //Jos pelaaja ei pääse tresholdin sisään häviää kierroksen
+            if (myHandNumber < enemyHandNumber - enemyTreshold || myHandNumber > enemyHandNumber + enemyTreshold) {
                 encounterController.RoundLost();
                 encounterController.enemyScore += 1;
-                //Jos vihollisen score on kolme, häviää pelin
                 if (encounterController.enemyScore == 3) {
                     encounterController.GameLost();
                 }
@@ -132,9 +104,18 @@ public class CombatController : MonoBehaviour {
                     encounterController.ShowScore(0);
                 }
             }
+            //Jos pelaaja pääsee Tresholdin sisään hän voittaa pelin
             else {
-                encounterController.ShowScore(1);
+                Debug.Log("voitto");
+                enemyHandNumber = 0;
+                myHandNumber = 0;
+                encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
+                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+                enemyHand.GetComponent<Text>().text = "";
+                myHand.GetComponent<Text>().text = "";
+                encounterController.GameWon();
             }
+ 
         }
 
     }
@@ -175,8 +156,8 @@ public class CombatController : MonoBehaviour {
                 myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
                 myHand.GetComponent<Text>().text = myHandText;
             }
-            //Jos oma käsi on yli 21 Häviää kierroksen
-            if (myHandNumber > 21) {
+            //Jos oma käsi on yli hirviön häiritsemisrajan, häviää kierroksen
+            if (myHandNumber > enemyHandNumber + enemyTreshold) {
                 encounterController.RoundLost();
                 Debug.Log("mennään täällä");
                 encounterController.enemyScore += 1;

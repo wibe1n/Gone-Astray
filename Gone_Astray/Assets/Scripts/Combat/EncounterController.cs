@@ -15,7 +15,7 @@ public class EncounterController : MonoBehaviour {
     public List<Firefly> myFireflies = new List<Firefly>();
     public List<Firefly> usedFireflies = new List<Firefly>();
     public List<int> deck = new List<int>() { };
-    public List<int> enemyHand;
+    public int enemyHand;
     public List<int> myHand;
     public int myScore, enemyScore, winTarget, minimFireflies, round;
     private int tutorialPart = 0;
@@ -94,14 +94,7 @@ public class EncounterController : MonoBehaviour {
             infoText.text = NameDescContainer.GetCombatTutorialPart("part0");
             GenerateBlackJackDeck();
             ShuffleDeck();
-            enemyHand.Add(5);
-            myHand.Add(4);
-            enemyHand.Add(9);
-            myHand.Add(7);
-            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-            myFireflies.RemoveAt(myFireflies.Count - 1);
-            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-            myFireflies.RemoveAt(myFireflies.Count - 1);
+            enemyHand = 15;
         }
     }
 
@@ -117,11 +110,9 @@ public class EncounterController : MonoBehaviour {
             nextButton.SetActive(false);
             proceedButton.SetActive(true);
         }
-        else if (tutorialPart == 10) {
-            reached = true;
-        }
-        else  if (tutorialPart == 12) {
-            reached = true;
+        else if (tutorialPart == 9) {
+            nextButton.SetActive(true);
+            proceedButton.SetActive(false);
         }
         else if (tutorialPart == 14) {
             reached = true;
@@ -310,18 +301,7 @@ public class EncounterController : MonoBehaviour {
         proceedButton.SetActive(true);
         GenerateBlackJackDeck();
         ShuffleDeck();
-        enemyHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        myHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        enemyHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        myHand.Add(deck[0]);
-        deck.RemoveAt(0);
-        usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-        myFireflies.RemoveAt(myFireflies.Count - 1);
-        usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-        myFireflies.RemoveAt(myFireflies.Count - 1);
+        enemyHand = myEnemy.disturbLimit;
         combatController.PlayersTurn();
         UpdateFlyAmount(fireflyCounter, myFireflies.Count);
         UpdateFlyAmount(usedFireflyCounter, usedFireflies.Count);
@@ -335,10 +315,6 @@ public class EncounterController : MonoBehaviour {
             FirstRound();
         }
         else { 
-            foreach (int item in enemyHand) {
-                deck.Add(item);
-            }
-            enemyHand.Clear();
             foreach (int item in myHand) {
                 deck.Add(item);
             }
@@ -366,11 +342,7 @@ public class EncounterController : MonoBehaviour {
             fireflyIcon.SetActive(true);
             darknessIcon.SetActive(true);
             proceedButton.SetActive(true);
-            enemyHand.Add(deck[0]);
-            deck.RemoveAt(0);
             myHand.Add(deck[0]);
-            deck.RemoveAt(0);
-            enemyHand.Add(deck[0]);
             deck.RemoveAt(0);
             myHand.Add(deck[0]);
             deck.RemoveAt(0);
@@ -389,7 +361,7 @@ public class EncounterController : MonoBehaviour {
     //Lopuksi juostaan karkuun
     public void GameLost() {
         battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        enemyHand.Clear();
+        enemyHand = 0;
         myHand.Clear();
         deck.Clear();
         enemyScore = 0;
@@ -417,7 +389,7 @@ public class EncounterController : MonoBehaviour {
         myEnemy.eye1.SetActive(false);
         myEnemy.eye2.SetActive(false);
         battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        enemyHand.Clear();
+        enemyHand = 0;
         myHand.Clear();
         deck.Clear();
         Destroy(myEnemy);

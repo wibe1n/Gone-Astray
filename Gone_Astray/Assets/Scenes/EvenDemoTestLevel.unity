@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 704277919}
-  m_IndirectSpecularColor: {r: 0.12182029, g: 0.15329543, b: 0.2697369, a: 1}
+  m_IndirectSpecularColor: {r: 0.12182041, g: 0.15329567, b: 0.26973724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9407,6 +9407,16 @@ Prefab:
         type: 2}
       propertyPath: m_Center.z
       value: 0.0021796394
+      objectReference: {fileID: 0}
+    - target: {fileID: 114060925371151462, guid: 133cc10000e98ca4da68c23f2681d7a5,
+        type: 2}
+      propertyPath: disturbLimit
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114060925371151462, guid: 133cc10000e98ca4da68c23f2681d7a5,
+        type: 2}
+      propertyPath: disturbTreshold
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 133cc10000e98ca4da68c23f2681d7a5, type: 2}
@@ -25818,6 +25828,10 @@ Prefab:
       propertyPath: igcController
       value: 
       objectReference: {fileID: 1788720585}
+    - target: {fileID: 1426499240004724, guid: 5074b275daecf4343b370a15ee6409a9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5074b275daecf4343b370a15ee6409a9, type: 2}
   m_IsPrefabAsset: 0
@@ -25984,6 +25998,7 @@ MonoBehaviour:
   isCollectable: 1
   isFirefly: 0
   isLeshen: 1
+  isRaskovnik: 0
   pickKey: 0
 --- !u!114 &1680984147
 MonoBehaviour:
@@ -31698,13 +31713,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
-  m_JumpPower: 12
+  m_JumpPower: 13
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
-  m_MoveSpeedMultiplier: 0.5
+  m_MoveSpeedMultiplier: 0.6
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
   m_IsGrounded: 0
+  RaycastDrawer: {fileID: 0}
+  secondRaycastDrawer: {fileID: 0}
 --- !u!114 &2013956636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31742,11 +31759,13 @@ MonoBehaviour:
   spooped: 0
   leshenObjectNear: 0
   hasLeshen: 0
+  hasRaskovnik: 0
   level: 0
   stressLevel: 0
   items: 
   undyObj: {fileID: 0}
   leshenKey: 0
+  NPCspeechInstance: 0
 --- !u!20 &2013956638
 Camera:
   m_ObjectHideFlags: 0
@@ -32962,7 +32981,7 @@ Prefab:
     - target: {fileID: 20313150950622316, guid: c463419246aa9e049aef45f2d992057c,
         type: 2}
       propertyPath: field of view
-      value: 60.000004
+      value: 77.31962
       objectReference: {fileID: 0}
     - target: {fileID: 20313150950622316, guid: c463419246aa9e049aef45f2d992057c,
         type: 2}
@@ -32972,7 +32991,7 @@ Prefab:
     - target: {fileID: 20313150950622316, guid: c463419246aa9e049aef45f2d992057c,
         type: 2}
       propertyPath: m_FocalLength
-      value: 20.78461
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114295578692617318, guid: c463419246aa9e049aef45f2d992057c,
         type: 2}
