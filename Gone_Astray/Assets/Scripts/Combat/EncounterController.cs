@@ -88,6 +88,7 @@ public class EncounterController : MonoBehaviour {
             tutorialButton.SetActive(false);
             approachButton.SetActive(false);
             fireflyIcon.SetActive(true);
+            fireflyIcon.GetComponent<Button>().interactable = false;
             darknessIcon.SetActive(true);
             nextButton.SetActive(true);
             textPanel.SetActive(true);
@@ -103,8 +104,13 @@ public class EncounterController : MonoBehaviour {
         tutorialPart++;
         infoText.text = NameDescContainer.GetCombatTutorialPart("part" + tutorialPart.ToString());
         if(tutorialPart == 3) {
+            fireflyIcon.GetComponent<Button>().interactable = true;
             nextButton.SetActive(false);
             combatController.PlayersTurn();
+        }
+        else if(tutorialPart == 7) {
+            nextButton.SetActive(false);
+            fireflyIcon.GetComponent<Button>().interactable = true;
         }
         else if (tutorialPart == 8) {
             nextButton.SetActive(false);
@@ -113,6 +119,7 @@ public class EncounterController : MonoBehaviour {
         else if (tutorialPart == 9) {
             nextButton.SetActive(true);
             proceedButton.SetActive(false);
+            reached = true;
         }
         else if (tutorialPart == 14) {
             reached = true;

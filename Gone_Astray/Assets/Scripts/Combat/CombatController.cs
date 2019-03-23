@@ -61,23 +61,20 @@ public class CombatController : MonoBehaviour {
             //Jos pelaaja ei pääse tresholdin sisään häviää kierroksen
             encounterController.NextTutorialPart();
             yield return new WaitUntil(() => encounterController.reached == true);
-            if (myHandNumber < enemyHandNumber - enemyTreshold || myHandNumber > enemyHandNumber + enemyTreshold)
-            {
+            encounterController.reached = false;
+            if (myHandNumber < enemyHandNumber - enemyTreshold || myHandNumber > enemyHandNumber + enemyTreshold) {
                 encounterController.RoundLost();
                 encounterController.enemyScore += 1;
-                if (encounterController.enemyScore == 3)
-                {
+                if (encounterController.enemyScore == 3) {
                     encounterController.GameLost();
                 }
                 //Muuten uusi kierros
-                else
-                {
+                else {
                     encounterController.ShowScore(0);
                 }
             }
             //Jos pelaaja pääsee Tresholdin sisään hän voittaa pelin
-            else
-            {
+            else {
                 Debug.Log("voitto");
                 enemyHandNumber = 0;
                 myHandNumber = 0;
@@ -85,6 +82,7 @@ public class CombatController : MonoBehaviour {
                 encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
                 enemyHand.GetComponent<Text>().text = "";
                 myHand.GetComponent<Text>().text = "";
+                yield return new WaitUntil(() => encounterController.reached == true);
                 encounterController.GameWon();
             }
         }
@@ -120,13 +118,11 @@ public class CombatController : MonoBehaviour {
 
     }
 
-    public void AddFirefly() {
+    public void AddLight() {
         //Tutorial versio
         if (encounterController.tutorial == true) {
-            encounterController.myHand.Add(9);
-            myHandNumber += 9;
-            encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
-            encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
+            encounterController.myHand.Add(8);
+            myHandNumber += 8;
             myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
             myHand.GetComponent<Text>().text = myHandText;
             encounterController.nextButton.SetActive(true);
@@ -145,14 +141,6 @@ public class CombatController : MonoBehaviour {
                 encounterController.myHand.Add(encounterController.deck[0]);
                 myHandNumber += encounterController.deck[0];
                 encounterController.deck.RemoveAt(0);
-                if (encounterController.myFireflies.Count > 0)
-                {
-                    encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
-                    encounterController.UpdateFlyAmount(encounterController.usedFireflyCounter, encounterController.usedFireflies.Count);
-                    encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
-                    encounterController.UpdateFlyAmount(encounterController.fireflyCounter, encounterController.myFireflies.Count);
-                }
-
                 myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
                 myHand.GetComponent<Text>().text = myHandText;
             }
@@ -174,4 +162,15 @@ public class CombatController : MonoBehaviour {
         //ball of light size update
         encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
     }
+
+    public void UseFirefly() {
+        if (encounterController.myFireflies.Count > 0)
+        {
+            encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
+            encounterController.UpdateFlyAmount(encounterController.usedFireflyCounter, encounterController.usedFireflies.Count);
+            encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
+            encounterController.UpdateFlyAmount(encounterController.fireflyCounter, encounterController.myFireflies.Count);
+        }
+    }
+
 }
