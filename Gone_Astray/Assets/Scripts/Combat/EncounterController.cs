@@ -19,7 +19,7 @@ public class EncounterController : MonoBehaviour {
     public List<int> myHand;
     public int myScore, enemyScore, winTarget, minimFireflies, round;
     private int tutorialPart = 0;
-    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton, notEnoughIcon, outOfFliesIcon, scoreCanvas, roundText, scoreText, wonOrLostText, encounterEndText, encounterEndCanvas, fireflyCounter, usedFireflyCounter;
+    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton, notEnoughIcon, outOfFliesIcon, scoreCanvas, roundText, scoreText, wonOrLostText, encounterEndText, encounterEndCanvas, fireflyCounter, usedFireflyCounter, useFirefly;
     public Text infoText;
     public GameObject runAwayScreen;
     public bool reached = false;
@@ -88,6 +88,7 @@ public class EncounterController : MonoBehaviour {
             tutorialButton.SetActive(false);
             approachButton.SetActive(false);
             fireflyIcon.SetActive(true);
+            fireflyIcon.GetComponent<Button>().interactable = false;
             darknessIcon.SetActive(true);
             nextButton.SetActive(true);
             textPanel.SetActive(true);
@@ -103,8 +104,13 @@ public class EncounterController : MonoBehaviour {
         tutorialPart++;
         infoText.text = NameDescContainer.GetCombatTutorialPart("part" + tutorialPart.ToString());
         if(tutorialPart == 3) {
+            fireflyIcon.GetComponent<Button>().interactable = true;
             nextButton.SetActive(false);
             combatController.PlayersTurn();
+        }
+        else if(tutorialPart == 7) {
+            nextButton.SetActive(false);
+            fireflyIcon.GetComponent<Button>().interactable = true;
         }
         else if (tutorialPart == 8) {
             nextButton.SetActive(false);
@@ -113,6 +119,15 @@ public class EncounterController : MonoBehaviour {
         else if (tutorialPart == 9) {
             nextButton.SetActive(true);
             proceedButton.SetActive(false);
+            reached = true;
+        }
+        else if (tutorialPart == 11) {
+            nextButton.SetActive(false);
+            fireflyIcon.GetComponent<Button>().interactable = true;
+        }
+        else if (tutorialPart == 12) {
+            nextButton.SetActive(false);
+            fireflyIcon.GetComponent<Button>().interactable = true;
         }
         else if (tutorialPart == 14) {
             reached = true;
@@ -238,6 +253,7 @@ public class EncounterController : MonoBehaviour {
         {
             fireflyIcon.SetActive(false);
             darknessIcon.SetActive(false);
+            useFirefly.SetActive(false);
             proceedButton.SetActive(false);
         }
 
@@ -298,6 +314,7 @@ public class EncounterController : MonoBehaviour {
         //Aloitetaan pelaajan vuoro
         fireflyIcon.SetActive(true);
         darknessIcon.SetActive(true);
+        useFirefly.SetActive(true);
         proceedButton.SetActive(true);
         GenerateBlackJackDeck();
         ShuffleDeck();
@@ -321,9 +338,7 @@ public class EncounterController : MonoBehaviour {
             myHand.Clear();
             ShuffleDeck();
             combatController.myHandText = "";
-            combatController.enemyHandText = "";
             combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
-            combatController.enemyHand.GetComponent<Text>().text = combatController.enemyHandText;
             //Jos ei ole tulikärpäsiä uuteen kierrokseen, lähdetään karkuun
             /*if (myFireflies.Count < 3)
             {
@@ -341,15 +356,10 @@ public class EncounterController : MonoBehaviour {
             else {*/
             fireflyIcon.SetActive(true);
             darknessIcon.SetActive(true);
-            proceedButton.SetActive(true);
-            myHand.Add(deck[0]);
-            deck.RemoveAt(0);
-            myHand.Add(deck[0]);
-            deck.RemoveAt(0);
-            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-            myFireflies.RemoveAt(myFireflies.Count - 1);
-            usedFireflies.Add(myFireflies[myFireflies.Count - 1]);
-            myFireflies.RemoveAt(myFireflies.Count - 1);
+            if (!tutorial){
+                useFirefly.SetActive(true);
+                proceedButton.SetActive(true);
+            }
             UpdateFlyAmount(fireflyCounter, myFireflies.Count);
             UpdateFlyAmount(usedFireflyCounter, usedFireflies.Count);
             combatController.PlayersTurn();
@@ -374,6 +384,7 @@ public class EncounterController : MonoBehaviour {
         runButton.SetActive(true);
         approachButton.SetActive(true);
         fireflyIcon.SetActive(false);
+        useFirefly.SetActive(false);
         darknessIcon.SetActive(false);
         proceedButton.SetActive(false);
         textPanel.SetActive(false);
@@ -405,6 +416,7 @@ public class EncounterController : MonoBehaviour {
         approachButton.SetActive(true);
         fireflyIcon.SetActive(false);
         darknessIcon.SetActive(false);
+        useFirefly.SetActive(false);
         proceedButton.SetActive(false);
         usedFireflyCounter.SetActive(false);
         gameCanvas.SetActive(false);
