@@ -164,6 +164,9 @@ public class CombatController : MonoBehaviour {
     }
 
     public void UseFirefly() {
+        if (encounterController.tutorial) {
+            encounterController.NextTutorialPart();
+        }
         if (encounterController.myFireflies.Count > 0) {
             encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
             encounterController.UpdateFlyAmount(encounterController.usedFireflyCounter, encounterController.usedFireflies.Count);
@@ -172,6 +175,7 @@ public class CombatController : MonoBehaviour {
 
             enemyTreshold += 1;
         }
+        Debug.Log(enemyHandNumber + enemyTreshold);
     }
 
 }
