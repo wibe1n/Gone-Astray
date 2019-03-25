@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelLoader : MonoBehaviour {
 
     public string loadPath;
+	public GameObject spawnLocation;
     private ResourceRequest levelRequest;
     private GameObject nextLevel;
 
@@ -21,7 +22,7 @@ public class LevelLoader : MonoBehaviour {
         levelRequest = Resources.LoadAsync(loadPath);
         yield return levelRequest; 
         nextLevel = (GameObject)levelRequest.asset;
-        Instantiate(nextLevel);
+		Instantiate(nextLevel,spawnLocation.transform.position,spawnLocation.transform.rotation);
     }
 
 }
