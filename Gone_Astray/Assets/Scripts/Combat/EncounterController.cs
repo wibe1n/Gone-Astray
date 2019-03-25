@@ -106,11 +106,15 @@ public class EncounterController : MonoBehaviour {
         if(tutorialPart == 3) {
             fireflyIcon.GetComponent<Button>().interactable = true;
             nextButton.SetActive(false);
+            m_MyEvent.RemoveListener(NextTutorialPart);
             combatController.PlayersTurn();
+        }
+        else if(tutorialPart == 4) {
+            m_MyEvent.AddListener(NextTutorialPart);
         }
         else if(tutorialPart == 7) {
             nextButton.SetActive(false);
-            nextButton.GetComponent<Button>().interactable = false;
+            m_MyEvent.RemoveListener(NextTutorialPart);
             fireflyIcon.GetComponent<Button>().interactable = true;
         }
         else if (tutorialPart == 8) {
@@ -119,7 +123,7 @@ public class EncounterController : MonoBehaviour {
         }
         else if (tutorialPart == 9) {
             nextButton.SetActive(true);
-            nextButton.GetComponent<Button>().interactable = true;
+            m_MyEvent.AddListener(NextTutorialPart);
             proceedButton.SetActive(false);
             reached = true;
         }
@@ -129,33 +133,34 @@ public class EncounterController : MonoBehaviour {
         }
         else if (tutorialPart == 13) {
             nextButton.SetActive(false);
-            nextButton.GetComponent<Button>().interactable = false;
+            m_MyEvent.RemoveListener(NextTutorialPart);
             useFirefly.GetComponent<Button>().interactable = true;
         }
         else if (tutorialPart == 14) {
             nextButton.SetActive(false);
-            nextButton.GetComponent<Button>().interactable = false;
+
             useFirefly.GetComponent<Button>().interactable = false;
             fireflyIcon.GetComponent<Button>().interactable = true;
         }
         else if (tutorialPart == 15) {
             nextButton.SetActive(false);
-            nextButton.GetComponent<Button>().interactable = false;
+
             fireflyIcon.GetComponent<Button>().interactable = true;
             
         }
         else if (tutorialPart == 16) {
             nextButton.SetActive(false);
-            nextButton.GetComponent<Button>().interactable = false;
+
             proceedButton.SetActive(true);
         }
         else if (tutorialPart == 17) {
             nextButton.SetActive(true);
-            nextButton.GetComponent<Button>().interactable = true;
+            m_MyEvent.AddListener(NextTutorialPart);
             proceedButton.SetActive(false);
             reached = true;
         }
         else if (tutorialPart == 20) {
+            m_MyEvent.RemoveListener(NextTutorialPart);
             reached = true;
         }
     }
