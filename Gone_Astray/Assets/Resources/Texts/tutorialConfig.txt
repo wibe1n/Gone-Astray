@@ -41,5 +41,23 @@
 &tutorial_combatTutorial_part13_Click on the use firefly button to use one of your fireflies.
 
 %tutorial_combatTutorial_0_part14
-&tutorial_combatTutorial_part14_Great! Now click
+&tutorial_combatTutorial_part14_Great! Now click on the lightball once again and try to match the lightball and darkness.
+
+%tutorial_combatTutorial _0_part15
+&tutorial_combatTutorial_part15_A little more...
+
+%tutorial_combatTutorial_0_part16
+&tutorial_combatTutorial_part16_Alright, let's see if we can win this time!
+
+%tutorial_combatTutorial_0_part17
+&tutorial_combatTutorial_part17_Nice! You managed to defeat the darkness!
+
+%tutorial_combatTutorial_0_part18
+&tutorial_combatTutorial_part18_Since you won, you get all your used fireflies back!
+
+%tutorial_combatTutorial_0_part19
+&tutorial_combatTutorial_part19_But be careful using our fireflies, should you lose the fireflies will run away...
+
+%tutorial_combatTutorial_0_part20
+&tutorial_combatTutorial_part20_
 
