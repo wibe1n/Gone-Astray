@@ -5,10 +5,10 @@
 &tutorial_combatTutorial_part1_The fight is a game of light and darkness. On the right you see two spheres, that represent them.
 
 %tutorial_combatTutorial_0_part2
-&tutorial_combatTutorial_part2_Your goal is to try to have stronger aura of light than the enemys aura of darkness.
+&tutorial_combatTutorial_part2_Your goal is to try to have as strong aura of light as the enemys aura of darkness.
 
 %tutorial_combatTutorial_0_part3
-&tutorial_combatTutorial_part3_Right now your sphere of light is smaller than the sphere of dark, click on the lightball to add more light.
+&tutorial_combatTutorial_part3_You start the fight with no light at all so try and click on the lightball to add more light.
 
 %tutorial_combatTutorial_0_part4
 &tutorial_combatTutorial_part4_Great! When you add more light you encourage Fia to go a little closer.
@@ -20,16 +20,16 @@
 &tutorial_combatTutorial_part6_However, be careful when adding more light! If the light amount exceeds the monster treshold, monster will get agitated!
 
 %tutorial_combatTutorial_0_part7
-&tutorial_combatTutorial_part7_Now your light is pretty close the monsters darkness so you have a good chance of winning!
+&tutorial_combatTutorial_part7_Now it looks like your light is still little smaller than the enemys darkness, try adding some light once more.
 
 %tutorial_combatTutorial_0_part8
-&tutorial_combatTutorial_part8_Press proceed to pass your turn
+&tutorial_combatTutorial_part8_It looks like you managed to match the spheres pretty close. Since you have now good chance of winning, press proceed to pass your turn
 
 %tutorial_combatTutorial_0_part9
-&tutorial_combatTutorial_part9_Nice! As you saw, the enemy is now also trying to grow its sphere of dark. It will continue to do so, as long as it is losing.
+&tutorial_combatTutorial_part9_Oh no! Looks like the lights weren't close enough... but don't worry
 
 %tutorial_combatTutorial_0_part10
-&tutorial_combatTutorial_part10_The enemy is still behind so it has no other choice than to try add more darkness.
+&tutorial_combatTutorial_part10_You can try to beat the monster 3 times before it gets too dangerous.
 
 %tutorial_combatTutorial_0_part11
 &tutorial_combatTutorial_part11_Oh my, the darkness exceeded to circle!
