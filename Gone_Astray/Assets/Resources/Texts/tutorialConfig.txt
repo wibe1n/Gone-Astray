@@ -26,10 +26,10 @@
 &tutorial_combatTutorial_part8_It looks like you managed to match the spheres pretty close. Since you have now good chance of winning, press proceed to pass your turn
 
 %tutorial_combatTutorial_0_part9
-&tutorial_combatTutorial_part9_Nice! The spheres were close enough to each other so you won the encounter!
+&tutorial_combatTutorial_part9_Oh no! Looks like the lights weren't close enough... but don't worry
 
 %tutorial_combatTutorial_0_part10
-&tutorial_combatTutorial_part10_Gongratulations! You managed to conquer your fears and defeated the darkness!
+&tutorial_combatTutorial_part10_You can try to beat the monster 3 times before it gets too dangerous.
 
 %tutorial_combatTutorial_0_part11
 &tutorial_combatTutorial_part11_Oh my, the darkness exceeded to circle!

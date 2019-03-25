@@ -121,8 +121,8 @@ public class CombatController : MonoBehaviour {
     public void AddLight() {
         //Tutorial versio
         if (encounterController.tutorial == true) {
-            encounterController.myHand.Add(8);
-            myHandNumber += 8;
+            encounterController.myHand.Add(9);
+            myHandNumber += 9;
             myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
             myHand.GetComponent<Text>().text = myHandText;
             encounterController.nextButton.SetActive(true);
@@ -164,12 +164,13 @@ public class CombatController : MonoBehaviour {
     }
 
     public void UseFirefly() {
-        if (encounterController.myFireflies.Count > 0)
-        {
+        if (encounterController.myFireflies.Count > 0) {
             encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
             encounterController.UpdateFlyAmount(encounterController.usedFireflyCounter, encounterController.usedFireflies.Count);
             encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
             encounterController.UpdateFlyAmount(encounterController.fireflyCounter, encounterController.myFireflies.Count);
+
+            enemyTreshold += 1;
         }
     }
 
