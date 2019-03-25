@@ -368,8 +368,6 @@ public class EncounterController : MonoBehaviour {
             }
             myHand.Clear();
             ShuffleDeck();
-            combatController.myHandText = "";
-            combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
             //Jos ei ole tulikärpäsiä uuteen kierrokseen, lähdetään karkuun
             /*if (myFireflies.Count < 3)
             {
@@ -407,10 +405,6 @@ public class EncounterController : MonoBehaviour {
         deck.Clear();
         enemyScore = 0;
         myScore = 0;
-        combatController.myHandText = "";
-        combatController.enemyHandText = "";
-        combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
-        combatController.enemyHand.GetComponent<Text>().text = combatController.enemyHandText;
         textPanel.SetActive(true);
         runButton.SetActive(true);
         approachButton.SetActive(true);
@@ -438,10 +432,6 @@ public class EncounterController : MonoBehaviour {
         for(int i = 0; i < usedFireflies.Count; i++) {
             player.GetComponent<Character>().myFireflies.Add(usedFireflies[i]);
         }
-        combatController.myHandText = "";
-        combatController.enemyHandText = "";
-        combatController.myHand.GetComponent<Text>().text = combatController.myHandText;
-        combatController.enemyHand.GetComponent<Text>().text = combatController.enemyHandText;
         textPanel.SetActive(true);
         runButton.SetActive(true);
         approachButton.SetActive(true);

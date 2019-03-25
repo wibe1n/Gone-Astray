@@ -8,8 +8,6 @@ public class CombatController : MonoBehaviour {
     public EncounterController encounterController;
     public GameObject enemyHand, myHand;
     public int myHandNumber, enemyHandNumber, enemyTreshold;
-    public string myHandText = "";
-    public string enemyHandText = "";
 
     public void PlayersTurn() {
         myHandNumber = 0;
@@ -23,9 +21,7 @@ public class CombatController : MonoBehaviour {
         //Pelaajan käsi esille
         for (int i = 0; i < encounterController.myHand.Count; i++) {
             myHandNumber += encounterController.myHand[i];
-            myHandText += encounterController.myHand[i].ToString() + " ";
         }
-        myHand.GetComponent<Text>().text = myHandText;
 
         //TODO: animation for adding the hand
         yield return new WaitForSeconds(0.5f);
@@ -34,9 +30,7 @@ public class CombatController : MonoBehaviour {
         
         enemyHandNumber = encounterController.enemyHand;
         enemyTreshold = encounterController.myEnemy.disturbTreshold;
-        enemyHandText = encounterController.enemyHand.ToString() + " ";
         
-        enemyHand.GetComponent<Text>().text = enemyHandText;
         //TODO: animation for adding the hand
 
         //ball of light size update
@@ -123,8 +117,6 @@ public class CombatController : MonoBehaviour {
         if (encounterController.tutorial == true) {
             encounterController.myHand.Add(9);
             myHandNumber += 9;
-            myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
-            myHand.GetComponent<Text>().text = myHandText;
             encounterController.nextButton.SetActive(true);
             encounterController.fireflyIcon.GetComponent<Button>().interactable = false;
             encounterController.NextTutorialPart();
@@ -141,8 +133,6 @@ public class CombatController : MonoBehaviour {
                 encounterController.myHand.Add(encounterController.deck[0]);
                 myHandNumber += encounterController.deck[0];
                 encounterController.deck.RemoveAt(0);
-                myHandText += encounterController.myHand[encounterController.myHand.Count - 1].ToString() + " ";
-                myHand.GetComponent<Text>().text = myHandText;
             }
             //Jos oma käsi on yli hirviön häiritsemisrajan, häviää kierroksen
             if (myHandNumber > enemyHandNumber + enemyTreshold) {
