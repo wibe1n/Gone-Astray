@@ -129,6 +129,10 @@ public class EncounterController : MonoBehaviour {
             nextButton.SetActive(false);
             fireflyIcon.GetComponent<Button>().interactable = true;
         }
+        else if (tutorialPart == 13) {
+            nextButton.SetActive(false);
+            proceedButton.SetActive(true);
+        }
         else if (tutorialPart == 14) {
             reached = true;
         }

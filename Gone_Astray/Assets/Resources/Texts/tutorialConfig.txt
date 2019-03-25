@@ -32,14 +32,14 @@
 &tutorial_combatTutorial_part10_You can try to beat the monster 3 times before it gets too dangerous.
 
 %tutorial_combatTutorial_0_part11
-&tutorial_combatTutorial_part11_Oh my, the darkness exceeded to circle!
+&tutorial_combatTutorial_part11_Let's try using one of your fireflies to make this easier. On the left bottom you see Use firefly button.
 
 %tutorial_combatTutorial_0_part12
-&tutorial_combatTutorial_part12_Gongratulations! You managed to conquer your fears and defeated the darkness!
+&tutorial_combatTutorial_part12_Using a firefly makes the monster treshold little wider so you have more chance of succeeding.
 
 %tutorial_combatTutorial_0_part13
-&tutorial_combatTutorial_part13_You have gained all the fireflies you used back! In case you would have lost, the fireflies would run away...so be careful.
+&tutorial_combatTutorial_part13_Click on the use firefly button to use one of your fireflies.
 
 %tutorial_combatTutorial_0_part14
-&tutorial_combatTutorial_part14_
+&tutorial_combatTutorial_part14_Great! Now click
 
