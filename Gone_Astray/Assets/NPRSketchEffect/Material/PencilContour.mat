@@ -30,7 +30,7 @@ Material:
     - _EdgeOnly: 0
     - _ErrorPeriod: 25
     - _ErrorRange: 0.0015
-    - _NoiseAmount: 0.01
+    - _NoiseAmount: 0
     - _SampleDistance: 1
     m_Colors:
     - _BackgroundColor: {r: 0, g: 0, b: 0, a: 1}

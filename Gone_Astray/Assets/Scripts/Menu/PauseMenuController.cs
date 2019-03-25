@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour {
@@ -9,13 +10,13 @@ public class PauseMenuController : MonoBehaviour {
     public Canvas journalCanvas;
 //    public Canvas inGameCanvas;
     public JournalController journalController;
+    public InGameCanvasController igcController;
+    public Character character;
 	public Undying_Object undyObj;
 	public KeyCode pauseKey = KeyCode.None;
 	public KeyCode journalKey = KeyCode.None;
 	public KeyCode altPauseKey = KeyCode.None;
-	public GameObject mainPage;
-	public GameObject helpPage;
-	public GameObject QuitPopup;
+	public GameObject mainPage, helpPage, QuitPopup, fireflyAmountTextPause, fireflyAmountTextJournal;
 	public HelpPage helpScript;
 	public FireflyAmount fireflies;
 
@@ -94,7 +95,10 @@ public class PauseMenuController : MonoBehaviour {
         }
         //Pysäytetään peli
         Time.timeScale = 0;
+        igcController.ToggleInGameCanvas(false);
+        fireflyAmountTextPause.GetComponentInChildren<Text>().text = character.myFireflies.Count.ToString();
         pauseMenuCanvas.enabled = true;
+
 //        inGameCanvas.enabled = false;
     }
 
@@ -106,6 +110,7 @@ public class PauseMenuController : MonoBehaviour {
         }
         //Peli jatkuu
         Time.timeScale = 1;
+        igcController.ToggleInGameCanvas(true);
         pauseMenuCanvas.enabled = false;
 //        inGameCanvas.enabled = true;
     }
@@ -121,12 +126,9 @@ public class PauseMenuController : MonoBehaviour {
         if (pauseMenuCanvas.enabled == true)
             pauseMenuCanvas.enabled = false;
 
-        if (pauseMenuCanvas.enabled == true)
-        {
-//            inGameCanvas.enabled = false;
-        }
-
         Time.timeScale = 0;
+        igcController.ToggleInGameCanvas(false);
+        fireflyAmountTextJournal.GetComponentInChildren<Text>().text = character.myFireflies.Count.ToString();
         journalCanvas.enabled = true;
         journalController.OpenJournal();
 		//päivitetään tulikärpäset
@@ -145,6 +147,7 @@ public class PauseMenuController : MonoBehaviour {
         {
             journalShortcut = false;
             Time.timeScale = 1;
+            igcController.ToggleInGameCanvas(true);
 
             if (pauseMenuCanvas.enabled == true)
                 pauseMenuCanvas.enabled = false;
