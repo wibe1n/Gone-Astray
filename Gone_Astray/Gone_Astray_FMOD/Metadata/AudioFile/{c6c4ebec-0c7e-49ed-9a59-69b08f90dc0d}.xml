@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{c6c4ebec-0c7e-49ed-9a59-69b08f90dc0d}">
+        <property name="assetPath">
+            <value>Gone_Astray_Battle_Music_191218.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>249.23077097505669</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{df0116cc-b72d-40e2-a893-d3e2240bd351}</destination>
+        </relationship>
+    </object>
+</objects>
