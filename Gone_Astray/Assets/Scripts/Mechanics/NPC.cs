@@ -21,6 +21,7 @@ public class NPC : MonoBehaviour {
         currentSpeechInstance = 1;
         if(id == 6) {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
+            Debug.Log(player);
         }
         if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			Undying_Object undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();

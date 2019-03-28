@@ -206,7 +206,6 @@ using UnityStandardAssets.CrossPlatformInput;
                 m_Rigidbody.velocity = new Vector3(lerpX, m_Rigidbody.velocity.y, lerpZ);
                 Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
                 m_Rigidbody.AddForce(extraGravityForce);
-                Debug.Log(m_Rigidbody.velocity);
             }
         }
 
@@ -239,7 +238,6 @@ using UnityStandardAssets.CrossPlatformInput;
 
         ApplyExtraTurnRotation();
         Vector3 velocity = transform.forward * move.x * 10 + new Vector3(0,m_Rigidbody.velocity.y);
-        Debug.Log(velocity);
         if (m_IsGrounded)
         {
         
