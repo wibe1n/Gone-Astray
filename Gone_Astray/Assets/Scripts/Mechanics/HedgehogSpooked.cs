@@ -7,6 +7,11 @@ public class HedgehogSpooked : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		gameObject.GetComponent<MoveToWaypoints> ().proceed = true;
-		gameObject.GetComponent<BoxCollider> ().enabled = false;
+		//gameObject.GetComponent<BoxCollider> ().enabled = false;
+	}
+	void OnTriggerExit(Collider other){
+		gameObject.GetComponent<MoveToWaypoints> ().proceed = false;
+		transform.LookAt (other.transform);
+
 	}
 }
