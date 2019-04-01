@@ -23,7 +23,7 @@ MonoBehaviour:
   - {fileID: 114662301369111198}
   MasterBankRef: {fileID: 114622110503483012}
   StringsBankRef: {fileID: 114393816725071548}
-  stringsBankWriteTime: 636801568376482410
+  stringsBankWriteTime: 636893838819301903
   cacheVersion: 2
 --- !u!114 &114005165689989658
 MonoBehaviour:
@@ -281,6 +281,21 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 1193
 --- !u!114 &114070562990190764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114072130081769628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1186,7 +1201,7 @@ MonoBehaviour:
   - {fileID: 114622110503483012}
   IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -1442,7 +1457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Gone_Astray_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636801568376482410
+  lastModified: 636893838819301903
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -2191,9 +2206,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114578836660843002}
-  - {fileID: 114486560398813246}
-  - {fileID: 114975562299398392}
+  - {fileID: 114807159719053018}
+  - {fileID: 114072130081769628}
+  - {fileID: 114730447505145352}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -2225,11 +2240,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Ville\Documents\Gone-Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
     Bank.bank
-  lastModified: 636801568376382306
+  lastModified: 636893838819271891
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 31373760
+    Value: 31372800
   Exists: 1
 --- !u!114 &114622257269103450
 MonoBehaviour:
@@ -2258,6 +2273,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114637208765109344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Progression
   Min: 0
   Max: 1
   Default: 0
@@ -2607,6 +2637,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114730447505145352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114732023483261754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2859,6 +2904,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114807159719053018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ignore
   Min: 0
   Max: 1
   Default: 0
@@ -3192,7 +3252,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114373813396812724}
+  - {fileID: 114637208765109344}
   MinDistance: 0
   MaxDistance: 0
   Length: 0

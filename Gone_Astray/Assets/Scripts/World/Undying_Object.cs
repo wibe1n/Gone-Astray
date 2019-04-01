@@ -17,9 +17,10 @@ public class Undying_Object : MonoBehaviour {
 	public KeyCode crouchKey;
 	public KeyCode jumpKey;
 	public KeyCode talkKey;
-	
+    private FMOD.Studio.EventInstance Music;
+
     //Alussa aloitetaan valittu (yleensä menu) skene, ladataan data ja asetetaan default näppäimet
-	void Start () {
+    void Start () {
         DontDestroyOnLoad(this);
         StartCoroutine(StartMenuScreen());
         DataManager.ReadDataString("nonexistent");
@@ -41,7 +42,8 @@ public class Undying_Object : MonoBehaviour {
 	}
 
 	private IEnumerator ToTheWorld() {
-		switch (whichScene) {
+
+        switch (whichScene) {
 		case 1:
 			yield return SceneManager.LoadSceneAsync ("DemoTestLevel1");
 			break;
@@ -71,6 +73,7 @@ public class Undying_Object : MonoBehaviour {
 
     private IEnumerator StartMenuScreen() {
         yield return SceneManager.LoadSceneAsync("Menu");
+        
     }
 
     public void Tutorial() {
