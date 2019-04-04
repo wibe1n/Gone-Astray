@@ -162,7 +162,7 @@
             <value>3600</value>
         </property>
         <property name="wetLevel">
-            <value>-22</value>
+            <value>-15.5</value>
         </property>
     </object>
     <object class="ThreeEQEffect" id="{78b646c2-58dd-4378-bb91-056033bb9ce4}">

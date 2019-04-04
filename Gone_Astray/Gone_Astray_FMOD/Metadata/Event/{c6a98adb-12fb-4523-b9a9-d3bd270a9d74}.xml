@@ -93,7 +93,7 @@
             <value>0.53866666666666663</value>
         </property>
         <property name="pitch">
-            <value>5.5</value>
+            <value>2.20000005</value>
         </property>
         <relationship name="sounds">
             <destination>{615695e5-3c96-4d8b-b494-4109f0ebf7f8}</destination>
@@ -144,7 +144,7 @@
     <object class="MixerBusPanner" id="{1ca31bec-1a44-47ef-a4f4-33014ee40a3d}"/>
     <object class="SFXReverbEffect" id="{5f8de254-473c-421e-9eb1-7b3075d6d424}">
         <property name="wetLevel">
-            <value>-17</value>
+            <value>-10.5</value>
         </property>
     </object>
     <object class="ThreeEQEffect" id="{b6ba4606-a1ea-45ff-a345-aef1ca1c79a3}">

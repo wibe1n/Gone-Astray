@@ -5,7 +5,7 @@
             <value>Water land</value>
         </property>
         <property name="outputFormat">
-            <value>0</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{d623f024-d774-4c95-a935-9f7d3e4d89d6}</destination>
@@ -30,6 +30,9 @@
         </relationship>
         <relationship name="timeline">
             <destination>{943f4ccf-793f-42f3-ab41-6c4e0cae085a}</destination>
+        </relationship>
+        <relationship name="banks">
+            <destination>{1dbd44b4-9cb7-4a19-909a-6c526ae0664f}</destination>
         </relationship>
     </object>
     <object class="EventMixer" id="{56747d2a-f2ac-47fa-892e-8dd6f5cbbdad}">
@@ -57,7 +60,7 @@
     <object class="MarkerTrack" id="{e569f86e-015f-4537-8ca6-243412355c31}"/>
     <object class="GroupTrack" id="{4507a934-9106-43ee-91a2-437f09d8b076}">
         <relationship name="modules">
-            <destination>{5f4826e1-daa3-4a27-8f08-b66834852da4}</destination>
+            <destination>{982c2bb7-a83c-4a57-bb5e-943327d1d332}</destination>
         </relationship>
         <relationship name="mixerGroup">
             <destination>{069cd676-c810-477d-a1c4-c018028bf96c}</destination>
@@ -65,7 +68,7 @@
     </object>
     <object class="Timeline" id="{943f4ccf-793f-42f3-ab41-6c4e0cae085a}">
         <relationship name="modules">
-            <destination>{5f4826e1-daa3-4a27-8f08-b66834852da4}</destination>
+            <destination>{982c2bb7-a83c-4a57-bb5e-943327d1d332}</destination>
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{fb747bc9-db72-4e03-b4e9-3b1481dae2ad}">
@@ -85,13 +88,17 @@
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{282d62e7-0487-444c-b8dd-87cf30f8e808}"/>
-    <object class="MultiSound" id="{5f4826e1-daa3-4a27-8f08-b66834852da4}">
+    <object class="MultiSound" id="{982c2bb7-a83c-4a57-bb5e-943327d1d332}">
         <property name="length">
-            <value>2</value>
+            <value>0.37241666666666667</value>
         </property>
         <property name="pitch">
-            <value>5.5</value>
+            <value>4.5</value>
         </property>
+        <relationship name="sounds">
+            <destination>{a7548a17-97d0-4e13-b879-1646c8410c24}</destination>
+            <destination>{947a5d2e-824c-4f98-af85-5310234e256c}</destination>
+        </relationship>
     </object>
     <object class="EventMixerGroup" id="{069cd676-c810-477d-a1c4-c018028bf96c}">
         <property name="name">
@@ -109,17 +116,42 @@
     </object>
     <object class="MixerBusEffectChain" id="{5cce561e-860f-4290-aa2f-f41a3534e60f}">
         <relationship name="effects">
+            <destination>{2d14c54e-4029-45ca-aab5-39c3ae45497c}</destination>
+            <destination>{fa879925-cdef-4483-b6ca-2d01a43ff7ca}</destination>
             <destination>{7c68c42c-1f11-4378-88c6-81912090978e}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{9656a754-c9c0-44ee-96ef-fca2a92bc4ac}"/>
     <object class="MixerBusFader" id="{d2e3cfd4-b485-4df0-904e-b9bbfeedc6b2}"/>
+    <object class="SingleSound" id="{a7548a17-97d0-4e13-b879-1646c8410c24}">
+        <relationship name="audioFile">
+            <destination>{59a5bfbe-37a0-4173-826e-431375b862f4}</destination>
+        </relationship>
+    </object>
+    <object class="SingleSound" id="{947a5d2e-824c-4f98-af85-5310234e256c}">
+        <relationship name="audioFile">
+            <destination>{8cd96dc3-e09c-4504-bd80-9b0f4eb72f00}</destination>
+        </relationship>
+    </object>
     <object class="MixerBusEffectChain" id="{72e1ec84-d91e-4b8e-923c-f96dc749afa5}">
         <relationship name="effects">
             <destination>{4b9ee917-d913-4fe5-9c2d-861e848d5461}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{c74128ce-2e78-4647-a995-20a7ae79e637}"/>
+    <object class="SFXReverbEffect" id="{2d14c54e-4029-45ca-aab5-39c3ae45497c}">
+        <property name="lowShelfGain">
+            <value>-1.5</value>
+        </property>
+        <property name="wetLevel">
+            <value>-14.5</value>
+        </property>
+    </object>
+    <object class="ThreeEQEffect" id="{fa879925-cdef-4483-b6ca-2d01a43ff7ca}">
+        <property name="lowGain">
+            <value>-5</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{7c68c42c-1f11-4378-88c6-81912090978e}"/>
     <object class="MixerBusFader" id="{4b9ee917-d913-4fe5-9c2d-861e848d5461}"/>
 </objects>
