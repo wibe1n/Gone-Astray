@@ -8,6 +8,7 @@ public class EncounterController : MonoBehaviour {
 
     public GameObject player, camera;
     UnityEvent m_MyEvent = new UnityEvent();
+    public UnityEvent m_Proceed = new UnityEvent();
     public Character character;
     public CombatController combatController;
     public InGameCanvasController igcController;
@@ -35,6 +36,9 @@ public class EncounterController : MonoBehaviour {
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E) && m_MyEvent != null) {
             m_MyEvent.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && m_Proceed != null) {
+            m_Proceed.Invoke();
         }
     }
 
@@ -99,6 +103,10 @@ public class EncounterController : MonoBehaviour {
         }
     }
 
+    public void Proceed() {
+        combatController.Proceed();
+    }
+
     //Lisää tutoriaalilaskinta ja laittaa seuraavan puhekuplan sen mukaan. Vihollinen myös käyttäytyy tiettyjen kohtien aikana
     public void NextTutorialPart() {
         tutorialPart++;
@@ -119,12 +127,14 @@ public class EncounterController : MonoBehaviour {
         }
         else if (tutorialPart == 8) {
             nextButton.SetActive(false);
+            m_Proceed.AddListener(Proceed);
             proceedButton.SetActive(true);
         }
         else if (tutorialPart == 9) {
             nextButton.SetActive(true);
             m_MyEvent.AddListener(NextTutorialPart);
             proceedButton.SetActive(false);
+            m_Proceed.RemoveListener(Proceed);
             reached = true;
         }
         else if (tutorialPart == 11) {
@@ -150,13 +160,14 @@ public class EncounterController : MonoBehaviour {
         }
         else if (tutorialPart == 16) {
             nextButton.SetActive(false);
-
+            m_Proceed.AddListener(Proceed);
             proceedButton.SetActive(true);
         }
         else if (tutorialPart == 17) {
             nextButton.SetActive(true);
             m_MyEvent.AddListener(NextTutorialPart);
             proceedButton.SetActive(false);
+            m_Proceed.RemoveListener(Proceed);
             reached = true;
         }
         else if (tutorialPart == 20) {
@@ -280,6 +291,7 @@ public class EncounterController : MonoBehaviour {
 
     public void ShowScore(int result)
     {
+        
         if (round != 1)
         {
             fireflyIcon.SetActive(false);
@@ -358,7 +370,8 @@ public class EncounterController : MonoBehaviour {
     //Putsataan kädet tyhjiksi ja sekoitetaan pakka
     public void NewRound() {
         scoreCanvas.SetActive(false);
-
+        m_Proceed.AddListener(Proceed);
+        Debug.Log("eiku täällä");
         if (round == 1) {
             FirstRound();
         }
