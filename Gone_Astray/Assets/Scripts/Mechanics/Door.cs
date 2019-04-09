@@ -23,6 +23,7 @@ public class Door : MonoBehaviour {
 		}else
 			talkKey = KeyCode.E;
         ambientPiano = FMODUnity.RuntimeManager.CreateInstance("event:/Ambience/AmbientPiano");
+       
     }
 	
 	void OnTriggerStay(Collider player) {
