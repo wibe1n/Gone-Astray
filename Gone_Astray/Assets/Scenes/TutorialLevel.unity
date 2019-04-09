@@ -357,6 +357,41 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17fd306f4a9437d4fb3c1cfdd14a66b4, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &101884888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: 17fd306f4a9437d4fb3c1cfdd14a66b4,
+    type: 3}
+  m_PrefabInternal: {fileID: 101884887}
+--- !u!114 &101884889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 101884888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5230642f7b4b23c488b2e286237fe8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disturbLimit: 16
+  disturbTreshold: 2
+  checkpoint: {fileID: 0}
+  isBoss: 0
+  isTutorial: 1
+  eye1: {fileID: 0}
+  eye2: {fileID: 0}
+--- !u!65 &101884890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 101884888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.7874274, y: 3, z: 7.329216}
+  m_Center: {x: 0.89371336, y: 0, z: -0.83538383}
 --- !u!1001 &103071213
 Prefab:
   m_ObjectHideFlags: 0
@@ -8085,6 +8120,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Emitters:
+  - Target: {fileID: 114132127}
+    Params:
+    - Name: Spoopy
+      Value: 0.1
+    - Name: BirdsCrickets
+      Value: 0
   - Target: {fileID: 114132125}
     Params:
     - Name: Spoopy
