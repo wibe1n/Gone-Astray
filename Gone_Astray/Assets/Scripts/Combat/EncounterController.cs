@@ -38,9 +38,9 @@ public class EncounterController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E) && m_MyEvent != null) {
             m_MyEvent.Invoke();
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && m_Proceed != null && !proceed) {
-            m_Proceed.Invoke();
-        }
+        //else if (Input.GetKeyDown(KeyCode.Space) && m_Proceed != null && !proceed) {
+        //    m_Proceed.Invoke();
+        //}
     }
 
     // haetaan vihollinen ja tulikärpäset saadulta objektilta, kyssäri lähestymisestä näkyviin
@@ -80,7 +80,7 @@ public class EncounterController : MonoBehaviour {
     //Aloitetaan tutoriaaali versio, muuten sama kuin normaaliversio alempana, mutta tesktiavut näkyvissä ja tauotettu taistelu
     public void StartTutorial() {
         battleMusic.start();
-        if (myFireflies.Count < 3) {
+        if (myFireflies.Count < 1) {
             RunAway();
         }
         else {
@@ -434,8 +434,10 @@ public class EncounterController : MonoBehaviour {
 
     public void GameWon() {
         //Vihollisen silmät kiinni, muuten sama kuin ylhäällä, paitsi että pelaaja ei lähde karkuun ja vapautetaan liikkuminen
-        myEnemy.eye1.SetActive(false);
-        myEnemy.eye2.SetActive(false);
+        if (myEnemy.hasEyes) {
+            myEnemy.eye1.SetActive(false);
+            myEnemy.eye2.SetActive(false);
+        }
         battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         enemyHand = 0;
         myHand.Clear();

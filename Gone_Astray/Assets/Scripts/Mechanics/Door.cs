@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Door : MonoBehaviour {
 	//tämä scripti teleporttaa pelaajan määrättyyn sijaintiin scenessä jos pelaajalla on avain/raskovnik
@@ -8,7 +9,8 @@ public class Door : MonoBehaviour {
 	public KeyCode talkKey;
 	public GameObject otherDoor;
     public GameObject blackScreen;
-    private FMOD.Studio.EventInstance ambientPiano;
+    public GameObject camera;
+    public GameObject canvas;
 
 
     // Use this for initialization
@@ -22,41 +24,47 @@ public class Door : MonoBehaviour {
 				talkKey = undyObj.talkKey;
 		}else
 			talkKey = KeyCode.E;
-        ambientPiano = FMODUnity.RuntimeManager.CreateInstance("event:/Ambience/AmbientPiano");
-       
+        Debug.Log(camera);     
     }
-	
-	void OnTriggerStay(Collider player) {
+
+    private void OnTriggerEnter(Collider player) {
+        canvas.SetActive(true);
+    }
+
+    private void OnTriggerExit(Collider other) {
+        canvas.SetActive(false);
+    }
+
+    void OnTriggerStay(Collider player) {
 		//jos ovella on pelaaja
 		if (player.gameObject.GetComponent<Character>() != null) {
 			//ja pelaajalla on avain
 			if (player.gameObject.GetComponent<Character> ().hasRaskovnik) {
 				//ja pelaaja avaa oven
 				if (Input.GetKeyDown(talkKey)){
-					//ovenavaus cutscene ja äänet tähän
-					player.transform.position = otherDoor.transform.position;
+                    //ovenavaus cutscene ja äänet tähän
+                    TeleportIn(player.gameObject);
 				}
 			}
 		}
 	}
 
-    //public void TeleportIn()
-    //{
-    //    StartCoroutine(RunAwayRoutine());
-    //}
+    
 
-    //IEnumerator RunAwayRoutine()
-    //{
-    //    blackScreen.SetActive(true);
-    //    ambientPiano.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-    //    runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.0f, false);
-    //    player.transform.position = myEnemy.checkpoint.transform.position;
-    //    camera.transform.position = myEnemy.checkpoint.transform.position;
-    //    //TODO: fancy effects for running away
-    //    yield return new WaitForSeconds(1f);
-    //    gameCanvas.SetActive(false);
-    //    runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 3.0f, false);
-    //    yield return new WaitForSeconds(3f);
-    //    runAwayScreen.SetActive(false);
-    //}
+    public void TeleportIn(GameObject player)
+    {
+        StartCoroutine(TeleportRoutine(player));
+    }
+
+    IEnumerator TeleportRoutine(GameObject player)
+    {
+        blackScreen.SetActive(true);
+        blackScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.0f, false);
+        player.transform.position = otherDoor.transform.position;
+        camera.transform.position = otherDoor.transform.position;
+        yield return new WaitForSeconds(1f);
+        blackScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 3.0f, false);
+        yield return new WaitForSeconds(3f);
+        blackScreen.SetActive(false);
+    }
 }

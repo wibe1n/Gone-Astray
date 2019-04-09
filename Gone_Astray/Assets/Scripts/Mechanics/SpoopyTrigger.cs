@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VolumetricFogAndMist;
 
 public class SpoopyTrigger : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class SpoopyTrigger : MonoBehaviour {
     public FMOD.Studio.ParameterInstance spoopyParameter;
     public GameObject ambienceSounds;
     public PencilContourEffect pencilEffects;
+    public VolumetricFog fogEffects;
     float currentDarkness, endDarkness;
 
     float duration;
