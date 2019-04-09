@@ -8,6 +8,7 @@ public class EncounterController : MonoBehaviour {
 
     public GameObject player, camera;
     UnityEvent m_MyEvent = new UnityEvent();
+    public UnityEvent m_Proceed = new UnityEvent();
     public Character character;
     public CombatController combatController;
     public InGameCanvasController igcController;
@@ -24,6 +25,7 @@ public class EncounterController : MonoBehaviour {
     public GameObject runAwayScreen;
     public bool reached = false;
     public bool tutorial;
+    public bool proceed = false;
     public Image fireFlyImage;
     public Image darknessImage;
     private FMOD.Studio.EventInstance battleMusic;
@@ -36,6 +38,9 @@ public class EncounterController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E) && m_MyEvent != null) {
             m_MyEvent.Invoke();
         }
+        else if (Input.GetKeyDown(KeyCode.Space) && m_Proceed != null && !proceed) {
+            m_Proceed.Invoke();
+        }
     }
 
     // haetaan vihollinen ja tulikärpäset saadulta objektilta, kyssäri lähestymisestä näkyviin
@@ -45,7 +50,6 @@ public class EncounterController : MonoBehaviour {
 
         //in game canvas käyttökieltoon
         igcController.ToggleInGameCanvas(false);
-
         myEnemy = enemy;
         myFireflies = fireflyList;
         round = 1;
@@ -97,6 +101,11 @@ public class EncounterController : MonoBehaviour {
             ShuffleDeck();
             enemyHand = 15;
         }
+    }
+
+    public void Proceed() {
+        proceed = true;
+        combatController.Proceed();
     }
 
     //Lisää tutoriaalilaskinta ja laittaa seuraavan puhekuplan sen mukaan. Vihollinen myös käyttäytyy tiettyjen kohtien aikana
@@ -358,9 +367,10 @@ public class EncounterController : MonoBehaviour {
     //Putsataan kädet tyhjiksi ja sekoitetaan pakka
     public void NewRound() {
         scoreCanvas.SetActive(false);
-
+ 
         if (round == 1) {
             FirstRound();
+            m_Proceed.AddListener(Proceed);
         }
         else { 
             foreach (int item in myHand) {
@@ -391,6 +401,8 @@ public class EncounterController : MonoBehaviour {
             }
             UpdateFlyAmount(fireflyCounter, myFireflies.Count);
             UpdateFlyAmount(usedFireflyCounter, usedFireflies.Count);
+            m_Proceed.AddListener(Proceed);
+            proceed = false;
             combatController.PlayersTurn();
             /*}*/
         }
