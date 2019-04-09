@@ -5,7 +5,7 @@
 &npc_npc1_part1_Hello? Are you hurt?
 
 %npc_npc1_0_part2
-&npc_npc1_part2_Oh, thank goodness. You can at least stand.
+&npc_npc1_part2_My name is Fia. What's yours?
 
 %npc_npc1_0_part3
 &npc_npc1_part3_Don't be frightened, I'm not going to hurt you.

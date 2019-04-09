@@ -8,7 +8,7 @@ public class Undying_Object : MonoBehaviour {
     //sisältää keybindingit
 	
 	public GameObject loadingScreen;
-	public int whichScene = 0;
+	public int whichScene = 2;
 	[HideInInspector]
 	public KeyCode pauseKey;
 	public KeyCode journalKey;
