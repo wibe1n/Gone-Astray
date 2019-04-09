@@ -18,28 +18,33 @@ public class MoveToWaypoints : MonoBehaviour {
         proceed = false;
     }
 
-   // private void FixedUpdate() {
-   //     //Jos ollaan päästy etapin luokse niin
-   //     if(Vector3.Distance(waypoints[current].transform.position, transform.position) < Wpradius) {
-   //         //jos ollaan perillä aletaan leijumaan
-			//if(current == waypoints.Length) {
-   //             hovering.GetPosition();
-   //             StartHovering();
-   //         }
-   //         current++;
-   //         //Jos ei olla perillä niin otetaan seuraava etappi
-   //         if (current >= waypoints.Length) {
-   //             current = 0;
-   //             proceed = false;
-   //         }
-   //     }
-   //     //Muuten mennään kohti etappi
-   //     if (proceed) {
-   //         transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, Time.deltaTime * speed);
-			//transform.LookAt (waypoints [current].transform);
-   //     }
-        
-   // }
+    private void FixedUpdate()
+    {
+        //Jos ollaan päästy etapin luokse niin
+        if (Vector3.Distance(waypoints[current].transform.position, transform.position) < Wpradius)
+        {
+            //jos ollaan perillä aletaan leijumaan
+            if (current == waypoints.Length)
+            {
+                hovering.GetPosition();
+                StartHovering();
+            }
+            current++;
+            //Jos ei olla perillä niin otetaan seuraava etappi
+            if (current >= waypoints.Length)
+            {
+                current = 0;
+                proceed = false;
+            }
+        }
+        //Muuten mennään kohti etappi
+        if (proceed)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, Time.deltaTime * speed);
+            transform.LookAt(waypoints[current].transform);
+        }
+
+    }
 
     public void DisableHovering() {
         hovering.enabled = false;
