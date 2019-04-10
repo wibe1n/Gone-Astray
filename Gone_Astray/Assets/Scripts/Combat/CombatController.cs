@@ -13,6 +13,7 @@ public class CombatController : MonoBehaviour {
         myHandNumber = 0;
         enemyHandNumber = 0;
         StartCoroutine(PlayerTurn());
+        encounterController.m_Proceed.RemoveListener(Proceed);
     }
 
 

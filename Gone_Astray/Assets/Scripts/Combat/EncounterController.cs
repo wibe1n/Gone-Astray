@@ -128,12 +128,14 @@ public class EncounterController : MonoBehaviour {
         }
         else if (tutorialPart == 8) {
             nextButton.SetActive(false);
+            m_Proceed.AddListener(Proceed);
             proceedButton.SetActive(true);
         }
         else if (tutorialPart == 9) {
             nextButton.SetActive(true);
             m_MyEvent.AddListener(NextTutorialPart);
             proceedButton.SetActive(false);
+            m_Proceed.RemoveListener(Proceed);
             reached = true;
         }
         else if (tutorialPart == 11) {
@@ -159,13 +161,14 @@ public class EncounterController : MonoBehaviour {
         }
         else if (tutorialPart == 16) {
             nextButton.SetActive(false);
-
+            m_Proceed.AddListener(Proceed);
             proceedButton.SetActive(true);
         }
         else if (tutorialPart == 17) {
             nextButton.SetActive(true);
             m_MyEvent.AddListener(NextTutorialPart);
             proceedButton.SetActive(false);
+            m_Proceed.RemoveListener(Proceed);
             reached = true;
         }
         else if (tutorialPart == 20) {
@@ -289,6 +292,7 @@ public class EncounterController : MonoBehaviour {
 
     public void ShowScore(int result)
     {
+        
         if (round != 1)
         {
             fireflyIcon.SetActive(false);
