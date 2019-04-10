@@ -44,9 +44,31 @@ public class NPC : MonoBehaviour {
                 m_MyEvent.Invoke();
             }
             else if (id == 6 && currentSpeechInstance == 10) {
+                if (player.GetComponent<Character>().hasRaskovnik) {
+                    currentSpeechInstance = 16;
+                    maxSpeechInstance = 16;
+                }
                 m_MyEvent.Invoke();
             }
             else if (id == 6 && currentSpeechInstance == 14) {
+                m_MyEvent.Invoke();
+            }
+            else if(id == 6 && currentSpeechInstance == 16) {
+                m_MyEvent.Invoke();
+            }
+            else if (id == 6 && currentSpeechInstance == 17) {
+                m_MyEvent.Invoke();
+            }
+            else if (id == 6 && currentSpeechInstance == 21) {
+                m_MyEvent.Invoke();
+            }
+            else if (id == 6 && currentSpeechInstance == 23) {
+                m_MyEvent.Invoke();
+            }
+            else if (id == 6 && currentSpeechInstance == 28) {
+                m_MyEvent.Invoke();
+            }
+            else if (id == 6 && currentSpeechInstance == 37) {
                 m_MyEvent.Invoke();
             }
         }
@@ -99,22 +121,52 @@ public class NPC : MonoBehaviour {
                     Canvas.SetActive(true);
                 //Jotkut npc:t voivat lähteä kävelemään tms.
                 if(id == 6) {
-                    if (maxSpeechInstance == 9) {
-                        player.AddFirefly();
-                        Canvas.SetActive(false);
-                        Destroy(gameObject);
-                        currentSpeechInstance = 10;
-                        maxSpeechInstance = 13;
-                    }
-                    else if (maxSpeechInstance == 13) {
-                        Canvas.SetActive(false);
-                        Destroy(gameObject);
-                        currentSpeechInstance = 14;
-                    }
-                    else if (maxSpeechInstance == 15) {
-                        Canvas.SetActive(false);
-                        Destroy(gameObject);
-                        currentSpeechInstance = 16;
+                    switch(maxSpeechInstance)
+                    {
+                        case 9:
+                            player.AddFirefly();
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            currentSpeechInstance = 10;
+                            maxSpeechInstance = 13;
+                            break;
+                        case 13:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            currentSpeechInstance = 14;
+                            break;
+                        case 15:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            currentSpeechInstance = 16;
+                            break;
+                        case 16:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            currentSpeechInstance = 17;
+                            break;
+                        case 20:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            currentSpeechInstance = 21;
+                            break;
+                        case 22:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            currentSpeechInstance = 23;
+                            break;
+                        case 27:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            break;
+                        case 36:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            break;
+                        case 39:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            break;
                     }
                     
                 }

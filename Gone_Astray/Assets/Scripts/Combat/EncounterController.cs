@@ -48,6 +48,7 @@ public class EncounterController : MonoBehaviour {
 
         //TODO: Turn camera to make player feel small
 
+
         //in game canvas käyttökieltoon
         igcController.ToggleInGameCanvas(false);
         myEnemy = enemy;

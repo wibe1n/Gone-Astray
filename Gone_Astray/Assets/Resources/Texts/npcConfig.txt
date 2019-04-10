@@ -47,7 +47,76 @@
 &npc_npc1_part15_This one opens our front door! Go ahead and pick it up.
 
 %npc_npc1_0_part16
-&npc_npc1_part16_
+&npc_npc1_part16_Well, we've got the key... Let's go inside.
+
+%npc_npc1_0_part17
+&npc_npc1_part17_Wait... this isn't right...
+
+%npc_npc1_0_part18
+&npc_npc1_part18_Where is everyone?
+
+%npc_npc1_0_part19
+&npc_npc1_part19_Hey you guys! it's me! Hellooo!
+
+%npc_npc1_0_part20
+&npc_npc1_part20_What the... Let's look around...
+
+%npc_npc1_0_part21
+&npc_npc1_part21_This goes to basement.
+
+%npc_npc1_0_part22
+&npc_npc1_part22_There's something down there. I can sense it...
+
+%npc_npc1_0_part23
+&npc_npc1_part23_What... is happening?
+
+%npc_npc1_0_part24
+&npc_npc1_part24_That chest!It's... It's doing something!
+
+%npc_npc1_0_part25
+&npc_npc1_part25_This might be a bad idea...
+
+%npc_npc1_0_part26
+&npc_npc1_part26_No. We can't get scared now. Come on Mila!
+
+%npc_npc1_0_part27
+&npc_npc1_part27_I'll help you see through the dark.
+
+%npc_npc1_0_part28
+&npc_npc1_part28_What was THAT all about?
+
+%npc_npc1_0_part29
+&npc_npc1_part29_First things first, we gotta find somenone...
+
+%npc_npc1_0_part30
+&npc_npc1_part30_MOM! DAD! It's Fia! Hello! ...Anyone?
+
+%npc_npc1_0_part31
+&npc_npc1_part31_They're all gone... I bet it's because of that chest.
+
+%npc_npc1_0_part32
+&npc_npc1_part32_Looks like we're both in it now. Your sister, my family...
+
+%npc_npc1_0_part33
+&npc_npc1_part33_C'mon... we have to do something... 
+
+%npc_npc1_0_part34
+&npc_npc1_part34_Look, I know the forest is scary at night but... our families must be out there
+
+%npc_npc1_0_part35
+&npc_npc1_part35_We have to find them, we just have to!
+
+%npc_npc1_0_part36
+&npc_npc1_part36_The dark isn't so scary when you got a friend. We'll find your sister and my family. Together.
+
+%npc_npc1_0_part37
+&npc_npc1_part37_A book? But where's all the pages?
+
+%npc_npc1_0_part38
+&npc_npc1_part38_This belongs to your sister? Then she HAS been through here.
+
+%npc_npc1_0_part39
+&npc_npc1_part39_Seems all the pages are missing. You think we'll find them in the woods?
 
 %npc_npc2_1_part0
 &npc_npc2_part0_Alright then, let's go.

@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour {
     private List<Firefly> availableFireflies = new List<Firefly> { };
     public GameObject eye1, eye2;
 
-    float currenAmount = 0.0F, endAmount = 0.005f;
+    float currenAmount = 0.001F, endAmount = 0.005f;
 
     float duration = 2;
 
@@ -50,18 +50,18 @@ public class Enemy : MonoBehaviour {
         EncounterController enCon = GameObject.FindGameObjectWithTag("EncounterController").GetComponent<EncounterController>();
         float timeRemaining = duration;
         //screenefektien väläytys
-        while (timeRemaining > 0) {
-            timeRemaining -= Time.deltaTime;
-            screenEffects.m_ErrorRange = Mathf.Lerp(currenAmount, endAmount, Mathf.InverseLerp(duration, 0, timeRemaining));
-            yield return null;
-        }
-        screenEffects.m_NoiseAmount = endAmount;
+        //while (timeRemaining > 0) {
+        //    timeRemaining -= Time.deltaTime;
+        //    screenEffects.m_ErrorRange = Mathf.Lerp(currenAmount, endAmount, Mathf.InverseLerp(duration, 0, timeRemaining));
+        //    yield return null;
+        //}
+        //screenEffects.m_NoiseAmount = endAmount;
         while (timeRemaining > 0) {
             timeRemaining -= Time.deltaTime;
             screenEffects.m_ErrorRange = Mathf.Lerp(endAmount, currenAmount, Mathf.InverseLerp(duration, 0, timeRemaining));
             yield return null;
         }
-        screenEffects.m_NoiseAmount = currenAmount;
+        screenEffects.m_NoiseAmount = 0;
         //lähetetään vihollinen ja pelaajan käytettävissä olevat tulikärpäset encounter controlleriin
         enCon.StartEncounter(enemy, availableFireflies);
         yield return new WaitForSeconds(1);

@@ -23,6 +23,7 @@
             <destination>{dd305abd-e887-4e99-8ca0-b581a1683491}</destination>
         </relationship>
         <relationship name="markerTracks">
+            <destination>{b1396758-9a0c-4f64-8cd5-8fcffe9ca675}</destination>
             <destination>{a355bbdf-b3b4-4c3d-9418-c6351f848d72}</destination>
         </relationship>
         <relationship name="groupTracks">
@@ -60,6 +61,7 @@
         </relationship>
     </object>
     <object class="EventAutomatableProperties" id="{dd305abd-e887-4e99-8ca0-b581a1683491}"/>
+    <object class="MarkerTrack" id="{b1396758-9a0c-4f64-8cd5-8fcffe9ca675}"/>
     <object class="MarkerTrack" id="{a355bbdf-b3b4-4c3d-9418-c6351f848d72}"/>
     <object class="GroupTrack" id="{8410e974-ed59-4954-bb2c-fe5c32d94341}">
         <relationship name="automationTracks">
@@ -79,6 +81,7 @@
         </relationship>
         <relationship name="markers">
             <destination>{2ec3bd93-92db-481e-b25f-9a89ca02c10a}</destination>
+            <destination>{b848b98a-59c5-4403-a53f-3d5cf32743b1}</destination>
         </relationship>
     </object>
     <object class="ParameterProxy" id="{3c3a1a40-4b36-4295-869f-1253d4729469}">
@@ -159,6 +162,20 @@
         </relationship>
         <relationship name="markerTrack">
             <destination>{a355bbdf-b3b4-4c3d-9418-c6351f848d72}</destination>
+        </relationship>
+    </object>
+    <object class="LoopRegion" id="{b848b98a-59c5-4403-a53f-3d5cf32743b1}">
+        <property name="position">
+            <value>0</value>
+        </property>
+        <property name="length">
+            <value>209.03226757369615</value>
+        </property>
+        <relationship name="timeline">
+            <destination>{f7d18cc6-52a1-4478-bff0-dbd6d502001e}</destination>
+        </relationship>
+        <relationship name="markerTrack">
+            <destination>{b1396758-9a0c-4f64-8cd5-8fcffe9ca675}</destination>
         </relationship>
     </object>
     <object class="ADSRModulator" id="{6706e0b3-c7a3-471e-8d14-8281c823e21e}">

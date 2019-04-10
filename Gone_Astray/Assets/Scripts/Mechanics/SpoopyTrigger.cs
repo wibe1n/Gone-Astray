@@ -10,7 +10,7 @@ public class SpoopyTrigger : MonoBehaviour {
     public GameObject ambienceSounds;
     public PencilContourEffect pencilEffects;
     public VolumetricFog fogEffects;
-    float currentDarkness, endDarkness;
+    public float currentDarkness, endDarkness;
 
     float duration;
     
@@ -20,7 +20,6 @@ public class SpoopyTrigger : MonoBehaviour {
         spoopySounds = FMODUnity.RuntimeManager.CreateInstance("event:/Ambience/AmbientMusic");
         spoopySounds.getParameter("Progression", out spoopyParameter);
         currentDarkness = 0;
-        endDarkness = 0.6f;
         duration = 10f;
         
 
