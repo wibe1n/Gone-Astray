@@ -22,6 +22,7 @@ public class SpoopyTrigger : MonoBehaviour {
         currentDarkness = 0;
         endDarkness = 0.6f;
         duration = 10f;
+        
 
     }
 
@@ -33,6 +34,7 @@ public class SpoopyTrigger : MonoBehaviour {
             spoopySounds.start();
             spoopyParameter.setValue(0.2f);
             ambienceSounds.GetComponent<FMODUnity.StudioEventEmitter>().Stop();
+            pencilEffects.enabled = true;
             StartCoroutine(TurnLightsSpoopy());
         }
     }

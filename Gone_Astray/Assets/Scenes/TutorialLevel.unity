@@ -1369,6 +1369,33 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0391fed188d31504e85b6617074c6b2d, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &293947479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1166911333545266, guid: 0391fed188d31504e85b6617074c6b2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 293947478}
+--- !u!114 &293947480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 293947479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Emitters:
+  - Target: {fileID: 114132127}
+    Params: []
+  - Target: {fileID: 114132125}
+    Params:
+    - Name: Spoopy
+      Value: 0.2
+    - Name: BirdsCrickets
+      Value: 0
+  TriggerEvent: 0
+  CollisionTag: 
 --- !u!1 &329080513
 GameObject:
   m_ObjectHideFlags: 0
