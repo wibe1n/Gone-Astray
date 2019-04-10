@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour {
     private List<Firefly> availableFireflies = new List<Firefly> { };
     public GameObject eye1, eye2;
 
-    float currenAmount = 0.01F, endAmount = 0.04f;
+    float currenAmount = 0.0F, endAmount = 0.005f;
 
     float duration = 2;
 
@@ -52,13 +52,13 @@ public class Enemy : MonoBehaviour {
         //screenefektien väläytys
         while (timeRemaining > 0) {
             timeRemaining -= Time.deltaTime;
-            screenEffects.m_NoiseAmount = Mathf.Lerp(currenAmount, endAmount, Mathf.InverseLerp(duration, 0, timeRemaining));
+            screenEffects.m_ErrorRange = Mathf.Lerp(currenAmount, endAmount, Mathf.InverseLerp(duration, 0, timeRemaining));
             yield return null;
         }
         screenEffects.m_NoiseAmount = endAmount;
         while (timeRemaining > 0) {
             timeRemaining -= Time.deltaTime;
-            screenEffects.m_NoiseAmount = Mathf.Lerp(endAmount, currenAmount, Mathf.InverseLerp(duration, 0, timeRemaining));
+            screenEffects.m_ErrorRange = Mathf.Lerp(endAmount, currenAmount, Mathf.InverseLerp(duration, 0, timeRemaining));
             yield return null;
         }
         screenEffects.m_NoiseAmount = currenAmount;
