@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour {
     public GameObject checkpoint;
 	public bool isBoss;
     public bool isTutorial;
+    public bool hasEyes;
     private PencilContourEffect screenEffects;
     private List<Firefly> availableFireflies = new List<Firefly> { };
     public GameObject eye1, eye2;
@@ -42,8 +43,10 @@ public class Enemy : MonoBehaviour {
 
     //Laita silmät palamaan 
     private IEnumerator StartEncounterIenum(Enemy enemy) {
-        eye1.SetActive(true);
-        eye2.SetActive(true);
+        if (hasEyes) {
+            eye1.SetActive(true);
+            eye2.SetActive(true);
+        }
         EncounterController enCon = GameObject.FindGameObjectWithTag("EncounterController").GetComponent<EncounterController>();
         float timeRemaining = duration;
         //screenefektien väläytys

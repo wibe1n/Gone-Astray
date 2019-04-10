@@ -18,10 +18,8 @@ public class NPC : MonoBehaviour {
     private Character player;
 
     private void Start() {
-        currentSpeechInstance = 1;
         if(id == 6) {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
-            Debug.Log(player);
         }
         if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			Undying_Object undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
@@ -43,6 +41,12 @@ public class NPC : MonoBehaviour {
             m_SecondEvent.AddListener(Backwards);
             //Tietyt NPC voivat alkaa älisee heti
             if (id == 6 && currentSpeechInstance == 1) {
+                m_MyEvent.Invoke();
+            }
+            else if (id == 6 && currentSpeechInstance == 10) {
+                m_MyEvent.Invoke();
+            }
+            else if (id == 6 && currentSpeechInstance == 14) {
                 m_MyEvent.Invoke();
             }
         }
@@ -74,8 +78,7 @@ public class NPC : MonoBehaviour {
 
     private void Update() {
 		if (Input.GetKeyDown(talkKey) && m_MyEvent != null) {
-            if (id == 6 && gameObject.GetComponent<MoveToWaypoints>().proceed) { }
-            else{
+            if (id == 6){
                 m_MyEvent.Invoke();
             }
         }
@@ -96,15 +99,22 @@ public class NPC : MonoBehaviour {
                     Canvas.SetActive(true);
                 //Jotkut npc:t voivat lähteä kävelemään tms.
                 if(id == 6) {
-                    if (maxSpeechInstance == 11) {
-                        gameObject.GetComponent<MoveToWaypoints>().DisableHovering();
-                        currentSpeechInstance = 12;
-                        maxSpeechInstance = 14;
-                    }
-                    else {
+                    if (maxSpeechInstance == 9) {
                         player.AddFirefly();
                         Canvas.SetActive(false);
                         Destroy(gameObject);
+                        currentSpeechInstance = 10;
+                        maxSpeechInstance = 13;
+                    }
+                    else if (maxSpeechInstance == 13) {
+                        Canvas.SetActive(false);
+                        Destroy(gameObject);
+                        currentSpeechInstance = 14;
+                    }
+                    else if (maxSpeechInstance == 15) {
+                        Canvas.SetActive(false);
+                        Destroy(gameObject);
+                        currentSpeechInstance = 16;
                     }
                     
                 }

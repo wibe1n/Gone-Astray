@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{99b28568-6a6e-4d9d-aa61-07a3ae0370fa}">
+        <property name="assetPath">
+            <value>20190402_SESTRA_WATERSTEP-01.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.40314583333333331</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{df0116cc-b72d-40e2-a893-d3e2240bd351}</destination>
+        </relationship>
+    </object>
+</objects>

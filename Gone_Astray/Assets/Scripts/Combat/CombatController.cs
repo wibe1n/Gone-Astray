@@ -43,6 +43,7 @@ public class CombatController : MonoBehaviour {
 
 
     public void Proceed() {
+        encounterController.m_Proceed.RemoveListener(Proceed);
         StartCoroutine(EnemyTurn());
     }
 

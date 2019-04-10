@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 1113545498}
-  whichScene: 0
+  whichScene: 2
   pauseKey: 0
   journalKey: 0
   altPauseKey: 0

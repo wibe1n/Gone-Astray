@@ -5,43 +5,49 @@
 &npc_npc1_part1_Hello? Are you hurt?
 
 %npc_npc1_0_part2
-&npc_npc1_part2_Oh, thank goodness. You can at least stand.
+&npc_npc1_part2_My name is Fia. What's yours?
 
 %npc_npc1_0_part3
-&npc_npc1_part3_Don't be frightened, I'm not going to hurt you.
+&npc_npc1_part3_You're Mila? Not a bad name!
 
 %npc_npc1_0_part4
-&npc_npc1_part4_My name's Fia. I'm a firefly. What's your name?
+&npc_npc1_part4_What are you doing here after dark?
 
 %npc_npc1_0_part5
-&npc_npc1_part5_Your name is Mila? What a pretty name. Nice to meet you Mila.
+&npc_npc1_part5_You're looking for your sister? Hey, we could ask my Kin!
 
 %npc_npc1_0_part6
-&npc_npc1_part6_What are you doing out here in the forest all by yourself? It gets very dangerous after dark.
+&npc_npc1_part6_If your sister's passed here, someone must've seen her.
 
 %npc_npc1_0_part7
-&npc_npc1_part7_You're looking for your sister? That's funny, I'm also looking for my family.
+&npc_npc1_part7_The problem is I'm locked out here and no one will answer the door...
 
 %npc_npc1_0_part8
-&npc_npc1_part8_You know, it's not safe out here in the dark, especially not all alone. 
+&npc_npc1_part8_Listen, we should work together. You help me find the key...
 
 %npc_npc1_0_part9
-&npc_npc1_part9_I know! Why Don't we work together!
+&npc_npc1_part9_and I'll help you find your sister! Let's go!
 
 %npc_npc1_0_part10
-&npc_npc1_part10_I'll help you find your sister, if you help me find the rest of my family.
+&npc_npc1_part10_Lucky for you, you just happened to wander onto our front porch.
 
 %npc_npc1_0_part11
-&npc_npc1_part11_You'll help me out? That's great! Okay, first, let's walk out from this cave.
+&npc_npc1_part11_Isn't it pretty? This is the home of the fireflies!
 
 %npc_npc1_0_part12
-&npc_npc1_part12_See that big tree over ahead? Isn't it pretty? That is where we fireflies call home.
+&npc_npc1_part12_Now let's see about that key...
 
 %npc_npc1_0_part13
-&npc_npc1_part13_But something has scared my family away. Could you help me find them?
+&npc_npc1_part13_It's a magical plant called Raskovnik. I think It's around here somewhere...
 
 %npc_npc1_0_part14
-&npc_npc1_part14_Great! Let's go!
+&npc_npc1_part14_Here it is! Look here, this is a Raskovnik. They're magic and can open doors.
+
+%npc_npc1_0_part15
+&npc_npc1_part15_This one opens our front door! Go ahead and pick it up.
+
+%npc_npc1_0_part16
+&npc_npc1_part16_
 
 %npc_npc2_1_part0
 &npc_npc2_part0_Alright then, let's go.

@@ -38,5 +38,6 @@ public class CalmTrigger : MonoBehaviour {
             yield return null;
         }
         pencilEffects.m_EdgesOnly = endLight;
+        pencilEffects.enabled = false;
     }
 }
