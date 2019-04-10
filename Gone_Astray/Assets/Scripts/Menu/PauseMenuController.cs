@@ -71,7 +71,7 @@ public class PauseMenuController : MonoBehaviour {
             }
         }
         //Jos painetaan journal nappia niin aktivoidaan journal
-		if (Input.GetKeyDown(journalKey))
+		if (Input.GetKeyDown(journalKey) && character.items[1])
         {
             if (pauseMenuCanvas.enabled == false && journalCanvas.enabled == false)
             {
@@ -118,7 +118,7 @@ public class PauseMenuController : MonoBehaviour {
     public void ActivateJournal()
     {
         //avataan journal ja pysäytetään aika
-        if (journalCanvas.enabled == true)
+		if (journalCanvas.enabled == true || !character.items[1])
         {
             return;
         }
