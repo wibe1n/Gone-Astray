@@ -25,8 +25,10 @@ public class Character : MonoBehaviour {
 
     void Start () {
         //Hae keybindingit
-
-		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
+        AddFirefly();
+        AddFirefly();
+        AddFirefly();
+        if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
 			if (undyObj.leshenKey == KeyCode.None)
 				leshenKey = KeyCode.L;
