@@ -40,36 +40,42 @@ public class NPC : MonoBehaviour {
             m_MyEvent.AddListener(TalkEvent);
             m_SecondEvent.AddListener(Backwards);
             //Tietyt NPC voivat alkaa älisee heti
-            if (id == 6 && currentSpeechInstance == 1) {
-                m_MyEvent.Invoke();
-            }
-            else if (id == 6 && currentSpeechInstance == 10) {
-                if (player.GetComponent<Character>().hasRaskovnik) {
-                    currentSpeechInstance = 16;
-                    maxSpeechInstance = 16;
+            if (id == 6) {               
+                switch (currentSpeechInstance) {
+                    case 1:
+                        player.gameObject.GetComponent<MovementControls>().stop = true;
+                        m_MyEvent.Invoke();
+                        break;
+                    case 10:
+                        if (player.GetComponent<Character>().hasRaskovnik) {
+                            currentSpeechInstance = 16;
+                            maxSpeechInstance = 16;
+                        }
+                        m_MyEvent.Invoke();
+                        break;
+                    case 14:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 16:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 17:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 21:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 23:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 28:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 37:
+                        m_MyEvent.Invoke();
+                        break;
                 }
-                m_MyEvent.Invoke();
-            }
-            else if (id == 6 && currentSpeechInstance == 14) {
-                m_MyEvent.Invoke();
-            }
-            else if(id == 6 && currentSpeechInstance == 16) {
-                m_MyEvent.Invoke();
-            }
-            else if (id == 6 && currentSpeechInstance == 17) {
-                m_MyEvent.Invoke();
-            }
-            else if (id == 6 && currentSpeechInstance == 21) {
-                m_MyEvent.Invoke();
-            }
-            else if (id == 6 && currentSpeechInstance == 23) {
-                m_MyEvent.Invoke();
-            }
-            else if (id == 6 && currentSpeechInstance == 28) {
-                m_MyEvent.Invoke();
-            }
-            else if (id == 6 && currentSpeechInstance == 37) {
-                m_MyEvent.Invoke();
+                
             }
         }
 
@@ -124,6 +130,7 @@ public class NPC : MonoBehaviour {
                     switch(maxSpeechInstance)
                     {
                         case 9:
+                            player.gameObject.GetComponent<MovementControls>().stop = false;
                             player.AddFirefly();
                             Canvas.SetActive(false);
                             Destroy(gameObject);

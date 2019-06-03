@@ -1,5 +1,5 @@
 %npc_npc1_0_part0
-&npc_npc1_part0_Follow me!
+&npc_npc1_part0_Hey, wait...
 
 %npc_npc1_0_part1
 &npc_npc1_part1_Hello? Are you hurt?
