@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114393816725071548}
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   EditorEvents:
   - {fileID: 114543151266094022}
   - {fileID: 114328907319900542}
@@ -31,9 +31,9 @@ MonoBehaviour:
   - {fileID: 114670140828108496}
   - {fileID: 114967888201628836}
   - {fileID: 114955001620150312}
-  MasterBankRef: {fileID: 114748510634231092}
+  MasterBankRef: {fileID: 114413997012786932}
   StringsBankRef: {fileID: 114393816725071548}
-  stringsBankWriteTime: 636905866609939193
+  stringsBankWriteTime: 636905303944983500
   cacheVersion: 2
 --- !u!114 &114005165689989658
 MonoBehaviour:
@@ -219,6 +219,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114051720519046606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: PianoVolume
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114060090706408064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +350,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1193
+--- !u!114 &114068369678737218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ignore
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114070562990190764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +381,21 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114072130081769628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114075503472461410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -394,7 +439,7 @@ MonoBehaviour:
   Path: event:/Misc/Fia speech long
   guid: d88e494d512a854d9867cc480e4746be
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -543,7 +588,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Water land
   guid: a3df4123391fae43a220ee09cc4ee53d
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -721,6 +766,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2050368
   Exists: 0
+--- !u!114 &114146513832791890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Progression
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114147716854320144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,7 +1407,7 @@ MonoBehaviour:
   Path: event:/Misc/Chime
   guid: 56f0b96c39a7c34e8d41e50403daa2af
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1507,7 +1567,7 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_theme_demo_3
   guid: 289a505cd77b09409dfda1be5c9bb021
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -1577,7 +1637,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Jump
   guid: 93e14acd01032547a60717de40ef96ed
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1833,7 +1893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Gone_Astray_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636905866609939193
+  lastModified: 636905303944983500
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1902,6 +1962,25 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114413997012786932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Ville\Documents\Gone-Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636905303944943480
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 33893952
+  Exists: 1
 --- !u!114 &114415571650023746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2119,7 +2198,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Land
   guid: 4372232a53af8a4ea272253e95d54b87
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2175,7 +2254,7 @@ MonoBehaviour:
   Path: event:/Misc/Fia speech mischievous
   guid: 51587cead351e244a271f69d2ee926ef
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2197,7 +2276,7 @@ MonoBehaviour:
   Path: event:/Misc/Fia speech short
   guid: 5fa85ddd0fe54d489025b74c42fe7ad0
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2542,7 +2621,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Footsteps
   guid: 086348bc1ebfe941a915054c30b881b4
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2748,14 +2827,14 @@ MonoBehaviour:
   Path: event:/Ambience/Forest
   guid: a3ae3bd04fbd33448238dee4bc729da1
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114008862894095432}
-  - {fileID: 114095334953010796}
-  - {fileID: 114099518081980670}
+  - {fileID: 114068369678737218}
+  - {fileID: 114075503472461410}
+  - {fileID: 114695618250953154}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -3001,7 +3080,7 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_Battle_Music_demo_2
   guid: c00afdc4e1cca748b8e2cc06ce02be69
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -3053,7 +3132,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Water jump
   guid: db8aa9c6fb122345b9a9d3bd270a9d74
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3173,6 +3252,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ignore
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114695618250953154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BirdsCrickets
   Min: 0
   Max: 1
   Default: 0
@@ -3802,7 +3896,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Stand up
   guid: d1870abefdfaa940bbf5f1319cedfc01
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4022,12 +4116,12 @@ MonoBehaviour:
   Path: event:/Ambience/AmbientMusic
   guid: 6e41c225fc2475468b2ba3e6e6a45bed
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114260566986380472}
+  - {fileID: 114146513832791890}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -4168,12 +4262,12 @@ MonoBehaviour:
   Path: event:/Ambience/AmbientPiano
   guid: 29f3df482c4e9f4c8d75fccc81a23f3c
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114620911561455432}
+  - {fileID: 114051720519046606}
   MinDistance: 0
   MaxDistance: 0
   Length: 209032
@@ -4255,7 +4349,7 @@ MonoBehaviour:
   Path: event:/Character/Movement/Water steps
   guid: f0955dece045c9499cb6130bd885dcab
   Banks:
-  - {fileID: 114748510634231092}
+  - {fileID: 114413997012786932}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
