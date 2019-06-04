@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
 	public bool isBoss;
     public bool isTutorial;
     public bool hasEyes;
+    public List<GameObject> lightPath = new List<GameObject> { };
     private PencilContourEffect screenEffects;
     private List<Firefly> availableFireflies = new List<Firefly> { };
     public GameObject eye1, eye2;

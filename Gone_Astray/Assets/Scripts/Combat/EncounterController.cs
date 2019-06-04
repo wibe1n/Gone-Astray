@@ -15,6 +15,7 @@ public class EncounterController : MonoBehaviour {
     public Enemy myEnemy;
     public List<Firefly> myFireflies = new List<Firefly>();
     public List<Firefly> usedFireflies = new List<Firefly>();
+    private List<GameObject> lights = new List<GameObject>();
     public List<int> deck = new List<int>() { };
     public int enemyHand;
     public List<int> myHand;
@@ -48,7 +49,6 @@ public class EncounterController : MonoBehaviour {
 
         //TODO: Turn camera to make player feel small
 
-
         //in game canvas käyttökieltoon
         igcController.ToggleInGameCanvas(false);
         myEnemy = enemy;
@@ -56,8 +56,11 @@ public class EncounterController : MonoBehaviour {
         round = 1;
         UpdateFlyAmount(fireflyCounter, myFireflies.Count);
         gameCanvas.SetActive(true);
-        if (myEnemy.isTutorial)
-        {
+        for (int i = 0; i < enemy.lightPath.Count; i++) {
+            enemy.lightPath[i].SetActive(true);
+            lights.Add(enemy.lightPath[i]);
+        }
+        if (myEnemy.isTutorial) {
             tutorialButton.SetActive(true);
         }
         
