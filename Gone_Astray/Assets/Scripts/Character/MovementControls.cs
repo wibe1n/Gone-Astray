@@ -11,8 +11,6 @@ public class MovementControls : MonoBehaviour {
     private Vector3 m_Move;
     public bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
     public bool stop;
-    public bool encounter;
-    public Transform destination;
 	private Undying_Object undyObj;
     public PhysicMaterial physMaterial;
 	KeyCode crouchKey = KeyCode.None;
@@ -21,7 +19,6 @@ public class MovementControls : MonoBehaviour {
     private void Start()
     {
         //Haetaan keybindingit
-        encounter = false;
 		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
 			if (undyObj.crouchKey == KeyCode.None)
@@ -94,11 +91,7 @@ public class MovementControls : MonoBehaviour {
             // we use world-relative directions in the case of no main camera
             m_Move = v * Vector3.forward + h * Vector3.right;
         }
-        if (encounter)
-        {
-            m_Move = Vector3.MoveTowards(transform.position, destination.position, Time.deltaTime * 0.2f);
-            m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-        }
+        Debug.Log(m_Move);
 
 #if !MOBILE_INPUT
         // walk speed multiplier
@@ -107,10 +100,10 @@ public class MovementControls : MonoBehaviour {
         if (Input.GetAxis("Fire1") != 0) {
             m_Move = Vector3.zero;
         }
-        //if (stop) {
-        //    m_Move = Vector3.zero;
-        //    m_Jump = false;
-        //}
+        if (stop) {
+            m_Move = Vector3.zero;
+            m_Jump = false;
+        }
         // pass all parameters to the character control script
         m_Character.Move(m_Move, crouch, m_Jump);
         //m_Character.TestMoveExample(m_Move, crouch, m_Jump);

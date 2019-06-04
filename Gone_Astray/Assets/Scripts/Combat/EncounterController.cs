@@ -48,7 +48,7 @@ public class EncounterController : MonoBehaviour {
     public void StartEncounter(Enemy enemy, List<Firefly> fireflyList) {
 
         //TODO: Turn camera to make player feel small
-        player.GetComponent<MovementControls>().encounter = true;
+
         //in game canvas käyttökieltoon
         igcController.ToggleInGameCanvas(false);
         myEnemy = enemy;
