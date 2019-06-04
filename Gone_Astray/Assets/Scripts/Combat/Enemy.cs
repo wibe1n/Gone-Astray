@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
     public int disturbLimit;
     public int disturbTreshold;
     public GameObject checkpoint;
+    public GameObject destination;
 	public bool isBoss;
     public bool isTutorial;
     public bool hasEyes;
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour {
     void OnTriggerEnter(Collider player){
         if (player.gameObject.GetComponent<Character>() != null) {
             player.gameObject.GetComponent<MovementControls>().stop = true;
+            player.gameObject.GetComponent<MovementControls>().destination = destination.transform;
             availableFireflies = player.gameObject.GetComponent<Character>().myFireflies;
             Encounter();
         }
