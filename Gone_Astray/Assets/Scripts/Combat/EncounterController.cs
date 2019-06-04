@@ -49,6 +49,7 @@ public class EncounterController : MonoBehaviour {
 
         //TODO: Turn camera to make player feel small
         player.GetComponent<MovementControls>().encounter = true;
+        player.GetComponent<MovementControls>().stop = true;
         //in game canvas käyttökieltoon
         igcController.ToggleInGameCanvas(false);
         myEnemy = enemy;
@@ -446,6 +447,7 @@ public class EncounterController : MonoBehaviour {
             myEnemy.eye1.SetActive(false);
             myEnemy.eye2.SetActive(false);
         }
+        player.GetComponent<MovementControls>().encounter = false;
         battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         enemyHand = 0;
         myHand.Clear();

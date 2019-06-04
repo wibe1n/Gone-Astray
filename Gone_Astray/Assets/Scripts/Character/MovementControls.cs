@@ -9,6 +9,7 @@ public class MovementControls : MonoBehaviour {
     private Transform m_Cam;                  // A reference to the main camera in the scenes transform
     private Vector3 m_CamForward;             // The current forward direction of the camera
     private Vector3 m_Move;
+    private Vector3 intendedMove;
     public bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
     public bool stop;
     public bool encounter;
@@ -96,8 +97,9 @@ public class MovementControls : MonoBehaviour {
         }
         if (encounter)
         {
-            m_Move = Vector3.MoveTowards(transform.position, destination.position, Time.deltaTime * 0.2f);
-            m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
+            intendedMove = destination.position - transform.position;
+            m_Move = intendedMove.normalized * 0.2f;
+
         }
 
 #if !MOBILE_INPUT
@@ -107,10 +109,10 @@ public class MovementControls : MonoBehaviour {
         if (Input.GetAxis("Fire1") != 0) {
             m_Move = Vector3.zero;
         }
-        //if (stop) {
-        //    m_Move = Vector3.zero;
-        //    m_Jump = false;
-        //}
+        if (stop) {
+            m_Move = Vector3.zero;
+            m_Jump = false;
+        }
         // pass all parameters to the character control script
         m_Character.Move(m_Move, crouch, m_Jump);
         //m_Character.TestMoveExample(m_Move, crouch, m_Jump);

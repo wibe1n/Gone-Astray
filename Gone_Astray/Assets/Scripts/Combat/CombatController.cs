@@ -153,6 +153,14 @@ public class CombatController : MonoBehaviour {
         }
         //ball of light size update
         encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
+        StartCoroutine(GetCloserRoutine());
+    }
+
+    IEnumerator GetCloserRoutine() {
+        encounterController.player.GetComponent<MovementControls>().stop = false;
+        yield return new WaitForSeconds(2);
+        encounterController.player.GetComponent<MovementControls>().stop = true;
+        yield return null;
     }
 
     public void UseFirefly() {
