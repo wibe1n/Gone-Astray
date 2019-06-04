@@ -439,6 +439,7 @@ MonoBehaviour:
   disturbLimit: 16
   disturbTreshold: 2
   checkpoint: {fileID: 979875886}
+  destination: {fileID: 1692162470}
   isBoss: 0
   isTutorial: 1
   hasEyes: 1
