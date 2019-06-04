@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class EncounterController : MonoBehaviour {
 
-    public GameObject player, camera;
+    public GameObject player, camera, cameraPosTarget;
     UnityEvent m_MyEvent = new UnityEvent();
     public UnityEvent m_Proceed = new UnityEvent();
     public Character character;
