@@ -5,6 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour {
 
     public GameObject rayCastDrawer, lastSapling, sapling;
+    public GameObject cameraPosTarget;
     public PauseMenuController _pauseController;
     public InGameCanvasController _igcController;
     public ParticleSystem fireflies;

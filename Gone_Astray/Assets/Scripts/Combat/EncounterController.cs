@@ -47,9 +47,9 @@ public class EncounterController : MonoBehaviour {
     // haetaan vihollinen ja tulikärpäset saadulta objektilta, kyssäri lähestymisestä näkyviin
     public void StartEncounter(Enemy enemy, List<Firefly> fireflyList) {
 
-        //TODO: Turn camera to make player feel small
         player.GetComponent<MovementControls>().encounter = true;
         player.GetComponent<MovementControls>().stop = true;
+        camera.GetComponent<CameraController2>().combatLock = true;
         //in game canvas käyttökieltoon
         igcController.ToggleInGameCanvas(false);
         myEnemy = enemy;
@@ -217,6 +217,11 @@ public class EncounterController : MonoBehaviour {
     IEnumerator RunAwayRoutine() {
         runAwayScreen.SetActive(true);
         battleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        player.gameObject.GetComponent<MovementControls>().destination = null;
+        player.gameObject.GetComponent<MovementControls>().destination2 = Vector3.zero;
+        player.GetComponent<MovementControls>().encounter = false;
+        player.GetComponent<MovementControls>().stop = false;
+        camera.GetComponent<CameraController2>().combatLock = false;
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.0f, false);
         player.transform.position = myEnemy.checkpoint.transform.position;
         camera.transform.position = myEnemy.checkpoint.transform.position;
@@ -267,6 +272,32 @@ public class EncounterController : MonoBehaviour {
             deck[i] = deck[k];
             deck[k] = temp;
         }
+    }
+
+    public void GetCloser() {
+        StartCoroutine(GetCloserRoutine());
+    }
+
+    IEnumerator GetCloserRoutine()
+    {
+        player.GetComponent<MovementControls>().stop = false;
+        yield return new WaitForSeconds(2);
+        player.GetComponent<MovementControls>().stop = true;
+        yield return null;
+    }
+
+    public void GetAway() {
+        StartCoroutine(GetAwayRoutine());
+    }
+
+    IEnumerator GetAwayRoutine()
+    {
+        player.GetComponent<MovementControls>().stop = false;
+        player.GetComponent<MovementControls>().running = true;
+        yield return new WaitUntil(() => Vector3.Distance(player.transform.position, player.GetComponent<MovementControls>().destination2) < 0.2f);
+        player.GetComponent<MovementControls>().running = false;
+        yield return new WaitForSeconds(1f);
+        player.GetComponent<MovementControls>().stop = true;
     }
 
     public void RoundLost() {
@@ -435,9 +466,14 @@ public class EncounterController : MonoBehaviour {
         proceedButton.SetActive(false);
         textPanel.SetActive(false);
         igcController.ToggleInGameCanvas(true);
-
+        player.gameObject.GetComponent<MovementControls>().destination = null;
+        player.gameObject.GetComponent<MovementControls>().destination2 = Vector3.zero;
+        player.GetComponent<MovementControls>().stop = false;
+        camera.GetComponent<CameraController2>().combatLock = false;
+        player.GetComponent<MovementControls>().encounter = false;
         RunAway();
         WhoWon(0);
+        StartCoroutine(CameraRoutine());
         //TODO affect world???       
     }
 
@@ -466,11 +502,25 @@ public class EncounterController : MonoBehaviour {
         usedFireflyCounter.SetActive(false);
         gameCanvas.SetActive(false);
         textPanel.SetActive(false);
-        player.GetComponent<MovementControls>().stop = false;
         igcController.ToggleInGameCanvas(true);
-
+        player.gameObject.GetComponent<MovementControls>().destination = null;
+        player.gameObject.GetComponent<MovementControls>().destination2 = Vector3.zero;
+        player.GetComponent<MovementControls>().stop = false;
+        camera.GetComponent<CameraController2>().combatLock = false;
+        player.GetComponent<MovementControls>().encounter = false;
         WhoWon(1);
+        StartCoroutine(CameraRoutine());
         //TODO animation for monster transforming to something regiular???
+    }
+
+    IEnumerator CameraRoutine() {
+        float i = 0;
+        while (i < 1) {
+            i += 0.01f;
+            Vector3 endPosition = new Vector3(myEnemy.cameraPos.transform.position.x, myEnemy.cameraPos.transform.position.y + 0.01f, myEnemy.cameraPos.transform.position.z);
+            myEnemy.cameraPos.transform.position = Vector3.Lerp(myEnemy.cameraPos.transform.position, endPosition, 1);
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 
     public void UpdateFlyAmount(GameObject counter, int amount)

@@ -8,9 +8,11 @@ public class Enemy : MonoBehaviour {
     public int disturbTreshold;
     public GameObject checkpoint;
     public GameObject destination;
+    public GameObject startPosition;
 	public bool isBoss;
     public bool isTutorial;
     public bool hasEyes;
+    public GameObject cameraPos;
     public List<GameObject> lightPath = new List<GameObject> { };
     private PencilContourEffect screenEffects;
     private List<Firefly> availableFireflies = new List<Firefly> { };
@@ -29,7 +31,9 @@ public class Enemy : MonoBehaviour {
         if (player.gameObject.GetComponent<Character>() != null) {
             player.gameObject.GetComponent<MovementControls>().stop = true;
             player.gameObject.GetComponent<MovementControls>().destination = destination.transform;
+            player.gameObject.GetComponent<MovementControls>().destination2 = player.gameObject.transform.position;
             availableFireflies = player.gameObject.GetComponent<Character>().myFireflies;
+            cameraPos = player.GetComponent<Character>().cameraPosTarget;
             Encounter();
         }
         
@@ -50,6 +54,13 @@ public class Enemy : MonoBehaviour {
             eye1.SetActive(true);
             eye2.SetActive(true);
         }
+        float i = 0;
+        while(i < 1) {
+            i += 0.01f;
+            Vector3 endPosition = new Vector3(cameraPos.transform.position.x, cameraPos.transform.position.y - 0.01f, cameraPos.transform.position.z);
+            cameraPos.transform.position = Vector3.Lerp(cameraPos.transform.position, endPosition, 1);
+            yield return new WaitForSeconds(0.01f);
+        }
         EncounterController enCon = GameObject.FindGameObjectWithTag("EncounterController").GetComponent<EncounterController>();
         float timeRemaining = duration;
         //screenefektien väläytys
@@ -67,6 +78,6 @@ public class Enemy : MonoBehaviour {
         screenEffects.m_NoiseAmount = 0;
         //lähetetään vihollinen ja pelaajan käytettävissä olevat tulikärpäset encounter controlleriin
         enCon.StartEncounter(enemy, availableFireflies);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
     }
 }

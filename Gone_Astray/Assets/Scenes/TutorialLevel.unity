@@ -446,11 +446,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disturbLimit: 16
   disturbTreshold: 2
-  checkpoint: {fileID: 979875886}
+  checkpoint: {fileID: 293947479}
   destination: {fileID: 1528580343}
+  startPosition: {fileID: 0}
   isBoss: 0
   isTutorial: 1
   hasEyes: 1
+  cameraPos: {fileID: 0}
   lightPath:
   - {fileID: 1693929243}
   - {fileID: 505651517}
@@ -2138,6 +2140,11 @@ Prefab:
       propertyPath: _igcController
       value: 
       objectReference: {fileID: 1528102230}
+    - target: {fileID: 114143247304396886, guid: b58735da606e12946adb26838cd7cbec,
+        type: 2}
+      propertyPath: cameraPosTarget
+      value: 
+      objectReference: {fileID: 922496367}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b58735da606e12946adb26838cd7cbec, type: 2}
   m_IsPrefabAsset: 0
@@ -8616,12 +8623,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1528580343}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.66, y: -158.46, z: 20.48}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.54963624, z: -0, w: 0.83540416}
+  m_LocalPosition: {x: -0.030625086, y: 0.21714124, z: 0.024135161}
+  m_LocalScale: {x: 0.28571433, y: 0.28571427, z: 0.28571433}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 101884891}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1540602100
 Prefab:
@@ -14879,7 +14886,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 103071214}
-  m_RootOrder: 15
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1854411757 stripped
 GameObject:
@@ -15375,7 +15382,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.7467368, b: 0.495283, a: 1}
-  m_Intensity: 4
+  m_Intensity: 2
   m_Range: 9.197731
   m_SpotAngle: 30
   m_CookieSize: 10

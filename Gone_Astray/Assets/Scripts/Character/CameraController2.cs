@@ -18,6 +18,7 @@ public class CameraController2 : MonoBehaviour
     public bool fixedCamMode;
 
     private bool rotationLock = true;
+    public bool combatLock = false;
     private float rotationDir = 1;
 
     // Use this for initialization
@@ -115,7 +116,7 @@ public class CameraController2 : MonoBehaviour
             // Kun ei paina mitään kamera ajaa automaattisesti pelaajan taakse
             else
             {
-                if (Input.GetAxis("Vertical") < 0)
+                if (Input.GetAxis("Vertical") < 0 || combatLock == true)
                 {
 
                 }

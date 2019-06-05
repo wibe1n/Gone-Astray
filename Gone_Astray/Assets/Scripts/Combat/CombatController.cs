@@ -89,6 +89,7 @@ public class CombatController : MonoBehaviour {
             //Jos pelaaja ei pääse tresholdin sisään häviää kierroksen
             if (myHandNumber < enemyHandNumber - enemyTreshold || myHandNumber > enemyHandNumber + enemyTreshold) {
                 encounterController.RoundLost();
+                encounterController.GetAway();
                 encounterController.enemyScore += 1;
                 if (encounterController.enemyScore == 3) {
                     encounterController.GameLost();
@@ -138,6 +139,7 @@ public class CombatController : MonoBehaviour {
             }
             //Jos oma käsi on yli hirviön häiritsemisrajan, häviää kierroksen
             if (myHandNumber > enemyHandNumber + enemyTreshold) {
+                encounterController.GetAway();
                 encounterController.RoundLost();
                 Debug.Log("mennään täällä");
                 encounterController.enemyScore += 1;
@@ -153,15 +155,9 @@ public class CombatController : MonoBehaviour {
         }
         //ball of light size update
         encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
-        StartCoroutine(GetCloserRoutine());
+        encounterController.GetCloser();
     }
 
-    IEnumerator GetCloserRoutine() {
-        encounterController.player.GetComponent<MovementControls>().stop = false;
-        yield return new WaitForSeconds(2);
-        encounterController.player.GetComponent<MovementControls>().stop = true;
-        yield return null;
-    }
 
     public void UseFirefly() {
         if (encounterController.tutorial) {

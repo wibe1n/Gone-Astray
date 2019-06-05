@@ -13,7 +13,10 @@ public class MovementControls : MonoBehaviour {
     public bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
     public bool stop;
     public bool encounter;
+    public bool running;
+    private float radius;
     public Transform destination;
+    public Vector3 destination2;
 	private Undying_Object undyObj;
     public PhysicMaterial physMaterial;
 	KeyCode crouchKey = KeyCode.None;
@@ -95,10 +98,14 @@ public class MovementControls : MonoBehaviour {
             // we use world-relative directions in the case of no main camera
             m_Move = v * Vector3.forward + h * Vector3.right;
         }
-        if (encounter)
-        {
+        if (encounter) {
             intendedMove = destination.position - transform.position;
             m_Move = intendedMove.normalized * 0.2f;
+            if (running) {
+                intendedMove = destination2 - transform.position;
+                m_Move = intendedMove.normalized * 0.5f;
+            }
+            
 
         }
 
