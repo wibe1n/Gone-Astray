@@ -220,13 +220,14 @@ public class EncounterController : MonoBehaviour {
         player.gameObject.GetComponent<MovementControls>().destination = null;
         player.gameObject.GetComponent<MovementControls>().destination2 = Vector3.zero;
         player.GetComponent<MovementControls>().encounter = false;
-        player.GetComponent<MovementControls>().stop = false;
+        player.GetComponent<MovementControls>().running = false;
         camera.GetComponent<CameraController2>().combatLock = false;
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.0f, false);
         player.transform.position = myEnemy.checkpoint.transform.position;
         camera.transform.position = myEnemy.checkpoint.transform.position;
         //TODO: fancy effects for running away
         yield return new WaitForSeconds(1f);
+        player.GetComponent<MovementControls>().stop = false;
         gameCanvas.SetActive(false);
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 3.0f, false);
         yield return new WaitForSeconds(3f);
@@ -282,7 +283,10 @@ public class EncounterController : MonoBehaviour {
     {
         player.GetComponent<MovementControls>().stop = false;
         yield return new WaitForSeconds(2);
-        player.GetComponent<MovementControls>().stop = true;
+        if (player.GetComponent<MovementControls>().encounter == true) {
+            Debug.Log("täällä");
+            player.GetComponent<MovementControls>().stop = true;
+        }
         yield return null;
     }
 
@@ -298,6 +302,7 @@ public class EncounterController : MonoBehaviour {
         player.GetComponent<MovementControls>().running = false;
         yield return new WaitForSeconds(1f);
         player.GetComponent<MovementControls>().stop = true;
+        yield return null;
     }
 
     public void RoundLost() {
@@ -468,9 +473,6 @@ public class EncounterController : MonoBehaviour {
         igcController.ToggleInGameCanvas(true);
         player.gameObject.GetComponent<MovementControls>().destination = null;
         player.gameObject.GetComponent<MovementControls>().destination2 = Vector3.zero;
-        player.GetComponent<MovementControls>().stop = false;
-        camera.GetComponent<CameraController2>().combatLock = false;
-        player.GetComponent<MovementControls>().encounter = false;
         RunAway();
         WhoWon(0);
         StartCoroutine(CameraRoutine());

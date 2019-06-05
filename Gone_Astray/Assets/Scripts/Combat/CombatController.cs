@@ -127,21 +127,19 @@ public class CombatController : MonoBehaviour {
         else {
             //Jos ei ole tarpeeksi tulikärpäsiä
             if (encounterController.myFireflies.Count == 0) {
-                Debug.Log("Not enough fireflies!");
                 encounterController.OutOfFlies();
             }
             //Pakan päällimäinen kortti lisätään omaan käteen, poistetaan yksi tulikärpänen varastosta, päivitetään teksti
             else
             {
+                encounterController.GetCloser();
                 encounterController.myHand.Add(encounterController.deck[0]);
                 myHandNumber += encounterController.deck[0];
                 encounterController.deck.RemoveAt(0);
             }
             //Jos oma käsi on yli hirviön häiritsemisrajan, häviää kierroksen
             if (myHandNumber > enemyHandNumber + enemyTreshold) {
-                encounterController.GetAway();
                 encounterController.RoundLost();
-                Debug.Log("mennään täällä");
                 encounterController.enemyScore += 1;
                 //Jos vihollisen pisteet ovat kolme häviää pelin
                 if (encounterController.enemyScore == 3) {
@@ -149,13 +147,14 @@ public class CombatController : MonoBehaviour {
                 }
                 //Uusi kierros
                 else {
+                    encounterController.GetAway();
                     encounterController.ShowScore(0);
                 }
             }
         }
         //ball of light size update
         encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
-        encounterController.GetCloser();
+        
     }
 
 
