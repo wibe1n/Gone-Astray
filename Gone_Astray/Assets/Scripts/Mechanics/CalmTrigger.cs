@@ -13,7 +13,6 @@ public class CalmTrigger : MonoBehaviour {
     //Asetetaan parametrit
     void Start() {
         ambienceSounds = GameObject.FindGameObjectWithTag("CameraRig");
-        currentLight = 0.6f;
         endLight = 0f;
         duration = 10f;
 
@@ -31,6 +30,7 @@ public class CalmTrigger : MonoBehaviour {
 
     //Lerpataan valaistus pimeästä valoisaksi
     public IEnumerator TurnLightsBack() {
+        currentLight = pencilEffects.m_EdgesOnly;
         float timeRemaining = duration;
         while (timeRemaining > 0) {
             timeRemaining -= Time.deltaTime;

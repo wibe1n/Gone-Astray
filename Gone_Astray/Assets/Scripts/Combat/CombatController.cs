@@ -35,7 +35,7 @@ public class CombatController : MonoBehaviour {
         //TODO: animation for adding the hand
 
         //ball of light size update
-        encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
+        encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 150 / 21, myHandNumber * 150 / 21);
         //ball of darkness size update
         encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
         yield return new WaitForSeconds(0.5f);
@@ -74,7 +74,7 @@ public class CombatController : MonoBehaviour {
                 Debug.Log("voitto");
                 enemyHandNumber = 0;
                 myHandNumber = 0;
-                encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
+                encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 150 / 21, myHandNumber * 150 / 21);
                 encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
                 enemyHand.GetComponent<Text>().text = "";
                 myHand.GetComponent<Text>().text = "";
@@ -91,6 +91,12 @@ public class CombatController : MonoBehaviour {
                 encounterController.RoundLost();
                 encounterController.GetAway();
                 encounterController.enemyScore += 1;
+                if (encounterController.enemyScore == 1) {
+                    encounterController.MakeLightsSpoopier(2, 0.3f, 0.5f);
+                }
+                else {
+                    encounterController.MakeLightsSpoopier(2, 0.5f, 0.7f);
+                }
                 if (encounterController.enemyScore == 3) {
                     encounterController.GameLost();
                 }
@@ -104,7 +110,7 @@ public class CombatController : MonoBehaviour {
                 Debug.Log("voitto");
                 enemyHandNumber = 0;
                 myHandNumber = 0;
-                encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
+                encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 150 / 21, myHandNumber * 150 / 21);
                 encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
                 enemyHand.GetComponent<Text>().text = "";
                 myHand.GetComponent<Text>().text = "";
@@ -117,6 +123,7 @@ public class CombatController : MonoBehaviour {
 
     public void AddLight() {
         //Tutorial versio
+        encounterController.fireflyIcon.GetComponent<Button>().interactable = false;
         if (encounterController.tutorial == true) {
             encounterController.myHand.Add(9);
             myHandNumber += 9;
@@ -141,6 +148,12 @@ public class CombatController : MonoBehaviour {
             if (myHandNumber > enemyHandNumber + enemyTreshold) {
                 encounterController.RoundLost();
                 encounterController.enemyScore += 1;
+                if (encounterController.enemyScore == 1) {
+                    encounterController.MakeLightsSpoopier(2, 0.3f, 0.5f);
+                }
+                else {
+                    encounterController.MakeLightsSpoopier(2, 0.5f, 0.7f);
+                }
                 //Jos vihollisen pisteet ovat kolme häviää pelin
                 if (encounterController.enemyScore == 3) {
                     encounterController.GameLost();
@@ -153,7 +166,7 @@ public class CombatController : MonoBehaviour {
             }
         }
         //ball of light size update
-        encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 100 / 21, myHandNumber * 100 / 21);
+        encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 150 / 21, myHandNumber * 150 / 21);
         
     }
 

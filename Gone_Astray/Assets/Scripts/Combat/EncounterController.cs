@@ -12,6 +12,7 @@ public class EncounterController : MonoBehaviour {
     public Character character;
     public CombatController combatController;
     public InGameCanvasController igcController;
+    public PencilContourEffect pencilEffects;
     public Enemy myEnemy;
     public List<Firefly> myFireflies = new List<Firefly>();
     public List<Firefly> usedFireflies = new List<Firefly>();
@@ -283,8 +284,8 @@ public class EncounterController : MonoBehaviour {
     {
         player.GetComponent<MovementControls>().stop = false;
         yield return new WaitForSeconds(2);
+        fireflyIcon.GetComponent<Button>().interactable = true;
         if (player.GetComponent<MovementControls>().encounter == true) {
-            Debug.Log("täällä");
             player.GetComponent<MovementControls>().stop = true;
         }
         yield return null;
@@ -302,6 +303,7 @@ public class EncounterController : MonoBehaviour {
         player.GetComponent<MovementControls>().running = false;
         yield return new WaitForSeconds(1f);
         player.GetComponent<MovementControls>().stop = true;
+        fireflyIcon.GetComponent<Button>().interactable = true;
         yield return null;
     }
 
@@ -329,6 +331,22 @@ public class EncounterController : MonoBehaviour {
         winIcon.GetComponentInChildren<Text>().CrossFadeAlpha(0.0f, 2.0f, false);
         yield return new WaitForSeconds(2);
         winIcon.SetActive(false);
+    }
+
+    public void MakeLightsSpoopier(float duration, float currentDarkness, float endDarkness) {
+        StartCoroutine(MakeLightsSpoopierRoutine(duration, currentDarkness, endDarkness));
+    }
+
+    IEnumerator MakeLightsSpoopierRoutine(float duration, float currentDarkness, float endDarkness) {
+        float timeRemaining = duration;
+        while (timeRemaining > 0)
+        {
+            Debug.Log("täällä");
+            timeRemaining -= Time.deltaTime;
+            pencilEffects.m_EdgesOnly = Mathf.Lerp(currentDarkness, endDarkness, Mathf.InverseLerp(duration, 0, timeRemaining));
+            yield return null;
+        }
+        pencilEffects.m_EdgesOnly = endDarkness;
     }
 
     public void ShowScore(int result)
