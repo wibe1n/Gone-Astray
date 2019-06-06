@@ -17,6 +17,7 @@ public class EncounterController : MonoBehaviour {
     public List<Firefly> myFireflies = new List<Firefly>();
     public List<Firefly> usedFireflies = new List<Firefly>();
     private List<GameObject> lights = new List<GameObject>();
+    private Animator lightballAnimator;
     public List<int> deck = new List<int>() { };
     public int enemyHand;
     public List<int> myHand;
@@ -34,6 +35,8 @@ public class EncounterController : MonoBehaviour {
 
     private void Start() {
         battleMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Gone_Astray_Battle_Music_demo_2");
+        lightballAnimator = fireflyIcon.GetComponentInChildren<Animator>();
+        lightballAnimator.SetBool("Clicked", false);
     }
 
     private void Update() {
@@ -226,7 +229,6 @@ public class EncounterController : MonoBehaviour {
         runAwayScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.0f, false);
         player.transform.position = myEnemy.checkpoint.transform.position;
         camera.transform.position = myEnemy.checkpoint.transform.position;
-        //TODO: fancy effects for running away
         yield return new WaitForSeconds(1f);
         player.GetComponent<MovementControls>().stop = false;
         gameCanvas.SetActive(false);
@@ -305,6 +307,10 @@ public class EncounterController : MonoBehaviour {
         player.GetComponent<MovementControls>().stop = true;
         fireflyIcon.GetComponent<Button>().interactable = true;
         yield return null;
+    }
+
+    public void RollLightBall() {
+        lightballAnimator.SetBool("Clicked", true);
     }
 
     public void RoundLost() {

@@ -35,9 +35,9 @@ public class CombatController : MonoBehaviour {
         //TODO: animation for adding the hand
 
         //ball of light size update
-        encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 150 / 21, myHandNumber * 150 / 21);
+        encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 145 / 21, myHandNumber * 145 / 21);
         //ball of darkness size update
-        encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+        encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 145 / 21, enemyHandNumber * 145 / 21);
         yield return new WaitForSeconds(0.5f);
     }
 
@@ -52,7 +52,7 @@ public class CombatController : MonoBehaviour {
         // Vihollisen vuoro muutetaan pian, en kommentoi
         if(encounterController.tutorial == true) {
             //Katsotaan kummalla on parempi käsi
-            encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+            encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 145 / 21, enemyHandNumber * 145 / 21);
             yield return new WaitForSeconds(1f);
             //Jos pelaaja ei pääse tresholdin sisään häviää kierroksen
             encounterController.NextTutorialPart();
@@ -74,8 +74,8 @@ public class CombatController : MonoBehaviour {
                 Debug.Log("voitto");
                 enemyHandNumber = 0;
                 myHandNumber = 0;
-                encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 150 / 21, myHandNumber * 150 / 21);
-                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+                encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 145 / 21, myHandNumber * 145 / 21);
+                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 145 / 21, enemyHandNumber * 145 / 21);
                 enemyHand.GetComponent<Text>().text = "";
                 myHand.GetComponent<Text>().text = "";
                 yield return new WaitUntil(() => encounterController.reached == true);
@@ -84,7 +84,7 @@ public class CombatController : MonoBehaviour {
         }
         else {
             //Katsotaan kummalla on parempi käsi
-            encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+            encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 145 / 21, enemyHandNumber * 145 / 21);
             yield return new WaitForSeconds(1f);
             //Jos pelaaja ei pääse tresholdin sisään häviää kierroksen
             if (myHandNumber < enemyHandNumber - enemyTreshold || myHandNumber > enemyHandNumber + enemyTreshold) {
@@ -92,10 +92,10 @@ public class CombatController : MonoBehaviour {
                 encounterController.GetAway();
                 encounterController.enemyScore += 1;
                 if (encounterController.enemyScore == 1) {
-                    encounterController.MakeLightsSpoopier(2, 0.3f, 0.5f);
+                    encounterController.MakeLightsSpoopier(2, 0.3f, 0.4f);
                 }
                 else {
-                    encounterController.MakeLightsSpoopier(2, 0.5f, 0.7f);
+                    encounterController.MakeLightsSpoopier(2, 0.4f, 0.5f);
                 }
                 if (encounterController.enemyScore == 3) {
                     encounterController.GameLost();
@@ -110,8 +110,8 @@ public class CombatController : MonoBehaviour {
                 Debug.Log("voitto");
                 enemyHandNumber = 0;
                 myHandNumber = 0;
-                encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 150 / 21, myHandNumber * 150 / 21);
-                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 100 / 21, enemyHandNumber * 100 / 21);
+                encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 145 / 21, myHandNumber * 145 / 21);
+                encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 145 / 21, enemyHandNumber * 145 / 21);
                 enemyHand.GetComponent<Text>().text = "";
                 myHand.GetComponent<Text>().text = "";
                 encounterController.GameWon();
@@ -149,10 +149,10 @@ public class CombatController : MonoBehaviour {
                 encounterController.RoundLost();
                 encounterController.enemyScore += 1;
                 if (encounterController.enemyScore == 1) {
-                    encounterController.MakeLightsSpoopier(2, 0.3f, 0.5f);
+                    encounterController.MakeLightsSpoopier(2, 0.3f, 0.4f);
                 }
                 else {
-                    encounterController.MakeLightsSpoopier(2, 0.5f, 0.7f);
+                    encounterController.MakeLightsSpoopier(2, 0.4f, 0.5f);
                 }
                 //Jos vihollisen pisteet ovat kolme häviää pelin
                 if (encounterController.enemyScore == 3) {
@@ -166,7 +166,7 @@ public class CombatController : MonoBehaviour {
             }
         }
         //ball of light size update
-        encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 150 / 21, myHandNumber * 150 / 21);
+        encounterController.fireFlyImage.rectTransform.sizeDelta = new Vector2(myHandNumber * 145 / 21, myHandNumber * 145 / 21);
         
     }
 
