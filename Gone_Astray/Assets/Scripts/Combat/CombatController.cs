@@ -148,6 +148,7 @@ public class CombatController : MonoBehaviour {
             if (myHandNumber > enemyHandNumber + enemyTreshold) {
                 encounterController.RoundLost();
                 encounterController.enemyScore += 1;
+                myHandNumber = 0;
                 if (encounterController.enemyScore == 1) {
                     encounterController.MakeLightsSpoopier(2, 0.3f, 0.4f);
                 }

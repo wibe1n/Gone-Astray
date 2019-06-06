@@ -310,7 +310,13 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void RollLightBall() {
+        StartCoroutine(RollLightBallRoutine());
+    }
+
+    IEnumerator RollLightBallRoutine() {
         lightballAnimator.SetBool("Clicked", true);
+        yield return new WaitForSeconds(0.5f);
+        lightballAnimator.SetBool("Clicked", false);
     }
 
     public void RoundLost() {
