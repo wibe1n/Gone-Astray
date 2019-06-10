@@ -122,6 +122,7 @@ public class CombatController : MonoBehaviour {
     }
 
     public void AddLight() {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Misc/Chime", encounterController.camera.transform.position);
         //Tutorial versio
         encounterController.fireflyIcon.GetComponent<Button>().interactable = false;
         if (encounterController.tutorial == true) {

@@ -50,7 +50,7 @@ public class EncounterController : MonoBehaviour {
 
     // haetaan vihollinen ja tulikärpäset saadulta objektilta, kyssäri lähestymisestä näkyviin
     public void StartEncounter(Enemy enemy, List<Firefly> fireflyList) {
-
+        
         player.GetComponent<MovementControls>().encounter = true;
         player.GetComponent<MovementControls>().stop = true;
         camera.GetComponent<CameraController2>().combatLock = true;
