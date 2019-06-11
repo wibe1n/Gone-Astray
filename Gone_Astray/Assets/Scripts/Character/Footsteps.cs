@@ -76,15 +76,17 @@ public class Footsteps : MonoBehaviour
         {
             if (m_Debug)
                 m_LinePos = transform.position;
-
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
+                
                 int materialIndex = GetMaterialIndex(hit);
                 if (materialIndex != -1)
                 {
                     Material material = hit.collider.gameObject.GetComponent<Renderer>().materials[materialIndex];
-                    if (material.name == "mat_terrain_near_01 (Instance)")
+                    Debug.Log(material.name);
+                    if (material.name == "SwampMat1 (Instance)")
                     {
+                        
                         if (m_Debug)
                         {//Calculate the points for the triangle in the mesh that we have hit with our raycast.
                             MeshFilter mesh = hit.collider.gameObject.GetComponent<MeshFilter>();
@@ -100,23 +102,24 @@ public class Footsteps : MonoBehaviour
                         //The mask texture determines how the material's main two textures are blended.
                         //Colour values from each texture are blended based on the mask texture's alpha channel value.
                         //0.0f is full dirt texture, 1.0f is full sand texture, 0.5f is half of each. 
-                        Texture2D maskTexture = material.GetTexture("_Mask") as Texture2D;
-                        Color maskPixel = maskTexture.GetPixelBilinear(hit.textureCoord.x, hit.textureCoord.y);
+                        //Texture2D maskTexture = material.GetTexture("_Mask") as Texture2D;
+                        //Color maskPixel = maskTexture.GetPixelBilinear(hit.textureCoord.x, hit.textureCoord.y);
 
                         //The specular texture maps shininess / gloss / reflection to the terrain mesh.
                         //We are using it to determine how much water is shown at the cast ray's point of intersection.
-                        Texture2D specTexture2 = material.GetTexture("_SpecGlossMap2") as Texture2D;
+                        //Texture2D specTexture2 = material.GetTexture("_SpecGlossMap2") as Texture2D;
                         //We apply tiling assuming it is not already applied to hit.textureCoord2
-                        float tiling = 40.0f;//This is a public variable set on the material, we could reference the actual variable but I ran out of time.
-                        float u = hit.textureCoord.x % (1.0f / tiling);
-                        float v = hit.textureCoord.y % (1.0f / tiling);
-                        Color spec2Pixel = specTexture2.GetPixelBilinear(u, v);
+                        //float tiling = 40.0f;//This is a public variable set on the material, we could reference the actual variable but I ran out of time.
+                        //float u = hit.textureCoord.x % (1.0f / tiling);
+                        //float v = hit.textureCoord.y % (1.0f / tiling);
+                        //Color spec2Pixel = specTexture2.GetPixelBilinear(u, v);
 
-                        float specMultiplier = 6.0f;//We use a multiplier to better represent the amount of water.
-                        m_Water = maskPixel.a * Mathf.Min(spec2Pixel.a * specMultiplier, 0.9f);//Only the sand texture has water, so we multiply by the mask pixel alpha value.
-                        m_Dirt = (1.0f - maskPixel.a);
-                        m_Sand = maskPixel.a - m_Water * 0.1f;//Ducking the sand a little for the water
-                        m_Wood = 0.0f;
+                        //float specMultiplier = 6.0f;//We use a multiplier to better represent the amount of water.
+                        //m_Water = maskPixel.a * Mathf.Min(spec2Pixel.a * specMultiplier, 0.9f);//Only the sand texture has water, so we multiply by the mask pixel alpha value.
+                        //m_Dirt = (1.0f - maskPixel.a);
+                        //m_Sand = maskPixel.a - m_Water * 0.1f;//Ducking the sand a little for the water
+                        //m_Wood = 0.0f;
+
                     }
                 }
             }

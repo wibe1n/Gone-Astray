@@ -2118,15 +2118,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 40
+      value: 36.8
       objectReference: {fileID: 0}
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -156
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 35
+      value: 54.7
       objectReference: {fileID: 0}
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalRotation.x
@@ -8205,7 +8205,7 @@ GameObject:
   - component: {fileID: 1209916953}
   - component: {fileID: 1209916955}
   - component: {fileID: 1209916954}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Swamp (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8282,7 +8282,7 @@ GameObject:
   - component: {fileID: 1265183849}
   - component: {fileID: 1265183852}
   - component: {fileID: 1265183851}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Swamp3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9135,7 +9135,8 @@ GameObject:
   - component: {fileID: 1595730253}
   - component: {fileID: 1595730255}
   - component: {fileID: 1595730254}
-  m_Layer: 0
+  - component: {fileID: 1595730256}
+  m_Layer: 9
   m_Name: Swamp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9197,6 +9198,20 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1595730252}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &1595730256
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595730252}
+  m_Material: {fileID: 13400000, guid: e52fb17f9b1e7fd48b8955f1391d3688, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1620044786 stripped
 GameObject:
