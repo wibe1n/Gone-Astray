@@ -17,7 +17,7 @@ public class EncounterController : MonoBehaviour {
     public List<Firefly> myFireflies = new List<Firefly>();
     public List<Firefly> usedFireflies = new List<Firefly>();
     private List<GameObject> lights = new List<GameObject>();
-    private Animator lightballAnimator;
+    public Animator lightballAnimator, darkBallAnimator, lightIconAnimator, darkIconAnimator;
     public List<int> deck = new List<int>() { };
     public int enemyHand;
     public List<int> myHand;
@@ -36,8 +36,10 @@ public class EncounterController : MonoBehaviour {
 
     private void Start() {
         battleMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Gone_Astray_Battle_Music_demo_2");
-        lightballAnimator = fireflyIcon.GetComponentInChildren<Animator>();
         lightballAnimator.SetBool("Clicked", false);
+        darkBallAnimator.SetBool("Clicked", false);
+        lightIconAnimator.SetBool("Showdown", false);
+        darkIconAnimator.SetBool("Showdown", false);
     }
 
     private void Update() {
@@ -320,6 +322,36 @@ public class EncounterController : MonoBehaviour {
         lightballAnimator.SetBool("Clicked", false);
     }
 
+    public void RollDarkBall() {
+        StartCoroutine(RollDarkBallRoutine());
+    }
+
+    IEnumerator RollDarkBallRoutine() {
+        darkBallAnimator.SetBool("Clicked", true);
+        yield return new WaitForSeconds(0.5f);
+        darkBallAnimator.SetBool("Clicked", false);
+    }
+
+    public void ShowDownL() {
+        StartCoroutine(ShowdownLRoutine());
+    }
+
+    IEnumerator ShowdownLRoutine() {
+        lightIconAnimator.SetBool("Showdown", true);
+        yield return new WaitForSeconds(2);
+        lightIconAnimator.SetBool("Showdown", false);
+    }
+
+    public void ShowDownD() {
+        StartCoroutine(ShowDownDRoutine());
+    }
+
+    IEnumerator ShowDownDRoutine() {
+        darkIconAnimator.SetBool("Showdown", true);
+        yield return new WaitForSeconds(2);
+        darkIconAnimator.SetBool("Showdown", false);
+    }
+
     public void RoundLost() {
         round++;
         StartCoroutine(RoundLostRoutine());
@@ -354,7 +386,6 @@ public class EncounterController : MonoBehaviour {
         float timeRemaining = duration;
         while (timeRemaining > 0)
         {
-            Debug.Log("täällä");
             timeRemaining -= Time.deltaTime;
             pencilEffects.m_EdgesOnly = Mathf.Lerp(currentDarkness, endDarkness, Mathf.InverseLerp(duration, 0, timeRemaining));
             yield return null;

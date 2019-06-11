@@ -84,10 +84,12 @@ public class CombatController : MonoBehaviour {
         }
         else {
             //Katsotaan kummalla on parempi käsi
-            encounterController.darknessImage.rectTransform.sizeDelta = new Vector2(enemyHandNumber * 145 / 21, enemyHandNumber * 145 / 21);
-            yield return new WaitForSeconds(1f);
+            encounterController.ShowDownL();
+            encounterController.ShowDownD();
             //Jos pelaaja ei pääse tresholdin sisään häviää kierroksen
             if (myHandNumber < enemyHandNumber - enemyTreshold || myHandNumber > enemyHandNumber + enemyTreshold) {
+                encounterController.RollDarkBall();
+                yield return new WaitForSeconds(3f);
                 encounterController.RoundLost();
                 encounterController.GetAway();
                 encounterController.enemyScore += 1;
@@ -107,6 +109,7 @@ public class CombatController : MonoBehaviour {
             }
             //Jos pelaaja pääsee Tresholdin sisään hän voittaa pelin
             else {
+                yield return new WaitForSeconds(3f);
                 Debug.Log("voitto");
                 enemyHandNumber = 0;
                 myHandNumber = 0;
