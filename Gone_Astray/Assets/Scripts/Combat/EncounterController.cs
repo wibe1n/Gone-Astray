@@ -23,7 +23,8 @@ public class EncounterController : MonoBehaviour {
     public List<int> myHand;
     public int myScore, enemyScore, winTarget, minimFireflies, round;
     private int tutorialPart = 0;
-    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon, nextButton, notEnoughIcon, outOfFliesIcon, scoreCanvas, roundText, scoreText, wonOrLostText, encounterEndText, encounterEndCanvas, fireflyCounter, usedFireflyCounter, useFirefly;
+    public GameObject gameCanvas, textPanel, runButton, approachButton, tutorialButton, fireflyIcon, darknessIcon, proceedButton, loseIcon, winIcon,
+        nextButton, notEnoughIcon, outOfFliesIcon, scoreCanvas, roundText, scoreText, wonOrLostText, encounterEndText, encounterEndCanvas, fireflyCounter, usedFireflyCounter, useFirefly;
     public Text infoText;
     public GameObject runAwayScreen;
     public bool reached = false;
