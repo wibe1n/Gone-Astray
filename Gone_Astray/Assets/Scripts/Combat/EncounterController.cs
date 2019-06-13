@@ -17,7 +17,7 @@ public class EncounterController : MonoBehaviour {
     public List<Firefly> myFireflies = new List<Firefly>();
     public List<Firefly> usedFireflies = new List<Firefly>();
     private List<GameObject> lights = new List<GameObject>();
-    public Animator lightballAnimator, darkBallAnimator, lightIconAnimator, darkIconAnimator;
+    public Animator lightballAnimator, darkBallAnimator, lightIconAnimator, darkIconAnimator, useFireflyAnimator;
     public List<int> deck = new List<int>() { };
     public int enemyHand;
     public List<int> myHand;
@@ -32,6 +32,7 @@ public class EncounterController : MonoBehaviour {
     public bool proceed = false;
     public Image fireFlyImage;
     public Image darknessImage;
+    public GameObject Fireflyball;
     private FMOD.Studio.EventInstance battleMusic;
 
     private void Start() {
@@ -312,6 +313,16 @@ public class EncounterController : MonoBehaviour {
         yield return null;
     }
 
+    public void UseFirefly() {
+        StartCoroutine(UseFireflyRoutine());
+    }
+
+    IEnumerator UseFireflyRoutine(){
+        useFireflyAnimator.SetBool("Clicked", true);
+        yield return new WaitForSeconds(1f);
+        useFireflyAnimator.SetBool("Clicked", false);
+    }
+
     public void RollLightBall() {
         StartCoroutine(RollLightBallRoutine());
     }
@@ -401,6 +412,7 @@ public class EncounterController : MonoBehaviour {
             fireflyIcon.SetActive(false);
             darknessIcon.SetActive(false);
             useFirefly.SetActive(false);
+            Fireflyball.SetActive(false);
             proceedButton.SetActive(false);
         }
 
@@ -462,6 +474,7 @@ public class EncounterController : MonoBehaviour {
         fireflyIcon.SetActive(true);
         darknessIcon.SetActive(true);
         useFirefly.SetActive(true);
+        Fireflyball.SetActive(true);
         proceedButton.SetActive(true);
         GenerateBlackJackDeck();
         ShuffleDeck();
@@ -505,6 +518,7 @@ public class EncounterController : MonoBehaviour {
             if (!tutorial){
                 useFirefly.SetActive(true);
                 proceedButton.SetActive(true);
+                Fireflyball.SetActive(true);
             }
             UpdateFlyAmount(fireflyCounter, myFireflies.Count);
             UpdateFlyAmount(usedFireflyCounter, usedFireflies.Count);
