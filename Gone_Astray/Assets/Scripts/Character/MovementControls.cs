@@ -26,7 +26,7 @@ public class MovementControls : MonoBehaviour {
     {
         //Haetaan keybindingit
         encounter = false;
-		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
+        if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
 			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
 			if (undyObj.crouchKey == KeyCode.None)
 				crouchKey = KeyCode.C;

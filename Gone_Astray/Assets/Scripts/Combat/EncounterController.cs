@@ -321,6 +321,9 @@ public class EncounterController : MonoBehaviour {
         useFireflyAnimator.SetBool("Clicked", true);
         yield return new WaitForSeconds(1f);
         useFireflyAnimator.SetBool("Clicked", false);
+        lightballAnimator.SetBool("Used", true);
+        yield return new WaitForSeconds(0.5f);
+        lightballAnimator.SetBool("Used", false);
     }
 
     public void RollLightBall() {
