@@ -188,7 +188,7 @@ public class CombatController : MonoBehaviour {
 
             enemyTreshold += 1;
         }
-        Debug.Log(enemyHandNumber + enemyTreshold);
+        encounterController.UseFirefly();
     }
 
 }
