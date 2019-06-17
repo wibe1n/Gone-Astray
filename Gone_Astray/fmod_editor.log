@@ -4,12 +4,12 @@
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000102A50FF8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000102A50FF8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000BAF9FE58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000BAF9FE58
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000000005E3AF258 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000000005E3AFF68 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -17,20 +17,19 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BB0BC458
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BA889E88
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_FOOTSTEPV2-03', format=2, channels=2, frequency=48000, lengthbytes=3328, lengthpcm=15040, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.086886.
@@ -39,14 +38,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BB0BC458
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BA889E88
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_FOOTSTEPV2-04', format=2, channels=2, frequency=48000, lengthbytes=3520, lengthpcm=15296, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.349164.
@@ -55,14 +54,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BB0BC458
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BA889E88
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_FOOTSTEPV2-01', format=2, channels=2, frequency=48000, lengthbytes=4640, lengthpcm=16832, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.239042.
@@ -71,14 +70,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BB0BC458
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BA889E88
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_FOOTSTEPV2-02', format=2, channels=2, frequency=48000, lengthbytes=4416, lengthpcm=18048, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.134517.
@@ -87,14 +86,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BB0BC458
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BA889E88
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_WATERSTEP-03', format=2, channels=2, frequency=48000, lengthbytes=4768, lengthpcm=17347, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.365898.
@@ -103,14 +102,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BB0BC458
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BA889E88
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_WATERSTEP-04', format=2, channels=2, frequency=48000, lengthbytes=4640, lengthpcm=16059, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.206685.
@@ -119,14 +118,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BB0BC458
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BA889E88
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_WATERSTEP-01', format=2, channels=2, frequency=48000, lengthbytes=5568, lengthpcm=19351, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.188023.
@@ -135,14 +134,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BB0BC458
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BA889E88
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_WATERSTEP-02', format=2, channels=2, frequency=48000, lengthbytes=5888, lengthpcm=19456, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.141224.
@@ -151,14 +150,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000D812EDD8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000D84F1848
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_MILAJUMP-02', format=2, channels=2, frequency=48000, lengthbytes=9568, lengthpcm=38784, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.498723.
@@ -167,14 +166,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000D812EDD8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000D84F1848
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_MILAJUMP-01', format=2, channels=2, frequency=48000, lengthbytes=8256, lengthpcm=38016, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.466966.
@@ -183,14 +182,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BB0BC458
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000D84F1638
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_MILALAND-01', format=2, channels=2, frequency=48000, lengthbytes=8704, lengthpcm=40960, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.399247.
@@ -199,14 +198,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 33849088
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46400
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000FCD6F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000B04AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0EFA1220
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0EFA11F0
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0EFA12F0
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0EFA13B0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000BB0BC458
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000D84F1638
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='20190402_SESTRA_MILALAND-02', format=2, channels=2, frequency=48000, lengthbytes=4000, lengthpcm=17088, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.579208.
@@ -217,56 +216,52 @@
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
-[LOG] SoundI::release                          : BIRBS (0000000102A50428)
-[LOG] SoundI::release                          :     BIRBS (00000000BAF9FDA8)
-[LOG] SoundI::release                          :     BIRBS (0000000102A50FF8)
-[LOG] SoundI::release                          : POHJA (0000000102A50E48)
-[LOG] SoundI::release                          :     POHJA (00000000BAFA0428)
-[LOG] SoundI::release                          :     POHJA (0000000102A51508)
-[LOG] SoundI::release                          : Gone_Astray_Ambient_Music_051218 (0000000102A50AE8)
-[LOG] SoundI::release                          :     Gone_Astray_Ambient_Music_051218 (000000004C8C5658)
-[LOG] SoundI::release                          :     Gone_Astray_Ambient_Music_051218 (0000000102A516B8)
-[LOG] SoundI::release                          : Gone_Astray_Ambient_Music_051218 (0000000102A51A18)
-[LOG] SoundI::release                          :     Gone_Astray_Ambient_Music_051218 (000000004C8C4958)
-[LOG] SoundI::release                          :     Gone_Astray_Ambient_Music_051218 (0000000102A50C98)
-[LOG] SoundI::release                          :  (00000000D82FEC28)
-[LOG] SoundI::release                          :     20190402_SESTRA_MILAJUMP-01 (00000000AE1B7BB8)
-[LOG] SoundI::release                          :  (00000000D82FF078)
-[LOG] SoundI::release                          :     20190402_SESTRA_MILAJUMP-02 (00000000AE1B7878)
-[LOG] SoundI::release                          :  (00000000D82FE0A8)
-[LOG] SoundI::release                          :     20190402_SESTRA_MILALAND-02 (00000000BAFA0908)
-[LOG] SoundI::release                          :  (00000000D82FED98)
-[LOG] SoundI::release                          :     20190402_SESTRA_MILALAND-01 (00000000BAF9F588)
-[LOG] SoundI::release                          :  (00000000D82FDDC8)
-[LOG] SoundI::release                          :     20190402_SESTRA_FOOTSTEPV2-01 (00000000BAFA00E8)
-[LOG] SoundI::release                          :  (00000000D82FDF38)
-[LOG] SoundI::release                          :     20190402_SESTRA_FOOTSTEPV2-02 (00000000BAFA0288)
-[LOG] SoundI::release                          :  (00000000D82FD808)
-[LOG] SoundI::release                          :     20190402_SESTRA_FOOTSTEPV2-03 (00000000BAFA05C8)
-[LOG] SoundI::release                          :  (00000000D82FDC58)
-[LOG] SoundI::release                          :     20190402_SESTRA_FOOTSTEPV2-04 (00000000BAF9FF48)
-[LOG] SoundI::release                          :  (00000000D82FDAE8)
-[LOG] SoundI::release                          :     20190402_SESTRA_WATERSTEP-01 (00000000BAF9F3E8)
-[LOG] SoundI::release                          :  (00000000D82FD698)
-[LOG] SoundI::release                          :     20190402_SESTRA_WATERSTEP-02 (00000000BAF9F248)
-[LOG] SoundI::release                          :  (00000000D82FE948)
-[LOG] SoundI::release                          :     20190402_SESTRA_WATERSTEP-03 (00000000BAF9F0A8)
-[LOG] SoundI::release                          :  (00000000D82FD978)
-[LOG] SoundI::release                          :     20190402_SESTRA_WATERSTEP-04 (00000000BAFA0768)
-[LOG] SoundI::release                          :  (000000004C1D7B78)
-[LOG] SoundI::release                          :     BIRD_FLYBY_DRY (00000000AE1B7D58)
-[LOG] SoundI::release                          :  (00000000AE446A48)
-[LOG] SoundI::release                          :     OWL_DRY (00000000AE1B7538)
-[LOG] SoundI::release                          :  (00000000AD8E4C18)
-[LOG] SoundI::release                          :     RAVEN-01_DRY (00000000AE1B7EF8)
-[LOG] SoundI::release                          :  (00000000AD8E47C8)
-[LOG] SoundI::release                          :     RAVEN-02_DRY (00000000A76BECF8)
-[LOG] SoundI::release                          :  (00000000AE446768)
-[LOG] SoundI::release                          :     WOLF_DRY (00000000AE1B76D8)
+[LOG] SoundI::release                          : BIRBS (00000000BAF9F948)
+[LOG] SoundI::release                          :     BIRBS (000000004C83A288)
+[LOG] SoundI::release                          :     BIRBS (00000000BAF9FE58)
+[LOG] SoundI::release                          : POHJA (00000000BAF9F5E8)
+[LOG] SoundI::release                          :     POHJA (00000000BB00C748)
+[LOG] SoundI::release                          :     POHJA (00000000BAF9FAF8)
+[LOG] SoundI::release                          : Gone_Astray_Ambient_Music_051218 (00000000BAFA0008)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Music_051218 (000000005E03F5F8)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Music_051218 (00000000BAF9FCA8)
+[LOG] SoundI::release                          : Gone_Astray_Ambient_Music_051218 (00000000BAF9F438)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Music_051218 (000000005E03F798)
+[LOG] SoundI::release                          :     Gone_Astray_Ambient_Music_051218 (00000000BAF9F0D8)
+[LOG] SoundI::release                          :  (00000000BA529708)
+[LOG] SoundI::release                          :     20190402_SESTRA_MILAJUMP-01 (000000004C839F48)
+[LOG] SoundI::release                          :  (00000000BA529598)
+[LOG] SoundI::release                          :     20190402_SESTRA_MILAJUMP-02 (000000004C83A428)
+[LOG] SoundI::release                          :  (00000000BA55BC78)
+[LOG] SoundI::release                          :     20190402_SESTRA_MILALAND-02 (000000004C8398C8)
+[LOG] SoundI::release                          :  (000000000B4178F8)
+[LOG] SoundI::release                          :     20190402_SESTRA_MILALAND-01 (000000004C839728)
+[LOG] SoundI::release                          :  (00000000BA5288A8)
+[LOG] SoundI::release                          :     BIRD_FLYBY_DRY (00000000BB00D448)
+[LOG] SoundI::release                          :  (00000000BA5285C8)
+[LOG] SoundI::release                          :     OWL_DRY (00000000BB00CA88)
+[LOG] SoundI::release                          :  (00000000BA527E98)
+[LOG] SoundI::release                          :     RAVEN-01_DRY (00000000BB00D108)
+[LOG] SoundI::release                          :  (00000000BA5292B8)
+[LOG] SoundI::release                          :     RAVEN-02_DRY (00000000BB00C8E8)
+[LOG] SoundI::release                          :  (00000000BA5299E8)
+[LOG] SoundI::release                          :     WOLF_DRY (00000000BB00D2A8)
+[LOG] SoundI::release                          :  (00000000BA529878)
+[LOG] SoundI::release                          :     20190402_SESTRA_FOOTSTEPV2-01 (00000000A73AA8C8)
+[LOG] SoundI::release                          :  (00000000BA5282E8)
+[LOG] SoundI::release                          :     20190402_SESTRA_FOOTSTEPV2-02 (00000000A73A9F08)
+[LOG] SoundI::release                          :  (00000000BA528A18)
+[LOG] SoundI::release                          :     20190402_SESTRA_FOOTSTEPV2-03 (000000004CD16968)
+[LOG] SoundI::release                          :  (00000000BA528178)
+[LOG] SoundI::release                          :     20190402_SESTRA_FOOTSTEPV2-04 (000000004CD16CA8)
+[LOG] SoundI::release                          :  (00000000BA528CF8)
+[LOG] SoundI::release                          :     20190402_SESTRA_WATERSTEP-01 (000000004C8C4958)
+[LOG] SoundI::release                          :  (00000000BA528E68)
+[LOG] SoundI::release                          :     20190402_SESTRA_WATERSTEP-02 (000000004CC07288)
+[LOG] SoundI::release                          :  (00000000BA528458)
+[LOG] SoundI::release                          :     20190402_SESTRA_WATERSTEP-03 (00000000A73AA0A8)
+[LOG] SoundI::release                          :  (00000000BA528B88)
+[LOG] SoundI::release                          :     20190402_SESTRA_WATERSTEP-04 (000000004C8C5658)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -284,3 +279,10 @@
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
