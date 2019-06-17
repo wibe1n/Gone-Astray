@@ -2118,15 +2118,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 40
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -156
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 35
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2158,6 +2158,20 @@ Prefab:
       propertyPath: _igcController
       value: 
       objectReference: {fileID: 1528102230}
+    - target: {fileID: 114411864833408978, guid: 94b58afffabd5234db3d6adc6b89f108,
+        type: 2}
+      propertyPath: m_StepDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647486948387064, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95802295890919918, guid: 94b58afffabd5234db3d6adc6b89f108,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
   m_IsPrefabAsset: 0

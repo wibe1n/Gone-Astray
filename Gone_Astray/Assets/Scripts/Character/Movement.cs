@@ -37,8 +37,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
     Vector3 theMove;
 
-
-        //Alustetaan animaattori ja hahmo
+    //Alustetaan animaattori ja hahmo
     void Start() {
             m_Animator = GetComponent<Animator>();
             m_Rigidbody = GetComponent<Rigidbody>();
@@ -78,6 +77,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
             // send input and other state parameters to the animator
             UpdateAnimator(move, jump);
+
         }
 
 
@@ -134,7 +134,7 @@ using UnityStandardAssets.CrossPlatformInput;
                 Mathf.Repeat(
                     m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime + m_RunCycleLegOffset, 1);
             float jumpLeg = (runCycle < k_Half ? 1 : -1) * m_ForwardAmount;
-            if (m_IsGrounded) {
+        if (m_IsGrounded) {
                 m_Animator.SetFloat("JumpLeg", jumpLeg);
             }
 
