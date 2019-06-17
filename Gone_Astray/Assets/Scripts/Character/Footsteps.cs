@@ -9,13 +9,10 @@ public class Footsteps : MonoBehaviour
     [FMODUnity.EventRef]
     public string m_EventPath;
 
-    public float m_Wood;
-    public float m_Water;
-    public float m_Dirt;
-    public float m_Sand;
+    public float m_GroundType;
 
-    public float m_StepDistance = 2.0f;
-    float m_StepRand;
+    public float m_StepDistance;
+
     Vector3 m_PrevPos;
     float m_DistanceTravelled;
 
@@ -33,7 +30,7 @@ public class Footsteps : MonoBehaviour
         Random.InitState(System.DateTime.Now.Second);
 
         //Initialise member variables
-        m_StepRand = Random.Range(0.0f, 0.5f);
+        m_StepDistance = 1;
         m_PrevPos = transform.position;
         m_LinePos = transform.position;
     }
@@ -42,12 +39,12 @@ public class Footsteps : MonoBehaviour
     {
         // Kun ollaan edetty tietyn verran matkaa ja ollaan maassa soitetaan jalanjälki ääni
         m_DistanceTravelled += (transform.position - m_PrevPos).magnitude;
-        if (m_DistanceTravelled >= m_StepDistance + m_StepRand)//TODO: Play footstep sound based on position from headbob script
+
+        if (m_DistanceTravelled >= m_StepDistance)//TODO: Play footstep sound based on position from headbob script
         {
             if (movement.m_IsGrounded) {
                 PlayFootstepSound();
             }
-            m_StepRand = Random.Range(0.0f, 0.5f);//Adding subtle random variation to the distance required before a step is taken - Re-randomise after each step.
             m_DistanceTravelled = 0.0f;
         }
 
@@ -65,10 +62,7 @@ public class Footsteps : MonoBehaviour
     void PlayFootstepSound()
     {
         //Defaults
-        m_Water = 0.0f;
-        m_Dirt = 1.0f;
-        m_Sand = 0.0f;
-        m_Wood = 0.0f;
+        m_GroundType = 0.0f;
 
         RaycastHit hit;
         // lähetetään maahan raycasti, haetaan maaston materiaali ja soitetaan oikea ääni sen perusteella. Jos ei ole materiaalia, niin soitetaan default ääni
@@ -119,31 +113,25 @@ public class Footsteps : MonoBehaviour
                         //m_Dirt = (1.0f - maskPixel.a);
                         //m_Sand = maskPixel.a - m_Water * 0.1f;//Ducking the sand a little for the water
                         //m_Wood = 0.0f;
+                        m_GroundType = 0.2f;
 
                     }
+
+
                 }
             }
             else//If the ray hits somethign other than the ground, we assume it hit a wooden prop - and set the parameter values for wood.
             {
-                m_Water = 0.0f;
-                m_Dirt = 0.0f;
-                m_Sand = 0.0f;
-                m_Wood = 1.0f;
+                m_GroundType = 0.0f;
             }
         }
 
-        if (m_Debug)
-            Debug.Log("Wood: " + m_Wood + " Dirt: " + m_Dirt + " Sand: " + m_Sand + " Water: " + m_Water);
 
         if (m_EventPath != null)
         {
             FMOD.Studio.EventInstance e = FMODUnity.RuntimeManager.CreateInstance(m_EventPath);
             e.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
-
-            SetParameter(e, "Wood", m_Wood);
-            SetParameter(e, "Dirt", m_Dirt);
-            SetParameter(e, "Sand", m_Sand);
-            SetParameter(e, "Water", m_Water);
+            SetParameter(e, "GroundType", m_GroundType);
 
             e.start();
             e.release();//Release each event instance immediately, there are fire and forget, one-shot instances. 
