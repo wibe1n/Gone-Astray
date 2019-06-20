@@ -7,7 +7,7 @@ public class MoveToWaypoints : MonoBehaviour {
     public GameObject[] waypoints;
     private HoveringObject hovering;
     public Vector3 tempPosition;
-    int current = 0;
+    public int current = 0;
     float rotSpeed;
     public float speed;
     float Wpradius = 1;
@@ -37,7 +37,8 @@ public class MoveToWaypoints : MonoBehaviour {
                 proceed = false;
             }
         }
-        //Muuten mennään kohti etappi
+        Debug.Log(proceed);
+        //Muuten mennään kohti etappia
         if (proceed)
         {
             transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, Time.deltaTime * speed);
