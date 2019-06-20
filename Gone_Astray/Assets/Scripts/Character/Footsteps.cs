@@ -77,7 +77,6 @@ public class Footsteps : MonoBehaviour
                 if (materialIndex != -1)
                 {
                     Material material = hit.collider.gameObject.GetComponent<Renderer>().materials[materialIndex];
-                    Debug.Log(material.name);
                     if (material.name == "SwampMat1 (Instance)")
                     {
                         

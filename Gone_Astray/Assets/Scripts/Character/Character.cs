@@ -70,7 +70,19 @@ public class Character : MonoBehaviour {
         _igcController.UpdateFlyAmount(myFireflies.Count);
         
         ParticleSystem.MainModule system = fireflies.main;
-        system.maxParticles += 1;
+        if (system.maxParticles != 8) {
+            system.maxParticles += 1;
+        }
+        
+    }
+
+    public void RemoveFirefly() {
+
+    }
+
+    public void UpdateParticles() {
+        ParticleSystem.MainModule system = fireflies.main;
+        system.maxParticles = myFireflies.Count;
     }
 
 

@@ -60,18 +60,22 @@ public class NPC : MonoBehaviour {
                         m_MyEvent.Invoke();
                         break;
                     case 17:
+                        player.gameObject.GetComponent<MovementControls>().stop = true;
                         m_MyEvent.Invoke();
                         break;
                     case 21:
                         m_MyEvent.Invoke();
                         break;
                     case 23:
+                        player.gameObject.GetComponent<MovementControls>().stop = true;
                         m_MyEvent.Invoke();
                         break;
                     case 28:
+                        player.gameObject.GetComponent<MovementControls>().stop = true;
                         m_MyEvent.Invoke();
                         break;
                     case 37:
+                        player.gameObject.GetComponent<MovementControls>().stop = true;
                         m_MyEvent.Invoke();
                         break;
                 }
@@ -98,8 +102,33 @@ public class NPC : MonoBehaviour {
             //Jos pelaaja kävelee liian kauas puhujasta puhumisen aikana, niin npc ruikuttaa
             else if (!(currentSpeechInstance == maxSpeechInstance))
             {
-                speechCreator.WentTooFar(this);
-                StartCoroutine(CloseWhineBox(20));
+                //Fian puhumisista ei tule aina valitusta
+                if(id == 6 && maxSpeechInstance == 13) {
+                    Canvas.SetActive(false);
+                    talking = false;
+                    speechCreator.CloseSpeechBubble(this);
+                    m_MyEvent.RemoveListener(TalkEvent);
+                    Destroy(this);
+                }
+                else if (id == 6 && maxSpeechInstance == 15) {
+                    Canvas.SetActive(false);
+                    talking = false;
+                    speechCreator.CloseSpeechBubble(this);
+                    m_MyEvent.RemoveListener(TalkEvent);
+                    Destroy(this);
+                }
+                else if (id == 6 && maxSpeechInstance == 22)
+                {
+                    Canvas.SetActive(false);
+                    talking = false;
+                    speechCreator.CloseSpeechBubble(this);
+                    m_MyEvent.RemoveListener(TalkEvent);
+                    Destroy(this);
+                }
+                else {
+                    speechCreator.WentTooFar(this);
+                    StartCoroutine(CloseWhineBox(20));
+                }
             }
         }
     }
@@ -153,6 +182,7 @@ public class NPC : MonoBehaviour {
                             currentSpeechInstance = 17;
                             break;
                         case 20:
+                            player.gameObject.GetComponent<MovementControls>().stop = false;
                             Canvas.SetActive(false);
                             Destroy(gameObject);
                             currentSpeechInstance = 21;
@@ -163,14 +193,17 @@ public class NPC : MonoBehaviour {
                             currentSpeechInstance = 23;
                             break;
                         case 27:
+                            player.gameObject.GetComponent<MovementControls>().stop = false;
                             Canvas.SetActive(false);
                             Destroy(gameObject);
                             break;
                         case 36:
+                            player.gameObject.GetComponent<MovementControls>().stop = false;
                             Canvas.SetActive(false);
                             Destroy(gameObject);
                             break;
                         case 39:
+                            player.gameObject.GetComponent<MovementControls>().stop = false;
                             Canvas.SetActive(false);
                             Destroy(gameObject);
                             break;

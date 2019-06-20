@@ -136,18 +136,13 @@ public class CombatController : MonoBehaviour {
             encounterController.NextTutorialPart();
         }
         else {
-            //Jos ei ole tarpeeksi tulikärpäsiä
-            if (encounterController.myFireflies.Count == 0) {
-                encounterController.OutOfFlies();
-            }
+            
             //Pakan päällimäinen kortti lisätään omaan käteen, poistetaan yksi tulikärpänen varastosta, päivitetään teksti
-            else
-            {
-                encounterController.GetCloser();
-                encounterController.myHand.Add(encounterController.deck[0]);
-                myHandNumber += encounterController.deck[0];
-                encounterController.deck.RemoveAt(0);
-            }
+             encounterController.GetCloser();
+             encounterController.myHand.Add(encounterController.deck[0]);
+             myHandNumber += encounterController.deck[0];
+             encounterController.deck.RemoveAt(0);
+
             //Jos oma käsi on yli hirviön häiritsemisrajan, häviää kierroksen
             if (myHandNumber > enemyHandNumber + enemyTreshold) {
                 encounterController.RoundLost();
@@ -180,15 +175,21 @@ public class CombatController : MonoBehaviour {
         if (encounterController.tutorial) {
             encounterController.NextTutorialPart();
         }
-        if (encounterController.myFireflies.Count > 0) {
-            encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
-            encounterController.UpdateFlyAmount(encounterController.usedFireflyCounter, encounterController.usedFireflies.Count);
-            encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
-            encounterController.UpdateFlyAmount(encounterController.fireflyCounter, encounterController.myFireflies.Count);
-
-            enemyTreshold += 1;
+        //Jos ei ole tarpeeksi tulikärpäsiä
+        if (encounterController.myFireflies.Count == 0) {
+            encounterController.OutOfFlies();
         }
-        encounterController.UseFirefly();
+        else {
+            if(encounterController.usedFireFly == false) {
+                encounterController.usedFireFly = true;
+                encounterController.usedFireflies.Add(encounterController.myFireflies[encounterController.myFireflies.Count - 1]);
+                encounterController.UpdateFlyAmount(encounterController.usedFireflyCounter, encounterController.usedFireflies.Count);
+                encounterController.myFireflies.RemoveAt(encounterController.myFireflies.Count - 1);
+                encounterController.UpdateFlyAmount(encounterController.fireflyCounter, encounterController.myFireflies.Count);
+                encounterController.UseFirefly();
+                enemyTreshold += 1;
+            }
+        }
     }
 
 }
