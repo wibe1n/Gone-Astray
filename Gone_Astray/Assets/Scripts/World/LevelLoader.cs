@@ -7,7 +7,7 @@ public class LevelLoader : MonoBehaviour {
     public string loadPath;
 	public GameObject spawnLocation;
     private ResourceRequest levelRequest;
-    private GameObject nextLevel;
+    public GameObject nextLevel;
 
     private void OnTriggerEnter(Collider col) {
         AsyncLoadLevel();
@@ -19,10 +19,11 @@ public class LevelLoader : MonoBehaviour {
 
     //Lataa levelin uuden osan taustalla
     IEnumerator AsyncLoad() {
-        levelRequest = Resources.LoadAsync(loadPath);
-        yield return levelRequest; 
-        nextLevel = (GameObject)levelRequest.asset;
+        //levelRequest = Resources.LoadAsync(loadPath);
+        //yield return levelRequest; 
+        //nextLevel = (GameObject)levelRequest.asset;
 		Instantiate(nextLevel,spawnLocation.transform.position,spawnLocation.transform.rotation);
+        yield return null;
     }
 
 }

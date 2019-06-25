@@ -48,7 +48,7 @@ public class Undying_Object : MonoBehaviour {
 			yield return SceneManager.LoadSceneAsync ("DemoTestLevel1");
 			break;
 		case 2:
-			yield return SceneManager.LoadSceneAsync ("TutorialLevel");
+			yield return SceneManager.LoadSceneAsync ("World");
 			break;
 		default:
 			yield return SceneManager.LoadSceneAsync ("EvenDemoTestLevel");
@@ -81,7 +81,7 @@ public class Undying_Object : MonoBehaviour {
     }
 
     private IEnumerator StartTutorial() {
-        yield return SceneManager.LoadSceneAsync("Tutorial");
+        yield return SceneManager.LoadSceneAsync("World");
 		loadingScreen.SetActive (false);
     }
 
