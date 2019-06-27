@@ -837,6 +837,11 @@ Prefab:
       propertyPath: _noiseStrength
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114295578692617318, guid: c463419246aa9e049aef45f2d992057c,
+        type: 2}
+      propertyPath: AllowFadeout
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114931501660213736, guid: c463419246aa9e049aef45f2d992057c, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: c463419246aa9e049aef45f2d992057c, type: 2}
@@ -1661,7 +1666,7 @@ Prefab:
         type: 2}
       propertyPath: pencilEffects
       value: 
-      objectReference: {fileID: 114132133}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0391fed188d31504e85b6617074c6b2d, type: 2}
   m_IsPrefabAsset: 0
@@ -2229,7 +2234,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 39
+      value: 194
       objectReference: {fileID: 0}
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2237,7 +2242,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 57
+      value: 202
       objectReference: {fileID: 0}
     - target: {fileID: 4102474446112008, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2292,48 +2297,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 554870856}
   m_Script: {fileID: 11500000, guid: 80ae3d280851bed4789cfd239dedbb4c, type: 3}
---- !u!1001 &595085319
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4310706867202046, guid: 16cb3c898d8c3734283090831beec04f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 62.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4310706867202046, guid: 16cb3c898d8c3734283090831beec04f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4310706867202046, guid: 16cb3c898d8c3734283090831beec04f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 199.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4310706867202046, guid: 16cb3c898d8c3734283090831beec04f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4310706867202046, guid: 16cb3c898d8c3734283090831beec04f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4310706867202046, guid: 16cb3c898d8c3734283090831beec04f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4310706867202046, guid: 16cb3c898d8c3734283090831beec04f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4310706867202046, guid: 16cb3c898d8c3734283090831beec04f, type: 2}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 16cb3c898d8c3734283090831beec04f, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &633599692
 GameObject:
   m_ObjectHideFlags: 0
@@ -8892,7 +8855,7 @@ Prefab:
         type: 2}
       propertyPath: pencilEffects
       value: 
-      objectReference: {fileID: 114132133}
+      objectReference: {fileID: 0}
     - target: {fileID: 114069690060068658, guid: 0eac476b39a6e624eb45b7361976477d,
         type: 2}
       propertyPath: endDarkness
@@ -15292,7 +15255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1805366618}
   m_Layer: 0
-  m_Name: -- Spots For Testing --
+  m_Name: -- SPOTS FOR TESTING --
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15999,7 +15962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2092444250}
   m_Layer: 0
-  m_Name: --Level--
+  m_Name: --LEVEL--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

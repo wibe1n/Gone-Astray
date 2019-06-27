@@ -17,6 +17,7 @@ public class SpoopyTrigger : MonoBehaviour {
     //haetaan pelottava musiikki ja asetetaan valaistus parametrit
     void Start () {
         ambienceSounds = GameObject.FindGameObjectWithTag("CameraRig");
+        pencilEffects = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PencilContourEffect>();
         spoopySounds = FMODUnity.RuntimeManager.CreateInstance("event:/Ambience/AmbientMusic");
         spoopySounds.getParameter("Progression", out spoopyParameter);
         currentDarkness = 0;

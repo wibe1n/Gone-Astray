@@ -13,6 +13,7 @@ public class CalmTrigger : MonoBehaviour {
     //Asetetaan parametrit
     void Start() {
         ambienceSounds = GameObject.FindGameObjectWithTag("CameraRig");
+        pencilEffects = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PencilContourEffect>();
         endLight = 0f;
         duration = 10f;
 
