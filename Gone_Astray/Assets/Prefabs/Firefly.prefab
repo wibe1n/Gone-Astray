@@ -191,10 +191,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIndex: 0
-  speechCreator: {fileID: 0}
-  Canvas: {fileID: 0}
+  speechCreator: {fileID: 114442612373769562, guid: 0e506ba819be93f40b73bf9a47ebfa65,
+    type: 2}
+  Canvas: {fileID: 1077788679410260, guid: 0e506ba819be93f40b73bf9a47ebfa65, type: 2}
   isCollectable: 1
   isFirefly: 1
+  isLeshen: 0
+  isRaskovnik: 0
+  pickKey: 0
 --- !u!114 &114860467773051832
 MonoBehaviour:
   m_ObjectHideFlags: 1

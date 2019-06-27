@@ -37,7 +37,6 @@ public class MoveToWaypoints : MonoBehaviour {
                 proceed = false;
             }
         }
-        Debug.Log(proceed);
         //Muuten mennään kohti etappia
         if (proceed)
         {

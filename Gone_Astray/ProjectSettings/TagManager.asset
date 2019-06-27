@@ -12,6 +12,7 @@ TagManager:
   - CameraRig
   - CalmTrigger
   - SpoopyTrigger
+  - Interact
   layers:
   - Default
   - TransparentFX
