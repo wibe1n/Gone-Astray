@@ -34,7 +34,7 @@ MonoBehaviour:
   - {fileID: 114305736442880936}
   MasterBankRef: {fileID: 114375162788409670}
   StringsBankRef: {fileID: 114623419513529220}
-  stringsBankWriteTime: 636966262253606557
+  stringsBankWriteTime: 637021814498988477
   cacheVersion: 2
 --- !u!114 &114004181229255018
 MonoBehaviour:
@@ -127,6 +127,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114018102366899948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: PianoVolume
   Min: 0
   Max: 1
   Default: 0
@@ -314,6 +329,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: PianoVolume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114056793201753880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BirdsCrickets
   Min: 0
   Max: 1
   Default: 0
@@ -735,7 +765,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114830682824083776}
+  - {fileID: 114018102366899948}
   MinDistance: 0
   MaxDistance: 0
   Length: 209032
@@ -838,6 +868,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ignore
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114118887105407646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: GroundType
   Min: 0
   Max: 1
   Default: 0
@@ -1972,6 +2017,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114323314461418206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ignore
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114325481407977900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2302,7 +2362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\ville\Documents\Gone_Astray\Gone-Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
     Bank.bank
-  lastModified: 636966262253505006
+  lastModified: 637021814498988477
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -3526,6 +3586,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114580011876041112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: GroundType
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114582408534611108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3717,7 +3792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Gone_Astray_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636966262253606557
+  lastModified: 637021814498988477
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -3854,6 +3929,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114656054067189458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spoopy
   Min: 0
   Max: 1
   Default: 0
@@ -4324,6 +4414,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 31314624
   Exists: 1
+--- !u!114 &114734943248637192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114736430336912058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4361,6 +4466,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 249230
+--- !u!114 &114741269322927034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Progression
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114748359181701444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4418,7 +4538,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114299940568617100}
+  - {fileID: 114118887105407646}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -4782,7 +4902,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114809800943455088}
+  - {fileID: 114911880162889704}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -4805,6 +4925,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 12474
   Exists: 1
+--- !u!114 &114828079078353254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114830682824083776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4869,6 +5004,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114855865464658702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ignore
   Min: 0
   Max: 1
   Default: 0
@@ -5215,6 +5365,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114911880162889704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Progression
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114918640794408932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5287,6 +5452,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114927523946550158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: PianoVolume
   Min: 0
   Max: 1
   Default: 0
@@ -5822,9 +6002,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114409432284461862}
-  - {fileID: 114962909832517556}
-  - {fileID: 114760125041318122}
+  - {fileID: 114323314461418206}
+  - {fileID: 114828079078353254}
+  - {fileID: 114734943248637192}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
