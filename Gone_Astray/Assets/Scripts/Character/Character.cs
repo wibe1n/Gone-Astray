@@ -67,7 +67,10 @@ public class Character : MonoBehaviour {
         Firefly firefly = new Firefly(0);
         myFireflies.Add(firefly);
         //Päivitetään in game canvasiin kärpästen määrä
-        _igcController.UpdateFlyAmount(myFireflies.Count);
+        if(_igcController != null) {
+            _igcController.UpdateFlyAmount(myFireflies.Count);
+        }
+        
         
         ParticleSystem.MainModule system = fireflies.main;
         if (system.maxParticles != 8) {
