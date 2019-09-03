@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController2 : MonoBehaviour
 {
+    //fixed camera
 
     public float rotationSpeed; // kameran nopeus kun sitä käännetään hiirellä
     public float followRotationSpeed; // smoothisti seuraavan kameran kääntönopeus

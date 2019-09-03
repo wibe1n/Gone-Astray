@@ -12,12 +12,12 @@ public class MonsterFollowing : MonoBehaviour {
     float rotY;
     public float startingAngle;
     public float maxDistance;
-    private bool monsterFaced, checking;
+    public bool monsterFaced, checking, turningRight;
     // Use this for initialization
     void Start () {
         checking = true;
         monsterFaced = false;
-        maxDistance = 10;
+        maxDistance = 30;
 	}
 
     private void FixedUpdate() {
@@ -34,42 +34,74 @@ public class MonsterFollowing : MonoBehaviour {
                 startingAngle = characterPosition.eulerAngles.y;
                 Debug.Log(hit.collider);
             }
-            Debug.Log(rotY);
             if (transform.eulerAngles.y > startingAngle && checking == false) {
+                if (!turningRight && lastShadow != null && secondLastShadow != null) {
+                    Debug.Log("oikealla Täällä");
+                    if (!lastShadow.GetComponent<Renderer>().isVisible && !secondLastShadow.GetComponent<Renderer>().isVisible) {
+                        Destroy(lastShadow);
+                        Destroy(secondLastShadow);
+                    }
+                    
+                }
+                turningRight = true;
                 rotY = transform.eulerAngles.y - startingAngle;
                 if (rotY >= 90) {
                     if (monsterFaced == false) {
                         if (lastShadow != null) {
-                            Destroy(secondLastShadow);
+                            Debug.Log("90 astetta oikea");
+                            Destroy(lastShadow);
                         }
                         lastShadow = Instantiate(monsterShadow, monsterPosition, monsterShadow.transform.rotation);
                         monsterFaced = true;
                     }
                 }
-                if (rotY >= 180) {
-                    secondLastShadow = lastShadow;
-                    lastShadow = Instantiate(monsterShadow, monsterPosition, monsterShadow.transform.rotation);
-                    monsterFaced = false;
-                    checking = true;
+                if (rotY >= 180 && turningRight) {
+                    if (monsterFaced)
+                    {
+                        if (lastShadow != null)
+                        {
+                            Debug.Log("180 astetta oikea");
+                            Destroy(secondLastShadow);
+                        }
+                        secondLastShadow = Instantiate(monsterShadow, monsterPosition, monsterShadow.transform.rotation);
+                        monsterFaced = false;
+                        checking = true;
+                    }
                 }
 
             }
             else if (transform.eulerAngles.y < startingAngle && checking == false) {
+                if (turningRight && lastShadow != null && secondLastShadow != null) {
+                    Debug.Log("vasemmalla Täällä");
+                    if (!lastShadow.GetComponent<Renderer>().isVisible && !secondLastShadow.GetComponent<Renderer>().isVisible) {
+                        Destroy(lastShadow);
+                        Destroy(secondLastShadow);
+                    }
+                }
+                turningRight = false;
                 rotY = transform.eulerAngles.y - startingAngle;
                 if (rotY <= -90) {
                     if(monsterFaced == false) {
                         if (lastShadow != null) {
-                            Destroy(secondLastShadow);
+                            Debug.Log("90 astetta vasen");
+                            Destroy(lastShadow);
                         }
                         lastShadow = Instantiate(monsterShadow, monsterPosition, monsterShadow.transform.rotation);
                         monsterFaced = true;
                     }
                 }
-                if (rotY <= -180) {
-                    secondLastShadow = lastShadow;
-                    lastShadow = Instantiate(monsterShadow, monsterPosition, monsterShadow.transform.rotation);
-                    monsterFaced = false;
-                    checking = true;
+                if (rotY <= -180 && !turningRight) {
+                    if (monsterFaced)
+                    {
+                        if (lastShadow != null)
+                        {
+                            Debug.Log("180 astetta vasen");
+                            Destroy(secondLastShadow);
+                        }
+                        secondLastShadow = Instantiate(monsterShadow, monsterPosition, monsterShadow.transform.rotation);
+                        monsterFaced = false;
+                        checking = true;
+                    }
                 }
             }
 
