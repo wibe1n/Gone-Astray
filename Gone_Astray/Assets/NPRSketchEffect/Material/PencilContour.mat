@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: PencilContour
   m_Shader: {fileID: 4800000, guid: 26fc45bf89162e2489eb0fcc383d616f, type: 3}
   m_ShaderKeywords: 
@@ -27,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _EdgeOnly: 0.5
+    - _EdgeOnly: 0
     - _ErrorPeriod: 10
     - _ErrorRange: 0.001
     - _NoiseAmount: 0
