@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FreeCam : MonoBehaviour
 {
+    //free camera
+
     public float rotationSpeed; // kameran nopeus kun sitä käännetään hiirellä
     public float followRotationSpeed; // smoothisti seuraavan kameran kääntönopeus
     public GameObject player; //kohde, mitä kamera seuraa
@@ -36,7 +38,7 @@ public class FreeCam : MonoBehaviour
         yRotate = Mathf.Clamp(yRotate, MinAngleY, MaxAngleY);
         xRotate += Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
         //xRotate = Mathf.Clamp (xRotate, -MaxAnglex, MaxAnglex);
-        transform.eulerAngles = new Vector3(yRotate, xRotate, 0.0f);
+        transform.eulerAngles = new Vector3(-yRotate, xRotate, 0.0f);
 
         //Kamera seuraa pelaajaa
         if ((cameraPos.transform.position - transform.position).magnitude > 0)

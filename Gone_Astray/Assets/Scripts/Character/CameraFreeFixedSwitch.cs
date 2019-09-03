@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraFreeFixedSwitch : MonoBehaviour
 {
+    //goes to camera rig. manages the two camera modes
     public bool isFreeCamera = false;
     public CameraController2 fixCam;
     public FreeCam freeCam;
