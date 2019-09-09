@@ -865,6 +865,21 @@ PrefabInstance:
       propertyPath: AllowFadeout
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114728274899490202, guid: c463419246aa9e049aef45f2d992057c,
+        type: 3}
+      propertyPath: testCube
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728274899490202, guid: c463419246aa9e049aef45f2d992057c,
+        type: 3}
+      propertyPath: testCube2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728274899490202, guid: c463419246aa9e049aef45f2d992057c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1711916923}
     m_RemovedComponents:
     - {fileID: 114931501660213736, guid: c463419246aa9e049aef45f2d992057c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c463419246aa9e049aef45f2d992057c, type: 3}
