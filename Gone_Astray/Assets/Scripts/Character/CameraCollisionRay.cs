@@ -5,6 +5,10 @@ using UnityEngine;
 public class CameraCollisionRay : MonoBehaviour {
 
     public Camera mainCamera;
+    Vector3 topRight;
+    Vector3 topLeft;
+    Vector3 bottomRight;
+    Vector3 bottomLeft;
 
     //Kameran etäisyys pelaajasta
 
@@ -32,6 +36,10 @@ public class CameraCollisionRay : MonoBehaviour {
         {
             mainCamera.transform.position = transform.position + -transform.forward * cameraDistance;
         }
-
+        topRight = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, mainCamera.nearClipPlane));
+        bottomLeft = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, mainCamera.nearClipPlane));
+        topLeft = mainCamera.ViewportToWorldPoint(new Vector3(0, 1, mainCamera.nearClipPlane));
+        bottomRight = mainCamera.ViewportToWorldPoint(new Vector3(1, 0, mainCamera.nearClipPlane));
+        
     }
 }
