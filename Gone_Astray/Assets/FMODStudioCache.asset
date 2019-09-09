@@ -16,6 +16,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &-3498927364935889767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BirdsCrickets
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &-3376883674050561227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,6 +61,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: PianoVolume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &-797758164433029155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ignore
   Min: 0
   Max: 1
   Default: 0
@@ -83,7 +115,7 @@ MonoBehaviour:
   - {fileID: 114305736442880936}
   MasterBankRef: {fileID: 6833010637896441759}
   StringsBankRef: {fileID: 114623419513529220}
-  stringsBankWriteTime: 637021814498988477
+  stringsBankWriteTime: 637036324573696325
   cacheVersion: 2
 --- !u!114 &114004181229255018
 MonoBehaviour:
@@ -859,7 +891,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -1783182219891665924}
+  - {fileID: 1374792968249772821}
   MinDistance: 0
   MaxDistance: 0
   Length: 209032
@@ -4186,7 +4218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Gone_Astray_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 637021814498988477
+  lastModified: 637036324573696325
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -4977,7 +5009,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -3376883674050561227}
+  - {fileID: 8000871649922803968}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -5363,7 +5395,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 8760945780717757408}
+  - {fileID: 1490878213870126706}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -6529,9 +6561,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 6470473808372413829}
-  - {fileID: 1045868859222681152}
-  - {fileID: -6192452310009280050}
+  - {fileID: -797758164433029155}
+  - {fileID: 7937658018525897838}
+  - {fileID: -3498927364935889767}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -6567,6 +6599,38 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &1374792968249772821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: PianoVolume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &1490878213870126706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Progression
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &6470473808372413829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6597,12 +6661,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\ville\Documents\Gone_Astray\Gone-Astray\Gone_Astray\Gone_Astray_FMOD\Build\Desktop\Master
     Bank.bank
-  lastModified: 637021814498988477
+  lastModified: 637036324573645843
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 33909024
   Exists: 1
+--- !u!114 &7937658018525897838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spoopy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &8000871649922803968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: GroundType
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &8760945780717757408
 MonoBehaviour:
   m_ObjectHideFlags: 0
