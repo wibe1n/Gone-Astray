@@ -8,7 +8,11 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
 <<<<<<< HEAD
+<<<<<<< HEAD
 [LOG] AsyncManager::init                       : manager 0000029B432DD5F8 isAsync 0 updatePeriod 0.02
+=======
+[LOG] AsyncManager::init                       : manager 000000004FAC5D98 isAsync 0 updatePeriod 0.02
+>>>>>>> parent of aac7ed1... uus versio
 =======
 [LOG] AsyncManager::init                       : manager 000000004FAC5D98 isAsync 0 updatePeriod 0.02
 >>>>>>> parent of aac7ed1... uus versio
@@ -19,6 +23,7 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
+<<<<<<< HEAD
 <<<<<<< HEAD
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 101)
@@ -33,5 +38,7 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+=======
+>>>>>>> parent of aac7ed1... uus versio
 =======
 >>>>>>> parent of aac7ed1... uus versio

@@ -89,10 +89,13 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: 3dbae61b60b493b46ae80ac8620697be,
 =======
+=======
+>>>>>>> parent of aac7ed1... uus versio
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000014, guid: 3dbae61b60b493b46ae80ac8620697be,
 >>>>>>> parent of aac7ed1... uus versio
@@ -750,6 +753,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114598258278960514, guid: c463419246aa9e049aef45f2d992057c,
         type: 2}
+<<<<<<< HEAD
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -768,6 +772,26 @@ Prefab:
       propertyPath: _density
       value: 0.1
       objectReference: {fileID: 0}
+=======
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114374216010105028, guid: c463419246aa9e049aef45f2d992057c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 124431660545059432, guid: c463419246aa9e049aef45f2d992057c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114598258278960514, guid: c463419246aa9e049aef45f2d992057c,
+        type: 2}
+      propertyPath: _density
+      value: 0.1
+      objectReference: {fileID: 0}
+>>>>>>> parent of aac7ed1... uus versio
     - target: {fileID: 114598258278960514, guid: c463419246aa9e049aef45f2d992057c,
         type: 2}
       propertyPath: _maxFogLength
@@ -911,6 +935,7 @@ MonoBehaviour:
   m_PrefabInternal: {fileID: 114132122}
   m_Script: {fileID: 11500000, guid: 91775e6e025025d4c8ff272d647721e4, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114132135 stripped
@@ -1007,6 +1032,8 @@ MonoBehaviour:
   isFreeCamera: 0
   fixCam: {fileID: 114132135}
   freeCam: {fileID: 114132138}
+=======
+>>>>>>> parent of aac7ed1... uus versio
 =======
 >>>>>>> parent of aac7ed1... uus versio
 --- !u!1001 &125854560
@@ -1482,6 +1509,7 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 4455780047397101494, guid: 0e506ba819be93f40b73bf9a47ebfa65,
         type: 3}
       propertyPath: cam
@@ -1508,6 +1536,9 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4084975363845196, guid: 0e506ba819be93f40b73bf9a47ebfa65, type: 3}
+=======
+    - target: {fileID: 4084975363845196, guid: 0e506ba819be93f40b73bf9a47ebfa65, type: 2}
+>>>>>>> parent of aac7ed1... uus versio
 =======
     - target: {fileID: 4084975363845196, guid: 0e506ba819be93f40b73bf9a47ebfa65, type: 2}
 >>>>>>> parent of aac7ed1... uus versio
@@ -1679,6 +1710,7 @@ Prefab:
       propertyPath: m_Name
       value: Fia
       objectReference: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     - target: {fileID: 224789618525528928, guid: 0e506ba819be93f40b73bf9a47ebfa65,
         type: 3}
@@ -1939,6 +1971,9 @@ PrefabInstance:
       value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4173196603494040, guid: 8f4c689b975cd3445ad692615227d1cd, type: 3}
+=======
+    - target: {fileID: 4173196603494040, guid: 8f4c689b975cd3445ad692615227d1cd, type: 2}
+>>>>>>> parent of aac7ed1... uus versio
 =======
     - target: {fileID: 4173196603494040, guid: 8f4c689b975cd3445ad692615227d1cd, type: 2}
 >>>>>>> parent of aac7ed1... uus versio
@@ -2659,11 +2694,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114411864833408978, guid: 94b58afffabd5234db3d6adc6b89f108,
         type: 3}
       propertyPath: m_StepDistance
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of aac7ed1... uus versio
     - target: {fileID: 114411528743361620, guid: 94b58afffabd5234db3d6adc6b89f108,
         type: 2}
       propertyPath: _pauseController
@@ -2692,6 +2730,9 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4983013057229786, guid: 94b58afffabd5234db3d6adc6b89f108, type: 2}
+<<<<<<< HEAD
+>>>>>>> parent of aac7ed1... uus versio
+=======
 >>>>>>> parent of aac7ed1... uus versio
       propertyPath: m_LocalPosition.y
       value: -156
@@ -2717,6 +2758,7 @@ Prefab:
       value: 8.35
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 114508985328420118, guid: 94b58afffabd5234db3d6adc6b89f108,
         type: 3}
       propertyPath: _pauseController
@@ -2740,6 +2782,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of aac7ed1... uus versio
 =======
 >>>>>>> parent of aac7ed1... uus versio
     m_RemovedComponents: []
@@ -5493,6 +5537,7 @@ ParticleSystem:
   ClampVelocityModule:
     enabled: 0
     x:
+<<<<<<< HEAD
       serializedVersion: 2
       minMaxState: 0
       scalar: 1
@@ -5546,6 +5591,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
+=======
+>>>>>>> parent of aac7ed1... uus versio
       serializedVersion: 2
       minMaxState: 0
       scalar: 1
@@ -10566,6 +10613,7 @@ Prefab:
       objectReference: {fileID: 21300000, guid: 4a79e0f2ea0aba64497afdb1e182b1e1,
         type: 3}
     - target: {fileID: 1382802835421442, guid: fdad39db88079f049a6df90f44d5a5b8, type: 2}
+<<<<<<< HEAD
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -10573,6 +10621,15 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+=======
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353902988880090, guid: fdad39db88079f049a6df90f44d5a5b8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> parent of aac7ed1... uus versio
     - target: {fileID: 114616138683306124, guid: fdad39db88079f049a6df90f44d5a5b8,
         type: 2}
       propertyPath: fireFlyImage
@@ -10801,6 +10858,22 @@ Prefab:
     - target: {fileID: 1022341423319826, guid: fdad39db88079f049a6df90f44d5a5b8, type: 2}
       propertyPath: m_IsActive
       value: 0
+<<<<<<< HEAD
+      objectReference: {fileID: 0}
+    - target: {fileID: 224388558326206972, guid: fdad39db88079f049a6df90f44d5a5b8,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224388558326206972, guid: fdad39db88079f049a6df90f44d5a5b8,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224388558326206972, guid: fdad39db88079f049a6df90f44d5a5b8,
+        type: 2}
+      propertyPath: m_LocalScale.z
+=======
       objectReference: {fileID: 0}
     - target: {fileID: 224388558326206972, guid: fdad39db88079f049a6df90f44d5a5b8,
         type: 2}
@@ -10825,10 +10898,24 @@ Prefab:
     - target: {fileID: 224902106249292224, guid: fdad39db88079f049a6df90f44d5a5b8,
         type: 2}
       propertyPath: m_LocalScale.y
+>>>>>>> parent of aac7ed1... uus versio
       value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 224902106249292224, guid: fdad39db88079f049a6df90f44d5a5b8,
         type: 2}
+<<<<<<< HEAD
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224902106249292224, guid: fdad39db88079f049a6df90f44d5a5b8,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224902106249292224, guid: fdad39db88079f049a6df90f44d5a5b8,
+        type: 2}
+=======
+>>>>>>> parent of aac7ed1... uus versio
       propertyPath: m_LocalScale.z
       value: 1.2
       objectReference: {fileID: 0}
