@@ -15,6 +15,8 @@ public class CameraCollisionRay : MonoBehaviour {
     RaycastHit hittl;
     RaycastHit hitbr;
     RaycastHit hitbl;
+    float vecAngle;
+    float moveLength;
 
     //Kameran etäisyys pelaajasta
 
@@ -51,23 +53,38 @@ public class CameraCollisionRay : MonoBehaviour {
         if (Physics.Raycast(topRight, playerPos - topRight, out hittr, Mathf.Ceil(Vector3.Distance(playerPos, topRight))))
         {
             if (!hittr.rigidbody)
+            {
                 Debug.Log("top right hit");
+                vecAngle = Vector3.Angle((playerPos-topRight),(playerPos-transform.position));
+                moveLength = hittr.distance* vecAngle;
+            }
         }
         if (Physics.Raycast(topLeft, playerPos - topLeft, out hittl, Mathf.Ceil(Vector3.Distance(playerPos, topLeft))))
         {
-            if(!hittl.rigidbody)
+            if (!hittl.rigidbody)
+            {
                 Debug.Log("top left hit");
+            }
         }
         if (Physics.Raycast(bottomRight, playerPos - bottomRight, out hitbr, Mathf.Ceil(Vector3.Distance(playerPos, bottomRight))))
         {
             if (!hitbr.rigidbody)
+            {
                 Debug.Log("bottom right hit");
+            }
         }
         if (Physics.Raycast(bottomLeft, playerPos - bottomLeft, out hitbl, Mathf.Ceil(Vector3.Distance(playerPos, bottomLeft))))
         {
             if (!hitbl.rigidbody)
+            {
                 Debug.Log("bottom right hit");
+            }
         }
+        if (moveLength != 0)
+        {
+            Debug.Log("siirrä kamera");
+        }
+        moveLength = 0;
     }
 }
 
