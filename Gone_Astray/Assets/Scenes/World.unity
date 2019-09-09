@@ -2921,11 +2921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4983013057229786, guid: 94b58afffabd5234db3d6adc6b89f108, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39
+      value: 193
       objectReference: {fileID: 0}
     - target: {fileID: 4983013057229786, guid: 94b58afffabd5234db3d6adc6b89f108, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 57
+      value: 202
       objectReference: {fileID: 0}
     - target: {fileID: 4983013057229786, guid: 94b58afffabd5234db3d6adc6b89f108, type: 3}
       propertyPath: m_LocalRotation.y
@@ -10873,6 +10873,28 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 554870856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1711916924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711916923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb00ad4551f6c084e960ade8236b443d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterShadow: {fileID: 1576038199721212, guid: 133cc10000e98ca4da68c23f2681d7a5,
+    type: 3}
+  lastShadow: {fileID: 0}
+  secondLastShadow: {fileID: 0}
+  monsterPosition: {x: 0, y: 0, z: 0}
+  startingAngle: 0
+  maxDistance: 0
+  monsterFaced: 0
+  checking: 0
+  turningRight: 0
 --- !u!1001 &1724898413
 PrefabInstance:
   m_ObjectHideFlags: 0
