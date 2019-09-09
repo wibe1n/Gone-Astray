@@ -62,7 +62,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114623419513529220}
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   EditorEvents:
   - {fileID: 114749379406410062}
   - {fileID: 114138515539181990}
@@ -81,7 +85,11 @@ MonoBehaviour:
   - {fileID: 114041234655809572}
   - {fileID: 114421186429075396}
   - {fileID: 114305736442880936}
+<<<<<<< HEAD
   MasterBankRef: {fileID: 6833010637896441759}
+=======
+  MasterBankRef: {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   StringsBankRef: {fileID: 114623419513529220}
   stringsBankWriteTime: 637021814498988477
   cacheVersion: 2
@@ -328,7 +336,11 @@ MonoBehaviour:
   Path: event:/Character/Movement/Water jump
   guid: db8aa9c6fb122345b9a9d3bd270a9d74
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -808,7 +820,11 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_Battle_Music_demo_2
   guid: c00afdc4e1cca748b8e2cc06ce02be69
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -854,12 +870,20 @@ MonoBehaviour:
   Path: event:/Ambience/AmbientPiano
   guid: 29f3df482c4e9f4c8d75fccc81a23f3c
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< HEAD
   - {fileID: -1783182219891665924}
+=======
+  - {fileID: 114018102366899948}
+>>>>>>> parent of aac7ed1... uus versio
   MinDistance: 0
   MaxDistance: 0
   Length: 209032
@@ -1134,7 +1158,11 @@ MonoBehaviour:
   Path: event:/Music/Gone_Astray_theme_demo_3
   guid: 289a505cd77b09409dfda1be5c9bb021
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -1840,7 +1868,11 @@ MonoBehaviour:
   Path: event:/Misc/Chime
   guid: 56f0b96c39a7c34e8d41e50403daa2af
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2090,7 +2122,11 @@ MonoBehaviour:
   Path: event:/Misc/Encounter chime
   guid: b172fac9a21e7a4cb71ed0ff0abfe1df
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2220,6 +2256,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+<<<<<<< HEAD
 --- !u!114 &114326583560801582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2236,6 +2273,8 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+=======
+>>>>>>> parent of aac7ed1... uus versio
 --- !u!114 &114328907319900542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2275,6 +2314,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+<<<<<<< HEAD
 --- !u!114 &114330875888549322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2291,6 +2331,8 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+=======
+>>>>>>> parent of aac7ed1... uus versio
 --- !u!114 &114332109399484590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2660,7 +2702,11 @@ MonoBehaviour:
   Path: event:/Character/Movement/Stand up
   guid: d1870abefdfaa940bbf5f1319cedfc01
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2880,7 +2926,11 @@ MonoBehaviour:
   Path: event:/Character/Movement/Water steps
   guid: f0955dece045c9499cb6130bd885dcab
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3031,7 +3081,11 @@ MonoBehaviour:
   Path: event:/Misc/Fia speech mischievous
   guid: 51587cead351e244a271f69d2ee926ef
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3155,6 +3209,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+<<<<<<< HEAD
 --- !u!114 &114474014058939566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3175,6 +3230,8 @@ MonoBehaviour:
   - Name: Desktop
     Value: 33908896
   Exists: 1
+=======
+>>>>>>> parent of aac7ed1... uus versio
 --- !u!114 &114474349759507218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3213,7 +3270,11 @@ MonoBehaviour:
   Path: event:/Character/Movement/Jump
   guid: 93e14acd01032547a60717de40ef96ed
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3502,7 +3563,11 @@ MonoBehaviour:
   Path: event:/Character/Movement/Water land
   guid: a3df4123391fae43a220ee09cc4ee53d
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3835,6 +3900,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2050336
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &114565835990524896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3851,6 +3917,8 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+=======
+>>>>>>> parent of aac7ed1... uus versio
 --- !u!114 &114570589307731514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3951,6 +4019,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+<<<<<<< HEAD
 --- !u!114 &114584053974253768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3967,6 +4036,8 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+=======
+>>>>>>> parent of aac7ed1... uus versio
 --- !u!114 &114584222892524432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4057,6 +4128,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+<<<<<<< HEAD
 --- !u!114 &114598282678134468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4073,6 +4145,8 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+=======
+>>>>>>> parent of aac7ed1... uus versio
 --- !u!114 &114601964694405200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4089,6 +4163,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+<<<<<<< HEAD
 --- !u!114 &114603243111229810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4105,6 +4180,8 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+=======
+>>>>>>> parent of aac7ed1... uus versio
 --- !u!114 &114619859270177972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4972,12 +5049,20 @@ MonoBehaviour:
   Path: event:/Character/Movement/Footsteps
   guid: 086348bc1ebfe941a915054c30b881b4
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
+<<<<<<< HEAD
   - {fileID: -3376883674050561227}
+=======
+  - {fileID: 114118887105407646}
+>>>>>>> parent of aac7ed1... uus versio
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -5358,12 +5443,20 @@ MonoBehaviour:
   Path: event:/Ambience/AmbientMusic
   guid: 6e41c225fc2475468b2ba3e6e6a45bed
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< HEAD
   - {fileID: 8760945780717757408}
+=======
+  - {fileID: 114911880162889704}
+>>>>>>> parent of aac7ed1... uus versio
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -5434,7 +5527,11 @@ MonoBehaviour:
   Path: event:/Misc/Fia speech long
   guid: d88e494d512a854d9867cc480e4746be
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5541,7 +5638,11 @@ MonoBehaviour:
   Path: event:/Character/Movement/Land
   guid: 4372232a53af8a4ea272253e95d54b87
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5755,7 +5856,11 @@ MonoBehaviour:
   Path: event:/Misc/Fia speech short
   guid: 5fa85ddd0fe54d489025b74c42fe7ad0
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6524,14 +6629,24 @@ MonoBehaviour:
   Path: event:/Ambience/Forest
   guid: a3ae3bd04fbd33448238dee4bc729da1
   Banks:
+<<<<<<< HEAD
   - {fileID: 6833010637896441759}
+=======
+  - {fileID: 114375162788409670}
+>>>>>>> parent of aac7ed1... uus versio
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< HEAD
   - {fileID: 6470473808372413829}
   - {fileID: 1045868859222681152}
   - {fileID: -6192452310009280050}
+=======
+  - {fileID: 114323314461418206}
+  - {fileID: 114828079078353254}
+  - {fileID: 114734943248637192}
+>>>>>>> parent of aac7ed1... uus versio
   MinDistance: 0
   MaxDistance: 0
   Length: 0
