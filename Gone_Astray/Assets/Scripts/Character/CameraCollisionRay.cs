@@ -6,7 +6,6 @@ public class CameraCollisionRay : MonoBehaviour {
 
     public Camera mainCamera;
     public GameObject player;
-    Vector3 playerPos;
     Vector3 topRight;
     Vector3 topLeft;
     Vector3 bottomRight;
@@ -31,16 +30,16 @@ public class CameraCollisionRay : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        RaycastHit hit;
-        //Ammu raycast taaksepäin, jos osuu niin kameran sijainti vaihtuu osumakohdan sijainniksi
-        if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.forward), out hit, Mathf.Ceil(cameraDistance)))
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.forward) * cameraDistance, Color.yellow);
-            if (!hit.rigidbody)
-                mainCamera.transform.position = hit.point;
-        }
+        //RaycastHit hit;
+        ////Ammu raycast taaksepäin, jos osuu niin kameran sijainti vaihtuu osumakohdan sijainniksi
+        //if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.forward), out hit, Mathf.Ceil(cameraDistance)))
+        //{
+        //    Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.forward) * cameraDistance, Color.yellow);
+        //    if (!hit.rigidbody)
+        //        mainCamera.transform.position = hit.point;
+        //}
 
-        else
+        //else
         {
             mainCamera.transform.position = transform.position + -transform.forward * cameraDistance;
         }
@@ -49,42 +48,51 @@ public class CameraCollisionRay : MonoBehaviour {
         bottomLeft = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, mainCamera.nearClipPlane));
         topLeft = mainCamera.ViewportToWorldPoint(new Vector3(0, 1, mainCamera.nearClipPlane));
         bottomRight = mainCamera.ViewportToWorldPoint(new Vector3(1, 0, mainCamera.nearClipPlane));
-        playerPos = player.transform.position;
-        if (Physics.Raycast(topRight, playerPos - topRight, out hittr, Mathf.Ceil(Vector3.Distance(playerPos, topRight))))
+        if (Physics.Raycast(bottomRight, player.transform.position - bottomRight, out hitbr, Mathf.Ceil(Vector3.Distance(player.transform.position, bottomRight))))
         {
-            if (!hittr.rigidbody)
-            {
-                Debug.Log("top right hit");
-                vecAngle = Vector3.Angle((playerPos-topRight),(playerPos-transform.position));
-                moveLength = hittr.distance* vecAngle;
-            }
-        }
-        if (Physics.Raycast(topLeft, playerPos - topLeft, out hittl, Mathf.Ceil(Vector3.Distance(playerPos, topLeft))))
-        {
-            if (!hittl.rigidbody)
-            {
-                Debug.Log("top left hit");
-            }
-        }
-        if (Physics.Raycast(bottomRight, playerPos - bottomRight, out hitbr, Mathf.Ceil(Vector3.Distance(playerPos, bottomRight))))
-        {
+            Debug.DrawRay(bottomRight, player.transform.position - bottomRight, Color.magenta);
             if (!hitbr.rigidbody)
             {
                 Debug.Log("bottom right hit");
+                vecAngle = Vector3.Angle((player.transform.position - bottomRight), (player.transform.position - mainCamera.transform.position));
+                moveLength = hitbr.distance * vecAngle;
+                mainCamera.transform.position = (player.transform.position - mainCamera.transform.position).normalized * moveLength;
             }
         }
-        if (Physics.Raycast(bottomLeft, playerPos - bottomLeft, out hitbl, Mathf.Ceil(Vector3.Distance(playerPos, bottomLeft))))
+        if (Physics.Raycast(bottomLeft, player.transform.position - bottomLeft, out hitbl, Mathf.Ceil(Vector3.Distance(player.transform.position, bottomLeft))))
         {
+            Debug.DrawRay(bottomLeft, player.transform.position - bottomLeft, Color.cyan);
             if (!hitbl.rigidbody)
             {
                 Debug.Log("bottom right hit");
+                vecAngle = Vector3.Angle((player.transform.position - bottomLeft), (player.transform.position - mainCamera.transform.position));
+                moveLength = hitbl.distance * vecAngle;
+                mainCamera.transform.position = (player.transform.position - mainCamera.transform.position).normalized * moveLength;
             }
         }
-        if (moveLength != 0)
+        if (Physics.Raycast(topRight, player.transform.position - topRight, out hittr, Mathf.Ceil(Vector3.Distance(player.transform.position, topRight))))
         {
-            Debug.Log("siirrä kamera");
+            Debug.DrawRay(topRight, player.transform.position - topRight, Color.green);
+            if (!hittr.rigidbody)
+            {
+                Debug.Log("top right hit");
+                vecAngle = Vector3.Angle((player.transform.position - topRight),(player.transform.position - mainCamera.transform.position));
+                moveLength = hittr.distance* vecAngle;
+                mainCamera.transform.position = (player.transform.position - mainCamera.transform.position).normalized * moveLength;
+            }
         }
-        moveLength = 0;
+        if (Physics.Raycast(topLeft, player.transform.position - topLeft, out hittl, Mathf.Ceil(Vector3.Distance(player.transform.position, topLeft))))
+        {
+            Debug.DrawRay(topLeft, player.transform.position - topLeft, Color.yellow);
+            if (!hittl.rigidbody)
+            {
+                Debug.Log("top left hit");
+                vecAngle = Vector3.Angle((player.transform.position - topLeft), (player.transform.position - mainCamera.transform.position));
+                moveLength = hittl.distance * vecAngle;
+                mainCamera.transform.position = (player.transform.position - mainCamera.transform.position).normalized * moveLength;
+            }
+        }
+        
     }
 }
 
