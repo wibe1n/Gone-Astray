@@ -866,6 +866,11 @@ PrefabInstance:
       propertyPath: AllowFadeout
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114728274899490202, guid: c463419246aa9e049aef45f2d992057c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1711916923}
     m_RemovedComponents:
     - {fileID: 114931501660213736, guid: c463419246aa9e049aef45f2d992057c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c463419246aa9e049aef45f2d992057c, type: 3}
@@ -2984,11 +2989,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114411864833408978, guid: 94b58afffabd5234db3d6adc6b89f108,
-        type: 3}
-      propertyPath: m_StepDistance
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114411528743361620, guid: 94b58afffabd5234db3d6adc6b89f108,
         type: 3}
       propertyPath: _pauseController
@@ -2999,6 +2999,20 @@ PrefabInstance:
       propertyPath: _igcController
       value: 
       objectReference: {fileID: 1528102230}
+    - target: {fileID: 114411864833408978, guid: 94b58afffabd5234db3d6adc6b89f108,
+        type: 3}
+      propertyPath: m_StepDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647486948387064, guid: 94b58afffabd5234db3d6adc6b89f108, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95802295890919918, guid: 94b58afffabd5234db3d6adc6b89f108,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4983013057229786, guid: 94b58afffabd5234db3d6adc6b89f108, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1
@@ -3033,15 +3047,6 @@ PrefabInstance:
       propertyPath: _igcController
       value: 
       objectReference: {fileID: 1528102230}
-    - target: {fileID: 4647486948387064, guid: 94b58afffabd5234db3d6adc6b89f108, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 95802295890919918, guid: 94b58afffabd5234db3d6adc6b89f108,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94b58afffabd5234db3d6adc6b89f108, type: 3}
 --- !u!114 &554870857 stripped
