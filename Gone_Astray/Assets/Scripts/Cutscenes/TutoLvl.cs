@@ -30,7 +30,7 @@ public class TutoLvl : MonoBehaviour {
         cutsceneCanvas.SetActive(true);
         
 
-        switch (cutsceneNum)
+        /*switch (cutsceneNum)
         {
             case 1:
                 //jotain
@@ -43,7 +43,7 @@ public class TutoLvl : MonoBehaviour {
             default:
                 //error
                 EndCutscene();
-        }
+        }*/
     }
 
     void PlayingListener()

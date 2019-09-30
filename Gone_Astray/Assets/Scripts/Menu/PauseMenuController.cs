@@ -4,83 +4,88 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PauseMenuController : MonoBehaviour {
+public class PauseMenuController : MonoBehaviour
+{
 
-    public Canvas pauseMenuCanvas;
-    public Canvas journalCanvas;
-//    public Canvas inGameCanvas;
+    public GameObject pauseMenuCanvas;
+    public GameObject journalCanvas;
+    //    public Canvas inGameCanvas;
     public JournalController journalController;
     public InGameCanvasController igcController;
     public Character character;
-	public Undying_Object undyObj;
-	public KeyCode pauseKey = KeyCode.None;
-	public KeyCode journalKey = KeyCode.None;
-	public KeyCode altPauseKey = KeyCode.None;
-	public GameObject mainPage, helpPage, QuitPopup, fireflyAmountTextPause, fireflyAmountTextJournal;
-	public HelpPage helpScript;
-	public FireflyAmount fireflies;
+    public Undying_Object undyObj;
+    public KeyCode pauseKey = KeyCode.None;
+    public KeyCode journalKey = KeyCode.None;
+    public KeyCode altPauseKey = KeyCode.None;
+    public GameObject mainPage, helpPage, QuitPopup, fireflyAmountTextPause, fireflyAmountTextJournal;
+    public HelpPage helpScript;
+    public FireflyAmount fireflies;
 
     private bool journalShortcut = false;
 
-	void Start () {
-		if (GameObject.FindGameObjectWithTag ("UndyingObject") != null) {
-			undyObj = GameObject.FindGameObjectWithTag ("UndyingObject").GetComponent<Undying_Object> ();
-			if (undyObj.pauseKey == KeyCode.None)
-				pauseKey = KeyCode.P;
-			else
-				pauseKey = undyObj.pauseKey;
-			if (undyObj.altPauseKey == KeyCode.None)
-				altPauseKey = KeyCode.Escape;
-			else
-				altPauseKey = undyObj.altPauseKey;
-			if (undyObj.journalKey == KeyCode.None)
-				journalKey = KeyCode.J;
-			else
-				journalKey = undyObj.journalKey;
-		} else {
-			journalKey = KeyCode.J;
-			pauseKey = KeyCode.P;
-			altPauseKey = KeyCode.Escape;
-		}
-
-        if (pauseMenuCanvas.enabled == true)
+    void Start()
+    {
+        if (GameObject.FindGameObjectWithTag("UndyingObject") != null)
         {
-            pauseMenuCanvas.enabled = false;
+            undyObj = GameObject.FindGameObjectWithTag("UndyingObject").GetComponent<Undying_Object>();
+            if (undyObj.pauseKey == KeyCode.None)
+                pauseKey = KeyCode.P;
+            else
+                pauseKey = undyObj.pauseKey;
+            if (undyObj.altPauseKey == KeyCode.None)
+                altPauseKey = KeyCode.Escape;
+            else
+                altPauseKey = undyObj.altPauseKey;
+            if (undyObj.journalKey == KeyCode.None)
+                journalKey = KeyCode.J;
+            else
+                journalKey = undyObj.journalKey;
         }
-        if (journalCanvas.enabled == true)
+        else
         {
-            journalCanvas.enabled = false;
+            journalKey = KeyCode.J;
+            pauseKey = KeyCode.P;
+            altPauseKey = KeyCode.Escape;
+        }
+
+        if (pauseMenuCanvas.activeSelf == true)
+        {
+            pauseMenuCanvas.SetActive(false);
+        }
+        if (journalCanvas.activeSelf == true)
+        {
+            journalCanvas.SetActive(false);
         }
 
         journalShortcut = false;
     }
 
-    void Update ()
+    void Update()
     {
         //Jos painetaan pausenappia, niin aktivoidaan pausemenu
-		if (Input.GetKeyDown(pauseKey) || Input.GetKeyDown(altPauseKey))
+        if (Input.GetKeyDown(pauseKey) || Input.GetKeyDown(altPauseKey))
         {
-            if (pauseMenuCanvas.enabled == false && journalCanvas.enabled == false)
+            if (pauseMenuCanvas.activeSelf == false && journalCanvas.activeSelf == false)
             {
                 Cursor.lockState = CursorLockMode.None;
                 ActivatePauseMenu();
             }
-            else if (journalCanvas.enabled == false)
+            else if (journalCanvas.activeSelf == false)
             {
                 ClosePauseMenu();
             }
         }
         //Jos painetaan journal nappia niin aktivoidaan journal
-		if (Input.GetKeyDown(journalKey) && character.items[1])
+        if (Input.GetKeyDown(journalKey)/* && character.items[1]*/)
         {
-            if (pauseMenuCanvas.enabled == false && journalCanvas.enabled == false)
+            if (pauseMenuCanvas.activeSelf == false && journalCanvas.activeSelf == false)
             {
                 Cursor.lockState = CursorLockMode.None;
                 //Katsotaan mistä journaliin on menty
                 JournalShortcut();
                 ActivateJournal();
             }
-            else if (pauseMenuCanvas.enabled == false)
+            else if (pauseMenuCanvas.activeSelf == false)
             {
                 CloseJournal();
             }
@@ -89,7 +94,7 @@ public class PauseMenuController : MonoBehaviour {
 
     public void ActivatePauseMenu()
     {
-        if (pauseMenuCanvas.enabled == true)
+        if (pauseMenuCanvas.activeSelf == true)
         {
             return;
         }
@@ -97,48 +102,46 @@ public class PauseMenuController : MonoBehaviour {
         Time.timeScale = 0;
         igcController.ToggleInGameCanvas(false);
         fireflyAmountTextPause.GetComponentInChildren<Text>().text = character.myFireflies.Count.ToString();
-        pauseMenuCanvas.enabled = true;
-
-//        inGameCanvas.enabled = false;
+        pauseMenuCanvas.SetActive(true);
     }
 
     public void ClosePauseMenu()
     {
-        if (pauseMenuCanvas.enabled == false)
+        if (pauseMenuCanvas.activeSelf == false)
         {
             return;
         }
         //Peli jatkuu
         Time.timeScale = 1;
         igcController.ToggleInGameCanvas(true);
-        pauseMenuCanvas.enabled = false;
-//        inGameCanvas.enabled = true;
+        pauseMenuCanvas.SetActive(false);
     }
 
     public void ActivateJournal()
     {
         //avataan journal ja pysäytetään aika
-		if (journalCanvas.enabled == true || !character.items[1])
+        Debug.Log(journalCanvas.activeSelf);
+        if (journalCanvas.activeSelf == true/* || !character.items[1]*/)
         {
             return;
         }
 
-        if (pauseMenuCanvas.enabled == true)
-            pauseMenuCanvas.enabled = false;
+        if (pauseMenuCanvas.activeSelf == true)
+            pauseMenuCanvas.SetActive(false);
 
         Time.timeScale = 0;
         igcController.ToggleInGameCanvas(false);
         fireflyAmountTextJournal.GetComponentInChildren<Text>().text = character.myFireflies.Count.ToString();
-        journalCanvas.enabled = true;
+        journalCanvas.SetActive(true);
         journalController.OpenJournal();
-		//päivitetään tulikärpäset
-		fireflies.UpdateFireflies ();
+        //päivitetään tulikärpäset
+        fireflies.UpdateFireflies();
     }
 
     public void CloseJournal()
     {
         //Suljetaan journal ja jatketaan peliä
-        if (journalCanvas.enabled == false)
+        if (journalCanvas.activeSelf == false)
         {
             return;
         }
@@ -149,15 +152,14 @@ public class PauseMenuController : MonoBehaviour {
             Time.timeScale = 1;
             igcController.ToggleInGameCanvas(true);
 
-            if (pauseMenuCanvas.enabled == true)
-                pauseMenuCanvas.enabled = false;
-            journalCanvas.enabled = false;
-//            inGameCanvas.enabled = true;
+            if (pauseMenuCanvas.activeSelf == true)
+                pauseMenuCanvas.SetActive(false);
+            journalCanvas.SetActive(false);
         }
         else
         {
-            journalCanvas.enabled = false;
-            pauseMenuCanvas.enabled = true;
+            journalCanvas.SetActive(false);
+            pauseMenuCanvas.SetActive(true);
         }
     }
 
@@ -165,26 +167,28 @@ public class PauseMenuController : MonoBehaviour {
     {
         journalShortcut = true;
     }
-	public void QuitOn()
-	{
-		QuitPopup.SetActive (true);
-	}
-	public void QuitOff()
-	{
-		QuitPopup.SetActive (false);
-	}
+    public void QuitOn()
+    {
+        QuitPopup.SetActive(true);
+    }
+    public void QuitOff()
+    {
+        QuitPopup.SetActive(false);
+    }
     public void GotoMainMenu()
     {
         Time.timeScale = 1;
         Game_Manager.StartMenu();
     }
-	public void HelpOn(){
-		helpPage.SetActive (true);
-		helpScript.HelpPageOn ();
-		mainPage.SetActive (false);
-	}
-	public void HelpOff(){
-		helpPage.SetActive (false);
-		mainPage.SetActive (true);
-	}
+    public void HelpOn()
+    {
+        helpPage.SetActive(true);
+        helpScript.HelpPageOn();
+        mainPage.SetActive(false);
+    }
+    public void HelpOff()
+    {
+        helpPage.SetActive(false);
+        mainPage.SetActive(true);
+    }
 }
