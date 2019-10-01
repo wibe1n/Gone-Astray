@@ -3317,6 +3317,11 @@ PrefabInstance:
       propertyPath: _igcController
       value: 
       objectReference: {fileID: 1528102230}
+    - target: {fileID: 114508985328420118, guid: 94b58afffabd5234db3d6adc6b89f108,
+        type: 3}
+      propertyPath: hasLeshen
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94b58afffabd5234db3d6adc6b89f108, type: 3}
 --- !u!114 &554870857 stripped
@@ -9162,7 +9167,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.0122e-41, y: 1.02e-43, z: 9.843e-42, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0.22265625, z: 0.0390625, w: -0.04296875}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -11807,6 +11812,11 @@ PrefabInstance:
       propertyPath: isLeshen
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8648921442054970840, guid: 16cb3c898d8c3734283090831beec04f,
+        type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 1624980409}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16cb3c898d8c3734283090831beec04f, type: 3}
 --- !u!1001 &1752622824
