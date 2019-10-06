@@ -9,18 +9,20 @@ public class TutoLvl : MonoBehaviour {
     public GameObject mainCamera, cutsceneCamera, cutsceneHolder, cutsceneCanvas, inGameCanvas, player;
     public PlayableDirector director;
     public MovementControls movementControls;
-    public int cutsceneNum;
     public UnityEvent cutsceneEvent = new UnityEvent();
+    public bool playCutscenes;
 
     // Use this for initialization
     void Start ()
     {
-        cutsceneNum = 0;
+        if (playCutscenes)
+        {
+            PlayNextCutscene(1);
+        }
     }
 
-    void PlayNextCutscene()
+    public void PlayNextCutscene(int id)
     {
-        cutsceneNum++;
         
         movementControls.stop = true;
         mainCamera.SetActive(false);
@@ -30,7 +32,7 @@ public class TutoLvl : MonoBehaviour {
         cutsceneCanvas.SetActive(true);
         
 
-        /*switch (cutsceneNum)
+        switch (id)
         {
             case 1:
                 //jotain
@@ -43,7 +45,8 @@ public class TutoLvl : MonoBehaviour {
             default:
                 //error
                 EndCutscene();
-        }*/
+                break;
+        }
     }
 
     void PlayingListener()

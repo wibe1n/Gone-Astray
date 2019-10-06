@@ -8,21 +8,21 @@ public class InGameCanvasController : MonoBehaviour {
     public GameObject fireflies;
     public bool disabled;
     public Animator animator;
-    //public bool toggleCutscenes = true;
+    public TutoLvl cutsceneScript;
 
     private void Start()
     {
         disabled = false;
         animator = fireflies.GetComponent<Animator>();
 
-        /*if (toggleCutscenes)
+        if (cutsceneScript.playCutscenes)
         {
             ToggleInGameCanvas(false);
         }
         else
         {
             ToggleInGameCanvas(true);
-        }*/
+        }
     }
 
     private void Update()
