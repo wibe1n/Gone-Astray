@@ -26,18 +26,22 @@ public class LeshenTriggerArea : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider player){
-		if(player.GetComponent<Character>().hasLeshen)
-        	m_MyEvent.AddListener(ActivateLeshen);
-        //Kerrotaan pelaajalle että olet leshenin lähellä
-        player.GetComponent<Character>().leshenObjectNear = true;
-        Canvas.SetActive(true);
+        if (player.GetComponent<Character>().hasLeshen)
+        {
+            m_MyEvent.AddListener(ActivateLeshen);
+            //Kerrotaan pelaajalle että hän on leshenin lähellä
+            player.GetComponent<Character>().leshenObjectNear = true;
+            Canvas.SetActive(true);
+        }
     }
 	void OnTriggerExit(Collider player){
-		if(player.GetComponent<Character>().hasLeshen)
-        	m_MyEvent.RemoveListener(ActivateLeshen);
-        //Kerrotaan pelaajalle ettei hän enää ole leshenin lähellä
-        player.GetComponent<Character>().leshenObjectNear = false;
-        Canvas.SetActive(false);
+        if (player.GetComponent<Character>().hasLeshen)
+        {
+            m_MyEvent.RemoveListener(ActivateLeshen);
+            //Kerrotaan pelaajalle ettei hän enää ole leshenin lähellä
+            player.GetComponent<Character>().leshenObjectNear = false;
+            Canvas.SetActive(false);
+        }
     }
 
     private void Update() {
