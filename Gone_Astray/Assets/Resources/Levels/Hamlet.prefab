@@ -6890,7 +6890,10 @@ MonoBehaviour:
   lastLeshen: {fileID: 0}
   vegetation: {fileID: 7249802646441689668, guid: 62762cfa7e8aa3941b73f71a380dda8d,
     type: 3}
+  bridge: {fileID: 7249802646441689668, guid: 62762cfa7e8aa3941b73f71a380dda8d, type: 3}
+  lilypad: {fileID: 739279292732395952, guid: 98706bf348743744da214c127db68242, type: 3}
   Canvas: {fileID: 0}
+  whichLeshen: 0
   leshenKey: 0
 --- !u!1 &7127016935369879437
 GameObject:
