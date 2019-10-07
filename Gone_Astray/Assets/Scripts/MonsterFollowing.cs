@@ -17,7 +17,7 @@ public class MonsterFollowing : MonoBehaviour {
     void Start () {
         checking = true;
         monsterFaced = false;
-        maxDistance = 30;
+        maxDistance = 20;
 	}
 
     private void FixedUpdate() {
@@ -34,7 +34,6 @@ public class MonsterFollowing : MonoBehaviour {
                 startingAngle = characterPosition.eulerAngles.y;
                 Debug.Log(hit.collider);
             }
-            Debug.Log(rotY);
             if (transform.eulerAngles.y > startingAngle && checking == false) {
                 if (!turningRight && lastShadow != null) {
                     Debug.Log("oikealla Täällä");
@@ -47,7 +46,9 @@ public class MonsterFollowing : MonoBehaviour {
                 if (rotY >= 90 && monsterFaced == false) {
                     if (lastShadow == null) {
                         Debug.Log("90 astetta oikea");
+                        Vector3 dir = characterPosition.position - monsterPosition;
                         lastShadow = Instantiate(monsterShadow, monsterPosition, monsterShadow.transform.rotation);
+                        lastShadow.transform.rotation = Quaternion.LookRotation(dir);
                         monsterFaced = true;
                     }
                     else {
@@ -56,7 +57,6 @@ public class MonsterFollowing : MonoBehaviour {
                 }
                 else if (rotY >= 180) {
                     Debug.Log("180 astetta oikea");
-                    Destroy(lastShadow);
                     checking = true;
                     monsterFaced = false;
                 }
@@ -82,7 +82,6 @@ public class MonsterFollowing : MonoBehaviour {
                 }
                 else if (rotY <= -180) {
                     Debug.Log("180 astetta vasen");
-                    Destroy(lastShadow);
                     checking = true;
                     monsterFaced = false;
                     
