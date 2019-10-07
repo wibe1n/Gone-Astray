@@ -8,8 +8,10 @@ public class Menu : MonoBehaviour {
 	//public Character chara;
 	public GameObject mainMenu;
 	public GameObject options;
+    public GameObject loadingText;
 
 	public void OnStartGame(){
+        loadingText.SetActive(true);
 		Debug.Log ("start press");
         Game_Manager.StartLevel1();
 	}
@@ -20,7 +22,8 @@ public class Menu : MonoBehaviour {
 		Application.Quit();
 	}
 	public void OnLoadGame(){
-		Debug.Log ("load press");
+        loadingText.SetActive(true);
+        Debug.Log ("load press");
 		SaveGame.Load ();
 		Game_Manager.LoadGame();
 	}
