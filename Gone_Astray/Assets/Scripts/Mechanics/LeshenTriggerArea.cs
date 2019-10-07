@@ -9,8 +9,9 @@ public class LeshenTriggerArea : MonoBehaviour {
     UnityEvent m_MyEvent = new UnityEvent();
 	public GameObject spawnPosition;
     public GameObject lastLeshen, vegetation;
+    public GameObject Canvas;
     //private bool vegetationGrown;
-	private Undying_Object undyObj;
+    private Undying_Object undyObj;
 	public KeyCode leshenKey = KeyCode.None;
 
 	void Start(){
@@ -29,12 +30,14 @@ public class LeshenTriggerArea : MonoBehaviour {
         	m_MyEvent.AddListener(ActivateLeshen);
         //Kerrotaan pelaajalle että olet leshenin lähellä
         player.GetComponent<Character>().leshenObjectNear = true;
+        Canvas.SetActive(true);
     }
 	void OnTriggerExit(Collider player){
 		if(player.GetComponent<Character>().hasLeshen)
         	m_MyEvent.RemoveListener(ActivateLeshen);
         //Kerrotaan pelaajalle ettei hän enää ole leshenin lähellä
         player.GetComponent<Character>().leshenObjectNear = false;
+        Canvas.SetActive(false);
     }
 
     private void Update() {
