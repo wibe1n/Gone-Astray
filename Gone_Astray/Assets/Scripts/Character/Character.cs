@@ -23,6 +23,7 @@ public class Character : MonoBehaviour {
 	public Undying_Object undyObj;
 	public KeyCode leshenKey = KeyCode.None;
 	public int NPCspeechInstance = 0;
+    public LeshenTriggerArea faeCircle;
 
     void Start () {
         //Hae keybindingit
@@ -88,5 +89,9 @@ public class Character : MonoBehaviour {
         system.maxParticles = myFireflies.Count;
     }
 
+    public void SelectLeshen(int thisLeshen) {
+        faeCircle.whichLeshen = thisLeshen;
+        //faeCircle.ActivateLeshen();
+    }
 
 }

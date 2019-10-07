@@ -7550,12 +7550,12 @@ GameObject:
   - component: {fileID: 2810736887359865099}
   - component: {fileID: 4906185601856262340}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonBridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2624299534366781876
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7836,7 +7836,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lillypad
+  m_Text: Lilypad
 --- !u!1 &4187924738678068557
 GameObject:
   m_ObjectHideFlags: 0
@@ -8195,12 +8195,12 @@ GameObject:
   - component: {fileID: 3504577369234839484}
   - component: {fileID: 8364085206001332618}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ButtonLilypad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6453504546564565349
 RectTransform:
   m_ObjectHideFlags: 0
