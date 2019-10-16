@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class TutoLvl : MonoBehaviour {
 
     public GameObject mainCamera, cutsceneCamera, cutsceneHolder, cutsceneCanvas, inGameCanvas, player, startLocation;
+    public GameObject vCam1;
     public PlayableDirector director;
     public MovementControls movementControls;
     public UnityEvent cutsceneEvent = new UnityEvent();
@@ -19,14 +20,20 @@ public class TutoLvl : MonoBehaviour {
         {
             PlayNextCutscene(1);
         }
+        else
+        {
+            cutsceneCamera.SetActive(false);
+            mainCamera.SetActive(true);
+        }
     }
 
     public void PlayNextCutscene(int id)
     {
         
-        //movementControls.stop = true;
-        //mainCamera.SetActive(false);
-        //cutsceneCamera.SetActive(true);
+        movementControls.stop = true;
+        mainCamera.SetActive(false);
+        vCam1.SetActive(true);
+        cutsceneCamera.SetActive(true);
 
         inGameCanvas.SetActive(false);
         cutsceneCanvas.SetActive(true);
