@@ -69,6 +69,5 @@ public class Door : MonoBehaviour {
         blackScreen.SetActive(false);
         isBeingUsed = false;
         otherDoor.GetComponentInParent<Door>().isBeingUsed = false;
-        canvas.SetActive(true);
     }
 }
