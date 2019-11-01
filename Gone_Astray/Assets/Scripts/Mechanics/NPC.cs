@@ -16,6 +16,7 @@ public class NPC : MonoBehaviour {
 	public KeyCode talkKey = KeyCode.None;
     public KeyCode talkBackKey = KeyCode.None;
     private Character player;
+    public TutoLvl TutorialCutsceneScript;
 
     private void Start() {
         if(id == 6) {
@@ -42,42 +43,44 @@ public class NPC : MonoBehaviour {
             //Tietyt NPC voivat alkaa älisee heti
             if (id == 6) {               
                 switch (currentSpeechInstance) {
-                    case 1:
+                    /*case 1:
                         player.gameObject.GetComponent<MovementControls>().stop = true;
                         m_MyEvent.Invoke();
-                        break;
-                    case 10:
+                        break;*/
+                    case 13:
                         if (player.GetComponent<Character>().hasRaskovnik) {
-                            currentSpeechInstance = 16;
-                            maxSpeechInstance = 16;
+                            currentSpeechInstance = 20;
+                            maxSpeechInstance = 20;
                         }
+                        TutorialCutsceneScript.PlayNextCutscene(2);
                         m_MyEvent.Invoke();
                         break;
-                    case 14:
+                    case 18:
+                        TutorialCutsceneScript.PlayNextCutscene(3);
                         m_MyEvent.Invoke();
                         break;
-                    case 16:
-                        m_MyEvent.Invoke();
-                        break;
-                    case 17:
-                        player.gameObject.GetComponent<MovementControls>().stop = true;
+                    case 20:
                         m_MyEvent.Invoke();
                         break;
                     case 21:
+                        TutorialCutsceneScript.PlayNextCutscene(4);
                         m_MyEvent.Invoke();
                         break;
-                    case 23:
-                        player.gameObject.GetComponent<MovementControls>().stop = true;
+                    case 25:
                         m_MyEvent.Invoke();
                         break;
-                    case 28:
+                    case 27:
+                        TutorialCutsceneScript.PlayNextCutscene(5);
+                        m_MyEvent.Invoke();
+                        break;
+                    /*case 28:
                         player.gameObject.GetComponent<MovementControls>().stop = true;
                         m_MyEvent.Invoke();
                         break;
                     case 37:
                         player.gameObject.GetComponent<MovementControls>().stop = true;
                         m_MyEvent.Invoke();
-                        break;
+                        break;*/
                 }
                 
             }
@@ -103,7 +106,7 @@ public class NPC : MonoBehaviour {
             else if (!(currentSpeechInstance == maxSpeechInstance))
             {
                 //Fian puhumisista ei tule aina valitusta
-                if(id == 6 && maxSpeechInstance == 13) {
+                /*if(id == 6 && maxSpeechInstance == 13) {
                     Canvas.SetActive(false);
                     talking = false;
                     speechCreator.CloseSpeechBubble(this);
@@ -128,7 +131,7 @@ public class NPC : MonoBehaviour {
                 else {
                     speechCreator.WentTooFar(this);
                     StartCoroutine(CloseWhineBox(20));
-                }
+                }*/
             }
         }
     }
@@ -158,10 +161,109 @@ public class NPC : MonoBehaviour {
                 if(id == 6) {
                     switch(maxSpeechInstance)
                     {
-                        case 9:
+                        case 2:
+                            Canvas.SetActive(false);
+                            currentSpeechInstance = 3;
+                            maxSpeechInstance = 12;
+                            TutorialCutsceneScript.director2.Play();
+                            TutorialCutsceneScript.once = false;
+                            break;
+                        /*case 12:
+                            Canvas.SetActive(false);
+                            player.AddFirefly();
+                            Destroy(gameObject);
+                            currentSpeechInstance = 13;
+                            maxSpeechInstance = 17;
+                            TutorialCutsceneScript.cutsceneFinished = true;
+                            break;
+                        case 17:
+                            Canvas.SetActive(false);
+                            currentSpeechInstance = 18;
+                            maxSpeechInstance = 19;
+                            TutorialCutsceneScript.cutsceneFinished = true;
+                            break;
+                        case 19:
+                            Canvas.SetActive(false);
+                            currentSpeechInstance = 20;
+                            maxSpeechInstance = 20;
+                            TutorialCutsceneScript.cutsceneFinished = true;
+                            break;
+                        case 20:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            currentSpeechInstance = 21;
+                            maxSpeechInstance = 24;
+                            break;
+                        case 24:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            currentSpeechInstance = 25;
+                            maxSpeechInstance = 26;
+                            TutorialCutsceneScript.cutsceneFinished = true;
+                            break;
+                        case 26:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            currentSpeechInstance = 27;
+                            maxSpeechInstance = 30;
+                            break;
+                        case 30:
+                            Canvas.SetActive(false);
+                            Destroy(gameObject);
+                            //currentSpeechInstance = 31;
+                            //maxSpeechInstance = 32;
+                            currentSpeechInstance = 33;
+                            maxSpeechInstance = 35;
+                            TutorialCutsceneScript.cutsceneFinished = true;
+                            break;
+                        case 36:
+                            currentSpeechInstance = 37;
+                            maxSpeechInstance = 37;
+                            TutorialCutsceneScript.StopCoroutine(TutorialCutsceneScript.PlayingListener(0));
+                            TutorialCutsceneScript.PlayNextCutscene(7);
+                            break;
+                        case 37:
+                            currentSpeechInstance = 38;
+                            maxSpeechInstance = 38;
+                            TutorialCutsceneScript.StopCoroutine(TutorialCutsceneScript.PlayingListener(0));
+                            TutorialCutsceneScript.PlayNextCutscene(8);
+                            break;
+                        case 38:
+                            currentSpeechInstance = 39;
+                            maxSpeechInstance = 39;
+                            TutorialCutsceneScript.StopCoroutine(TutorialCutsceneScript.PlayingListener(0));
+                            TutorialCutsceneScript.PlayNextCutscene(9);
+                            break;
+                        case 39:
+                            currentSpeechInstance = 40;
+                            maxSpeechInstance = 44;
+                            TutorialCutsceneScript.cutsceneFinished = true;
+                            break;
+                        case 44:
+                            currentSpeechInstance = 45;
+                            maxSpeechInstance = 45;
+                            TutorialCutsceneScript.StopCoroutine(TutorialCutsceneScript.PlayingListener(0));
+                            TutorialCutsceneScript.PlayNextCutscene(11);
+                            break;
+                        case 45:
+                            currentSpeechInstance = 46;
+                            maxSpeechInstance = 46;
+                            TutorialCutsceneScript.StopCoroutine(TutorialCutsceneScript.PlayingListener(0));
+                            TutorialCutsceneScript.PlayNextCutscene(12);
+                            break;
+                        case 46:
+                            //pick up prompt auki
+                            currentSpeechInstance = 47;
+                            maxSpeechInstance = 53;
+                            break;
+                        case 53:
+                            TutorialCutsceneScript.StopCoroutine(TutorialCutsceneScript.PlayingListener(0));
+                            TutorialCutsceneScript.PlayNextCutscene(13);
+                            break;
+                        /*case 9:
                             player.gameObject.GetComponent<MovementControls>().stop = false;
                             player.AddFirefly();
-                            Canvas.SetActive(false);
+                            Canvas.SetActive(false); 
                             Destroy(gameObject);
                             currentSpeechInstance = 10;
                             maxSpeechInstance = 13;
@@ -206,7 +308,7 @@ public class NPC : MonoBehaviour {
                             player.gameObject.GetComponent<MovementControls>().stop = false;
                             Canvas.SetActive(false);
                             Destroy(gameObject);
-                            break;
+                            break;*/
                     }
                     
                 }
@@ -221,6 +323,82 @@ public class NPC : MonoBehaviour {
             //Muussa tapauksessa päivitetään puhekupla
             else {
                 speechCreator.UpdateSpeechBubble(this);
+
+                //Ja päivitetään kamera puheenvuoron perusteella
+                switch (currentSpeechInstance)
+                {
+                    case 1:
+                        TutorialCutsceneScript.talkingMilaVCam.SetActive(true);
+                        TutorialCutsceneScript.activeVCam = TutorialCutsceneScript.talkingMilaVCam;
+                        break;
+                    /*case 3:
+                        TutorialCutsceneScript.SwitchVCam(2);
+                        break;
+                    case 4:
+                        TutorialCutsceneScript.SwitchVCam(1);
+                        break;
+                    case 5:
+                        TutorialCutsceneScript.SwitchVCam(2);
+                        break;
+                    case 6:
+                        TutorialCutsceneScript.SwitchVCam(2);
+                        break;
+                    case 7:
+                        TutorialCutsceneScript.SwitchVCam(1);
+                        break;
+                    case 8:
+                        TutorialCutsceneScript.SwitchVCam(2);
+                        break;
+                    case 16:
+                        if (TutorialCutsceneScript.director3.state == UnityEngine.Playables.PlayState.Playing)
+                        {
+                            TutorialCutsceneScript.director3.Stop();
+                        }
+                        TutorialCutsceneScript.vCam3.SetActive(true);
+                        TutorialCutsceneScript.activeVCam = TutorialCutsceneScript.vCam3;
+                        break;
+                    case 17:
+                        TutorialCutsceneScript.director4.Play();
+                        break;
+                    case 28:
+                        TutorialCutsceneScript.director7.Play();
+                        break;
+                    case 30:
+                        TutorialCutsceneScript.director7.Stop();
+                        TutorialCutsceneScript.vCam4.SetActive(true);
+                        break;
+                    case 33:
+                        TutorialCutsceneScript.SwitchVCam(2);
+                        break;
+                    case 34:
+                        TutorialCutsceneScript.SwitchVCam(1);
+                        break;
+                    case 35:
+                        TutorialCutsceneScript.SwitchVCam(2);
+                        break;
+                    case 47:
+                        TutorialCutsceneScript.SwitchVCam(2);
+                        break;
+                    case 48:
+                        TutorialCutsceneScript.SwitchVCam(2);
+                        break;
+                    case 49:
+                        TutorialCutsceneScript.SwitchVCam(1);
+                        break;
+                    case 50:
+                        TutorialCutsceneScript.SwitchVCam(2);
+                        break;
+                    case 51:
+                        TutorialCutsceneScript.SwitchVCam(2);
+                        break;
+                    case 52:
+                        TutorialCutsceneScript.SwitchVCam(1);
+                        break;
+                    case 53:
+                        TutorialCutsceneScript.SwitchVCam(2);
+                        break;*/
+
+                }
             }
         }
         //Jos keskustelu aloitetaan, luodaan enismmäinen puhekupla
@@ -247,5 +425,78 @@ public class NPC : MonoBehaviour {
             speechCreator.CloseSpeechBubble(this);
             talking = false;
         }
+    }
+
+    public void NextSpeechFromCutscene(int newCurrentSpeechInstance)
+    {
+        currentSpeechInstance = newCurrentSpeechInstance;
+        //Lisätään kuuntelija ja avataan kyssäri-ikoni. 
+        walkedAway = false;
+        if (player.gameObject.GetComponent<Character>() != null && !speechCreator.StillTalking())
+        {
+            Canvas.SetActive(true);
+            m_MyEvent.AddListener(TalkEvent);
+            m_SecondEvent.AddListener(Backwards);
+            if (id == 6)
+            {
+                switch (currentSpeechInstance)
+                {
+                    case 1:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 3:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 33:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 37:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 38:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 39:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 40:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 45:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 46:
+                        m_MyEvent.Invoke();
+                        break;
+                    /*case 14:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 16:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 17:
+                        player.gameObject.GetComponent<MovementControls>().stop = true;
+                        m_MyEvent.Invoke();
+                        break;
+                    case 21:
+                        m_MyEvent.Invoke();
+                        break;
+                    case 23:
+                        player.gameObject.GetComponent<MovementControls>().stop = true;
+                        m_MyEvent.Invoke();
+                        break;
+                    case 28:
+                        player.gameObject.GetComponent<MovementControls>().stop = true;
+                        m_MyEvent.Invoke();
+                        break;
+                    case 37:
+                        player.gameObject.GetComponent<MovementControls>().stop = true;
+                        m_MyEvent.Invoke();
+                        break;*/
+                }
+
+            }
+        }
+
     }
 }
