@@ -11,6 +11,7 @@ public class Door : MonoBehaviour {
     public GameObject blackScreen;
     public GameObject camera;
     public GameObject canvas;
+    bool isBeingUsed = false;
 
 
     // Use this for initialization
@@ -27,21 +28,18 @@ public class Door : MonoBehaviour {
         Debug.Log(camera);     
     }
 
-    private void OnTriggerEnter(Collider player) {
-        canvas.SetActive(true);
-    }
-
     private void OnTriggerExit(Collider other) {
         canvas.SetActive(false);
     }
 
     void OnTriggerStay(Collider player) {
 		//jos ovella on pelaaja
-		if (player.gameObject.GetComponent<Character>() != null) {
+		if (player.gameObject.GetComponent<Character>() != null && !isBeingUsed) {
 			//ja pelaajalla on avain
 			if (player.gameObject.GetComponent<Character> ().hasRaskovnik) {
-				//ja pelaaja avaa oven
-				if (Input.GetKeyDown(talkKey)){
+                //ja pelaaja avaa oven
+                canvas.SetActive(true);
+                if (Input.GetKeyDown(talkKey)){
                     //ovenavaus cutscene ja äänet tähän
                     TeleportIn(player.gameObject);
 				}
@@ -58,6 +56,9 @@ public class Door : MonoBehaviour {
 
     IEnumerator TeleportRoutine(GameObject player)
     {
+        isBeingUsed = true;
+        otherDoor.GetComponentInParent<Door>().isBeingUsed = true;
+        canvas.SetActive(false);
         blackScreen.SetActive(true);
         blackScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.0f, false);
         player.transform.position = otherDoor.transform.position;
@@ -66,5 +67,7 @@ public class Door : MonoBehaviour {
         blackScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 3.0f, false);
         yield return new WaitForSeconds(3f);
         blackScreen.SetActive(false);
+        isBeingUsed = false;
+        otherDoor.GetComponentInParent<Door>().isBeingUsed = false;
     }
 }
