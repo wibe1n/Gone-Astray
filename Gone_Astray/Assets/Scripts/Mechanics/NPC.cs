@@ -36,23 +36,27 @@ public class NPC : MonoBehaviour {
     void OnTriggerEnter(Collider player) {
         //Lisätään kuuntelija ja avataan kyssäri-ikoni. 
         walkedAway = false;
-        if (player.gameObject.GetComponent<Character>() != null && !speechCreator.StillTalking()) {
+        if (player.gameObject.GetComponent<Character>() != null && !speechCreator.StillTalking())
+        {
             Canvas.SetActive(true);
             m_MyEvent.AddListener(TalkEvent);
             m_SecondEvent.AddListener(Backwards);
             //Tietyt NPC voivat alkaa älisee heti
-            if (id == 6) {               
-                switch (currentSpeechInstance) {
+            if (id == 6)
+            {
+                switch (currentSpeechInstance)
+                {
                     /*case 1:
                         player.gameObject.GetComponent<MovementControls>().stop = true;
                         m_MyEvent.Invoke();
                         break;*/
                     case 13:
-                        if (player.GetComponent<Character>().hasRaskovnik) {
+                        if (player.GetComponent<Character>().hasRaskovnik)
+                        {
                             currentSpeechInstance = 20;
                             maxSpeechInstance = 20;
                         }
-                        TutorialCutsceneScript.PlayNextCutscene(2);
+                        //TutorialCutsceneScript.PlayNextCutscene(2);
                         m_MyEvent.Invoke();
                         break;
                     case 18:
@@ -73,16 +77,16 @@ public class NPC : MonoBehaviour {
                         TutorialCutsceneScript.PlayNextCutscene(5);
                         m_MyEvent.Invoke();
                         break;
-                    /*case 28:
-                        player.gameObject.GetComponent<MovementControls>().stop = true;
-                        m_MyEvent.Invoke();
-                        break;
-                    case 37:
-                        player.gameObject.GetComponent<MovementControls>().stop = true;
-                        m_MyEvent.Invoke();
-                        break;*/
+                        /*case 28:
+                            player.gameObject.GetComponent<MovementControls>().stop = true;
+                            m_MyEvent.Invoke();
+                            break;
+                        case 37:
+                            player.gameObject.GetComponent<MovementControls>().stop = true;
+                            m_MyEvent.Invoke();
+                            break;*/
                 }
-                
+
             }
         }
 
@@ -137,20 +141,30 @@ public class NPC : MonoBehaviour {
     }
 
     private void Update() {
-		if (Input.GetKeyDown(talkKey) && m_MyEvent != null) {
-            if (id == 6){
-                m_MyEvent.Invoke();
+        if (talking)
+        {
+            if (Input.GetKeyDown(talkKey) && m_MyEvent != null)
+            {
+                if (id == 6)
+                {
+                    m_MyEvent.Invoke();
+                }
             }
-        }
-        else if (Input.GetKeyDown(talkBackKey) && m_MyEvent != null) {
-            m_SecondEvent.Invoke();
+            else if (Input.GetKeyDown(talkBackKey) && m_MyEvent != null)
+            {
+                m_SecondEvent.Invoke();
+            }
         }
     }
 
-    public void TalkEvent() {
-		//tallennukselle välitetään pelaajan kautta missä kohtaa keskustelua mennään
-		player.NPCspeechInstance = currentSpeechInstance;
-        if (talking == true) {
+    public void TalkEvent()
+    {
+        //tallennukselle välitetään pelaajan kautta missä kohtaa keskustelua mennään
+        player.NPCspeechInstance = currentSpeechInstance;
+        if (talking == true)
+        {
+            Debug.Log("MAX === " + maxSpeechInstance);
+            Debug.Log("CURRENT === " + currentSpeechInstance);
             //Jos ollaan vikassa puhekerrassa niin suljetaan puhekupla
             if (currentSpeechInstance == maxSpeechInstance) {
                 speechCreator.CloseSpeechBubble(this);
@@ -162,21 +176,29 @@ public class NPC : MonoBehaviour {
                     switch(maxSpeechInstance)
                     {
                         case 2:
+                            speechCreator.CloseSpeechBubble(this);
                             Canvas.SetActive(false);
                             currentSpeechInstance = 3;
                             maxSpeechInstance = 12;
+                            player.transform.position = TutorialCutsceneScript.MilaLocation2.transform.position;
+                            player.transform.rotation = TutorialCutsceneScript.MilaLocation2.transform.rotation;
                             TutorialCutsceneScript.director2.Play();
-                            TutorialCutsceneScript.once = false;
+                            TutorialCutsceneScript.once2 = false;
+                            TutorialCutsceneScript.cutsceneId = 2;
+
+                            m_MyEvent.RemoveListener(TalkEvent);
                             break;
-                        /*case 12:
+                        case 12:
                             Canvas.SetActive(false);
-                            player.AddFirefly();
-                            Destroy(gameObject);
+                            speechCreator.CloseSpeechBubble(this);
+                            //player.AddFirefly();
+                            //Destroy(gameObject);
                             currentSpeechInstance = 13;
                             maxSpeechInstance = 17;
                             TutorialCutsceneScript.cutsceneFinished = true;
+                            TutorialCutsceneScript.EndCutscene();
                             break;
-                        case 17:
+                        /*case 17:
                             Canvas.SetActive(false);
                             currentSpeechInstance = 18;
                             maxSpeechInstance = 19;
@@ -327,29 +349,35 @@ public class NPC : MonoBehaviour {
                 //Ja päivitetään kamera puheenvuoron perusteella
                 switch (currentSpeechInstance)
                 {
-                    case 1:
+                    case 2:
                         TutorialCutsceneScript.talkingMilaVCam.SetActive(true);
                         TutorialCutsceneScript.activeVCam = TutorialCutsceneScript.talkingMilaVCam;
                         break;
-                    /*case 3:
-                        TutorialCutsceneScript.SwitchVCam(2);
+                    case 3:
+                        TutorialCutsceneScript.talkingFiaVCam.SetActive(true);
+                        TutorialCutsceneScript.talkingMilaVCam.SetActive(false);
+                        Debug.Log("Fian pitäisi olla aktiivinen kamera");
                         break;
                     case 4:
-                        TutorialCutsceneScript.SwitchVCam(1);
+                        TutorialCutsceneScript.talkingMilaVCam.SetActive(true);
+                        TutorialCutsceneScript.talkingFiaVCam.SetActive(false);
                         break;
                     case 5:
-                        TutorialCutsceneScript.SwitchVCam(2);
+                        TutorialCutsceneScript.talkingFiaVCam.SetActive(true);
+                        TutorialCutsceneScript.talkingMilaVCam.SetActive(false);
                         break;
                     case 6:
-                        TutorialCutsceneScript.SwitchVCam(2);
+                        TutorialCutsceneScript.talkingFiaVCam.SetActive(true);
+                        TutorialCutsceneScript.talkingMilaVCam.SetActive(false);
                         break;
                     case 7:
-                        TutorialCutsceneScript.SwitchVCam(1);
+                        TutorialCutsceneScript.talkingMilaVCam.SetActive(true);
+                        TutorialCutsceneScript.talkingFiaVCam.SetActive(false);
                         break;
                     case 8:
-                        TutorialCutsceneScript.SwitchVCam(2);
+                        TutorialCutsceneScript.talkingFiaVCam.SetActive(true);
                         break;
-                    case 16:
+                    /*case 16:
                         if (TutorialCutsceneScript.director3.state == UnityEngine.Playables.PlayState.Playing)
                         {
                             TutorialCutsceneScript.director3.Stop();
@@ -405,6 +433,11 @@ public class NPC : MonoBehaviour {
         else {
             speechCreator.GenerateSpeechBubble(this);
             talking = true;
+            if (currentSpeechInstance == 3)
+            {
+                TutorialCutsceneScript.talkingFiaVCam.SetActive(true);
+                TutorialCutsceneScript.talkingMilaVCam.SetActive(false);
+            }
         }
     }
 

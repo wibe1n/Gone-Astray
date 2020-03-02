@@ -6,21 +6,23 @@ using UnityEngine.Events;
 
 public class TutoLvl : MonoBehaviour {
 
-    public GameObject mainCamera, cutsceneCamera, cutsceneHolder, cutsceneCanvas, inGameCanvas, player, startLocation;
-    public GameObject activeVCam, vCam1, vCam2, vCam3, vCam4, vCam5;
+    public GameObject mainCamera, cutsceneCamera, cutsceneHolder, cutsceneCanvas, inGameCanvas, player, startLocation, MilaLocation2;
+    public GameObject activeVCam, vCam1, vCam2, vCam3, vCam4, vCam5, dollyCam1;
     public GameObject talkingMilaVCam, talkingFiaVCam;
     public PlayableDirector director1, director2, director3, director4, director5, director6, director7, director8, director9, director10, director11, director12, director13, director14, director15;
     public MovementControls movementControls;
     public NPC NPCScript;
     public CameraController2 mainCameraScript;
     public UnityEvent cutsceneEvent = new UnityEvent();
-    public bool playCutscenes, cutsceneFinished, once, once2, once3, once4, once5, once6, once7, once8, once9, once10;
+    public bool playCutscenes, cutsceneFinished, once = true, once2 = true, once3 = true, once4 = true, once5 = true, once6 = true, once7 = true, once8 = true, once9 = true, once10 = true;
+    public int cutsceneId;
 
     // Use this for initialization
     void Start ()
     {
         if (playCutscenes)
         {
+            cutsceneId = 1;
             PlayNextCutscene(1);
         }
         else
@@ -29,7 +31,7 @@ public class TutoLvl : MonoBehaviour {
             mainCamera.SetActive(true);
         }
 
-        once = true;
+        /*once = true;
         once2 = true;
         once3 = true;
         once4 = true;
@@ -38,14 +40,107 @@ public class TutoLvl : MonoBehaviour {
         once7 = true;
         once8 = true;
         once9 = true;
-        once10 = true;
+        once10 = true;*/
+    }
+
+    private void Update()
+    {
+        if (!cutsceneFinished)
+        {
+            if (cutsceneId == 1)
+            {
+                if (director1.state == PlayState.Paused && once == false)
+                {   
+                    dollyCam1.SetActive(false);
+                    SwitchVCam(1);
+                    NPCScript.NextSpeechFromCutscene(1);
+                    once = true;
+                }
+            }
+            if (cutsceneId == 2)
+            {
+                if (director2.state == PlayState.Paused && once2 == false)
+                {
+                    NPCScript.NextSpeechFromCutscene(3);
+                    once2 = true;
+                }
+            }
+            /*if (id == 6)
+            {
+                if (director7.state == PlayState.Paused && once3 == false)
+                {
+                    NPCScript.NextSpeechFromCutscene(33);
+                    once3 = true;
+                }
+            }
+            if (id == 7)
+            {
+                if (director8.state == PlayState.Paused && once4 == false)
+                {
+                    NPCScript.NextSpeechFromCutscene(37);
+                    once4 = true;
+                }
+            }
+            if (id == 8)
+            {
+                if (director9.state == PlayState.Paused && once5 == false)
+                {
+                    NPCScript.NextSpeechFromCutscene(38);
+                    once5 = true;
+                }
+            }
+            if (id == 9)
+            {
+                if (director10.state == PlayState.Paused && once6 == false)
+                {
+                    NPCScript.NextSpeechFromCutscene(39);
+                    once6 = true;
+                }
+            }
+            if (id == 10)
+            {
+                if (director11.state == PlayState.Paused && once7 == false)
+                {
+                    vCam5.SetActive(true);
+                    NPCScript.NextSpeechFromCutscene(40);
+                    once7 = true;
+                }
+            }
+            if (id == 11)
+            {
+                if (director12.state == PlayState.Paused && once8 == false)
+                {
+                    NPCScript.NextSpeechFromCutscene(45);
+                    once8 = true;
+                }
+            }
+            if (id == 12)
+            {
+                if (director13.state == PlayState.Paused && once9 == false)
+                {
+                    //kuvataan ylhäältä
+                    director14.Play();
+                    once9 = false;
+                    NPCScript.NextSpeechFromCutscene(46);
+                    once9 = true;
+                }
+            }
+            if (id == 10)
+            {
+                if (director15.state == PlayState.Paused && once10 == false)
+                {
+                    //thanks for playing ikkuna auki
+                    once10 = true;
+                }
+            }*/
+        }
     }
 
     public void PlayNextCutscene(int id)
     {
         if (playCutscenes)
         {
-            movementControls.stop = true;
+            player.gameObject.GetComponent<MovementControls>().stop = true;
             //mainCamera.SetActive(false);
             //vCam1.SetActive(true);
             cutsceneCamera.SetActive(true);
@@ -65,7 +160,8 @@ public class TutoLvl : MonoBehaviour {
                     mainCameraScript.ResetCameraPos();
                     director1.Play();
                     once = false;
-                    StartCoroutine(PlayingListener(1));
+                    cutsceneFinished = false;
+                    //StartCoroutine(PlayingListener(1));
                     break;
                 case 2:
                     //Puun kierto ja apilapusikko
@@ -145,9 +241,9 @@ public class TutoLvl : MonoBehaviour {
 
     public IEnumerator PlayingListener(int id)
     {
-        while (!(cutsceneFinished == true || Input.GetKeyDown(KeyCode.E)))
+        /*while (!(cutsceneFinished == true || Input.GetKeyDown(KeyCode.E)))
         {
-            if (id == 1)
+            /*if (id == 1)
             {
                 Debug.Log("BBBBBBBBBBbb");
                 Debug.Log("once on " + once);
@@ -234,20 +330,20 @@ public class TutoLvl : MonoBehaviour {
                     once10 = true;
                 }
             }*/
-        }
+        
         yield return new WaitUntil(() => (cutsceneFinished == true || Input.GetKeyDown(KeyCode.E)));
         EndCutscene();
     }
 
     public void EndCutscene()
     {
-        StopCoroutine(PlayingListener(0));
-        cutsceneFinished = false;
+        //StopCoroutine(PlayingListener(0));
+        //cutsceneFinished = false;
 
         cutsceneCanvas.SetActive(false);
         cutsceneCamera.SetActive(false);
-        inGameCanvas.SetActive(true);
-        mainCamera.SetActive(true);
+        //inGameCanvas.SetActive(true);
+        //mainCamera.SetActive(true);
         //cutsceneHolder.SetActive(false);
         movementControls.stop = false;
     }
@@ -256,16 +352,20 @@ public class TutoLvl : MonoBehaviour {
     {
         //target 1 = Mila
         //target 2 = Fia
+        Debug.Log("AAAAAAAAAAAAA");
         if (target == 1)
         {
-            activeVCam.SetActive(false);
+            Debug.Log("NBBBBBBBBBBBBBBBBBBB");
             talkingMilaVCam.SetActive(true);
+            if (activeVCam != talkingMilaVCam)
+                activeVCam.SetActive(false);
             activeVCam = talkingMilaVCam;
         }
         if (target == 2)
         {
             activeVCam.SetActive(false);
-            talkingFiaVCam.SetActive(true);
+            if (activeVCam != talkingFiaVCam)
+                activeVCam.SetActive(false);
             activeVCam = talkingFiaVCam;
         }
     }

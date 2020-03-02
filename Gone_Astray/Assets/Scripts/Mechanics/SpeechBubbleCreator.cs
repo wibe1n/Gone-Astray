@@ -47,6 +47,7 @@ public class SpeechBubbleCreator : MonoBehaviour {
             npc.currentSpeechInstance = 1;
         }
         speechbubble.SetActive(false);
+        
     }
 
     public void SetSpeechInstance(NPC npc, int setInstance) {
