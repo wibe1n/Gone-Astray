@@ -30,7 +30,7 @@ Material:
     m_Floats:
     - _EdgeOnly: 0
     - _ErrorPeriod: 10
-    - _ErrorRange: 0.001
+    - _ErrorRange: 0
     - _NoiseAmount: 0
     - _SampleDistance: 1
     m_Colors:
