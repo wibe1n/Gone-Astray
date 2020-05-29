@@ -29,11 +29,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _EdgeOnly: 0
-    - _ErrorPeriod: 25
-    - _ErrorRange: 0.0015
-    - _NoiseAmount: 0.02
+    - _ErrorPeriod: 10
+    - _ErrorRange: 0
+    - _NoiseAmount: 0
     - _SampleDistance: 1
     m_Colors:
-    - _BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BackgroundColor: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeColor: {r: 0, g: 0, b: 0, a: 1}

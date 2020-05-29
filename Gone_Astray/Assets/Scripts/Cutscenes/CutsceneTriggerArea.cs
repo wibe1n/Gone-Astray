@@ -4,23 +4,80 @@ using UnityEngine;
 
 public class CutsceneTriggerArea : MonoBehaviour
 {
-    public int id;
-    public TutoLvl lvl0script;
+    public int triggerId;
+    public TutoLvl tutorialCutsceneScript;
+    public NPC FiaNpcScript;
+    public GameObject QuestionMarkCanvas;
 
-    // Start is called before the first frame update
+    private Undying_Object undyObj;
+    public KeyCode pickKey = KeyCode.None;
+
+    //Haetaan keybindingit
     void Start()
     {
-        
+
+        if (GameObject.FindGameObjectWithTag("UndyingObject") != null)
+        {
+            undyObj = GameObject.FindGameObjectWithTag("UndyingObject").GetComponent<Undying_Object>();
+            if (undyObj.talkKey == KeyCode.None)
+                pickKey = KeyCode.E;
+            else
+                pickKey = undyObj.talkKey;
+        }
+        else
+            pickKey = KeyCode.E;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider player)
     {
-        
+        if (player.gameObject.GetComponent<Character>() != null)
+        {
+            if (triggerId == 3 || triggerId == 7)
+            {
+                QuestionMarkCanvas.SetActive(true);
+            }
+            else if (triggerId == 4 || triggerId == 5 || triggerId == 6 || triggerId == 8)
+            {
+                FiaNpcScript.FiaChild.SetActive(false);
+                tutorialCutsceneScript.PlayNextCutscene(triggerId);
+                Destroy(gameObject);
+            }
+        }
     }
 
-    void OnTriggerEnter (Collider player)
+    private void OnTriggerStay(Collider player)
     {
-        lvl0script.PlayNextCutscene(id);
+        if (player.gameObject.GetComponent<Character>() != null)
+        {
+            if (Input.GetKeyDown(pickKey))
+            {
+                QuestionMarkCanvas.SetActive(false);
+                switch (triggerId)
+                {
+                    case 3:
+                        FiaNpcScript.FiaChild.SetActive(false);
+                        tutorialCutsceneScript.PlayNextCutscene(triggerId);
+                        break;
+                    case 7:
+                        FiaNpcScript.NextSpeechFromCutscene(31, 32);
+                        break;
+                    default:
+                        //Error id
+                        break;
+                }
+                Destroy(gameObject);
+            }
+        }
+
+    }
+
+    void OnTriggerExit(Collider player)
+    {
+        if (player.gameObject.GetComponent<Character>() != null)
+        {
+            if (QuestionMarkCanvas.activeSelf == true)
+                QuestionMarkCanvas.SetActive(false);
+        }
+
     }
 }

@@ -18,12 +18,18 @@ public class HoveringObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        GetPosition();
         tempPosition.y = Mathf.Sin(Time.realtimeSinceStartup * verticalSpeed) * amplitude + startingPosition.y;
         transform.position = tempPosition;
 	}
 
     public void GetPosition() {
         tempPosition = transform.position;
+        //startingPosition = transform.position;
+    }
+
+    public void ResetPos()
+    {
         startingPosition = transform.position;
     }
 }

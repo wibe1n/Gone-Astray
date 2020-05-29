@@ -6,7 +6,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class MovementControls : MonoBehaviour {
 
     private Movement m_Character; // A reference to the ThirdPersonCharacter on the object
-    private Transform m_Cam;                  // A reference to the main camera in the scenes transform
+    public Transform m_Cam;                  // A reference to the main camera in the scenes transform
     private Vector3 m_CamForward;             // The current forward direction of the camera
     private Vector3 m_Move;
     private Vector3 intendedMove;
@@ -43,7 +43,7 @@ public class MovementControls : MonoBehaviour {
         // get the transform of the main camera
         if (Camera.main != null)
         {
-            m_Cam = Camera.main.transform;
+            //m_Cam = Camera.main.transform;
         }
         else
         {

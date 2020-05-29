@@ -170,4 +170,4 @@
 &npc_npc2_part2_Fia: Could you help me look for it? It's a magical plant called Raskovnik.
 
 %npc_npc2_1_part3
-&npc_npc2_part3_Fia: It has to be somewhere in this forest. Let's just hope some creature hasn't took it.
+&npc_npc2_part3_Fia: It has to be somewhere in this forest. Let's just hope some creature hasn't taken it.
