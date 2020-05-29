@@ -60,9 +60,15 @@ public class InteractObject : MonoBehaviour
     //Otetaan objekti
     private void OnTriggerStay(Collider player) {
         if(player.gameObject.GetComponent<Character>() != null) {
-			if (Input.GetKeyDown(pickKey) && isCollectable) {
-				//tämän koodin voi varmaan joskus siistiä järkevämpään muotoon.
-				//esim leshen ja raskovnik esinelistaan ja niitä käyttävät scriptit katsoo onko esine listan indexissä n boolean päällä
+			if (Input.GetKeyDown(pickKey) && isCollectable)
+            {
+                if (itemIndex == 4)
+                {
+                    player.GetComponent<Character>().hasJournal = true;
+                }
+
+                //tämän koodin voi varmaan joskus siistiä järkevämpään muotoon.
+                //esim leshen ja raskovnik esinelistaan ja niitä käyttävät scriptit katsoo onko esine listan indexissä n boolean päällä
                 if (isFirefly) {
                     player.GetComponent<Character>().AddFirefly();
 				}else if (isLeshen) {
@@ -71,7 +77,7 @@ public class InteractObject : MonoBehaviour
 					player.GetComponent<Character>().hasRaskovnik = true;
 				}
                 else {
-                    player.GetComponent<Character>().items[itemIndex] = true;
+                    //player.GetComponent<Character>().items[itemIndex] = true;
                 }
                 Canvas.SetActive(false);
                 Destroy(gameObject);

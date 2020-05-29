@@ -5,118 +5,160 @@
 &npc_npc1_part1_Hello? Are you hurt?
 
 %npc_npc1_0_part2
-&npc_npc1_part2_My name is Fia. What's yours?
+&npc_npc1_part2_Try walking for a bit!
 
 %npc_npc1_0_part3
-&npc_npc1_part3_You're Mila? Not a bad name!
+&npc_npc1_part3_My name is Fia. What's yours?
 
 %npc_npc1_0_part4
-&npc_npc1_part4_What are you doing here after dark?
+&npc_npc1_part4_...
 
 %npc_npc1_0_part5
-&npc_npc1_part5_You're looking for your sister? Hey, we could ask my Kin!
+&npc_npc1_part5_You're Mila? Not a bad name!
 
 %npc_npc1_0_part6
-&npc_npc1_part6_If your sister's passed here, someone must've seen her.
+&npc_npc1_part6_What are you doing here after dark?
 
 %npc_npc1_0_part7
-&npc_npc1_part7_The problem is I'm locked out here and no one will answer the door...
+&npc_npc1_part7_...
 
 %npc_npc1_0_part8
-&npc_npc1_part8_Listen, we should work together. You help me find the key...
+&npc_npc1_part8_You're looking for your sister? Hey, we could ask my Kin!
 
 %npc_npc1_0_part9
-&npc_npc1_part9_and I'll help you find your sister! Let's go!
+&npc_npc1_part9_If your sister's passed here, someone must've seen her.
 
 %npc_npc1_0_part10
-&npc_npc1_part10_Lucky for you, you just happened to wander onto our front porch.
+&npc_npc1_part10_The problem is, I'm locked out here and no one will answer the door...
 
 %npc_npc1_0_part11
-&npc_npc1_part11_Isn't it pretty? This is the home of the fireflies!
+&npc_npc1_part11_Listen, we should work together. You help me find the key...
 
 %npc_npc1_0_part12
-&npc_npc1_part12_Now let's see about that key...
+&npc_npc1_part12_And I'll help you find your sister! Let's go!
 
 %npc_npc1_0_part13
-&npc_npc1_part13_It's a magical plant called Raskovnik. I think It's around here somewhere...
+&npc_npc1_part13_Lucky for you, you just happened to wander onto our front porch.
 
 %npc_npc1_0_part14
-&npc_npc1_part14_Here it is! Look here, this is a Raskovnik. They're magic and can open doors.
+&npc_npc1_part14_Isn't it pretty? This is the home of the fireflies!
 
 %npc_npc1_0_part15
-&npc_npc1_part15_This one opens our front door! Go ahead and pick it up.
+&npc_npc1_part15_Now let's see about that key...
 
 %npc_npc1_0_part16
-&npc_npc1_part16_Well, we've got the key... Let's go inside.
+&npc_npc1_part16_It's a magical plant called Raskovnik.
 
 %npc_npc1_0_part17
-&npc_npc1_part17_Wait... this isn't right...
+&npc_npc1_part17_This won't be easy... Raskovniks look pretty much exactly like regular ol' clovers.
 
 %npc_npc1_0_part18
-&npc_npc1_part18_Where is everyone?
+&npc_npc1_part18_Here it is! This is a Raskovnik. They're magic and can open doors.
 
 %npc_npc1_0_part19
-&npc_npc1_part19_Hey you guys! it's me! Hellooo!
+&npc_npc1_part19_This one opens our front door! Go ahead and pick it up.
 
 %npc_npc1_0_part20
-&npc_npc1_part20_What the... Let's look around...
+&npc_npc1_part20_Well, we've got the key... Let's go inside.
 
 %npc_npc1_0_part21
-&npc_npc1_part21_This goes to basement.
+&npc_npc1_part21_Wait... This isn't right...
 
 %npc_npc1_0_part22
-&npc_npc1_part22_There's something down there. I can sense it...
+&npc_npc1_part22_Where is everyone?
 
 %npc_npc1_0_part23
-&npc_npc1_part23_What... is happening?
+&npc_npc1_part23_Hey you guys! It's me! Hellooo!
 
 %npc_npc1_0_part24
-&npc_npc1_part24_That chest!It's... It's doing something!
+&npc_npc1_part24_What the... Let's look around...
 
 %npc_npc1_0_part25
-&npc_npc1_part25_This might be a bad idea...
+&npc_npc1_part25_This goes to the basement.
 
 %npc_npc1_0_part26
-&npc_npc1_part26_No. We can't get scared now. Come on Mila!
+&npc_npc1_part26_There's something down there. I can sense it...
 
 %npc_npc1_0_part27
-&npc_npc1_part27_I'll help you see through the dark.
+&npc_npc1_part27_What... Is happening?
 
 %npc_npc1_0_part28
-&npc_npc1_part28_What was THAT all about?
+&npc_npc1_part28_That chest! It's... It's doing something!
 
 %npc_npc1_0_part29
-&npc_npc1_part29_First things first, we gotta find somenone...
+&npc_npc1_part29_This might be a bad idea...
 
 %npc_npc1_0_part30
-&npc_npc1_part30_MOM! DAD! It's Fia! Hello! ...Anyone?
+&npc_npc1_part30_No. We can't get scared now. Come on, Mila!
 
 %npc_npc1_0_part31
-&npc_npc1_part31_They're all gone... I bet it's because of that chest.
+&npc_npc1_part31_Huh, so it was just roots n' baubles all along. Who knew!
 
 %npc_npc1_0_part32
-&npc_npc1_part32_Looks like we're both in it now. Your sister, my family...
+&npc_npc1_part32_I think we better move it outside to get a better look.
 
 %npc_npc1_0_part33
-&npc_npc1_part33_C'mon... we have to do something... 
+&npc_npc1_part33_Phew! What a workout!
 
 %npc_npc1_0_part34
-&npc_npc1_part34_Look, I know the forest is scary at night but... our families must be out there
+&npc_npc1_part34_...
 
 %npc_npc1_0_part35
-&npc_npc1_part35_We have to find them, we just have to!
+&npc_npc1_part35_... Whaddya mean I didn't even do anything?!
 
 %npc_npc1_0_part36
-&npc_npc1_part36_The dark isn't so scary when you got a friend. We'll find your sister and my family. Together.
+&npc_npc1_part36_I cheered you on, didn't I!
 
 %npc_npc1_0_part37
-&npc_npc1_part37_A book? But where's all the pages?
+&npc_npc1_part37_Think we should open it?
 
 %npc_npc1_0_part38
-&npc_npc1_part38_This belongs to your sister? Then she HAS been through here.
+&npc_npc1_part38_What was THAT all about?
 
 %npc_npc1_0_part39
-&npc_npc1_part39_Seems all the pages are missing. You think we'll find them in the woods?
+&npc_npc1_part39_First things first, we gotta find... Anyone.
+
+%npc_npc1_0_part40
+&npc_npc1_part40_MOM! DAD! It's Fia! Hello!
+
+%npc_npc1_0_part41
+&npc_npc1_part41_... Anyone?
+
+%npc_npc1_0_part42
+&npc_npc1_part42_They're all gone... I bet it's because of that chest.
+
+%npc_npc1_0_part43
+&npc_npc1_part43_Looks like we're both in it now. Your sister, my family...
+
+%npc_npc1_0_part44
+&npc_npc1_part44_C'mon... we have to do... Something. Anything.
+
+%npc_npc1_0_part45
+&npc_npc1_part45_Hey, what's that there?
+
+%npc_npc1_0_part46
+&npc_npc1_part46_A book?
+
+%npc_npc1_0_part47
+&npc_npc1_part47_This belongs to your sister? Then she HAS been through here.
+
+%npc_npc1_0_part48
+&npc_npc1_part48_Seems all the pages are missing. You think we'll find them in the woods?
+
+%npc_npc1_0_part49
+&npc_npc1_part49_...
+
+%npc_npc1_0_part50
+&npc_npc1_part50_Look, I know the forest is scary at night, but... We can't just leave our families out there.
+
+%npc_npc1_0_part51
+&npc_npc1_part51_We have to find them, we just have to!
+
+%npc_npc1_0_part52
+&npc_npc1_part52_...
+
+%npc_npc1_0_part53
+&npc_npc1_part53_The dark isn't so scary when you've got a friend. We'll find your sister and my family. Together.
 
 %npc_npc2_1_part0
 &npc_npc2_part0_Alright then, let's go.
@@ -128,4 +170,4 @@
 &npc_npc2_part2_Fia: Could you help me look for it? It's a magical plant called Raskovnik.
 
 %npc_npc2_1_part3
-&npc_npc2_part3_Fia: It has to be somewhere in this forest. Let's just hope some creature hasn't took it.
+&npc_npc2_part3_Fia: It has to be somewhere in this forest. Let's just hope some creature hasn't taken it.

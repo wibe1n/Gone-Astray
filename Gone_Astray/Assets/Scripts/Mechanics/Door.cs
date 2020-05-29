@@ -12,6 +12,7 @@ public class Door : MonoBehaviour {
     public GameObject camera;
     public GameObject canvas;
     bool isBeingUsed = false;
+    bool walkedInToTrigger;
 
 
     // Use this for initialization
@@ -62,6 +63,7 @@ public class Door : MonoBehaviour {
         blackScreen.SetActive(true);
         blackScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.0f, false);
         player.transform.position = otherDoor.transform.position;
+        player.transform.rotation = otherDoor.transform.rotation;
         camera.transform.position = otherDoor.transform.position;
         yield return new WaitForSeconds(1f);
         blackScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 3.0f, false);

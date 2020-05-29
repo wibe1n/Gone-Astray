@@ -5,7 +5,7 @@ using UnityEngine.Playables;
 
 public class CutsceneScript : MonoBehaviour {
 
-    public GameObject mainCamera, cutsceneCamera, cutsceneHolder, cutsceneCanvas, player;
+    /*public GameObject mainCamera, cutsceneCamera, cutsceneHolder, cutsceneCanvas, player;
     public PlayableDirector director;
     public bool checkTimeline = false;
     public MovementControls movementControls;
@@ -54,5 +54,5 @@ public class CutsceneScript : MonoBehaviour {
         mainCamera.SetActive(true);
         cutsceneHolder.SetActive(false);
         movementControls.stop = false;
-    }
+    }*/
 }

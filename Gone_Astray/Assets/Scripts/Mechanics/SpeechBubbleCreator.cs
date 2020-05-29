@@ -10,13 +10,17 @@ public class SpeechBubbleCreator : MonoBehaviour {
 
     //Tekstit haetaan teksticontainerista allaolevista funktioista
     public void GenerateSpeechBubble(NPC npc) {
+        Debug.Log("current " + npc.currentSpeechInstance);
         askCanvas.SetActive(false);
         NameType npcID = (NameType)npc.id;
         bubbleText.text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);
         speechbubble.SetActive(true);
+        if (npc.currentSpeechInstance >= 31)
+            Debug.Log(bubbleText.text);
     }
 
     public void UpdateSpeechBubble(NPC npc) {
+        Debug.Log("current2 " + npc.currentSpeechInstance);
         npc.currentSpeechInstance += 1;
         NameType npcID = (NameType)npc.id;
         bubbleText.text = NameDescContainer.GetSpeechBubble("part" + npc.currentSpeechInstance, npcID);

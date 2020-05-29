@@ -13,7 +13,7 @@ public enum NameType {
 public enum ChapterParts
 {
     part0, part1, part2, part3, part4, part5, part6, part7, part8, part9, part10, part11, part12, part13, part14, part15, part16, part17, part18, part19, part20, part21, part22, part23, part24, part25, part26, part27, part28, part29, part30,
-    part31, part32, part33, part34, part35, part36, part37, part38, part39, part40
+    part31, part32, part33, part34, part35, part36, part37, part38, part39, part40, part41, part42, part43, part44, part45, part46, part47, part48, part49, part50, part51, part52, part53
 };
 
 
