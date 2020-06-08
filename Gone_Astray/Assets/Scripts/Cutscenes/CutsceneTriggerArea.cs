@@ -41,6 +41,24 @@ public class CutsceneTriggerArea : MonoBehaviour
                 FiaNpcScript.FiaChild.SetActive(false);
                 tutorialCutsceneScript.PlayNextCutscene(triggerId);
                 Destroy(gameObject);
+                if (!tutorialCutsceneScript.playCutscenes)
+                {
+                    switch (triggerId)
+                    {
+                        case 4:
+                            FiaNpcScript.NextSpeechFromCutscene(18, 19);
+                            break;
+                        case 5:
+                            FiaNpcScript.NextSpeechFromCutscene(21, 24);
+                            break;
+                        case 6:
+                            FiaNpcScript.NextSpeechFromCutscene(27, 30);
+                            break;
+                        case 8:
+                            FiaNpcScript.journal.gameObject.GetComponent<Collider>().enabled = true;
+                            break;
+                    }
+                }
             }
         }
     }
@@ -56,7 +74,11 @@ public class CutsceneTriggerArea : MonoBehaviour
                 {
                     case 3:
                         FiaNpcScript.FiaChild.SetActive(false);
-                        tutorialCutsceneScript.PlayNextCutscene(triggerId);
+                        tutorialCutsceneScript.exclaMark.SetActive(false);
+                        if (tutorialCutsceneScript.playCutscenes)
+                            tutorialCutsceneScript.PlayNextCutscene(triggerId);
+                        else
+                            StartCoroutine(tutorialCutsceneScript.PlayingListener(3));
                         break;
                     case 7:
                         FiaNpcScript.NextSpeechFromCutscene(31, 32);

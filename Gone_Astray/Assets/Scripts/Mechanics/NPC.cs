@@ -18,7 +18,7 @@ public class NPC : MonoBehaviour {
     public KeyCode talkBackKey = KeyCode.None;
     private Character player;
     public TutoLvl TutorialCutsceneScript;
-    public GameObject FiaChild, journal;
+    public GameObject FiaChild, journal, nextSpeechButton;
 
     private void Start()
     {
@@ -205,19 +205,37 @@ public class NPC : MonoBehaviour {
                             currentSpeechInstance = 2;
                             maxSpeechInstance = 2;
                             //Mila nousee seisomaan -animaatio
-                            StartCoroutine(WaitASec(2.0f));
+                            if (TutorialCutsceneScript.playCutscenes == true)
+                            {
+                                StartCoroutine(WaitASec(2.0f));
+                            }
+                            else
+                            {
+                                StartCoroutine(WaitASec(0f));
+                            }
                             break;
                         case 2:
                             currentSpeechInstance = 3;
                             maxSpeechInstance = 12;
-                            TutorialCutsceneScript.SwitchVCam(1);
                             //Mila kävelee vähän eteen päin -animaatio, tohon^ ehkä uus yleiskuva-vcam?)
-                            StartCoroutine(WaitASec(2.0f));
+                            if (TutorialCutsceneScript.playCutscenes == true)
+                            {
+                                TutorialCutsceneScript.SwitchVCam(1);
+                                StartCoroutine(WaitASec(2.0f));
+                            }
+                            else
+                            {
+                                StartCoroutine(WaitASec(0f));
+                            }
                             break;
                         case 12:
                             currentSpeechInstance = 13;
                             maxSpeechInstance = 17;
                             TutorialCutsceneScript.cutsceneFinished = true;
+                            if (!TutorialCutsceneScript.playCutscenes)
+                            {
+                                StartCoroutine(TutorialCutsceneScript.FiaMove(1));
+                            }
                             break;
                         case 17:
                             currentSpeechInstance = 18;
@@ -248,6 +266,8 @@ public class NPC : MonoBehaviour {
                             currentSpeechInstance = 33;
                             maxSpeechInstance = 36;
                             TutorialCutsceneScript.PlayNextCutscene(7);
+                            if (!TutorialCutsceneScript.playCutscenes)
+                                TutorialCutsceneScript.CurrentPlayingListener = StartCoroutine(TutorialCutsceneScript.PlayingListener(7));
                             break;
                         case 36:
                             //korppikohta tähän
@@ -290,53 +310,54 @@ public class NPC : MonoBehaviour {
             {
                 speechCreator.UpdateSpeechBubble(this);
                 //Ja päivitetään kamera puheenvuoron perusteella
-                switch (currentSpeechInstance)
+                if (TutorialCutsceneScript.playCutscenes)
                 {
-                    case 3:
-                        TutorialCutsceneScript.Fia.transform.position = TutorialCutsceneScript.FiaLocation1.transform.position;
-                        TutorialCutsceneScript.Fia.GetComponent<HoveringObject>().ResetPos();
-                        TutorialCutsceneScript.SwitchVCam(2);
-                        break;
-                    case 4:
-                    case 7:
-                    case 34:
-                    case 49:
-                    case 52:
-                        TutorialCutsceneScript.SwitchVCam(1);
-                        break;
-                    case 5:
-                    case 6:
-                    case 8:
-                    case 35:
-                    case 48:
-                    case 50:
-                    case 51:
-                    case 53:
-                        TutorialCutsceneScript.SwitchVCam(2);
-                        break;
-                    case 14:
-                        player.transform.position = TutorialCutsceneScript.MilaLocation2.transform.position;
-                        player.transform.rotation = TutorialCutsceneScript.MilaLocation2.transform.rotation;
-                        TutorialCutsceneScript.PlayNextCutscene(2);
-                        break;
-                    case 16:
-                        TutorialCutsceneScript.cutsceneFinished = true;
-                        TutorialCutsceneScript.SwitchVCam(3);
-                        break;
-                    case 17:
-                        TutorialCutsceneScript.SwitchVCam(4);
-                        break;
-                    case 28:
-                        TutorialCutsceneScript.vCam9.SetActive(false);
-                        TutorialCutsceneScript.vCam10.SetActive(true);
-                        break;
-                    case 29:
-                        TutorialCutsceneScript.director6.Play();
-                        break;
-                    case 30:
-                        TutorialCutsceneScript.vCam10.SetActive(false);
-                        TutorialCutsceneScript.vCam9.SetActive(true);
-                        break;
+                    switch (currentSpeechInstance)
+                    {
+                        case 3:
+                            TutorialCutsceneScript.Fia.transform.position = TutorialCutsceneScript.FiaLocation1.transform.position;
+                            TutorialCutsceneScript.Fia.GetComponent<HoveringObject>().ResetPos();
+                            TutorialCutsceneScript.SwitchVCam(2);
+                            break;
+                        case 4:
+                        case 7:
+                        case 34:
+                        case 49:
+                        case 52:
+                            TutorialCutsceneScript.SwitchVCam(1);
+                            break;
+                        case 5:
+                        case 6:
+                        case 8:
+                        case 35:
+                        case 48:
+                        case 50:
+                        case 51:
+                        case 53:
+                            TutorialCutsceneScript.SwitchVCam(2);
+                            break;
+                        case 14:
+                            TutorialCutsceneScript.PlayNextCutscene(2);
+                            break;
+                        case 16:
+                            TutorialCutsceneScript.cutsceneFinished = true;
+                            TutorialCutsceneScript.SwitchVCam(3);
+                            break;
+                        case 17:
+                            TutorialCutsceneScript.SwitchVCam(4);
+                            break;
+                        case 28:
+                            TutorialCutsceneScript.vCam9.SetActive(false);
+                            TutorialCutsceneScript.vCam10.SetActive(true);
+                            break;
+                        case 29:
+                            TutorialCutsceneScript.director6.Play();
+                            break;
+                        case 30:
+                            TutorialCutsceneScript.vCam10.SetActive(false);
+                            TutorialCutsceneScript.vCam9.SetActive(true);
+                            break;
+                    }
                 }
             }
         }
@@ -347,13 +368,13 @@ public class NPC : MonoBehaviour {
             speechCreator.GenerateSpeechBubble(this);
             talking = true;
             //Sulava kamerasiirtymä kun Fia näytetään ekan kerran
-            if (id == 6 && currentSpeechInstance == 2)
+            if (id == 6 && currentSpeechInstance == 2 && TutorialCutsceneScript.playCutscenes)
             {
                 TutorialCutsceneScript.Fia.transform.position = TutorialCutsceneScript.FiaLocation1.transform.position;
                 TutorialCutsceneScript.SwitchVCam(2);
             }
             //kun fia alkaa puhumaan niin aktivoidaan sen vcam
-            else if (id == 6 && currentSpeechInstance > 2 && currentSpeechInstance < 18)
+            else if (id == 6 && currentSpeechInstance > 2 && currentSpeechInstance < 18 && TutorialCutsceneScript.playCutscenes)
             {
                 if (TutorialCutsceneScript.mainCamera.activeSelf == true)
                 {
@@ -361,6 +382,8 @@ public class NPC : MonoBehaviour {
                     TutorialCutsceneScript.cutsceneCamera.SetActive(true);
                 }
                 TutorialCutsceneScript.SwitchVCam(2);
+                player.transform.position = TutorialCutsceneScript.MilaLocation2.transform.position;
+                player.transform.rotation = TutorialCutsceneScript.MilaLocation2.transform.rotation;
 
                 if (currentSpeechInstance == 13)
                     TutorialCutsceneScript.exclaMark.SetActive(false);

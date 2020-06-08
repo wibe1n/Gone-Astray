@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class TutoLvl : MonoBehaviour {
 
     public GameObject mainCamera, cutsceneCamera, holder01, holder02, holder03, holder05, holder06, holder07, holder08, cutsceneCanvas, inGameCanvas, blackScreen, player, Fia, cutsceneFia, hedgehog;
-    public GameObject chest, chestLocation, cutsceneJournal, startPos, exclaMark;
+    public GameObject chest, chestLocation, cutsceneJournal, startPos, exclaMark, pressToSkipText;
     public GameObject MilaLocation1, MilaLocation2, MilaLocation3, MilaLocation4, MilaLocation5, MilaLocation6, MilaLocation7, MilaLocation8, FiaLocation1, FiaLocation2, FiaLocation3, FiaLocation4, FiaLocation5, FiaLocation6, FiaLocation7, FiaLocation8, FiaLocation9, hiddenFiaLocation;
-    public GameObject activeVCam, vCam1, vCam2, vCam3, vCam4, vCam5, vCam7, vCam8, vCam9, vCam10, vCam11, vCam12, vCam13, vCam14, vCam15, dollyCam1;
+    public GameObject activeVCam, vCam1, vCam2, vCam3, vCam4, vCam5, vCam7, vCam8, vCam9, vCam10, vCam11, vCam12, vCam13, vCam14, vCam15, dollyCam1, TLCam2;
     public GameObject talkingMilaVCam, talkingFiaVCam, talkingCutsceneFiaVCam;
     public PlayableDirector director1, director2, director3, director5, director6, director7, director8;
     public MovementControls movementControls;
@@ -18,14 +18,16 @@ public class TutoLvl : MonoBehaviour {
     public CameraController2 mainCameraScript;
     public UnityEvent cutsceneEvent = new UnityEvent();
     public bool playCutscenes, cutsceneFinished;
-    //playlis7 on pointteri jota käytetään kun skipataan cutscene 7, koska sen playinglistenerissä tapahtuu niin paljon niin skippaamista kuuntelee erillinen coroutine
-    public Coroutine CurrentPlayingListener;
+    //alla pointtereita coroutineille, jotta niitä voisi keskeyttää tarvittaessa
+    public Coroutine CurrentPlayingListener, currentPressToSkipText, currentBlackScreenFadeCut;
 
     // Use this for initialization
     void Start ()
     {
         if (playCutscenes)
         {
+            currentBlackScreenFadeCut = StartCoroutine(BlackScreenFadeCut(1, 3.0f));
+            currentPressToSkipText = StartCoroutine(PressToSkipText());
             PlayNextCutscene(1);
         }
         else
@@ -38,6 +40,7 @@ public class TutoLvl : MonoBehaviour {
 
     private void Update()
     {
+        
     }
 
     public void PlayNextCutscene(int id)
@@ -68,13 +71,13 @@ public class TutoLvl : MonoBehaviour {
                     Fia.transform.position = hiddenFiaLocation.transform.position;
                     mainCameraScript.ResetCameraPos();
                     director1.Play();
-                    StartCoroutine(PlayingListener(id));
+                    CurrentPlayingListener = StartCoroutine(PlayingListener(id));
                     break;
                 case 2:
                     //Fian puuta esitellään
                     holder02.SetActive(true);
                     director2.Play();
-                    StartCoroutine(PlayingListener(id));
+                    CurrentPlayingListener = StartCoroutine(PlayingListener(id));
                     break;
                 case 3:
                     //siili ilmestyy
@@ -86,18 +89,18 @@ public class TutoLvl : MonoBehaviour {
                     player.transform.rotation = MilaLocation3.transform.rotation;
                     director3.Play();
                     hedgehog.SetActive(true);
-                    StartCoroutine(PlayingListener(id));
+                    CurrentPlayingListener = StartCoroutine(PlayingListener(id));
                     break;
                 case 4:
                     //Rashkovnikin esittely
-                    StartCoroutine(PlayingListener(id));
+                    CurrentPlayingListener = StartCoroutine(PlayingListener(id));
                     break;
                 case 5:
                     //Mila astuu sisään puuhun
                     cutsceneCanvas.SetActive(true);
                     holder05.SetActive(true);
                     director5.Play();
-                    StartCoroutine(PlayingListener(id));
+                    CurrentPlayingListener = StartCoroutine(PlayingListener(id));
                     break;
                 case 6:
                     //Tullaan kellariin
@@ -108,7 +111,7 @@ public class TutoLvl : MonoBehaviour {
                     cutsceneFia.transform.position = FiaLocation4.transform.position;
                     cutsceneFia.GetComponentInChildren<HoveringObject>().ResetPos();
                     cutsceneFia.SetActive(true);
-                    StartCoroutine(PlayingListener(id));
+                    CurrentPlayingListener = StartCoroutine(PlayingListener(id));
                     break;
                 case 7:
                     CurrentPlayingListener = StartCoroutine(PlayingListener(id));
@@ -135,6 +138,7 @@ public class TutoLvl : MonoBehaviour {
         switch (id)
         {
             case 1:
+                bool skipped = false;
                 yield return new WaitUntil(() => (director1.state == PlayState.Paused || Input.GetKeyDown(KeyCode.R)));
                 //Jos skipattiin niin musta ruutu -haihdutusleikkaus
                 if (director1.state != PlayState.Paused)
@@ -142,12 +146,15 @@ public class TutoLvl : MonoBehaviour {
                     StartCoroutine(BlackScreenFadeCut());
                     yield return new WaitForSeconds(1.0f);
                     director1.Stop();
+                    skipped = true;
                 }
 
                 if (director1.state == PlayState.Paused)
                 {
                     vCam1.SetActive(true);
                     dollyCam1.SetActive(false);
+                    if (skipped)
+                        StartCoroutine(PressToSkipText());
                     yield return new WaitForSeconds(3.0f);
                     //tähän asti fia nyyhkyttää istuen puuta vasten (crouch toistaiseksi), sitten hätkähtää (mikä toistaiseksi????)
                     NPCScript.NextSpeechFromCutscene(1, 1);
@@ -170,13 +177,8 @@ public class TutoLvl : MonoBehaviour {
                 mainCameraScript.ResetCameraPos();
                 break;
             case 2:
-                //looppaava kameraliike
                 while (cutsceneFinished != true)
                 {
-                    /*if (director2.state == PlayState.Paused)
-                    {
-                        director2.Play();
-                    }*/
                     yield return null;
                 }
                 director2.Stop();
@@ -185,9 +187,14 @@ public class TutoLvl : MonoBehaviour {
                 yield return new WaitUntil(() => (cutsceneFinished == true));
                 break;
             case 3:
-                yield return new WaitUntil(() => (director3.state == PlayState.Paused || Input.GetKeyDown(KeyCode.R)));
-                if (director3.state != PlayState.Paused)
+                if (playCutscenes)
                 {
+                    currentPressToSkipText = StartCoroutine(PressToSkipText(1f));
+                    yield return new WaitUntil(() => (director3.state == PlayState.Paused || Input.GetKeyDown(KeyCode.R)));
+                }
+                if (director3.state != PlayState.Paused || !playCutscenes)
+                {
+                    hedgehog.SetActive(true);
                     StartCoroutine(BlackScreenFadeCut());
                     yield return new WaitForSeconds(1.0f);
                     director3.Stop();
@@ -214,6 +221,7 @@ public class TutoLvl : MonoBehaviour {
                 vCam7.SetActive(false);
                 break;
             case 5:
+                currentPressToSkipText = StartCoroutine(PressToSkipText(1f));
                 yield return new WaitForSeconds(3.0f);
                 NPCScript.NextSpeechFromCutscene(21, 24);
                 yield return new WaitUntil(() => (cutsceneFinished == true || Input.GetKeyDown(KeyCode.R)));
@@ -228,6 +236,7 @@ public class TutoLvl : MonoBehaviour {
                 holder05.SetActive(false);
                 break;
             case 6:
+                currentPressToSkipText = StartCoroutine(PressToSkipText());
                 yield return new WaitForSeconds(3.0f);
                 NPCScript.NextSpeechFromCutscene(27, 30);
                 yield return new WaitUntil(() => (cutsceneFinished == true || Input.GetKeyDown(KeyCode.R)));
@@ -263,6 +272,7 @@ public class TutoLvl : MonoBehaviour {
                 chest.transform.position = chestLocation.transform.position;
                 chest.transform.rotation = chestLocation.transform.rotation;
                 chest.transform.localScale = new Vector3(70, 70, 70);
+                currentPressToSkipText = StartCoroutine(PressToSkipText());
 
                 //timeline jossa mila kiskoo arkkua vähän matkaa
                 yield return new WaitForSeconds(5.0f);
@@ -281,6 +291,9 @@ public class TutoLvl : MonoBehaviour {
                 cutsceneFinished = false;
                 director7.Play();
                 yield return new WaitUntil(() => director7.state == PlayState.Paused);
+                /*activeVCam.SetActive(false );
+                TLCam2.SetActive(true);
+                activeVCam = TLCam2;*/
                 player.transform.position = MilaLocation6.transform.position;
                 player.transform.rotation = MilaLocation6.transform.rotation;
                 cutsceneFia.transform.position = FiaLocation6.transform.position;
@@ -298,6 +311,7 @@ public class TutoLvl : MonoBehaviour {
                 break;
             case 8:
                 Coroutine skipCheck2 = StartCoroutine(SkipCutscene(8));
+                currentPressToSkipText = StartCoroutine(PressToSkipText());
                 yield return new WaitUntil(() => director8.state == PlayState.Paused);
                 NPCScript.auto = false;
 
@@ -340,228 +354,7 @@ public class TutoLvl : MonoBehaviour {
                 cutsceneFia.SetActive(false);
                 StopCoroutine(skipCheck2);
                 break;
-    }
-        /*if (id == 1)
-        {
-            //vvvvvvv
-            yield return new WaitUntil(() => (director1.state == PlayState.Paused || Input.GetKeyDown(KeyCode.R)));
-            //^^^^^^^^
-            //Jos skipattiin niin musta ruutu -haihdutusleikkaus
-            if (director1.state != PlayState.Paused)
-            {
-                StartCoroutine(BlackScreenFadeCut());
-                yield return new WaitForSeconds(1.0f);
-                director1.Stop();
-            }
-
-            if (director1.state == PlayState.Paused)
-            {
-                vCam1.SetActive(true);
-                dollyCam1.SetActive(false);
-                yield return new WaitForSeconds(3.0f);
-                //tähän asti fia nyyhkyttää istuen puuta vasten (crouch toistaiseksi), sitten hätkähtää (mikä toistaiseksi????)
-                NPCScript.NextSpeechFromCutscene(1, 1);
-            }
-            yield return new WaitUntil(() => !(Input.GetKeyDown(KeyCode.R)));
-            yield return new WaitUntil(() => (cutsceneFinished == true || Input.GetKeyDown(KeyCode.R)));
-            if (cutsceneFinished != true)
-            {
-                cutsceneFinished = true;
-                NPCScript.currentSpeechInstance = 12;
-                NPCScript.maxSpeechInstance = 12;
-                NPCScript.TalkEvent();
-                StartCoroutine(BlackScreenFadeCut());
-                yield return new WaitForSeconds(2f);
-                Fia.transform.position = FiaLocation1.transform.position;
-            }
-            holder01.SetActive(false);
-            player.transform.position = startPos.transform.position;
-            player.transform.rotation = startPos.transform.rotation;
-            mainCameraScript.ResetCameraPos();
         }
-
-        if (id == 2)
-        {
-            //looppaava kameraliike
-            while (cutsceneFinished != true)
-            {
-                /*if (director2.state == PlayState.Paused)
-                {
-                    director2.Play();
-                }
-                yield return null;
-            }
-            director2.Stop();
-            vCam2.SetActive(false);
-            cutsceneFinished = false;
-            yield return new WaitUntil(() => (cutsceneFinished == true));
-        }
-
-        if (id == 3)
-        {
-            yield return new WaitUntil(() => (director3.state == PlayState.Paused || Input.GetKeyDown(KeyCode.R)));
-            if (director3.state != PlayState.Paused)
-            {
-                StartCoroutine(BlackScreenFadeCut());
-                yield return new WaitForSeconds(1.0f);
-                director3.Stop();
-                Vector3 temp = new Vector3 (79.3f, 0.4f, 50.9f);
-                hedgehog.transform.position = temp;
-            }
-            holder03.SetActive(false);
-            cutsceneFia.SetActive(false);
-        }
-
-        if (id == 4)
-        {
-            vCam8.SetActive(true);
-            vCam8.transform.position = mainCamera.transform.position;
-            vCam8.transform.rotation = mainCamera.transform.rotation;
-            activeVCam = vCam8;
-            if (mainCamera.activeSelf == true)
-            {
-                mainCamera.SetActive(false);
-                cutsceneCamera.SetActive(true);
-            }
-            yield return null;
-            SwitchVCam(7);
-            NPCScript.NextSpeechFromCutscene(18, 19);
-            yield return new WaitUntil(() => (cutsceneFinished == true));
-            vCam7.SetActive(false);
-        }
-
-        if (id == 5)
-        {
-            yield return new WaitForSeconds(3.0f);
-            NPCScript.NextSpeechFromCutscene(21, 24);
-            yield return new WaitUntil(() => (cutsceneFinished == true || Input.GetKeyDown(KeyCode.R)));
-            if (cutsceneFinished != true)
-            {
-                NPCScript.currentSpeechInstance = 24;
-                NPCScript.maxSpeechInstance = 24;
-                NPCScript.TalkEvent();
-                StartCoroutine(BlackScreenFadeCut());
-                yield return new WaitForSeconds(2.0f);
-            }
-            holder05.SetActive(false);
-        }
-        if (id == 6)
-        {
-            yield return new WaitForSeconds(3.0f);
-            NPCScript.NextSpeechFromCutscene(27, 30);
-            yield return new WaitUntil(() => (cutsceneFinished == true || Input.GetKeyDown(KeyCode.R)));
-            if (cutsceneFinished != true)
-            {
-                NPCScript.currentSpeechInstance = 30;
-                NPCScript.maxSpeechInstance = 30;
-                NPCScript.TalkEvent();
-                StartCoroutine(BlackScreenFadeCut());
-                yield return new WaitForSeconds(2.0f);
-            }
-            holder06.SetActive(false);
-            cutsceneFia.SetActive(false);
-
-        }
-        if (id == 7)
-        {
-            StartCoroutine(BlackScreenFadeCut());
-            yield return new WaitForSeconds(1.0f);
-            if (mainCamera.activeSelf == true)
-            {
-                mainCamera.SetActive(false);
-                cutsceneCamera.SetActive(true);
-            }
-            holder07.SetActive(true);
-            cutsceneCanvas.SetActive(true);
-            //Skippausta kuunteleva coroutine
-            Coroutine skipCheck = StartCoroutine(SkipCutscene(7));
-
-            cutsceneFia.transform.position = FiaLocation5.transform.position;
-            cutsceneFia.GetComponent<HoveringObject>().ResetPos();
-            cutsceneFia.SetActive(true);
-            player.transform.position = MilaLocation5.transform.position;
-            player.transform.rotation = MilaLocation5.transform.rotation;
-            chest.transform.position = chestLocation.transform.position;
-            chest.transform.rotation = chestLocation.transform.rotation;
-            chest.transform.localScale = new Vector3(70, 70, 70);
-
-            //timeline jossa mila kiskoo arkkua vähän matkaa
-            yield return new WaitForSeconds(5.0f);
-
-            NPCScript.NextSpeechFromCutscene(33, 36);
-
-            yield return new WaitUntil(() => cutsceneFinished == true);
-            cutsceneFinished = false;
-
-            //korppikohta
-
-            SwitchVCam(12);
-            NPCScript.NextSpeechFromCutscene(37, 37);
-
-            yield return new WaitUntil(() => cutsceneFinished == true);
-            cutsceneFinished = false;
-            director7.Play();
-            yield return new WaitUntil(() => director7.state == PlayState.Paused);
-            player.transform.position = MilaLocation6.transform.position;
-            player.transform.rotation = MilaLocation6.transform.rotation;
-            cutsceneFia.transform.position = FiaLocation6.transform.position;
-            cutsceneFia.transform.rotation = FiaLocation6.transform.rotation;
-            NPCScript.NextSpeechFromCutscene(38, 39);
-            //Tähän v ehkä oma kamera joka näyttää molemmat?
-            SwitchVCam(2);
-
-            yield return new WaitUntil(() => cutsceneFinished == true);
-
-            holder07.SetActive(false);
-            cutsceneFia.SetActive(false);
-            //Jos ei skipattu niin suljetaan sitä kuunteleva coroutine
-            StopCoroutine(skipCheck);
-        }
-        if (id == 8)
-        {
-            Coroutine skipCheck = StartCoroutine(SkipCutscene(8));
-            yield return new WaitUntil(() => director8.state == PlayState.Paused);
-            NPCScript.auto = false;
-
-            NPCScript.NextSpeechFromCutscene(44, 44);
-            FiaMove(2);
-            yield return new WaitUntil(() => NPCScript.talking == false);
-            yield return new WaitForSeconds(2.0f);
-            NPCScript.NextSpeechFromCutscene(45, 45);
-            yield return new WaitUntil(() => NPCScript.talking == false);
-            //mila kääntyy
-            //while
-            //player.transform.Rotate(Vector3.up, -50f * Time.deltaTime);
-            yield return new WaitForSeconds(2.0f);
-            player.transform.position = MilaLocation8.transform.position;
-            player.transform.rotation = MilaLocation8.transform.rotation;
-            cutsceneFia.transform.position = FiaLocation8.transform.position;
-            cutsceneFia.GetComponent<HoveringObject>().ResetPos();
-            SwitchVCam(14);
-            StartCoroutine(RotateCamera());
-            NPCScript.NextSpeechFromCutscene(46, 46);
-            yield return new WaitUntil(() => player.GetComponent<Character>().hasJournal == true);
-            cutsceneFinished = true;
-            cutsceneJournal.SetActive(true);
-            cutsceneFia.transform.position = FiaLocation9.transform.position;
-            SwitchVCam(1);
-            yield return new WaitForSeconds(3.0f);
-            SwitchVCam(2);
-            cutsceneFinished = false;
-            NPCScript.NextSpeechFromCutscene(47, 53);
-            yield return new WaitUntil(() => cutsceneFinished == true);
-            cutsceneFinished = false;
-            SwitchVCam(15);
-            yield return new WaitForSeconds(3.0f);
-            StartCoroutine(PullBack());
-
-            StartCoroutine(BlackScreenFadeCut());
-            yield return new WaitForSeconds(2.0f);
-            cutsceneFinished = true;
-            holder08.SetActive(false);
-            cutsceneFia.SetActive(false);
-            StopCoroutine(skipCheck);
-        }*/
 
         EndCutscene();
 
@@ -575,7 +368,7 @@ public class TutoLvl : MonoBehaviour {
     public void EndCutscene()
     {
         Debug.Log("ENDCUTSCENE AAAAAAAAAAAAAA");
-        StopCoroutine(PlayingListener(0));
+        //StopCoroutine(CurrentPlayingListener);
         cutsceneFinished = false;
 
         cutsceneCanvas.SetActive(false);
@@ -665,43 +458,77 @@ public class TutoLvl : MonoBehaviour {
         }
     }
 
-    public IEnumerator BlackScreenFadeCut()
+    public IEnumerator BlackScreenFadeCut(int onlyFadeIn = 0, float fadeDuration = 1.0f)
     {
         blackScreen.SetActive(true);
+
+        if (onlyFadeIn == 0)
+        {
+            if (currentBlackScreenFadeCut != null)
+                StopCoroutine(currentBlackScreenFadeCut);
+            else
+                blackScreen.GetComponentInChildren<Image>().canvasRenderer.SetAlpha(0.0f);
+            blackScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.5f, false);
+            yield return new WaitForSeconds(2f);
+        }
+        else
+            blackScreen.GetComponentInChildren<Image>().canvasRenderer.SetAlpha(1.0f);
+
+        //jos press to skip väläytys on kesken, keskeytetään ja nollataan alfa
+        if (currentPressToSkipText != null)
+        {
+            StopCoroutine(currentPressToSkipText);
+            pressToSkipText.GetComponent<Text>().canvasRenderer.SetAlpha(0.0f);
+        }
+
+        blackScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, fadeDuration, false);
+        yield return new WaitForSeconds(fadeDuration);
         blackScreen.GetComponentInChildren<Image>().canvasRenderer.SetAlpha(0.0f);
-        blackScreen.GetComponentInChildren<Image>().CrossFadeAlpha(1.0f, 0.5f, false);
-        yield return new WaitForSeconds(2f);
-        blackScreen.GetComponentInChildren<Image>().CrossFadeAlpha(0.0f, 1.0f, false);
-        blackScreen.GetComponentInChildren<Image>().canvasRenderer.SetAlpha(1.0f);
-        yield return new WaitForSeconds(1f);
         blackScreen.SetActive(false);
+
+        currentBlackScreenFadeCut = null;
     }
 
     public IEnumerator SkipCutscene(int id)
     {
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.R));
+        if (playCutscenes)
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.R));
+
+        cutsceneFinished = true;
         StopCoroutine(CurrentPlayingListener);
         if (id == 7)
         {
-            NPCScript.currentSpeechInstance = 39;
-            NPCScript.maxSpeechInstance = 39;
-            NPCScript.TalkEvent();
+            if (NPCScript.talking)
+            {
+                NPCScript.currentSpeechInstance = 39;
+                NPCScript.maxSpeechInstance = 39;
+                NPCScript.TalkEvent();
+            }
             StartCoroutine(BlackScreenFadeCut());
             yield return new WaitForSeconds(2.0f);
             player.transform.position = MilaLocation6.transform.position;
             player.transform.rotation = MilaLocation6.transform.rotation;
+            mainCameraScript.ResetCameraPos();
             holder07.SetActive(false);
         }
         if (id == 8)
         {
-            NPCScript.currentSpeechInstance = 53;
-            NPCScript.maxSpeechInstance = 53;
-            NPCScript.TalkEvent();
+            if (NPCScript.talking)
+            {
+                NPCScript.currentSpeechInstance = 53;
+                NPCScript.maxSpeechInstance = 53;
+                NPCScript.TalkEvent();
+            }
             StartCoroutine(BlackScreenFadeCut());
             yield return new WaitForSeconds(2.0f);
+            if (director8.state == PlayState.Playing)
+                director8.Stop();
             player.transform.position = MilaLocation8.transform.position;
             player.transform.rotation = MilaLocation8.transform.rotation;
+            mainCameraScript.ResetCameraPos();
             holder08.SetActive(false);
+            if (player.GetComponent<Character>().hasJournal == false)
+                NPCScript.journal.gameObject.GetComponent<Collider>().enabled = true; 
         }
         cutsceneFia.SetActive(false);
         EndCutscene();
@@ -725,5 +552,19 @@ public class TutoLvl : MonoBehaviour {
             vCam14.transform.Translate(-Vector3.forward * Time.deltaTime);
             yield return null;
         }
+    }
+
+    public IEnumerator PressToSkipText(float waitTime = 2f)
+    {
+        pressToSkipText.SetActive(true);
+        pressToSkipText.GetComponent<Text>().canvasRenderer.SetAlpha(0.0f);
+        yield return new WaitForSeconds(waitTime);
+        pressToSkipText.GetComponent<Text>().CrossFadeAlpha(1.0f, 0.5f, false);
+        yield return new WaitForSeconds(2f);
+        pressToSkipText.GetComponent<Text>().CrossFadeAlpha(0.0f, 0.5f, false);
+        yield return new WaitForSeconds(0.5f);
+        pressToSkipText.SetActive(false);
+
+        currentPressToSkipText = null;
     }
 }

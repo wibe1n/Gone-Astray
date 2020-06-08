@@ -15,9 +15,14 @@ public class HoveringObject : MonoBehaviour {
         tempPosition = transform.position;
         startingPosition = transform.position;
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    private void Update()
+    {
+        Debug.Log(startingPosition);
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
         GetPosition();
         tempPosition.y = Mathf.Sin(Time.realtimeSinceStartup * verticalSpeed) * amplitude + startingPosition.y;
         transform.position = tempPosition;
@@ -30,6 +35,6 @@ public class HoveringObject : MonoBehaviour {
 
     public void ResetPos()
     {
-        startingPosition = transform.position;
+        startingPosition = this.transform.parent.gameObject.transform.position;
     }
 }

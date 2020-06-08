@@ -18,24 +18,28 @@ public class SignalManager : MonoBehaviour
 
     public void NextSpeechSignal()
     {
-        Debug.Log("SIGNAALIIII " + signal);
-        switch (signal)
+        if (FiaNpcScript.TutorialCutsceneScript.cutsceneFinished != true)
         {
-            case 1:
-                FiaNpcScript.NextSpeechFromCutscene(40, 40);
-                break;
-            case 2:
-            case 4:
-                FiaNpcScript.TalkEvent();
-                break;
-            case 3:
-                FiaNpcScript.NextSpeechFromCutscene(41, 41);
-                break;
-            case 5:
-                FiaNpcScript.NextSpeechFromCutscene(42, 43);
-                break;
-        }
+            switch (signal)
+            {
+                case 1:
+                    FiaNpcScript.NextSpeechFromCutscene(40, 40);
+                    FiaNpcScript.nextSpeechButton.SetActive(false);
+                    break;
+                case 2:
+                case 4:
+                    FiaNpcScript.TalkEvent();
+                    break;
+                case 3:
+                    FiaNpcScript.NextSpeechFromCutscene(41, 41);
+                    break;
+                case 5:
+                    FiaNpcScript.NextSpeechFromCutscene(42, 43);
+                    FiaNpcScript.nextSpeechButton.SetActive(true);
+                    break;
+            }
 
-        signal++;
+            signal++;
+        }
     }
 }
