@@ -16,11 +16,6 @@ public class HoveringObject : MonoBehaviour {
         startingPosition = transform.position;
 	}
 
-    private void Update()
-    {
-        Debug.Log(startingPosition);
-    }
-
     // Update is called once per frame
     void FixedUpdate () {
         GetPosition();

@@ -476,5 +476,6 @@ public class NPC : MonoBehaviour {
         //DESTROY EI KÄY se pilaa kaikki loput puhelut
         //Destroy(gameObject);
         FiaChild.SetActive(false);
+        this.GetComponent<Collider>().enabled = false;
     }
 }

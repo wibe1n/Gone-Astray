@@ -7373,7 +7373,7 @@ PrefabInstance:
     - target: {fileID: 5545559532079882648, guid: f6ab99cb4f448664b94ef8b8b9a28453,
         type: 3}
       propertyPath: playCutscenes
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5545559532079882648, guid: f6ab99cb4f448664b94ef8b8b9a28453,
         type: 3}
@@ -11524,12 +11524,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655903476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 93.37, y: 10.1, z: 89.54}
+  m_LocalPosition: {x: 92.81943, y: 10.1464815, z: 89.48415}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1281513570}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 52, z: 0}
 --- !u!1 &656969610
 GameObject:
   m_ObjectHideFlags: 0

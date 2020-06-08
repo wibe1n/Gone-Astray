@@ -39,6 +39,8 @@ public class CutsceneTriggerArea : MonoBehaviour
             else if (triggerId == 4 || triggerId == 5 || triggerId == 6 || triggerId == 8)
             {
                 FiaNpcScript.FiaChild.SetActive(false);
+                FiaNpcScript.gameObject.GetComponent<Collider>().enabled = false;
+                tutorialCutsceneScript.exclaMark.SetActive(false);
                 tutorialCutsceneScript.PlayNextCutscene(triggerId);
                 Destroy(gameObject);
                 if (!tutorialCutsceneScript.playCutscenes)
@@ -74,6 +76,7 @@ public class CutsceneTriggerArea : MonoBehaviour
                 {
                     case 3:
                         FiaNpcScript.FiaChild.SetActive(false);
+                        FiaNpcScript.gameObject.GetComponent<Collider>().enabled = false;
                         tutorialCutsceneScript.exclaMark.SetActive(false);
                         if (tutorialCutsceneScript.playCutscenes)
                             tutorialCutsceneScript.PlayNextCutscene(triggerId);

@@ -290,9 +290,11 @@ public class TutoLvl : MonoBehaviour {
                 yield return new WaitUntil(() => cutsceneFinished == true);
                 cutsceneFinished = false;
                 director7.Play();
+                vCam11.SetActive(false);
+                vCam12.SetActive(false);
                 yield return new WaitUntil(() => director7.state == PlayState.Paused);
                 /*activeVCam.SetActive(false );
-                TLCam2.SetActive(true);
+                TLCam2.SetActive(false);
                 activeVCam = TLCam2;*/
                 player.transform.position = MilaLocation6.transform.position;
                 player.transform.rotation = MilaLocation6.transform.rotation;
