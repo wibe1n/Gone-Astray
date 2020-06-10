@@ -11,7 +11,7 @@ public class MovementControls : MonoBehaviour {
     private Vector3 m_Move;
     private Vector3 intendedMove;
     public bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-    public bool stop;
+    public bool stop = false;
     public bool encounter;
     public bool running;
     private float radius;
@@ -54,7 +54,7 @@ public class MovementControls : MonoBehaviour {
 
         // get the third person character ( this should never be null due to require component )
         m_Character = GetComponent<Movement>();
-        stop = false;
+        //stop = false;
     }
 
 

@@ -180,7 +180,7 @@ public class NPC : MonoBehaviour {
 
     public void TalkEvent()
     {
-        Debug.Log("TALKEVENT");
+        Debug.Log("BBBBBBBBBBB");
         //tallennukselle välitetään pelaajan kautta missä kohtaa keskustelua mennään
         player.NPCspeechInstance = currentSpeechInstance;
         if (talking == true)
@@ -364,7 +364,7 @@ public class NPC : MonoBehaviour {
         //Jos keskustelu aloitetaan, luodaan enismmäinen puhekupla
         else
         {
-            Debug.Log("luodaan");
+            Debug.Log("CCCCCCCCCCCCC");
             speechCreator.GenerateSpeechBubble(this);
             talking = true;
             //Sulava kamerasiirtymä kun Fia näytetään ekan kerran
@@ -427,6 +427,7 @@ public class NPC : MonoBehaviour {
             if (id == 6)
             {
                 m_MyEvent.Invoke();
+                Debug.Log("AAAAAAAAAAAAAAAAAAAA");
             }
         }
     }

@@ -9,7 +9,7 @@ public class TutoLvl : MonoBehaviour {
 
     public GameObject mainCamera, cutsceneCamera, holder01, holder02, holder03, holder05, holder06, holder07, holder08, cutsceneCanvas, inGameCanvas, blackScreen, player, Fia, cutsceneFia, hedgehog;
     public GameObject chest, chestLocation, cutsceneJournal, startPos, exclaMark, pressToSkipText;
-    public GameObject MilaLocation1, MilaLocation2, MilaLocation3, MilaLocation4, MilaLocation5, MilaLocation6, MilaLocation7, MilaLocation8, FiaLocation1, FiaLocation2, FiaLocation3, FiaLocation4, FiaLocation5, FiaLocation6, FiaLocation7, FiaLocation8, FiaLocation9, hiddenFiaLocation;
+    public GameObject MilaLocation1, MilaLocation2, MilaLocation3, MilaLocation4, MilaLocation5, MilaLocation6, MilaLocation7, MilaLocation8, FiaLocation1, FiaLocation2, FiaLocation3, FiaLocation4, FiaLocation5, FiaLocation6, FiaLocation7, FiaLocation8, FiaLocation9, FiaLocation10, hiddenFiaLocation;
     public GameObject activeVCam, vCam1, vCam2, vCam3, vCam4, vCam5, vCam7, vCam8, vCam9, vCam10, vCam11, vCam12, vCam13, vCam14, vCam15, dollyCam1, TLCam2;
     public GameObject talkingMilaVCam, talkingFiaVCam, talkingCutsceneFiaVCam;
     public PlayableDirector director1, director2, director3, director5, director6, director7, director8;
@@ -99,6 +99,9 @@ public class TutoLvl : MonoBehaviour {
                     //Mila astuu sisään puuhun
                     cutsceneCanvas.SetActive(true);
                     holder05.SetActive(true);
+                    cutsceneFia.transform.position = FiaLocation10.transform.position;
+                    cutsceneFia.GetComponentInChildren<HoveringObject>().ResetPos();
+                    cutsceneFia.SetActive(true);
                     director5.Play();
                     CurrentPlayingListener = StartCoroutine(PlayingListener(id));
                     break;
@@ -209,6 +212,7 @@ public class TutoLvl : MonoBehaviour {
                 vCam8.transform.position = mainCamera.transform.position;
                 vCam8.transform.rotation = mainCamera.transform.rotation;
                 activeVCam = vCam8;
+                StartCoroutine(LerpFieldOfView());
                 if (mainCamera.activeSelf == true)
                 {
                     mainCamera.SetActive(false);
@@ -234,6 +238,7 @@ public class TutoLvl : MonoBehaviour {
                     yield return new WaitForSeconds(2.0f);
                 }
                 holder05.SetActive(false);
+                cutsceneFia.SetActive(false);
                 break;
             case 6:
                 currentPressToSkipText = StartCoroutine(PressToSkipText());
@@ -369,7 +374,6 @@ public class TutoLvl : MonoBehaviour {
 
     public void EndCutscene()
     {
-        Debug.Log("ENDCUTSCENE AAAAAAAAAAAAAA");
         //StopCoroutine(CurrentPlayingListener);
         cutsceneFinished = false;
 
@@ -568,5 +572,18 @@ public class TutoLvl : MonoBehaviour {
         pressToSkipText.SetActive(false);
 
         currentPressToSkipText = null;
+    }
+
+    public IEnumerator LerpFieldOfView()
+    {
+        cutsceneCamera.GetComponent<Camera>().fieldOfView = 94.97911f;
+        /*
+        while (cutsceneFinished != true)
+        {
+            vCam14.transform.Translate(-Vector3.forward * Time.deltaTime);
+            yield return null;
+        }
+        */
+        yield return null;
     }
 }
