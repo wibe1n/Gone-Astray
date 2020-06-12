@@ -18,7 +18,8 @@ public class NPC : MonoBehaviour {
     public KeyCode talkBackKey = KeyCode.None;
     private Character player;
     public TutoLvl TutorialCutsceneScript;
-    public GameObject FiaChild, journal, nextSpeechButton;
+    public GameObject FiaChild, journal, nextSpeechButton, burstParticleSystem;
+    //public ParticleSystem burstParticleSystem;
 
     private void Start()
     {
@@ -440,15 +441,19 @@ public class NPC : MonoBehaviour {
 
     public IEnumerator SpiralAround()
     {
-        //kerätty kärpänen kiertää spirallissa milan positioon, ja "katoaa takin alle"
+        //kerätty kärpänen kiertää spiraalissa milan positioon, ja "katoaa takin alle"
 
         //spiraali alkaa aina samasta kohdasta milan edessä, vois myöhemmin muokata sulavammaks koska kärpänen ei aina oo just siinä kun sen kerää
         Vector3 temp;
         temp = player.transform.position;
         temp.z++;
 
-        int spiralSpeed = 15;
-        float distance = (transform.position - player.transform.position).magnitude / 100;
+        GameObject parentHolder = transform.parent.gameObject;
+        transform.parent = player.transform;
+
+        int spiralSpeed = 30;
+        float distance = (transform.position - player.transform.position).magnitude / 150;
+        float halfDistance = (transform.position - player.transform.position).magnitude / 2;
         Collider col = null;
         if (FiaChild.GetComponentInChildren<Collider>() != null)
         {
@@ -458,6 +463,7 @@ public class NPC : MonoBehaviour {
         //spiralointi
         while (transform.position.x != player.transform.position.x && transform.position.z != player.transform.position.z)
         {
+            yield return new WaitForEndOfFrame();
             temp = player.transform.position;
             temp.y += 0.6f;
 
@@ -466,7 +472,14 @@ public class NPC : MonoBehaviour {
 
             temp = transform.position;
             temp.y = player.transform.position.y;
-            if ((temp - player.transform.position).magnitude > 0.085f)
+
+            if ((transform.position - player.transform.position).magnitude < halfDistance && transform.localScale.x > 0)
+            {
+                Vector3 tmp = new Vector3(transform.localScale.x - 0.001f, transform.localScale.x - 0.001f, transform.localScale.x - 0.001f);
+                transform.localScale -= new Vector3(0.002f, 0.002f, 0.002f);
+            }
+
+            if ((temp - player.transform.position).magnitude > 0.1f)
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, distance);
             else
                 transform.position = player.transform.position;
@@ -474,9 +487,12 @@ public class NPC : MonoBehaviour {
         }
 
         //partikkeliefekti kun katoaa
+        burstParticleSystem.SetActive(true);
+
         //DESTROY EI KÄY se pilaa kaikki loput puhelut
         //Destroy(gameObject);
         FiaChild.SetActive(false);
         this.GetComponent<Collider>().enabled = false;
+        transform.parent = parentHolder.transform;
     }
 }

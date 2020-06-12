@@ -452,7 +452,14 @@ public class TutoLvl : MonoBehaviour {
                 Fia.transform.position = Vector3.MoveTowards(Fia.transform.position, FiaLocation2.transform.position, Time.deltaTime * /*speed*/10);
                 yield return null;
             }
+            Fia.GetComponent<Collider>().enabled = true;
             exclaMark.SetActive(true);
+            exclaMark.transform.localScale = new Vector3(0, 0, 0);
+            while (exclaMark.transform.localScale.x < 1)
+            {
+                exclaMark.transform.localScale += new Vector3(0.01f, 0.01f, 0.01f);
+                yield return null;
+            }
         }
         else
         {
