@@ -6,6 +6,7 @@ public class ScalingUI : MonoBehaviour
 {
     public float FixedSize = 0.05f;
     public Camera Camera;
+    public float startScale = 0;
 
     void Update()
     {
@@ -14,5 +15,10 @@ public class ScalingUI : MonoBehaviour
         //muokkaa alempana olevaa lukua 10 jos kokoa pitää muuttaa
         transform.localScale = Vector3.one * size /10;
         transform.forward = transform.position - Camera.transform.position;
+        if (startScale < 1)
+        {
+            transform.localScale *= startScale;
+            startScale += 0.05f;
+        }
     }
 }

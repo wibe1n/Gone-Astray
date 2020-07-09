@@ -476,10 +476,11 @@ public class NPC : MonoBehaviour {
             if ((transform.position - player.transform.position).magnitude < halfDistance && transform.localScale.x > 0)
             {
                 Vector3 tmp = new Vector3(transform.localScale.x - 0.001f, transform.localScale.x - 0.001f, transform.localScale.x - 0.001f);
-                transform.localScale -= new Vector3(0.002f, 0.002f, 0.002f);
+                transform.localScale -= new Vector3(0.0025f, 0.0025f, 0.0025f);
+                GetComponentInChildren<Light>().intensity -= 0.05f;
             }
 
-            if ((temp - player.transform.position).magnitude > 0.1f)
+            if ((temp - player.transform.position).magnitude > 0.2f)
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, distance);
             else
                 transform.position = player.transform.position;

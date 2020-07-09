@@ -368,6 +368,7 @@ public class TutoLvl : MonoBehaviour {
         if (id == 1)
         {
             yield return new WaitForSeconds(1f);
+            //INFO1 movement controls
             StartCoroutine(FiaMove(1));
         }
     }
